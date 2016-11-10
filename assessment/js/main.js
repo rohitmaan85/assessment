@@ -1,14 +1,96 @@
 $(function() {
 
+
+    $(document).ready(function() {
+        /* Activate data table with JS code*/
+
+
+        var courseData = [{
+                "fname": "",
+                "lname": "",
+                "pos": "0000-00-00",
+                "office": "",
+                "age": "",
+                "sdate": "",
+                "sal": "",
+                "ext": "",
+                "email": ""
+            },
+            {
+                "fname": "",
+                "lname": "",
+                "pos": "0000-00-00",
+                "office": "",
+                "age": "",
+                "sdate": "",
+                "sal": "",
+                "ext": "",
+                "email": ""
+            },
+            {
+                "fname": "Federico",
+                "lname": "Lupieri",
+                "pos": "2015-09-16",
+                "office": "",
+                "age": "",
+                "sdate": "34170",
+                "sal": "Via Ascoli 1",
+                "ext": "00112233445566",
+                "email": "00112233445566"
+            }
+        ];
+
+
+        /* Get from database using jax request*/
+        $('#courses').DataTable({
+            "ajax": '/assessment/php/db_connection.php',
+        });
+
+
+        /*
+        $('#courses').DataTable({
+            "ajax": '/assessment/php/data.json',
+            "columns": [
+                { "data": "fname" },
+                { "data": "lname" },
+                { "data": "pos" },
+                { "data": "office" },
+                { "data": "age" },
+                { "data": "sdate" },
+                { "data": "sal" },
+                { "data": "ext" },
+                { "data": "email" }
+            ]
+        });
+        */
+
+        /* Working Code widhout column name*/
+        /*
+        $('#courses').DataTable({
+            "ajax": '/assessment/php/arrays.txt',
+        });
+        */
+
+    })
+
+
+
     /*
-	  $('.nav li a').each(function(){  
-	  
-	  var activePage = "";
-	  var currentPage = "";
-		if (activePage == currentPage) {
-      $(this).parent().addClass('active'); 
-    } 
-  });*/
+        $(document).ready(function() {
+            $('#courses').DataTable();
+        });
+
+        
+
+            
+        	  $('.nav li a').each(function(){  
+        	  
+        	  var activePage = "";
+        	  var currentPage = "";
+        		if (activePage == currentPage) {
+              $(this).parent().addClass('active'); 
+            } 
+          });*/
 
     $(".nav a").on("click", function() {
         $(".nav").find(".active").removeClass("active");

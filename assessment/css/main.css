@@ -20,11 +20,22 @@ body {
     margin-top: 0px;
 }
 
+
 /*
  css for error and success message
 */
+
 .alert {
     width: 100%;
+}
+
+.panel panel-default {
+    width: 100%;
+}
+
+table.dataTable th,
+table.dataTable td {
+    white-space: nowrap;
 }
 
 
