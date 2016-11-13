@@ -1,6 +1,5 @@
 $(function() {
 
-
     $(document).ready(function() {
         /* Activate data table with JS code*/
 
