@@ -1,6 +1,8 @@
 $(function() {
 
-
+       var subjectTable =  $('#courses').DataTable({
+            "ajax": '/assessment/php/Subjects.php',
+        });
 
     $("#uploadFileButton").click(function() {
         // alert('button clicked');
@@ -114,15 +116,12 @@ $(function() {
     function submitForm(event, data) {
         // Create a jQuery object from the form
         $form = $(event.target);
-
         // Serialize the form data
         var formData = $form.serialize();
-
         // You should sterilise the file names
         $.each(data.files, function(key, value) {
             formData = formData + '&filenames[]=' + value;
         });
-
         $.ajax({
             url: 'php/uploadSubjects.php',
             type: 'POST',
@@ -135,6 +134,8 @@ $(function() {
                     console.log('SUCCESS: ' + data.success);
                     $('#error_msg').addClass('in');
                     $('#error_msg strong').text("Success! " + data.success);
+                    /* Get from database using jax request*/
+                    subjectTable.ajax.reload();
                 } else {
                     // Handle errors here
                     console.log('ERRORS: ' + data.error);
@@ -149,6 +150,4 @@ $(function() {
             }
         });
     }
-
-
 });

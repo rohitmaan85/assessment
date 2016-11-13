@@ -26,3 +26,28 @@
 2016-11-13T11:27:24+00:00 [11336] INFO  : DB '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' File already exists in uploads directory, so remove it succesfully.
 2016-11-13T11:27:24+00:00 [11336] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadSubjects.php , Excel File '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' has been uploaded successfully.
 2016-11-13T11:27:25+00:00 [11336] INFO  : DB 78  C:\wamp64\www\assessment\php\ImportSubjects.php  , Success !  Records inserted successfully in Database : '6'
+2016-11-13T11:33:00+00:00 [11336] INFO  : DB '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-13T11:33:00+00:00 [11336] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadSubjects.php , Excel File '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' has been uploaded successfully.
+2016-11-13T11:33:02+00:00 [11336] INFO  : DB 78  C:\wamp64\www\assessment\php\ImportSubjects.php  , Success !  Records inserted successfully in Database : '6'
+2016-11-13T12:21:46+00:00 [11336] INFO  : DB '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-13T12:21:46+00:00 [11336] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadSubjects.php , Excel File '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' has been uploaded successfully.
+2016-11-13T12:21:48+00:00 [11336] INFO  : DB 78  C:\wamp64\www\assessment\php\ImportSubjects.php  , Success !  Records inserted successfully in Database : '6'
+2016-11-13T12:23:14+00:00 [11336] INFO  : DB '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-13T12:23:14+00:00 [11336] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadSubjects.php , Excel File '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' has been uploaded successfully.
+2016-11-13T12:23:16+00:00 [11336] INFO  : DB 78  C:\wamp64\www\assessment\php\ImportSubjects.php  , Success !  Records inserted successfully in Database : '6'
+2016-11-13T12:23:28+00:00 [11336] INFO  : DB '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-13T12:23:28+00:00 [11336] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadSubjects.php , Excel File '../uploads/CandidateRegandEnrollment (1) (1).xls' has been uploaded successfully.
+2016-11-13T12:23:31+00:00 [11336] INFO  : DB 82  C:\wamp64\www\assessment\php\ImportSubjects.php  ,ERROR #Column count doesn't match value count at row 1
+2016-11-13T12:23:31+00:00 [11336] INFO  : DB 93  C:\wamp64\www\assessment\php\ImportSubjects.php ,  ERROR while inserting data in database.
+2016-11-13T12:23:49+00:00 [11336] INFO  : DB '../uploads/CandidateRegandEnrollment (1) (1).xls' File already exists in uploads directory, so remove it succesfully.
+2016-11-13T12:23:49+00:00 [11336] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadSubjects.php , Excel File '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' has been uploaded successfully.
+2016-11-13T12:23:51+00:00 [11336] INFO  : DB 78  C:\wamp64\www\assessment\php\ImportSubjects.php  , Success !  Records inserted successfully in Database : '6'
+2016-11-13T12:24:06+00:00 [11336] INFO  : DB '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-13T12:24:06+00:00 [11336] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadSubjects.php , Excel File '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' has been uploaded successfully.
+2016-11-13T12:24:07+00:00 [11336] INFO  : DB 78  C:\wamp64\www\assessment\php\ImportSubjects.php  , Success !  Records inserted successfully in Database : '6'
+2016-11-13T12:35:49+00:00 [11336] INFO  : DB '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-13T12:35:49+00:00 [11336] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadSubjects.php , Excel File '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' has been uploaded successfully.
+2016-11-13T12:35:50+00:00 [11336] INFO  : DB 78  C:\wamp64\www\assessment\php\ImportSubjects.php  , Success !  Records inserted successfully in Database : '6'
+2016-11-13T12:37:25+00:00 [11336] INFO  : DB '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-13T12:37:25+00:00 [11336] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadSubjects.php , Excel File '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' has been uploaded successfully.
+2016-11-13T12:37:27+00:00 [11336] INFO  : DB 78  C:\wamp64\www\assessment\php\ImportSubjects.php  , Success !  Records inserted successfully in Database : '6'

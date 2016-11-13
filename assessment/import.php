@@ -114,198 +114,23 @@
                                             <th data-field="ext"> Extn.</th>
                                             <th data-field="email">E-mail</th>
                                             -->
-                                            <th>First name</th>
-                                            <th>Last name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                            <th> Extn.</th>
-                                            <th>E-mail</th>
+                                            <th>S.No</th>
+                                            <th>SSC</th>
+                                            <th>Job Role</th>
+                                            <th>QP Code</th>
+                                            <th>NSQF Level</th>
+                                            <th>Theory</th>
+                                            <th>Practical</th>
+                                            <th>Dur-ESAS</th>
+                                            <th>Dur-DL</th>
+                                            <th>TD</th>
+                                            <th>Curr-Avail.</th>
+                                            <th>Cont-Avail.</th>
+                                            <th>CN-Catgry.</th>
+                                            <th>Classfication</th>
                                         </tr>
                                     </thead>
-                                <!--
-                                    <tbody>
-                                        <tr>
-                                            <td>Duinn</td>
-                                            <td>Flynn</td>
-                                            <td>Support Lead</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2013/03/03</td>
-                                            <td>$342,000</td>
-                                            <td>9497</td>
-                                            <td>q.flynn@datatables.net</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Auinn</td>
-                                            <td>Flynn</td>
-                                            <td>Support Lead</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2013/03/03</td>
-                                            <td>$342,000</td>
-                                            <td>9497</td>
-                                            <td>q.flynn@datatables.net</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Zuinn</td>
-                                            <td>Flynn</td>
-                                            <td>Support Lead</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2013/03/03</td>
-                                            <td>$342,000</td>
-                                            <td>9497</td>
-                                            <td>q.flynn@datatables.net</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cuinn</td>
-                                            <td>Flynn</td>
-                                            <td>Support Lead</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2013/03/03</td>
-                                            <td>$342,000</td>
-                                            <td>9497</td>
-                                            <td>q.flynn@datatables.net</td>
-                                        </tr>
-                                                                                <tr>
-                                            <td>Cuinn</td>
-                                            <td>Flynn</td>
-                                            <td>Support Lead</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2013/03/03</td>
-                                            <td>$342,000</td>
-                                            <td>9497</td>
-                                            <td>q.flynn@datatables.net</td>
-                                        </tr>
-                                                                                <tr>
-                                            <td>Cuinn</td>
-                                            <td>Flynn</td>
-                                            <td>Support Lead</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2013/03/03</td>
-                                            <td>$342,000</td>
-                                            <td>9497</td>
-                                            <td>q.flynn@datatables.net</td>
-                                        </tr>
-                                                                                <tr>
-                                            <td>Cuinn</td>
-                                            <td>Flynn</td>
-                                            <td>Support Lead</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2013/03/03</td>
-                                            <td>$342,000</td>
-                                            <td>9497</td>
-                                            <td>q.flynn@datatables.net</td>
-                                        </tr>
-                                                                                <tr>
-                                            <td>Cuinn</td>
-                                            <td>Flynn</td>
-                                            <td>Support Lead</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2013/03/03</td>
-                                            <td>$342,000</td>
-                                            <td>9497</td>
-                                            <td>q.flynn@datatables.net</td>
-                                        </tr>
-                                                                                <tr>
-                                            <td>Cuinn</td>
-                                            <td>Flynn</td>
-                                            <td>Support Lead</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2013/03/03</td>
-                                            <td>$342,000</td>
-                                            <td>9497</td>
-                                            <td>q.flynn@datatables.net</td>
-                                        </tr>
-                                                                                <tr>
-                                            <td>Cuinn</td>
-                                            <td>Flynn</td>
-                                            <td>Support Lead</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2013/03/03</td>
-                                            <td>$342,000</td>
-                                            <td>9497</td>
-                                            <td>q.flynn@datatables.net</td>
-                                        </tr>
-                                                                                <tr>
-                                            <td>Cuinn</td>
-                                            <td>Flynn</td>
-                                            <td>Support Lead</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2013/03/03</td>
-                                            <td>$342,000</td>
-                                            <td>9497</td>
-                                            <td>q.flynn@datatables.net</td>
-                                        </tr>
-                                                                                <tr>
-                                            <td>Cuinn</td>
-                                            <td>Flynn</td>
-                                            <td>Support Lead</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2013/03/03</td>
-                                            <td>$342,000</td>
-                                            <td>9497</td>
-                                            <td>q.flynn@datatables.net</td>
-                                        </tr>
-                                                                                <tr>
-                                            <td>Cuinn</td>
-                                            <td>Flynn</td>
-                                            <td>Support Lead</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2013/03/03</td>
-                                            <td>$342,000</td>
-                                            <td>9497</td>
-                                            <td>q.flynn@datatables.net</td>
-                                        </tr>
-                                                                                <tr>
-                                            <td>Cuinn</td>
-                                            <td>Flynn</td>
-                                            <td>Support Lead</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2013/03/03</td>
-                                            <td>$342,000</td>
-                                            <td>9497</td>
-                                            <td>q.flynn@datatables.net</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cuinn</td>
-                                            <td>Flynn</td>
-                                            <td>Support Lead</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2013/03/03</td>
-                                            <td>$342,000</td>
-                                            <td>9497</td>
-                                            <td>q.flynn@datatables.net</td>
-                                        </tr>
-                                         <tr>
-                                            <td>Cuinn</td>
-                                            <td>Flynn</td>
-                                            <td>Support Lead</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2013/03/03</td>
-                                            <td>$342,000</td>
-                                            <td>9497</td>
-                                            <td>q.flynn@datatables.net</td>
-                                        </tr>
-                                    </tbody>
-                                    -->
-                                </table>
+                                 </table>
                             </div>
                         </div>
                     </div>
