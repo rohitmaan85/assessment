@@ -20,6 +20,10 @@ body {
     margin-top: 0px;
 }
 
+.progress {
+    margin-bottom: 0;
+}
+
 
 /*
  css for error and success message

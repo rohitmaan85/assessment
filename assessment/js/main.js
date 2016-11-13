@@ -1,7 +1,8 @@
 $(function() {
 
     $(document).ready(function() {
-        /* Activate data table with JS code*/
+
+         /* Activate data table with JS code*/
 
         /* Get from database using jax request*/
 

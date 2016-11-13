@@ -88,7 +88,7 @@ class ImportSubjects{
 	{
 		if($this->readExcel($startRow, $endROw, $sheetName, $excelFilePath)){
 			if($this->insertInToDatabase())
-			return true;
+				return true;
 			else{
 				log_event( LOG_DATABASE, __LINE__."  ". __FILE__. " ,  ERROR while inserting data in database." );
 				return false;

@@ -32,6 +32,7 @@ if(isset($_GET['files']))
                 // Parse the excel file and save it in database.
 				$obj = new ImportSubjects();
 				if(!$obj->importSubject(5, 10, "fiNAL 212", $excelFilePath)){
+					log_event( LOG_DATABASE, __LINE__."  ". __FILE__. " Set Error to true to send the response to page." );
 					$error = true;
 				}
 			}	
@@ -45,7 +46,7 @@ if(isset($_GET['files']))
 			$error = true;			
 		}		
 	}	
-	$data = ($error) ? array('error' => 'Error while uploading  file.') : array('files' => $files);	
+	$data = ($error) ? array('error' => ' Invalid Excel File , Please check the file formt.') : array('files' => $files);	
 }
 
 else

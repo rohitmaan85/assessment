@@ -1,18 +1,45 @@
 $(function() {
 
-       var subjectTable =  $('#courses').DataTable({
-            "ajax": '/assessment/php/Subjects.php',
-        });
+    var input = $("#fileUploadInput");
+
+    function clearFileInput() {
+        input.replaceWith(input.val('').clone(true));
+    };
+
+    // Referneces
+    var control = $("#fileUploadInput"),
+        clearBn = $("#cancelButton");
+
+    // Setup the clear functionality
+    clearBn.click(function() {
+        $('#fileUploadInput').val('');
+        // control.replaceWith(control.val('').clone(true));
+    });
+
+    // Some bound handlers to preserve when cloning
+    control.on({
+        change: function() { console.log("Changed") },
+        focus: function() { console.log("Focus") }
+    });
+
+
+
+    /*
+        $("#cancelButton").click(function() {
+            //window.fileUploadInput.reset();
+            clearFileInput();
+            //$("#fileUploadInput").val('').clone(true);
+        });*/
+
+    var subjectTable = $('#courses').DataTable({
+        "ajax": '/assessment/php/Subjects.php',
+    });
 
     $("#uploadFileButton").click(function() {
-        // alert('button clicked');
         $("#uploadXlsForm").submit();
     });
 
-    $("#cancelButton").click(function() {
-        // alert(true);
-        //$("#uploadXlsForm").submit();
-    });
+
 
     var files;
 
@@ -50,17 +77,21 @@ $(function() {
                 $('.alert-success').removeClass('alert-success').addClass('alert-danger');
                 $('#error_msg').addClass('in');
                 $('#error_msg strong').text("Error! File should be in excel format.");
-                $('#uploadFileButton').addClass('disabled')
-                    //$("error_msg.alert alert-danger fade in").css("display", "inline");
+                $('#uploadFileButton').addClass('disabled');
+                $('#uploadFileButton').prop('disabled', true);
+
+                //$("error_msg.alert alert-danger fade in").css("display", "inline");
             } else {
                 // $("#success_msg").css('display', 'inline-block');
                 //$('#error_msg').addClass('alert alert-success fade');
                 $('.alert-danger').removeClass('alert-danger').addClass('alert-success');
                 // $('#error_msg').addClass('in');
                 //  $('#error_msg strong').text("Success! File has been imported successfully.");
-                $('#uploadFileButton').removeClass('disabled')
-                    // $('#success_msg').addClass('in');
-                    //  $('#success_msg').addClass('in');
+                $('#uploadFileButton').removeClass('disabled');
+                $('#uploadFileButton').prop('disabled', false);
+
+                // $('#success_msg').addClass('in');
+                //  $('#success_msg').addClass('in');
             }
             if (input.length) {
                 input.val(log);
@@ -75,6 +106,9 @@ $(function() {
 
     // Catch the form submit and upload the files
     $("#uploadXlsForm").submit(function(event) {
+
+        $("#files").append($("#fileUploadProgressTemplate").tmpl());
+
 
         //alert('here1');
         event.stopPropagation(); // Stop stuff happening
@@ -96,13 +130,31 @@ $(function() {
             dataType: 'json',
             processData: false, // Don't process the files
             contentType: false, // Set content type to false as jQuery will tell the server its a query string request
+
+            xhr: function() {
+                var xhr = $.ajaxSettings.xhr();
+                if (xhr.upload) {
+                    xhr.upload.addEventListener('progress', function(evt) {
+                        var percent = (evt.loaded / evt.total) * 100;
+                        $("#files").find(".progress-bar").width(percent + "%");
+                    }, false);
+                }
+                return xhr;
+            },
+
             success: function(data, textStatus, jqXHR) {
+                $("#files").children().last().remove();
+                $("#files").append($("#fileUploadItemTemplate").tmpl(data));
+                
                 if (typeof data.error === 'undefined') {
                     // Success so call function to process the form
                     submitForm(event, data);
                 } else {
                     // Handle errors here
                     console.log('ERRORS: ' + data.error);
+                    $('.alert-success').removeClass('alert-success').addClass('alert-danger');
+                    $('#error_msg').addClass('in');
+                    $('#error_msg strong').text("Error! " + data.error);
                 }
             },
             error: function(jqXHR, textStatus, errorThrown) {
@@ -139,6 +191,9 @@ $(function() {
                 } else {
                     // Handle errors here
                     console.log('ERRORS: ' + data.error);
+                    $('.alert-success').removeClass('alert-success').addClass('alert-danger');
+                    $('#error_msg').addClass('in');
+                    $('#error_msg strong').text("Error! " + data.error);
                 }
             },
             error: function(jqXHR, textStatus, errorThrown) {

@@ -11,14 +11,16 @@
     <script src="js/dataTables.responsive.js"></script>
     <script src="js/dataTables.bootstrap.js"></script>
     <script src="js/dataTables.responsive.min.js"></script>
-      <script src="js/toggle.js"></script>
-   <script src="js/upload.js"></script>
-  
+   
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css"  href="css/main.css">
 <link rel="stylesheet" type="text/css"  href="css/dataTables.bootstrap.css">
  <link rel="stylesheet" type="text/css"  href="css/dataTables.responsive.css">
  
+   <script src="js/toggle.js"></script>
+   <script src="js/upload.js"></script>
+  <script src="js/progress.js"></script>
+
   </head>
 
 <body>
@@ -81,7 +83,7 @@
                           <div class="input-group">
                               <label class="input-group-btn">
                                   <span class="btn btn-primary">
-                                      Browse&hellip; <input type="file" style="display: none;" multiple>
+                                      Browse&hellip; <input id="fileUploadInput" type="file" style="display: none;" multiple>
                                   </span>
                               </label>
                               <input type="text" class="form-control" readonly>
@@ -89,11 +91,22 @@
                           <span class="help-block">
                               Select file to be uploaded , Only Excel files are allowed.
                           </span>
+                          
+                        <!-- File Upload Progress Bar -->
+                        <div class="list-group" id="files"></div>
+                        <script id="fileUploadProgressTemplate" type="text/x-jquery-tmpl">
+                        <div class="list-group-item">
+                            <div class="progress progress-striped active">
+                                <div class="progress-bar progress-bar-info" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                        </script>
+                        <!-- File Upload Progress Bar End-->
+
+
                        </div> 
-
-
-                       <button id="uploadFileButton"  type="button" class="btn btn-success disabled"><span class="glyphicon glyphicon-upload"></span>      Import Data...</button> 
-                       <button id="cancelButton"  type="button" class="btn btn-success"><span class="glyphicon glyphicon-remove"></span>  Cancel</button> 
+                       <button id="uploadFileButton"  type="button" class="btn btn-success disabled" disabled="disabled"><span class="glyphicon glyphicon-upload"></span>      Import Data...</button> 
+                       <button id="cancelButton"  type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>  Cancel</button> 
                        </form>
                        <hr>
                        
@@ -103,17 +116,6 @@
                             <table id="courses" class="table table-striped table-bordered table-hover dt-responsive"  cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
-                                            <!--
-                                            <th data-field="fname">First name</th>
-                                            <th data-field="lname">Last name</th>
-                                            <th data-field="pos">Position</th>
-                                            <th data-field="office">Office</th>
-                                            <th data-field="age">Age</th>
-                                            <th data-field="sdate">Start date</th>
-                                            <th data-field="sal">Salary</th>
-                                            <th data-field="ext"> Extn.</th>
-                                            <th data-field="email">E-mail</th>
-                                            -->
                                             <th>S.No</th>
                                             <th>SSC</th>
                                             <th>Job Role</th>
