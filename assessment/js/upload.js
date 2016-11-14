@@ -145,7 +145,7 @@ $(function() {
             success: function(data, textStatus, jqXHR) {
                 $("#files").children().last().remove();
                 $("#files").append($("#fileUploadItemTemplate").tmpl(data));
-                
+
                 if (typeof data.error === 'undefined') {
                     // Success so call function to process the form
                     submitForm(event, data);

@@ -14,12 +14,11 @@
    
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css"  href="css/main.css">
-<link rel="stylesheet" type="text/css"  href="css/dataTables.bootstrap.css">
- <link rel="stylesheet" type="text/css"  href="css/dataTables.responsive.css">
+  <link rel="stylesheet" type="text/css"  href="css/dataTables.bootstrap.css">
+  <link rel="stylesheet" type="text/css"  href="css/dataTables.responsive.css">
  
    <script src="js/toggle.js"></script>
-   <script src="js/upload.js"></script>
-  <script src="js/progress.js"></script>
+   <script src="js/exams.js"></script>
 
   </head>
 
@@ -70,51 +69,13 @@
             <!--<div class="col-lg-14 col-md-11 col-sm-2 col-xs-12"> -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                         <h3 class="panel-title">Import Data from Excel File.</h3>    
+                         <h3 class="panel-title">Manage Exams.</h3>    
                     </div>
                     <div class="panel-body">
-                     <form id="uploadXlsForm" class="well" action="#" method="post" enctype="multipart/form-data">
-                      <div class="row" style="position:relative">                                    
-                         <div id="error_msg"  class="alert alert-danger fade" style="position:relative">
-                           <button href="#" type="button" class="close">&times;</button>
-                               <strong></strong>
-                        </div>
-                        <!--  <div class="col-lg-12 col-sm-6 col-12"> -->
-                          <h4>Upload partner details.</h4>
-                          <div class="input-group">
-                              <label class="input-group-btn">
-                                  <span class="btn btn-primary">
-                                      Browse&hellip; <input id="fileUploadInput" type="file" style="display: none;" multiple>
-                                  </span>
-                              </label>
-                              <input type="text" class="form-control" readonly>
-                          </div>
-                          <span class="help-block">
-                              Select file to be uploaded , Only Excel files are allowed.
-                          </span>
-                          
-                        <!-- File Upload Progress Bar -->
-                        <div class="list-group" id="files"></div>
-                        <script id="fileUploadProgressTemplate" type="text/x-jquery-tmpl">
-                        <div class="list-group-item">
-                            <div class="progress progress-striped active">
-                                <div class="progress-bar progress-bar-info" style="width: 0%;"></div>
-                            </div>
-                        </div>
-                        </script>
-                        <!-- File Upload Progress Bar End-->
-
-
-                       </div> 
-                       <button id="uploadFileButton"  type="button" class="btn btn-success disabled" disabled="disabled"><span class="glyphicon glyphicon-upload"></span>      Import Data...</button> 
-                       <button id="cancelButton"  type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>  Cancel</button> 
-                       </form>
-                       <hr>
-                       
-  
+                    <hr>
                     <div class="rowtable">
                         <div class="col-md-12">
-                            <table id="courses" class="table table-striped table-bordered table-hover dt-responsive"  cellspacing="0" width="100%">
+                            <table id="test" class="table table-striped table-bordered table-hover dt-responsive"  cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
                                             <th>S.No</th>

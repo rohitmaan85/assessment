@@ -24,6 +24,40 @@ body {
     margin-bottom: 0;
 }
 
+.dropdown-menu {
+    width: 100%;
+}
+
+#sscdropdownButton {
+    width: 100%;
+}
+
+#jobroledropdownButton {
+    width: 100%;
+}
+
+.dropdown-menu {
+    font-size: 16px;
+    left: 50%;
+    right: auto;
+    text-align: center;
+    transform: translate(-50%, 0);
+}
+
+#jobrole-dropdown-menu {
+    font-size: 16px;
+    left: 50%;
+    right: auto;
+    text-align: center;
+    transform: translate(-50%, 0);
+}
+
+#qpcodeText {
+    font-size: 16px;
+    left: 50%;
+    text-align: center;
+}
+
 
 /*
  css for error and success message
