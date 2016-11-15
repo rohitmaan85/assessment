@@ -54,7 +54,7 @@
             <li><a  href="manageExams.php"><span class="glyphicon glyphicon-send"></span>Manage Exams</a></li>
             <li><a  href="login.php" ><span class="glyphicon glyphicon-cloud"></span>Users</a></li>
             <li><a  href="login.php"><span class="glyphicon glyphicon-send"></span>Courses</a></li>
-            <li><a  href="login.php"><span class="glyphicon glyphicon-plane"></span>Exams</a></li>
+             <li><a  href="createQuestion.php"><span class="glyphicon glyphicon-plane"></span>Questions</a></li>
             <li><a  href="login.php"><span class="glyphicon glyphicon-send"></span>Reports</a></li>
             <li><a  href="login.php"><span class="glyphicon glyphicon-plane"></span>Active Link</a></li>
           </ul>

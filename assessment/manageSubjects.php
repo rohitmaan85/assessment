@@ -50,7 +50,7 @@
             <li><a  href="manageExams.php"><span class="glyphicon glyphicon-send"></span>Manage Exams</a></li>
             <li><a  href="login.php" ><span class="glyphicon glyphicon-cloud"></span>Users</a></li>
             <li><a  href="login.php"><span class="glyphicon glyphicon-send"></span>Courses</a></li>
-            <li><a  href="login.php"><span class="glyphicon glyphicon-plane"></span>Exams</a></li>
+             <li><a  href="createQuestion.php"><span class="glyphicon glyphicon-plane"></span>Questions</a></li>
             <li><a  href="login.php"><span class="glyphicon glyphicon-send"></span>Reports</a></li>
             <li><a  href="login.php"><span class="glyphicon glyphicon-plane"></span>Active Link</a></li>
           </ul>
@@ -63,19 +63,6 @@
       <div class="side-body"> 
         <div class="row">
 
-<!--
-        <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" id="sscdropdown" type="button" data-toggle="dropdown">Dropdown Example
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
-              <li role="presentation" class="divider"></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
-            </ul>
-          </div
--->
             <!--<div class="col-lg-14 col-md-11 col-sm-2 col-xs-12"> -->
                 <div class="panel panel-default">               
                     <div class="panel-heading">

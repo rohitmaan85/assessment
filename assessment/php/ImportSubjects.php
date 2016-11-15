@@ -67,7 +67,7 @@ class ImportSubjects{
 			do{
 				//echo array_shift($query_type[1]),": ";
 				if($result=mysqli_store_result($conn)){  //if has a record set, like SELECT
-					echo "Selected rows = ".mysqli_num_rows($result)."<br>";
+					//echo "Selected rows = ".mysqli_num_rows($result)."<br>";
 					mysqli_free_result($result);
 				}else{  //if only returning true or false, like INSERT/UPDATE/DELETE/etc.
 					$cumulative_rows+=$aff_rows=mysqli_affected_rows($conn);

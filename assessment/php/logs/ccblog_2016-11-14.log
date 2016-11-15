@@ -1,237 +1,140 @@
-2016-11-14T07:44:50+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T07:44:50+00:00 [6008] INFO  : DB Get SSC List with parameter :'ssc'
-2016-11-14T07:44:50+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T07:44:53+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T07:44:53+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T07:44:53+00:00 [6008] INFO  : DB SQL = '0'
-2016-11-14T07:48:04+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='add''
-2016-11-14T07:48:04+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T07:48:04+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T07:48:04+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T07:48:08+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='add''
-2016-11-14T07:48:08+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T07:48:08+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T07:48:08+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T07:48:08+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='add''
-2016-11-14T07:48:08+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T07:48:08+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T07:48:08+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T07:48:20+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T07:48:20+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T07:48:20+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T07:48:24+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T07:48:24+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T07:48:24+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T07:49:08+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
-2016-11-14T07:49:08+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Aquaculture worker'
-2016-11-14T07:49:08+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Aquaculture worker''
-2016-11-14T07:50:34+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T07:50:34+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T07:50:34+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T07:50:39+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T07:50:39+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T07:50:39+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T07:50:41+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
-2016-11-14T07:50:41+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Animal Health Worker'
-2016-11-14T07:50:41+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Animal Health Worker''
-2016-11-14T07:51:05+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
-2016-11-14T07:51:05+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Dairy Farmer/ Entrepreneur'
-2016-11-14T07:51:05+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Dairy Farmer/ Entrepreneur''
-2016-11-14T07:59:32+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T07:59:32+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T07:59:32+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T07:59:33+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T07:59:33+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T07:59:33+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T07:59:34+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
-2016-11-14T07:59:34+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Aquaculture worker'
-2016-11-14T07:59:34+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Aquaculture worker''
-2016-11-14T08:01:11+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:01:11+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:01:11+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:01:12+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T08:01:12+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T08:01:12+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T08:01:17+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
-2016-11-14T08:01:17+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Aquaculture worker'
-2016-11-14T08:01:17+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Aquaculture worker''
-2016-11-14T08:01:26+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
-2016-11-14T08:01:26+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Animal Health Worker'
-2016-11-14T08:01:26+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Animal Health Worker''
-2016-11-14T08:01:28+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
-2016-11-14T08:01:28+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Aquaculture worker'
-2016-11-14T08:01:28+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Aquaculture worker''
-2016-11-14T08:01:30+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
-2016-11-14T08:01:30+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Dairy Farmer/ Entrepreneur'
-2016-11-14T08:01:30+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Dairy Farmer/ Entrepreneur''
-2016-11-14T08:01:32+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
-2016-11-14T08:01:32+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Gardener'
-2016-11-14T08:01:32+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Gardener''
-2016-11-14T08:01:59+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:01:59+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:01:59+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:02:00+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T08:02:00+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T08:02:00+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T08:02:01+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:02:01+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:02:01+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:02:01+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T08:02:01+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T08:02:01+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T08:02:04+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:02:04+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:02:04+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:02:05+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T08:02:05+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T08:02:05+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T08:02:06+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
-2016-11-14T08:02:06+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Green House Operator'
-2016-11-14T08:02:06+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Green House Operator''
-2016-11-14T08:02:17+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:02:17+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:02:17+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:02:18+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:02:18+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:02:18+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:03:48+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:03:48+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:03:48+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:03:48+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T08:03:48+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T08:03:48+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T08:03:50+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
-2016-11-14T08:03:50+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Aquaculture worker'
-2016-11-14T08:03:50+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Aquaculture worker''
-2016-11-14T08:04:13+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:04:13+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:04:13+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:04:13+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T08:04:13+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T08:04:13+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T08:04:14+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
-2016-11-14T08:04:14+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Aquaculture worker'
-2016-11-14T08:04:14+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Aquaculture worker''
-2016-11-14T08:05:03+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:05:03+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:05:03+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:05:04+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T08:05:04+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T08:05:04+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T08:05:05+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
-2016-11-14T08:05:05+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Animal Health Worker'
-2016-11-14T08:05:05+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Animal Health Worker''
-2016-11-14T08:05:17+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:05:17+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:05:17+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:05:18+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T08:05:18+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T08:05:18+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T08:05:18+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:05:18+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:05:18+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:05:20+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T08:05:20+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T08:05:20+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T08:05:22+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
-2016-11-14T08:05:22+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Animal Health Worker'
-2016-11-14T08:05:22+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Animal Health Worker''
-2016-11-14T08:08:06+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:08:06+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:08:06+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:08:07+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T08:08:07+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T08:08:07+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T08:08:25+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:08:25+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:08:25+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:09:05+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:09:05+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:09:05+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:09:09+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T08:09:09+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T08:09:09+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T08:09:15+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:09:15+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:09:15+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:09:22+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T08:09:22+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T08:09:22+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T08:09:38+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:09:38+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:09:38+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:09:42+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T08:09:42+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T08:09:42+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T08:10:19+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:10:19+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:10:19+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:10:26+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T08:10:26+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T08:10:26+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T08:10:34+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:10:34+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:10:34+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:11:01+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T08:11:01+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T08:11:01+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T08:11:05+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:11:05+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:11:05+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:11:05+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T08:11:05+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T08:11:05+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T08:12:25+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:12:25+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:12:25+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:12:25+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T08:12:25+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T08:12:25+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T08:14:58+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:14:58+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:14:58+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:15:03+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T08:15:03+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T08:15:03+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T08:15:13+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:15:13+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:15:13+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:15:15+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T08:15:15+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T08:15:15+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T08:15:21+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:15:21+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:15:21+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:15:22+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:15:22+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:15:22+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:16:45+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:16:45+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:16:45+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:16:45+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T08:16:45+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T08:16:45+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T08:16:47+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
-2016-11-14T08:16:47+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Green House Operator'
-2016-11-14T08:16:47+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Green House Operator''
-2016-11-14T08:16:52+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
-2016-11-14T08:16:52+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Aquaculture worker'
-2016-11-14T08:16:52+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Aquaculture worker''
-2016-11-14T08:16:53+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
-2016-11-14T08:16:53+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Green House Operator'
-2016-11-14T08:16:53+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Green House Operator''
-2016-11-14T08:16:54+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
-2016-11-14T08:16:54+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Green House Operator'
-2016-11-14T08:16:54+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Green House Operator''
-2016-11-14T08:16:56+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
-2016-11-14T08:16:56+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Tractor operator '
-2016-11-14T08:16:56+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Tractor operator ''
-2016-11-14T08:18:21+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
-2016-11-14T08:18:21+00:00 [6008] INFO  : DB Get SSC List from database.
-2016-11-14T08:18:21+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
-2016-11-14T08:18:22+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-14T08:18:22+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
-2016-11-14T08:18:22+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
-2016-11-14T08:18:23+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
-2016-11-14T08:18:23+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Aquaculture worker'
-2016-11-14T08:18:23+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Aquaculture worker''
+2016-11-14T13:30:54+00:00 [6008] INFO  : DB 38  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-14T13:30:54+00:00 [6008] INFO  : DB 30  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES('',test',',',',',Option A',12);'
+2016-11-14T13:30:54+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '',',',',',Option A',12)' at line 4
+2016-11-14T13:33:14+00:00 [6008] INFO  : DB 38  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-14T13:33:14+00:00 [6008] INFO  : DB 30  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES('',f',',',',',Option B',12);'
+2016-11-14T13:33:14+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '',',',',',Option B',12)' at line 4
+2016-11-14T13:33:14+00:00 [6008] INFO  : DB 52  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.
+2016-11-14T13:35:03+00:00 [6008] INFO  : DB 38  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-14T13:35:03+00:00 [6008] INFO  : DB 30  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES('',srs',',',',',Option A',1);'
+2016-11-14T13:35:03+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '',',',',',Option A',1)' at line 4
+2016-11-14T13:35:03+00:00 [6008] INFO  : DB 52  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.
+2016-11-14T13:36:45+00:00 [6008] INFO  : DB 38  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-14T13:36:45+00:00 [6008] INFO  : DB 30  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES('',12',',',',',Option A',12);'
+2016-11-14T13:36:45+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '',',',',',Option A',12)' at line 4
+2016-11-14T13:36:45+00:00 [6008] INFO  : DB 52  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":" Invalid Excel File , Please check the file formt."}
+2016-11-14T13:44:22+00:00 [6008] INFO  : DB '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-14T13:44:22+00:00 [6008] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadSubjects.php , Excel File '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' has been uploaded successfully.
+2016-11-14T13:44:23+00:00 [6008] INFO  : DB 78  C:\wamp64\www\assessment\php\ImportSubjects.php  , Success !  Records inserted successfully in Database : '6'
+2016-11-14T13:45:00+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
+2016-11-14T13:45:00+00:00 [6008] INFO  : DB Get SSC List from database.
+2016-11-14T13:45:00+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-11-14T13:45:01+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
+2016-11-14T13:45:01+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
+2016-11-14T13:45:01+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
+2016-11-14T13:45:05+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
+2016-11-14T13:45:05+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Aquaculture worker'
+2016-11-14T13:45:05+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Aquaculture worker''
+2016-11-14T13:51:29+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
+2016-11-14T13:51:29+00:00 [6008] INFO  : DB Get SSC List from database.
+2016-11-14T13:51:29+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-11-14T13:51:30+00:00 [6008] INFO  : DB Get Request with parameter :'jobrole'
+2016-11-14T13:51:30+00:00 [6008] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :'Agriculture'
+2016-11-14T13:51:30+00:00 [6008] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
+2016-11-14T13:51:31+00:00 [6008] INFO  : DB Get Request with parameter :'qpcode'
+2016-11-14T13:51:31+00:00 [6008] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Animal Health Worker'
+2016-11-14T13:51:31+00:00 [6008] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Animal Health Worker''
+2016-11-14T14:17:34+00:00 [6008] INFO  : DB '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-14T14:17:34+00:00 [6008] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadSubjects.php , Excel File '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' has been uploaded successfully.
+2016-11-14T14:17:47+00:00 [6008] INFO  : DB 78  C:\wamp64\www\assessment\php\ImportSubjects.php  , Success !  Records inserted successfully in Database : '216'
+2016-11-14T16:27:00+00:00 [6008] INFO  : DB Get Request with parameter :'ssc'
+2016-11-14T16:27:00+00:00 [6008] INFO  : DB Get SSC List from database.
+2016-11-14T16:27:00+00:00 [6008] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-11-14T16:30:31+00:00 [6008] INFO  : DB 38  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-14T16:30:31+00:00 [6008] INFO  : DB 30  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES('','tes','','','','','Option A','12');'
+2016-11-14T16:30:31+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Column count doesn't match value count at row 1
+2016-11-14T16:30:31+00:00 [6008] INFO  : DB 52  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-14T16:30:32+00:00 [6008] INFO  : DB 38  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-14T16:30:32+00:00 [6008] INFO  : DB 30  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES('','','','','','','Option A','');'
+2016-11-14T16:30:32+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Column count doesn't match value count at row 1
+2016-11-14T16:30:32+00:00 [6008] INFO  : DB 52  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-14T16:34:08+00:00 [6008] INFO  : DB 38  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-14T16:34:08+00:00 [6008] INFO  : DB 30  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123','','w','','','','','Option A','3');'
+2016-11-14T16:34:08+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','','w','','','','','Option A','3')' at line 4
+2016-11-14T16:34:08+00:00 [6008] INFO  : DB 52  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-14T16:35:52+00:00 [6008] INFO  : DB 38  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-14T16:35:52+00:00 [6008] INFO  : DB 30  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES('123','','d','','','','','Option A','12');'
+2016-11-14T16:35:52+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Incorrect integer value: '' for column 'subId' at row 1
+2016-11-14T16:35:52+00:00 [6008] INFO  : DB 52  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-14T16:36:52+00:00 [6008] INFO  : DB 38  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-14T16:36:52+00:00 [6008] INFO  : DB 30  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','test','','','','','Option A','12');'
+2016-11-14T16:36:52+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Incorrect integer value: '' for column 'subId' at row 1
+2016-11-14T16:36:52+00:00 [6008] INFO  : DB 52  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-14T16:37:54+00:00 [6008] INFO  : DB 38  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-14T16:37:54+00:00 [6008] INFO  : DB 30  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','tewt','','','','','Option A','12');'
+2016-11-14T16:37:54+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Incorrect integer value: '' for column 'subId' at row 1
+2016-11-14T16:37:54+00:00 [6008] INFO  : DB 52  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-14T16:39:02+00:00 [6008] INFO  : DB 38  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-14T16:39:02+00:00 [6008] INFO  : DB 30  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','w','','','','','Option A','1');'
+2016-11-14T16:39:02+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Data truncated for column 'correctanswer' at row 1
+2016-11-14T16:39:02+00:00 [6008] INFO  : DB 52  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-14T16:44:20+00:00 [6008] INFO  : DB 38  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-14T16:44:20+00:00 [6008] INFO  : DB 30  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','sdsddsg'!".\/
+','','','','','Option A','m m');'
+2016-11-14T16:44:20+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '!".\/
+','','','','','Option A','m m')' at line 4
+2016-11-14T16:44:20+00:00 [6008] INFO  : DB 52  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-14T16:47:00+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-14T16:47:00+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','asdasd1&#039;&quot;','','','','','Option A','12');'
+2016-11-14T16:47:00+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Data truncated for column 'correctanswer' at row 1
+2016-11-14T16:47:00+00:00 [6008] INFO  : DB 53  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-14T16:54:15+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-14T16:54:15+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','t','','','','','t','1');'
+2016-11-14T16:54:15+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Data truncated for column 'correctanswer' at row 1
+2016-11-14T16:54:15+00:00 [6008] INFO  : DB 53  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-14T17:05:14+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-14T17:05:14+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','test1','','','','','Option D','5');'
+2016-11-14T17:05:14+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Data truncated for column 'correctanswer' at row 1
+2016-11-14T17:05:14+00:00 [6008] INFO  : DB 53  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-14T17:06:59+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-14T17:06:59+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','test1','','','','','optiond','3');'
+2016-11-14T17:06:59+00:00 [6008] INFO  : DB 12  C:\wamp64\www\assessment\php\manageQuestions.php  , Success !  Question inserted successfully in Database : ''
+2016-11-14T17:06:59+00:00 [6008] INFO  : DB 58  C:\wamp64\www\assessment\php\manageQuestions.php Question created successfully.

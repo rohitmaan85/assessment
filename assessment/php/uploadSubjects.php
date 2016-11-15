@@ -31,7 +31,7 @@ if(isset($_GET['files']))
 			if (file_exists($excelFilePath)) {				
                 // Parse the excel file and save it in database.
 				$obj = new ImportSubjects();
-				if(!$obj->importSubject(5, 10, "fiNAL 212", $excelFilePath)){
+				if(!$obj->importSubject(5, 220, "fiNAL 212", $excelFilePath)){
 					log_event( LOG_DATABASE, __LINE__."  ". __FILE__. " Set Error to true to send the response to page." );
 					$error = true;
 				}

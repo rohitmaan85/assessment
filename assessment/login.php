@@ -37,14 +37,14 @@
         <!-- Main Menu -->
         <div class="side-menu-container">
           <ul class="nav navbar-nav" >
-            <li><a  data-target="#" data-toggle="pill" href=""><span class="glyphicon glyphicon-send"></span>Import Users</a></li>
-            <li><a  data-target="#" data-toggle="pill" href="#"><span class="glyphicon glyphicon-send"></span>Import Exams</a></li>
-            <li><a href="login1.html" ><span class="glyphicon glyphicon-cloud"></span>Users</a></li>
-            <li><a  data-target="#" data-toggle="pill" href="#"><span class="glyphicon glyphicon-send"></span>Courses</a></li>
-            <li><a  data-target="#" data-toggle="pill" href="#"><span class="glyphicon glyphicon-plane"></span>Exams</a></li>
-            <li><a  data-target="#" data-toggle="pill" href="#"><span class="glyphicon glyphicon-send"></span>Reports</a></li>
-            <li><a data-target="#" data-toggle="pill" href="#"><span class="glyphicon glyphicon-plane"></span>Active Link</a></li>
-
+            <li><a  href="import.php"><span class="glyphicon glyphicon-send"></span>Import Subjects</a></li>
+            <li><a  href="manageSubjects.php"><span class="glyphicon glyphicon-send"></span>Manage Subjects</a></li>
+            <li><a  href="manageExams.php"><span class="glyphicon glyphicon-send"></span>Manage Exams</a></li>
+            <li><a  href="login.php" ><span class="glyphicon glyphicon-cloud"></span>Users</a></li>
+            <li><a  href="login.php"><span class="glyphicon glyphicon-send"></span>Courses</a></li>
+             <li><a  href="createQuestion.php"><span class="glyphicon glyphicon-plane"></span>Questions</a></li>
+            <li><a  href="login.php"><span class="glyphicon glyphicon-send"></span>Reports</a></li>
+            <li><a  href="login.php"><span class="glyphicon glyphicon-plane"></span>Active Link</a></li>
           </ul>
         </div>
         <!-- /.navbar-collapse -->
