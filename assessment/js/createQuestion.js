@@ -1,7 +1,40 @@
 $(document).ready(function() {
+
+    $('input[type="radio"]').click(function(){
+           if($(this).attr("value")=="1"){             //alert("select 1");
+               $("#hindiTextArea").removeClass('hide');
+               $("#hindioptionATextAreaInput").removeClass('hide');
+               $("#hindioptionBTextAreaInput").removeClass('hide');
+               $("#hindioptionCTextAreaInput").removeClass('hide');
+               $("#hindioptionDTextAreaInput").removeClass('hide');
+
+                $("#questionInputTextArea").addClass('hide');
+                $("#optionATextAreaInput").addClass('hide');
+                $("#optionBTextAreaInput").addClass('hide');
+                $("#optionCTextAreaInput").addClass('hide');
+                $("#optionDTextAreaInput").addClass('hide');
+           } else{
+
+                 $("#questionInputTextArea").removeClass('hide');
+                 $("#optionATextAreaInput").removeClass('hide');
+                 $("#optionBTextAreaInput").removeClass('hide');
+                 $("#optionCTextAreaInput").removeClass('hide');
+                 $("#optionDTextAreaInput").removeClass('hide');
+
+                $("#hindiTextArea").addClass('hide');
+                $("#hindioptionATextAreaInput").addClass('hide');
+                $("#hindioptionBTextAreaInput").addClass('hide');
+                $("#hindioptionCTextAreaInput").addClass('hide');
+                $("#hindioptionDTextAreaInput").addClass('hide');
+           }
+       });
+
+
     //$('#createExamForm').BootstrapValidator();
     $("#createQstnButton").click(function() {
 
+        var lang =  $('#selectLang input:radio:checked').val();
+        var hindiQstn = $("#hindiTextQstn").val();
         var qpCode = $("#name").val();
         var question = $("#questionInputTextArea").val();
         var optiona = $("#optionATextAreaInput").val();
@@ -29,6 +62,7 @@ $(document).ready(function() {
                 if (typeof data.error === 'undefined') {
                     // Success so call function to process the form
                     console.log('SUCCESS: ' + data.success);
+                    $('.alert-danger').removeClass('alert-danger').addClass('alert-success');
                     $('#error_msg').addClass('in');
                     $('#error_msg strong').text("Success! " + data.success);
                     /* Get from database using jax request*/
@@ -36,7 +70,6 @@ $(document).ready(function() {
                 } else {
                     // Handle errors here
                     console.log('ERRORS: ' + data.error);
-                    $('.alert-success').removeClass('alert-success').addClass('alert-danger');
                     $('#error_msg').addClass('in');
                     $('#error_msg strong').text("Error! " + data.error);
                 }
@@ -44,8 +77,10 @@ $(document).ready(function() {
             error: function(jqXHR, textStatus, errorThrown) {
                 // Handle errors here
                 console.log('ERRORS: ' + textStatus);
+                $('#error_msg').addClass('in');
+                $('#error_msg strong').text("Error! Invalid response from server" + errorThrown);
             },
-        })
+        });
     });
 
     $('#noOfOptions').change(function() {

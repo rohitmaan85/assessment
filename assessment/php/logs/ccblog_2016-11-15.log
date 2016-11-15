@@ -1,0 +1,143 @@
+2016-11-15T03:51:40+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-15T03:51:40+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','ad','','','','','optiona2','2');'
+2016-11-15T03:51:40+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Data truncated for column 'correctanswer' at row 1
+2016-11-15T03:51:40+00:00 [6008] INFO  : DB 53  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-15T03:52:21+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-15T03:52:21+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','dd','','','','','optiona2','1');'
+2016-11-15T03:52:21+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Data truncated for column 'correctanswer' at row 1
+2016-11-15T03:52:21+00:00 [6008] INFO  : DB 53  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-15T03:53:10+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-15T03:53:10+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','ss','','','','','optiona2','1');'
+2016-11-15T03:53:10+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Data truncated for column 'correctanswer' at row 1
+2016-11-15T03:53:10+00:00 [6008] INFO  : DB 53  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-15T03:55:26+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-15T03:55:26+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','das','','','','','optiona2','12');'
+2016-11-15T03:55:26+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Data truncated for column 'correctanswer' at row 1
+2016-11-15T03:55:26+00:00 [6008] INFO  : DB 53  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-15T03:58:21+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-15T03:58:21+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','qwe','','','','','optiona2','2');'
+2016-11-15T03:58:21+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Data truncated for column 'correctanswer' at row 1
+2016-11-15T03:58:21+00:00 [6008] INFO  : DB 53  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-15T04:00:14+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-15T04:00:14+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','s','','','','','optiona2','1');'
+2016-11-15T04:00:14+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Data truncated for column 'correctanswer' at row 1
+2016-11-15T04:00:14+00:00 [6008] INFO  : DB 53  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-15T04:02:08+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-15T04:02:08+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','df','','','','','optiona2','1');'
+2016-11-15T04:02:09+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Data truncated for column 'correctanswer' at row 1
+2016-11-15T04:02:09+00:00 [6008] INFO  : DB 53  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-15T04:07:39+00:00 [6008] INFO  : DB '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-15T04:07:39+00:00 [6008] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadSubjects.php , Excel File '../uploads/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' has been uploaded successfully.
+2016-11-15T04:07:50+00:00 [6008] INFO  : DB 78  C:\wamp64\www\assessment\php\ImportSubjects.php  , Success !  Records inserted successfully in Database : '216'
+2016-11-15T04:15:09+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-15T04:15:09+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','3','','','','','optiona2','23');'
+2016-11-15T04:15:09+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Data truncated for column 'correctanswer' at row 1
+2016-11-15T04:15:09+00:00 [6008] INFO  : DB 53  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-15T04:16:23+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-15T04:16:23+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','fsf','','','','','optiona2','2');'
+2016-11-15T04:16:23+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Data truncated for column 'correctanswer' at row 1
+2016-11-15T04:16:23+00:00 [6008] INFO  : DB 53  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-15T04:17:22+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-15T04:17:22+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','sf','','','','','optiona2','2');'
+2016-11-15T04:17:22+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Data truncated for column 'correctanswer' at row 1
+2016-11-15T04:17:22+00:00 [6008] INFO  : DB 53  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-15T04:19:19+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-15T04:19:19+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','w','','','','','optiona2','3');'
+2016-11-15T04:19:19+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Data truncated for column 'correctanswer' at row 1
+2016-11-15T04:19:19+00:00 [6008] INFO  : DB 53  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-15T04:20:15+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-15T04:20:15+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','w','','','','','optiona2','3');'
+2016-11-15T04:20:15+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Data truncated for column 'correctanswer' at row 1
+2016-11-15T04:20:15+00:00 [6008] INFO  : DB 53  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-15T04:20:31+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-15T04:20:31+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','dsd','','','','','optiona2','2');'
+2016-11-15T04:20:31+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Data truncated for column 'correctanswer' at row 1
+2016-11-15T04:20:31+00:00 [6008] INFO  : DB 53  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-15T04:21:20+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-15T04:21:20+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','dq','','','','','optiona2','3');'
+2016-11-15T04:21:20+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Data truncated for column 'correctanswer' at row 1
+2016-11-15T04:21:20+00:00 [6008] INFO  : DB 53  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-15T04:22:34+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-15T04:22:34+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','qwe','','','','','optiona','12');'
+2016-11-15T04:22:34+00:00 [6008] INFO  : DB 12  C:\wamp64\www\assessment\php\manageQuestions.php  , Success !  Question inserted successfully in Database : ''
+2016-11-15T04:22:34+00:00 [6008] INFO  : DB 58  C:\wamp64\www\assessment\php\manageQuestions.php Question created successfully.
+2016-11-15T04:24:20+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-15T04:24:20+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'','qweq','','','','','optiona','1');'
+2016-11-15T04:24:20+00:00 [6008] INFO  : DB 12  C:\wamp64\www\assessment\php\manageQuestions.php  , Success !  Question inserted successfully in Database : ''
+2016-11-15T04:24:20+00:00 [6008] INFO  : DB 58  C:\wamp64\www\assessment\php\manageQuestions.php Question created successfully.
+2016-11-15T04:26:19+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-15T04:26:19+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'AGR/Q4804','qwe','','','','','optiona','3');'
+2016-11-15T04:26:19+00:00 [6008] INFO  : DB 12  C:\wamp64\www\assessment\php\manageQuestions.php  , Success !  Question inserted successfully in Database : ''
+2016-11-15T04:26:19+00:00 [6008] INFO  : DB 58  C:\wamp64\www\assessment\php\manageQuestions.php Question created successfully.
+2016-11-15T10:26:13+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-15T10:26:13+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'AGR/Q4804','qw','','','','','optiona','');'
+2016-11-15T10:26:13+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Incorrect integer value: '' for column 'marks' at row 1
+2016-11-15T10:26:13+00:00 [6008] INFO  : DB 53  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-15T10:26:32+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-15T10:26:32+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'AGR/Q4804','qw','','','','','optiona','');'
+2016-11-15T10:26:32+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Incorrect integer value: '' for column 'marks' at row 1
+2016-11-15T10:26:32+00:00 [6008] INFO  : DB 53  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-15T10:49:50+00:00 [6008] INFO  : DB 39  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-15T10:49:50+00:00 [6008] INFO  : DB 31  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`)
+					 VALUES(123,'AGR/Q4804','','','','','','optiona','');'
+2016-11-15T10:49:50+00:00 [6008] INFO  : DB 16  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Incorrect integer value: '' for column 'marks' at row 1
+2016-11-15T10:49:50+00:00 [6008] INFO  : DB 53  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}

@@ -14,5 +14,4 @@ $(document).ready(function() {
         alert(data[0] + "'s salary is: " + data[5]);
 
     });
-
 });
