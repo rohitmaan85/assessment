@@ -64,6 +64,30 @@ body {
     height: auto;
 }
 
+#hindioptionATextAreaInput textarea{
+    position:relative;
+    width:100%;
+    height: auto;
+}
+
+#hindioptionBTextAreaInput textarea{
+    position:relative;
+    width:100%;
+    height: auto;
+}
+
+#hindioptionCTextAreaInput textarea{
+    position:relative;
+    width:100%;
+    height: auto;
+}
+
+#hindioptionDTextAreaInput textarea{
+    position:relative;
+    width:100%;
+    height: auto;
+}
+
 
 /*
  css for error and success message

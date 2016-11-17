@@ -12,6 +12,5 @@ $(document).ready(function() {
         console.log(testTable.row($(this).parents('tr')).data());
         var data = testTable.row($(this).parents('tr')).data();
         alert(data[0] + "'s salary is: " + data[5]);
-
     });
 });

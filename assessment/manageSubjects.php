@@ -5,14 +5,19 @@
   <title>Online Portal System</title>
 
   <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script> 
+  <script src="js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css"  href="css/main.css">
-  <link rel="stylesheet" type="text/css"  href="css/dataTables.bootstrap.css">
-  <link rel="stylesheet" type="text/css"  href="css/dataTables.responsive.css">
-  
- 
+  <script src="js/jquery.dataTables.min.js"></script>
+  <script src="js/dataTables.responsive.js"></script>
+  <script src="js/dataTables.bootstrap.js"></script>
+  <script src="js/dataTables.responsive.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"  href="css/main.css">
+<link rel="stylesheet" type="text/css"  href="css/dataTables.bootstrap.css">
+<link rel="stylesheet" type="text/css"  href="css/dataTables.responsive.css">
+
+
    <script src="js/toggle.js"></script>
    <script src="js/subjects.js"></script>
 
@@ -23,7 +28,7 @@
   <script src="js/main.js"></script>
   <div class="row">
     <!-- uncomment code for absolute positioning tweek see top comment in css -->
-    <div class="absolute-wrapper"> </div> 
+    <div class="absolute-wrapper"> </div>
     <!-- Menu -->
     <div class="page-header">
     <h2> Control panel for handlng Data</h2>
@@ -60,38 +65,37 @@
     </div>
     <!-- Main Content -->
     <div class="container-fluid">
-      <div class="side-body"> 
+      <div class="side-body">
         <div class="row">
 
             <!--<div class="col-lg-14 col-md-11 col-sm-2 col-xs-12"> -->
-                <div class="panel panel-default">               
+                <div class="panel panel-default">
                     <div class="panel-heading">
-                         <h3 class="panel-title">Manage Subjects.</h3>    
+                         <h3 class="panel-title">Manage Subjects.</h3>
                     </div>
-                    <div class="panel-body">
-                    
-          <div class="col-xs-8 col-md-8">
+              <div class="panel-body">
+                <div class="col-xs-8 col-md-8">
                   <form>
                     <div class="form-group">
                       <label for="ssc_label">Select SSC Code :</label>
                       <div class="dropdown">
-                        <button id="sscdropdownButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select    SSC 
+                        <button id="sscdropdownButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select    SSC
                         <span class="caret"></span></button>
                          <ul id="ssc-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
                         </ul>
-                       </div> 
+                       </div>
                      </div>
 
-                       
+
                      <hr>
                     <div class="form-group">
                       <label for="jobrole_label">Select Job Role/QP Name :</label>
                       <div class="dropdown">
-                        <button id="jobroledropdownButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Job Role 
+                        <button id="jobroledropdownButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Job Role
                         <span class="caret"></span></button>
                          <ul id="jobrole-dropdown-menu" class="dropdown-menu dropdown-menu-center">
                         </ul>
-                       </div> 
+                       </div>
                     </div>
 
                     <hr>
@@ -99,50 +103,51 @@
                       <label for="pwd">QP Code :</label>
                       <span class="input-group-addon" id="sizing-addon1">QP Code</span>
                      <strong> <input id="qpcodeText" type="text" class="form-control" aria-describedby="sizing-addon1" ></strong>
-                      <!-- 
+                      <!--
                       <div class="input-group input-group-sm">
                         <span class="input-group-addon" id="sizing-addon1">QP Code</span>
                         <input type="text" class="form-control" aria-describedby="sizing-addon1">
                       </div>
                       -->
                     </div>
-                   </form> 
+                   </form>
                </div>
-                    <!-- Drop down start--> 
-  
-                <!-- Drop down End--> 
 
-                    <hr>
-                    <!--
-                    <div class="rowtable">
-                        <div class="col-md-12">
-                            <table id="test" class="table table-striped table-bordered table-hover dt-responsive"  cellspacing="0" width="100%">
-                                    <thead>
-                                        <tr>
-                                            <th>S.No</th>
-                                            <th>SSC</th>
-                                            <th>Job Role</th>
-                                            <th>QP Code</th>
-                                            <th>NSQF Level</th>
-                                            <th>Theory</th>
-                                            <th>Practical</th>
-                                            <th>Dur-ESAS</th>
-                                            <th>Dur-DL</th>
-                                            <th>TD</th>
-                                            <th>Curr-Avail.</th>
-                                            <th>Cont-Avail.</th>
-                                            <th>CN-Catgry.</th>
-                                            <th>Classfication</th>
-                                        </tr>
-                                    </thead>
-                                 </table>
-                            </div>
-                        </div>-->
+
                     </div>
                 </div>
+
+                <div class="col-xs-14 col-md-14">
+                    <hr>
+                </div>
+                <!-- Drop down End-->
+                 <div class="rowtable">
+                     <div class="col-md-12">
+                         <table id="qstns" class="table table-striped table-bordered table-hover dt-responsive"  cellspacing="0" width="100%">
+                                 <thead>
+                                     <tr>
+                                         <th>S.No</th>
+                                         <!-- <th>QstnId</th> -->
+                                         <th>Subject</th>
+                                         <th>Question</th>
+                                         <th>Option A</th>
+                                         <th>Option B</th>
+                                         <th>Option C</th>
+                                         <th>Option D</th>
+                                         <th>Action</th>
+                                         <!--
+                                         <th>Correct Opt</th>
+                                         <th>Marks</th>
+                                         <th>Lang</th>
+                                       -->
+                                     </tr>
+                                 </thead>
+                              </table>
+                         </div>
+                     </div>
+
             </div>
-        <!-- </div> -->
-    </div>
+        </div>
     </div>
 </body>
 

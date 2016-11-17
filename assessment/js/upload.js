@@ -4,7 +4,7 @@ $(function() {
 
     function clearFileInput() {
         input.replaceWith(input.val('').clone(true));
-    };
+    }
 
     // Referneces
     var control = $("#fileUploadInput"),

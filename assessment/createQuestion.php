@@ -1,6 +1,23 @@
-<!DOCTYPE HTML>
-<html>
+<?php
+if(isset($_GET['action'])){
+   $action = $_GET['action'];
+  // If action is "edit"
+  if($action=="edit"){
+    echo '<input type="hidden" value="yes" name="isEditable"/>';
+    // get Question id to edit
+     $subId = $_GET['subId'];
+     $qstnId = $_GET['qstnId'];
+    echo '<input type="hidden" value="'.$subId.'" name="subId"/>';
+    echo '<input type="hidden" value="'.$qstnId.'" name="qstnId"/>';
 
+  } else{
+    echo '<input type="hidden" value="no" name="isEditable"/>';
+  }
+}
+?>
+
+
+<html>
 <head>
   <title>Online Portal System</title>
 
@@ -23,6 +40,9 @@
     <script src="js/validator.js"></script>
     <script src="js/main.js"></script>
     <script src="js/upload.js"></script>
+    <script src="js/keyboard.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/keyboard.css" />
+
   </head>
 
 <body>
@@ -75,19 +95,40 @@
                  <h4 class="form-signin-heading">Create New Question</h4>
                  </div>
                <div class="panel-body">
-                <div class="col-xs-12">
-                 <div id="error_msg"  class="alert alert-danger fade in" style="position:relative">
-                   <button href="#" type="button" class="close">&times;</button>
-                       <strong>test</strong>
-                 </div>
-                 </div>
                  <!--  Start Create Exam <Form--></Form-->
                   <div class="row">
                   <div id='createExamDiv' class="col-xs-12">
-                    <form id="createExamForm" class="form-horizontal" >
+
+                  <form id="createQuesionmForm" class="form-horizontal" >
                     <div class="form-group">
+                       <label for="langauge" class="col-xs-4">Select Language : </label>
+                         <div class="col-xs-8">
+                            <div class="btn-group" id="selectLangRadio" data-toggle="buttons">
+                              <label class="radio-inline">
+                               <input name="radioGroup" id="radio1" value="1" type="radio"> Hindi
+                              </label>
+                              <label class="radio-inline">
+                               <input name="radioGroup" id="radio2" value="2" checked="checked" type="radio"> English
+                              </label>
+                           </div>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="col-xs-12">
+                       <div id="error_msg"  class="alert alert-danger fade" style="position:relative">
+                         <button href="#" type="button" class="close">&times;</button>
+                             <strong></strong>
+                       </div>
+                       </div>
+
+                      <div class="form-group">
                          <label for="enterQuestion" class="col-xs-4">Question : </label>
                          <div class="col-xs-8">
+                           <div id="hindiTextArea" class="textarea.form-control hide">
+                             <script language="javascript">
+                                 CreateHindiTextArea("hindiTextQstn");
+                             </script>
+                           </div>
                             <textarea rows="5" cols="4" class="form-control" id="questionInputTextArea" placeholder="Enter Question" required></textarea>
                           </div>
                        </div>
@@ -105,24 +146,44 @@
                     <div id="optionADiv" class="form-group">
                        <label class="col-xs-4" for="optionAText">Option A</label>
                        <div class="col-xs-8">
+                         <div id="hindioptionATextAreaInput" class="textarea.form-control hide">
+                           <script language="javascript">
+                               CreateHindiTextArea("hindiTextOptionA");
+                           </script>
+                         </div>
                          <textarea id="optionATextAreaInput" rows="2" cols="6" class="form-control" placeholder="Enter Option A" required></textarea>
                        </div>
                     </div>
                    <div id="optionBDiv" class="form-group hide">
                        <label class="col-xs-4" for="optionBText">Option B</label>
                        <div class="col-xs-8">
+                         <div id="hindioptionBTextAreaInput" class="textarea.form-control hide">
+                           <script language="javascript">
+                               CreateHindiTextArea("hindiTextOptionB");
+                           </script>
+                         </div>
                           <textarea id="optionBTextAreaInput" rows="2" cols="6" class="form-control" placeholder="Enter Option B"></textarea>
                         </div>
                     </div>
                     <div id="optionCDiv" class="form-group hide">
                        <label class="col-xs-4" for="optionCText">Option C</label>
                        <div class="col-xs-8">
+                         <div id="hindioptionCTextAreaInput" class="textarea.form-control hide">
+                           <script language="javascript">
+                               CreateHindiTextArea("hindiTextOptionC");
+                           </script>
+                         </div>
                         <textarea id="optionCTextAreaInput" rows="2" cols="6" class="form-control" placeholder="Enter Option C"></textarea>
                        </div>
                     </div>
                     <div id="optionDDiv" class="form-group hide">
                        <label class="col-xs-4" for="optionDText">Option D</label>
                        <div class="col-xs-8">
+                         <div id="hindioptionDTextAreaInput" class="textarea.form-control hide">
+                           <script language="javascript">
+                               CreateHindiTextArea("hindiTextOptionD");
+                           </script>
+                         </div>
                           <textarea id="optionDTextAreaInput" rows="2" cols="6" class="form-control" placeholder="Enter Option D"></textarea>
                        </div>
                     </div>
@@ -158,5 +219,4 @@
     </div>
     </div>
 </body>
-
 </html>
