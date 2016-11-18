@@ -1,22 +1,26 @@
 $(document).ready(function() {
 
      // check if form is editable
+     var id= "";
      var subId= "";
      var qstnId= "";
 
      isEditable() ;
      function isEditable(){
        // For testing
-         $('#isEditable').val("yes");
+         // $('#isEditable').val("yes");
+         /*
          $('#subId').val("AGR/Q4804");
          $('#qstnId').val("7316_AGR/Q4804");
+         */
        // Testing  End
       if($('#isEditable').val()=="yes")
         {
           $('#heading').html("Edit Question");
+           id= ($('#id').val());
            subId= ($('#subId').val());
            qstnId= ($('#qstnId').val());
-          enableEditMode(subId,qstnId);
+          enableEditMode(id,subId,qstnId);
           $('#newModeButton').addClass('hide');
           $('#editModeButton').removeClass('hide');
          }
@@ -27,7 +31,7 @@ $(document).ready(function() {
           }
      }
 
-  function enableEditMode(subId,qstnId){
+  function enableEditMode(id,subId,qstnId){
        // Get Data from Database using subId and qstnId
        $.ajax({
            url: '/assessment/php/manageQuestions.php',
@@ -251,7 +255,7 @@ function saveQuestion(){
    var noOfOptions = $('#noOfOptions').find("option:selected").text();
    $.ajax({
        url: '/assessment/php/manageQuestions.php',
-       data: { action :"update" ,id:7,subId: subId, qstnId : qstnId, qstn: question, opta: optiona, optb: optionb, optc: optionc, optd: optiond, corrans: correctanswer, mark: marks,language:lang,noOfOptions:noOfOptions },
+       data: { action :"update" ,id:id,subId: subId, qstnId : qstnId, qstn: question, opta: optiona, optb: optionb, optc: optionc, optd: optiond, corrans: correctanswer, mark: marks,language:lang,noOfOptions:noOfOptions },
        dataType: 'json', //since you wait for json
        success: function(data) {
            if (typeof data.error === 'undefined') {

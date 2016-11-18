@@ -89,26 +89,36 @@ function showQuestions(){
                               else{
                                     $('#error_msg').addClass('hide');
                               }
+
                         return json.data;
                   },
 
         },
-
-        'columnDefs': [{
-                    "targets": 7,
+         /* "scrollY": "200px",
+        "paging": false, */
+        'columnDefs': [
+            {
+               "targets": 1,
+               "bVisible": false,
+               "searchable": false
+           },
+              {
+                    "targets": 8,
                     "data": null,
-                    "defaultContent": "<button id=\"uploadFileButton\"  type=\"button\" class=\"btn btn-info btn-xs\" ><span class=\"glyphicon glyphicon-asterisk\"></span>Edit</button>  <button id=\"uploadFileButton\"  type=\"button\" class=\"btn btn-danger btn-xs\" ><span class=\"glyphicon glyphicon-remove\"></span>Delete</button>"
-                }],
+                    "defaultContent": "<button id=\"openQuestion\"  type=\"button\" class=\"btn btn-info btn-xs\" ><span class=\"glyphicon glyphicon-asterisk\"></span>Edit</button>  <button id=\"uploadFileButton\"  type=\"button\" class=\"btn btn-danger btn-xs\" ><span class=\"glyphicon glyphicon-remove\"></span>Delete</button>"
+                },
+
+              ],
         "destroy" : true,
       });
   }
 
 
 
-    $('#test tbody').on('click', 'button', function() {
-        console.log(testTable.row($(this).parents('tr')).data());
-        var data = testTable.row($(this).parents('tr')).data();
-        alert(data[0] + "'s salary is: " + data[5]);
+    $('#qstns tbody').on('click', 'button', function() {
+        //console.log(testTable.row($(this).parents('tr')).data());
+        var data =  $('#qstns').DataTable().row($(this).parents('tr')).data();
+        window.open("createQuestion.php?action=edit&id="+data[0]+"&subid="+data[2]+"&qstnid="+data[1]);
     });
 
 

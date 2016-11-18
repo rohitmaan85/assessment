@@ -27,7 +27,7 @@ class manageQuestions{
 			}else{
 				log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , ERROR #! No records found to update " );
 				return false;
-			}			
+			}
 		} else {
 			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,ERROR #" .mysqli_error($conn) );
 			return false;
@@ -82,17 +82,19 @@ class manageQuestions{
 		while ($row)
 		{
 			$i++;
-			$jsonArr[0]= $i;
-			$jsonArr[1]=$row['subId'];
-			$jsonArr[2]=$row['question'];
-			$jsonArr[3]=$row['optiona'];
-			$jsonArr[4]=$row['optionb'];
-			$jsonArr[5]=$row['optionc'];
-			$jsonArr[6]=$row['optiond'];
-			$jsonArr[7]="";
-			$jsonArr[8]=$row['correctanswer'];
-			$jsonArr[9]=$row['marks'];
-			$jsonArr[10]=$row['language'];
+			$jsonArr[0]= $row['id'];
+			$jsonArr[1]=$row['qnid'];
+			$jsonArr[2]=$row['subId'];
+			$jsonArr[3]=$row['question'];
+			$jsonArr[4]=$row['optiona'];
+			$jsonArr[5]=$row['optionb'];
+			$jsonArr[6]=$row['optionc'];
+			$jsonArr[7]=$row['optiond'];
+			$jsonArr[8]="";
+			$jsonArr[9]=$row['correctanswer'];
+			$jsonArr[10]=$row['marks'];
+			$jsonArr[11]=$row['language'];
+			$jsonArr[12]=$row['no_of_options'];
 			//$jsonArr[11]=$jsonArr;
 			$jsonArr1[] =$jsonArr;
 			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -251,7 +253,7 @@ if(isset($_GET['action'])){
 				log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Question saved successfully." );
 			}
 			echo json_encode($data);
-				
+
 		}else{
 			log_event( LOG_DATABASE, "Error : 'subId' && 'qstnId' are not set to edit Question.");
 			$data =  array('error' => "Error : 'subId' && 'qstnId' are not set to edit Question.") ;

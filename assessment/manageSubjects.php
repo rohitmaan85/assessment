@@ -127,7 +127,7 @@
                                  <thead>
                                      <tr>
                                          <th>S.No</th>
-                                         <!-- <th>QstnId</th> -->
+                                         <th>QstnId</th>
                                          <th>Subject</th>
                                          <th>Question</th>
                                          <th>Option A</th>
@@ -135,11 +135,9 @@
                                          <th>Option C</th>
                                          <th>Option D</th>
                                          <th>Action</th>
-                                         <!--
                                          <th>Correct Opt</th>
                                          <th>Marks</th>
                                          <th>Lang</th>
-                                       -->
                                      </tr>
                                  </thead>
                               </table>

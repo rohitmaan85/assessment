@@ -110,3 +110,39 @@
 2016-11-17T16:57:25+00:00 [1344] INFO  : DB Get Request with parameter :'questions'
 2016-11-17T16:57:25+00:00 [1344] INFO  : DB Get Questions List for subject  : 'questions'
 2016-11-17T16:57:25+00:00 [1344] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-17T17:04:20+00:00 [1344] INFO  : DB Get Request with parameter :'questions'
+2016-11-17T17:04:20+00:00 [1344] INFO  : DB Get Questions List for subject  : 'questions'
+2016-11-17T17:04:20+00:00 [1344] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-17T17:04:21+00:00 [1344] INFO  : DB Get Request with parameter :'questions'
+2016-11-17T17:04:21+00:00 [1344] INFO  : DB Get Questions List for subject  : 'questions'
+2016-11-17T17:04:21+00:00 [1344] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-17T17:05:40+00:00 [1344] INFO  : DB Get Request with parameter :'questions'
+2016-11-17T17:05:40+00:00 [1344] INFO  : DB Get Questions List for subject  : 'questions'
+2016-11-17T17:05:40+00:00 [1344] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-17T17:10:52+00:00 [1344] INFO  : DB Get Request with parameter :'questions'
+2016-11-17T17:10:52+00:00 [1344] INFO  : DB Get Questions List for subject  : 'questions'
+2016-11-17T17:10:52+00:00 [1344] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-17T17:10:56+00:00 [1344] INFO  : DB  Get Request with action parameter.
+2016-11-17T17:10:56+00:00 [1344] INFO  : DB  Get Request to get question details.
+2016-11-17T17:10:56+00:00 [1344] INFO  : DB 113  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where subid='AGR/Q4804' and qnid='7316_AGR/Q4804''
+2016-11-17T17:14:08+00:00 [1344] INFO  : DB Get Request with parameter :'questions'
+2016-11-17T17:14:08+00:00 [1344] INFO  : DB Get Questions List for subject  : 'questions'
+2016-11-17T17:14:08+00:00 [1344] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-17T17:14:14+00:00 [1344] INFO  : DB  Get Request with action parameter.
+2016-11-17T17:14:14+00:00 [1344] INFO  : DB  Get Request to get question details.
+2016-11-17T17:14:14+00:00 [1344] INFO  : DB 113  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question`'
+2016-11-17T17:15:57+00:00 [1344] INFO  : DB Get Request with parameter :'questions'
+2016-11-17T17:15:57+00:00 [1344] INFO  : DB Get Questions List for subject  : 'questions'
+2016-11-17T17:15:57+00:00 [1344] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-17T17:15:57+00:00 [1344] INFO  : DB Get Request with parameter :'questions'
+2016-11-17T17:15:57+00:00 [1344] INFO  : DB Get Questions List for subject  : 'questions'
+2016-11-17T17:15:57+00:00 [1344] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-17T17:15:59+00:00 [1344] INFO  : DB  Get Request with action parameter.
+2016-11-17T17:15:59+00:00 [1344] INFO  : DB  Get Request to get question details.
+2016-11-17T17:15:59+00:00 [1344] INFO  : DB 113  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question`'
+2016-11-17T17:16:31+00:00 [1344] INFO  : DB  Get Request with action parameter.
+2016-11-17T17:16:31+00:00 [1344] INFO  : DB  Get Request to get question details.
+2016-11-17T17:16:31+00:00 [1344] INFO  : DB 113  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question`'
+2016-11-17T17:16:37+00:00 [1344] INFO  : DB  Get Request with action parameter.
+2016-11-17T17:16:37+00:00 [1344] INFO  : DB  Get Request to get question details.
+2016-11-17T17:16:37+00:00 [1344] INFO  : DB 113  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question`'
