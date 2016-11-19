@@ -56,10 +56,7 @@ if(isset($_GET['action'])){
     <div class="absolute-wrapper"> </div>
     <!-- Menu -->
     <div class="page-header">
-      <h3 class="navbar-brand brand-name">
-           <a href="login.php"><img class="img-responsive2"
-           src="images/logo.png">     Brisk Mind Examination Management System.</a>
-       </h3>
+    <h2> Control panel for handlng Data</h2>
     </div>
     <div class="side-menu">
 
@@ -94,54 +91,61 @@ if(isset($_GET['action'])){
     <!-- Main Content -->
     <div class="container-fluid">
       <div class="side-body">
-          <div class="panel panel-default">
+        <div class="row">
+              <div class="panel panel-default">
               <div class="panel-heading">
                  <h4 id = "heading" class="form-signin-heading">Create New Exam</h4>
                  </div>
                <div class="panel-body">
-                 <!--  Start Create Exam <Form-->
-                                   <div class="form-group">
-                                      <label for="subjectName"  class="col-xs-1">Subject</label>
-                                      <div class="col-xs-5">
-                                        <div class="dropdown">
-                                            <button id="subNameButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            --Select Subject--<span class="caret"></span></button>
-                                             <ul id="subname-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
-                                            </ul>
-                                        </div>
-                                      </div>
-                                       <div class="col-xs-1"></div>
-                                       <label for="qpCode" class="col-xs-1">QPCode</label>
-                                       <div class="col-xs-2">
-                                         <input type="text" id="qpcodeText" class="form-control" placeholder="QPCode" disabled="true" required>  </div>
-                                        <!--  <input type="text" id="passPercentText" class="form-control" required>  </div> -->
-                                     </div>
-                                     <hr>
-                                     <hr>
-
-
-
-            <form id="createExamForm" class="form-horizontal hide" >
-              <div id='createExamDiv' class="col-xs-14">
-
-                      <div class="col-xs-14 " >
+                 <!--  Start Create Exam <Form--></Form-->
+                  <div class="row">
+                  <div id='createExamDiv' class="col-xs-14">
+                  <form id="createExamForm" class="form-horizontal" >
+                      <div class="col-xs-12 " >
                        <div id="error_msg"  class="alert alert-danger fade" style="position:relative">
                          <button href="#" type="button" class="close">&times;</button>
                              <strong></strong>
                         </div>
                        </div>
 
-                    <div class="form-group">
+                       <div class="form-group">
+                          <label for="subjectName"  class="col-xs-2">Subject</label>
+                          <div class="col-xs-5">
+                            <div class="dropdown">
+                                <button id="subNameButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                --Select Subject--<span class="caret"></span></button>
+                                 <ul id="subname-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
+                                </ul>
+                            </div>
+                          </div>
+                             <div class="col-xs-1"></div>
+                           <label for="qpCode" class="col-xs-1">QPCode</label>
+                           <div class="col-xs-2">
+                             <input type="text" id="qpcodeText" class="form-control" placeholder="QPCode" disabled="true" required>  </div>
+                            <!--  <input type="text" id="passPercentText" class="form-control" required>  </div> -->
+                         </div>
+
+                         <hr>
+
+
+                      <div class="form-group">
                          <label for="examName"  class="col-xs-2">Exam Name</label>
                          <div class="col-xs-3">
-                           <input type="text" id="examNameText" class="form-control" placeholder="Enter Exam Name" required>
-                         </div>
-                         <div class="col-xs-1"></div>
-                         <label for="noOfQstns" class="col-xs-2">Number of Questions</label>
-                         <div class="col-xs-3">
-                           <input type="text" id="noOfQstnsText" class="form-control" placeholder="Number of Question" required>
+                           <input type="text" id="examNameText" class="form-control" placeholder="Enter Exam Name" required>  </div>
+
+                            <div class="col-xs-1"></div>
+                           <label for="pasingPer" class="col-xs-2">Passing Percent</label>
+                          <div class="col-xs-3">
+                            <div class="dropdown">
+                                <button id="passPercentButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                --Select Percent--<span class="caret"></span></button>
+                                 <ul id="passpercent-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
+                                </ul>
+                            </div>
+                           <!--  <input type="text" id="passPercentText" class="form-control" required>  </div> -->
                         </div>
                       </div>
+
                         <div class="form-group">
                            <label for="enterQuestion" class="col-xs-2">Exam Instruction</label>
                            <div class="col-xs-9">
@@ -182,6 +186,7 @@ if(isset($_GET['action'])){
                          </div>
                          <div class="form-group">
                            <label for="examStart" class="col-xs-2">Start Date</label>
+
                            <div class="col-xs-3">
                              <div class='input-group date' id='startDate'>
                                  <input type='text' class="form-control" />
@@ -209,15 +214,15 @@ if(isset($_GET['action'])){
                                <div class="col-xs-3">
                                   <div class="btn-group" id="decResultRadio" data-toggle="buttons">
                                     <label class="radio-inline">
-                                     <input name="radioGroup" id="radio1" value="yes" type="radio"> Yes
+                                     <input name="radioGroup" id="radio1" value="1" type="radio"> Yes
                                     </label>
                                     <label class="radio-inline">
-                                     <input name="radioGroup" id="radio2" value="no" checked="checked" type="radio"> No
+                                     <input name="radioGroup" id="radio2" value="2" checked="checked" type="radio"> No
                                     </label>
                                  </div>
                               </div>
                                <div class="col-xs-1"></div>
-                             <label  class="col-xs-2" for="batch">Select Batch</label>
+                             <label  class="col-xs-2" for="numberOfOption">Select Group</label>
                               <div class="col-xs-3">
                                    <select class="form-control" id="selGroupDropdown">
                                     <option>None Selected</option>
@@ -233,10 +238,10 @@ if(isset($_GET['action'])){
                                  <div class="col-xs-3">
                                     <div class="btn-group" id="negMarkingRadio" data-toggle="buttons">
                                       <label class="radio-inline">
-                                       <input name="radioGroup1" id="radio1" value="yes" type="radio"> Yes
+                                       <input name="radioGroup1" id="radio1" value="1" type="radio"> Yes
                                       </label>
                                       <label class="radio-inline">
-                                       <input name="radioGroup1" id="radio2" value="no" checked="checked" type="radio"> No
+                                       <input name="radioGroup1" id="radio2" value="2" checked="checked" type="radio"> No
                                       </label>
                                    </div>
                                 </div>
@@ -245,10 +250,10 @@ if(isset($_GET['action'])){
                                    <div class="col-xs-3">
                                       <div class="btn-group" id="radomQstnRadio" data-toggle="buttons">
                                         <label class="radio-inline">
-                                         <input name="radioGroup2" id="radio1" value="yes" type="radio"> Yes
+                                         <input name="radioGroup2" id="radio1" value="1" type="radio"> Yes
                                         </label>
                                         <label class="radio-inline">
-                                         <input name="radioGroup2" id="radio2" value="no" checked="checked" type="radio"> No
+                                         <input name="radioGroup2" id="radio2" value="2" checked="checked" type="radio"> No
                                         </label>
                                      </div>
                                   </div>
@@ -256,27 +261,15 @@ if(isset($_GET['action'])){
                                 <div class="form-group">
                                    <label for="radomQstn" class="col-xs-2">Result After Finish</label>
                                      <div class="col-xs-3">
-                                        <div class="btn-group" id="rafRadio" data-toggle="buttons">
+                                        <div class="btn-group" id="radomQstnRadio" data-toggle="buttons">
                                           <label class="radio-inline">
-                                           <input name="radioGroup3" id="radio1" value="yes" type="radio" checked="checked"> Yes
+                                           <input name="radioGroup3" id="radio1" value="1" type="radio" checked="checked"> Yes
                                           </label>
                                           <label class="radio-inline">
-                                           <input name="radioGroup3" id="radio2" value="no"  type="radio"> No
+                                           <input name="radioGroup3" id="radio2" value="2"  type="radio"> No
                                           </label>
                                        </div>
                                     </div>
-                                    <div class="col-xs-1"></div>
-                                    <label for="pasingPer" class="col-xs-2">Passing Percent</label>
-                                     <div class="col-xs-3">
-                                       <div class="dropdown">
-                                           <button id="passPercentButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                           --Select Percent--<span class="caret"></span></button>
-                                            <ul id="passpercent-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
-                                           </ul>
-                                       </div>
-                                      <!--  <input type="text" id="passPercentText" class="form-control" required>  </div> -->
-                                   </div>
-
                                   </div>
 
                    <hr>
@@ -301,6 +294,7 @@ if(isset($_GET['action'])){
 
                     </form>
                   </div>
+                  </div>
                  <!--  End Create Exam Form-->
 
                  <!--
@@ -314,6 +308,7 @@ if(isset($_GET['action'])){
             -->
             </div>
         <!-- </div> -->
+    </div>
     </div>
 </body>
 </html>

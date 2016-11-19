@@ -31,7 +31,10 @@
     <div class="absolute-wrapper"> </div>
     <!-- Menu -->
     <div class="page-header">
-    <h2> Control panel for handlng Data</h2>
+      <h3 class="navbar-brand brand-name">
+           <a href="login.php"><img class="img-responsive2"
+           src="images/logo.png"> Brisk Mind EMS. </a>
+       </h3>
     </div>
     <div class="side-menu">
 
@@ -66,8 +69,6 @@
     <!-- Main Content -->
     <div class="container-fluid">
       <div class="side-body">
-        <div class="row">
-
             <!--<div class="col-lg-14 col-md-11 col-sm-2 col-xs-12"> -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -143,9 +144,7 @@
                               </table>
                          </div>
                      </div>
-
-            </div>
-        </div>
+         </div>
     </div>
 </body>
 

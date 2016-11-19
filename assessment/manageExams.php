@@ -5,18 +5,18 @@
   <title>Online Portal System</title>
 
   <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script> 
+  <script src="js/bootstrap.min.js"></script>
 
     <script src="js/jquery.dataTables.min.js"></script>
     <script src="js/dataTables.responsive.js"></script>
     <script src="js/dataTables.bootstrap.js"></script>
     <script src="js/dataTables.responsive.min.js"></script>
-   
+
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css"  href="css/main.css">
   <link rel="stylesheet" type="text/css"  href="css/dataTables.bootstrap.css">
   <link rel="stylesheet" type="text/css"  href="css/dataTables.responsive.css">
- 
+
    <script src="js/toggle.js"></script>
    <script src="js/exams.js"></script>
 
@@ -27,10 +27,13 @@
   <script src="js/main.js"></script>
   <div class="row">
     <!-- uncomment code for absolute positioning tweek see top comment in css -->
-    <div class="absolute-wrapper"> </div> 
+    <div class="absolute-wrapper"> </div>
     <!-- Menu -->
     <div class="page-header">
-    <h2> Control panel for handlng Data</h2>
+      <h3 class="navbar-brand brand-name">
+           <a href="login.php"><img class="img-responsive2"
+           src="images/logo.png"> Brisk Mind EMS. </a>
+       </h3>
     </div>
     <div class="side-menu">
 
@@ -64,12 +67,11 @@
     </div>
     <!-- Main Content -->
     <div class="container-fluid">
-      <div class="side-body"> 
-        <div class="row">
+      <div class="side-body">
             <!--<div class="col-lg-14 col-md-11 col-sm-2 col-xs-12"> -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                         <h3 class="panel-title">Manage Exams.</h3>    
+                         <h3 class="panel-title">Manage Exams.</h3>
                     </div>
                     <div class="panel-body">
                     <hr>
@@ -99,9 +101,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
         <!-- </div> -->
-    </div>
+       </div>
     </div>
 </body>
 

@@ -1,0 +1,55 @@
+2016-11-19T17:17:52+00:00 [1344] INFO  : DB  Get Request to Create Exam  with action parameter.
+2016-11-19T17:17:52+00:00 [1344] INFO  : DB 194  C:\wamp64\www\assessment\php\manageExams.php Get Request to create Exam with Values : 'Animal Health Worker','AGR/Q4804','xc','23','e','5','1','11/19/2016 10:30 PM','11/19/2016 10:30 PM','no','2','no','no','yes','30'
+2016-11-19T17:17:52+00:00 [1344] INFO  : DB 55  C:\wamp64\www\assessment\php\manageExams.php  , SQL to insert Exam : 'INSERT INTO `assessment`.`exam`(`subid`,`testid`,`testname`,`totalquestions`,`testdesc`,
+				  `duration`,`attemptedstudents`,`testfrom`,`testto`,`declareResult`,`batchid`,`negativemarking`,`randomqstn`,
+				   `raf`,`pp`,`testcode`,`createDate`)
+					VALUES('AGR/Q4804','45702_xc','xc','23','e','5','1','11/19/2016 10:30 PM','11/19/2016 10:30 PM','no','2','no','no','yes','30','2016-11-19 17:17:52','45702_xc');'
+2016-11-19T17:17:52+00:00 [1344] INFO  : DB 15  C:\wamp64\www\assessment\php\manageExams.php  ,ERROR #Data truncated for column 'testid' at row 1
+2016-11-19T17:17:52+00:00 [1344] INFO  : DB 206  C:\wamp64\www\assessment\php\manageExams.php Error while inserting Question in DB.{"error":"Error while creating exam."}
+2016-11-19T17:21:08+00:00 [1344] INFO  : DB  Get Request to Create Exam  with action parameter.
+2016-11-19T17:21:08+00:00 [1344] INFO  : DB 195  C:\wamp64\www\assessment\php\manageExams.php Get Request to create Exam with Values : 'Animal Health Worker','AGR/Q4804','xc','23','e','5','1','11/19/2016 10:30 PM','11/19/2016 10:30 PM','no','2','no','no','yes','30'
+2016-11-19T17:21:08+00:00 [1344] INFO  : DB 56  C:\wamp64\www\assessment\php\manageExams.php  , SQL to insert Exam : 'INSERT INTO `assessment`.`exam`(`subid`,`testid`,`testname`,`totalquestions`,`testdesc`,
+				  `duration`,`attemptedstudents`,`testfrom`,`testto`,`declareResult`,`batchid`,`negativemarking`,`randomqstn`,
+				   `raf`,`pp`,`testcode`,`createDate`)
+					VALUES('AGR/Q4804','xc_2016-11-19 17:21:08','xc','23','e','5','1','11/19/2016 10:30 PM','11/19/2016 10:30 PM','no','2','no','no','yes','30','2016-11-19 17:21:08','9263_xc');'
+2016-11-19T17:21:08+00:00 [1344] INFO  : DB 15  C:\wamp64\www\assessment\php\manageExams.php  ,ERROR #Incorrect datetime value: '11/19/2016 10:30 PM' for column 'testfrom' at row 1
+2016-11-19T17:21:08+00:00 [1344] INFO  : DB 207  C:\wamp64\www\assessment\php\manageExams.php Error while inserting Question in DB.{"error":"Error while creating exam."}
+2016-11-19T17:22:16+00:00 [1344] INFO  : DB  Get Request to Create Exam  with action parameter.
+2016-11-19T17:22:16+00:00 [1344] INFO  : DB 195  C:\wamp64\www\assessment\php\manageExams.php Get Request to create Exam with Values : 'Animal Health Worker','AGR/Q4804','xc','23','e','5','1','11/19/2016 10:30 PM','11/19/2016 10:30 PM','no','2','no','no','yes','30'
+2016-11-19T17:22:16+00:00 [1344] INFO  : DB 56  C:\wamp64\www\assessment\php\manageExams.php  , SQL to insert Exam : 'INSERT INTO `assessment`.`exam`(`subid`,`testid`,`testname`,`totalquestions`,`testdesc`,
+				  `duration`,`attemptedstudents`,`testfrom`,`testto`,`declareResult`,`batchid`,`negativemarking`,`randomqstn`,
+				   `raf`,`pp`,`testcode`,`createDate`)
+					VALUES('AGR/Q4804','xc_2016-11-19 17:22:16','xc','23','e','5','1','11/19/2016 10:30 PM','11/19/2016 10:30 PM','no','2','no','no','yes','30','2016-11-19 17:22:16','28490_xc');'
+2016-11-19T17:22:16+00:00 [1344] INFO  : DB 15  C:\wamp64\www\assessment\php\manageExams.php  ,ERROR #Incorrect datetime value: '28490_xc' for column 'createDate' at row 1
+2016-11-19T17:22:16+00:00 [1344] INFO  : DB 207  C:\wamp64\www\assessment\php\manageExams.php Error while inserting Question in DB.{"error":"Error while creating exam."}
+2016-11-19T17:23:03+00:00 [1344] INFO  : DB  Get Request to Create Exam  with action parameter.
+2016-11-19T17:23:03+00:00 [1344] INFO  : DB 195  C:\wamp64\www\assessment\php\manageExams.php Get Request to create Exam with Values : 'Animal Health Worker','AGR/Q4804','xc','23','e','5','1','11/19/2016 10:30 PM','11/19/2016 10:30 PM','no','2','no','no','yes','30'
+2016-11-19T17:23:03+00:00 [1344] INFO  : DB 56  C:\wamp64\www\assessment\php\manageExams.php  , SQL to insert Exam : 'INSERT INTO `assessment`.`exam`(`subid`,`testid`,`testname`,`totalquestions`,`testdesc`,
+				  `duration`,`attemptedstudents`,`testfrom`,`testto`,`declareResult`,`batchid`,`negativemarking`,`randomqstn`,
+				   `raf`,`pp`,`testcode`,`createDate`)
+					VALUES('AGR/Q4804','xc_2016-11-19 17:23:03','xc','23','e','5','1','11/19/2016 10:30 PM','11/19/2016 10:30 PM','no','2','no','no','yes','30','47451_xc','2016-11-19 17:23:03');'
+2016-11-19T17:23:03+00:00 [1344] INFO  : DB 12  C:\wamp64\www\assessment\php\manageExams.php  , Success !  Exam inserted successfully in Database : ''
+2016-11-19T17:23:03+00:00 [1344] INFO  : DB 210  C:\wamp64\www\assessment\php\manageExams.php Question created successfully.
+2016-11-19T17:24:43+00:00 [1344] INFO  : DB  Get Request with action parameter.
+2016-11-19T17:24:43+00:00 [1344] INFO  : DB  Get Request to get question details.
+2016-11-19T17:24:43+00:00 [1344] INFO  : DB 115  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question`'
+2016-11-19T17:24:59+00:00 [1344] INFO  : DB  Get Request with action parameter.
+2016-11-19T17:24:59+00:00 [1344] INFO  : DB  Get Request to update question.
+2016-11-19T17:24:59+00:00 [1344] INFO  : DB 67  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to update Question : 'update `assessment`.`question` set
+				`question`='अपअ',`optiona`='अपअ',`optionb`='अपअ',`optionc`='अपअ',`optiond`='अपअ',`correctanswer`='optionc',`marks`='122446',`language`='hindi',`no_of_options`='4' where qnid='' and subId='' and id='
+2016-11-19T17:24:59+00:00 [1344] INFO  : DB 32  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 2
+2016-11-19T17:24:59+00:00 [1344] INFO  : DB 250  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while updating Question in DB."}
+2016-11-19T17:29:28+00:00 [1344] INFO  : DB Get Request with parameter :'jobrole'
+2016-11-19T17:29:28+00:00 [1344] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :''
+2016-11-19T17:29:28+00:00 [1344] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import`'
+2016-11-19T17:29:29+00:00 [1344] INFO  : DB Get Request with parameter :'qpcode'
+2016-11-19T17:29:29+00:00 [1344] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Aquaculture worker'
+2016-11-19T17:29:29+00:00 [1344] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Aquaculture worker''
+2016-11-19T17:29:55+00:00 [1344] INFO  : DB  Get Request to Create Exam  with action parameter.
+2016-11-19T17:29:55+00:00 [1344] INFO  : DB 195  C:\wamp64\www\assessment\php\manageExams.php Get Request to create Exam with Values : 'Aquaculture worker','AGR/Q4904','asdad','12','asdad','5','2','11/19/2016 10:59 PM','11/19/2016 10:59 PM','no','1','no','no','yes','30'
+2016-11-19T17:29:55+00:00 [1344] INFO  : DB 56  C:\wamp64\www\assessment\php\manageExams.php  , SQL to insert Exam : 'INSERT INTO `assessment`.`exam`(`subid`,`testid`,`testname`,`totalquestions`,`testdesc`,
+				  `duration`,`attemptedstudents`,`testfrom`,`testto`,`declareResult`,`batchid`,`negativemarking`,`randomqstn`,
+				   `raf`,`pp`,`testcode`,`createDate`)
+					VALUES('AGR/Q4904','asdad_2016-11-19 17:29:55','asdad','12','asdad','5','2','11/19/2016 10:59 PM','11/19/2016 10:59 PM','no','1','no','no','yes','30','32785_asdad','2016-11-19 17:29:55');'
+2016-11-19T17:29:55+00:00 [1344] INFO  : DB 12  C:\wamp64\www\assessment\php\manageExams.php  , Success !  Exam inserted successfully in Database : ''
+2016-11-19T17:29:55+00:00 [1344] INFO  : DB 210  C:\wamp64\www\assessment\php\manageExams.php Question created successfully.

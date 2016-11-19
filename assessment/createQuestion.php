@@ -55,7 +55,10 @@ if(isset($_GET['action'])){
     <div class="absolute-wrapper"> </div>
     <!-- Menu -->
     <div class="page-header">
-    <h2> Control panel for handlng Data</h2>
+      <h3 class="navbar-brand brand-name">
+           <a href="login.php"><img class="img-responsive2"
+           src="images/logo.png"> Brisk Mind EMS. </a>
+       </h3>
     </div>
     <div class="side-menu">
 
@@ -90,17 +93,13 @@ if(isset($_GET['action'])){
     <!-- Main Content -->
     <div class="container-fluid">
       <div class="side-body">
-        <div class="row">
-
-              <div class="panel panel-default">
+            <div class="panel panel-default">
               <div class="panel-heading">
                  <h5 id = "heading" class="form-signin-heading">Create New Question</h5>
                  </div>
                <div class="panel-body">
                  <!--  Start Create Exam <Form--></Form-->
-                  <div class="row">
-                  <div id='createExamDiv' class="col-xs-12">
-
+              <div id='createExamDiv' class="col-xs-12">
                   <form id="createQuestionForm" class="form-horizontal" >
                     <div class="form-group">
                        <label for="langauge" class="col-xs-4">Select Language : </label>
@@ -230,7 +229,6 @@ if(isset($_GET['action'])){
 
                     </form>
                   </div>
-                  </div>
                  <!--  End Create Exam Form-->
 
                  <!--
@@ -245,6 +243,5 @@ if(isset($_GET['action'])){
             </div>
         <!-- </div> -->
     </div>
-    </div>
-</body>
+  </body>
 </html>

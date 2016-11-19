@@ -4,7 +4,7 @@
 <head>
   <title>Online Portal System</title>
    <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script> 
+  <script src="js/bootstrap.min.js"></script>
   <script src="js/toggle.js"></script>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css"  href="css/main.css">
@@ -15,10 +15,13 @@
   <script src="js/main.js"></script>
   <div class="row">
     <!-- uncomment code for absolute positioning tweek see top comment in css -->
-     <div class="absolute-wrapper"> </div> 
+     <div class="absolute-wrapper"> </div>
     <!-- Menu -->
     <div class="page-header">
-      <h2> Control panel for handlng Data</h2>
+      <h3 class="navbar-brand brand-name">
+           <a href="login.php"><img class="img-responsive2"
+           src="images/logo.png"> Brisk Mind EMS. </a>
+       </h3>
     </div>
     <div class="side-menu">
 
@@ -56,7 +59,7 @@
     <!-- Main Content -->
 
     <div class="container-fluid">
-      <div class="side-body">        
+      <div class="side-body">
        <div class="container1">
           <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-1">
             <div class="panel panel-info">
