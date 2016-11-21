@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Online Portal System</title>
+  <title>BriskMindTest EMS</title>
    <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/toggle.js"></script>
@@ -20,7 +20,7 @@
     <div class="page-header">
       <h3 class="navbar-brand brand-name">
            <a href="login.php"><img class="img-responsive2"
-           src="images/logo.png"> Brisk Mind EMS. </a>
+           src="images/logo.png">      Brisk Mind Examination Management System !!! </a>
        </h3>
     </div>
     <div class="side-menu">
@@ -40,14 +40,14 @@
         <!-- Main Menu -->
         <div class="side-menu-container">
           <ul class="nav navbar-nav" >
-            <li><a  href="import.php"><span class="glyphicon glyphicon-send"></span>Import Subjects</a></li>
-            <li><a  href="manageSubjects.php"><span class="glyphicon glyphicon-send"></span>Manage Subjects</a></li>
-            <li><a  href="manageExams.php"><span class="glyphicon glyphicon-send"></span>Manage Exams</a></li>
-            <li><a  href="login.php" ><span class="glyphicon glyphicon-cloud"></span>Users</a></li>
-            <li><a  href="login.php"><span class="glyphicon glyphicon-send"></span>Courses</a></li>
-             <li><a  href="createQuestion.php"><span class="glyphicon glyphicon-plane"></span>Questions</a></li>
-            <li><a  href="login.php"><span class="glyphicon glyphicon-send"></span>Reports</a></li>
-            <li><a  href="login.php"><span class="glyphicon glyphicon-plane"></span>Active Link</a></li>
+            <li><a  href="uploadSubjectPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Subjects</a></li>
+            <li><a  href="manageSubjectsPage.php"><span class="glyphicon glyphicon-paperclip"></span>Manage Questions</a></li>
+            <li><a  href="manageExamsPage.php"><span class="glyphicon glyphicon-pencil"></span>Manage Exams</a></li>
+            <li><a  href="createQuestionPage.php" ><span class="glyphicon glyphicon-pushpin"></span>Create Question</a></li>
+            <li><a  href="createExamPage.php"><span class="glyphicon glyphicon-education"></span>Create Test</a></li>
+            <li><a  href="createStudentPage.php"><span class="glyphicon glyphicon-user"></span>Create Student</a></li>
+            <li><a  href="login.php"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+            <li><a  href="login.php"><span class="glyphicon glyphicon-paperclip"></span>Reports</a></li>
           </ul>
         </div>
         <!-- /.navbar-collapse -->

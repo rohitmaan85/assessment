@@ -1,11 +1,97 @@
+.jumbotron.vertical-center {
+  margin-bottom: 0; /* Remove the default bottom margin of .jumbotron */
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for vh unit */
+  min-height: 100vh; /* You might also want to use
+                        'height' property instead.
+
+                        Note that for percentage values of
+                        'height' or 'min-height' properties,
+                        the 'height' of the parent element
+                        should be specified explicitly.
+
+                        In this case the parent of '.vertical-center'
+                        is the <body> element */
+
+  /* Make it a flex container */
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  /* Align the bootstrap's container vertically */
+    -webkit-box-align : center;
+  -webkit-align-items : center;
+       -moz-box-align : center;
+       -ms-flex-align : center;
+          align-items : center;
+
+  /* In legacy web browsers such as Firefox 9
+     we need to specify the width of the flex container */
+  width: 100%;
+
+  /* Also 'margin: 0 auto' doesn't have any effect on flex items in such web browsers
+     hence the bootstrap's container won't be aligned to the center anymore.
+
+     Therefore, we should use the following declarations to get it centered again */
+         -webkit-box-pack : center;
+            -moz-box-pack : center;
+            -ms-flex-pack : center;
+  -webkit-justify-content : center;
+          justify-content : center;
+}
+html, body {
+  height: 100%;
+}
+
 .navbar-brand {
       padding: 0px 0px;
 }
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+color: #000;  /*Sets the text hover color on navbar*/
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >
+ a:hover, .navbar-default .navbar-nav > .active > a:focus {
+color: white; /*BACKGROUND color for active*/
+background-color: #030033;
+}
+
+  .navbar-default {
+    background-color: #0f006f;
+    border-color: #030033;
+}
+
+  .dropdown-menu > li > a:hover,
+   .dropdown-menu > li > a:focus {
+    color: #262626;
+   text-decoration: none;
+  background-color: #66CCFF;  /*change color of links in drop down here*/
+   }
+
+ .nav > li > a:hover,
+ .nav > li > a:focus {
+    text-decoration: none;
+    background-color: silver; /*Change rollover cell color here*/
+  }
+
+
+  .navbar-default .navbar-nav > li > a {
+   color: white; /*Change active text color here*/
+    }
 
 
 :focus {
     outline: none;
 }
+
+#brisklogo > a {
+ color: green; /*Change active text color here*/
+  }
 
 .row {
     margin-right: 0;
@@ -240,7 +326,7 @@ h6 {
     padding-bottom: 9px;
     margin: 0 0 0 0;
     border-bottom: 1px solid #eee;
-    background-color: #666;
+    background-color: #1e6927;
 }
 
 #loginbox {
@@ -249,8 +335,8 @@ h6 {
 
 .side-menu {
     position: absolute;
-    font-size: 16px;
-    width: 280px;
+    font-size: 15px;
+    width: 285px;
     height: 100%;
     border-right: 1px solid #e7e7e7;
 }
@@ -273,8 +359,8 @@ h6 {
 .side-menu .navbar-nav li {
     display: block;
     width: 100%;
-    border-bottom: 1px solid #99ff99;
-    background-color: #99ff99;
+    border-bottom: 1px solid #128414;
+    background-color: #2f5061;
 }
 
 .side-menu .navbar-nav li a {
@@ -485,7 +571,7 @@ h6 {
         position: fixed;
         left: -300px;
         width: 300px;
-        top: 43px;
+        top: 80px;
         height: 100%;
         border-right: 1px solid #e7e7e7;
         background-color: #f8f8f8;
@@ -600,4 +686,10 @@ h6 {
     #dropdown .panel-body .navbar-nav {
         margin: 0;
     }
+}
+
+.nav .open > a
+{
+    background:#759ad6;
+    //put styling
 }

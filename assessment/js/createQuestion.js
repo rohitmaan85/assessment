@@ -1,5 +1,52 @@
 $(document).ready(function() {
 
+
+
+    $("#subNameButton").click(function() {
+        var selText = $(this).text();
+        loadJobRoles("");
+    });
+
+    $('#subname-dropdown-menu').on('click', 'li a', function() {
+        var selText = $(this).text();
+        subjectName = selText;
+        $('#subNameButton').html(selText + '<span class="caret"></span>');
+        loadQpCode(selText);
+    });
+
+    function loadJobRoles(sscValue) {
+        $.ajax({
+            url: '/assessment/php/getSubjectDetails.php',
+            data: { get: "jobrole", ssc: sscValue },
+            dataType: 'json', //since you wait for json
+            success: function(json) {
+                // Clear dropdown
+                $('#subname-dropdown-menu').children().remove();
+                //now when you received json, render options
+                $.each(json, function(i, option) {
+                    var rendered_option = '<li><a href="#">' + option + '</a></li>';
+                    $(rendered_option).appendTo('#subname-dropdown-menu');
+                });
+            }
+        });
+    }
+
+
+    function loadQpCode(jobroleValue) {
+        $.ajax({
+            url: '/assessment/php/getSubjectDetails.php',
+            data: { get: "qpcode", jobrole: jobroleValue },
+            dataType: 'json', //since you wait for json
+            success: function(json) {
+                // Clear Text
+                //  $('#qpcodeText').remove();
+                $('#qpcodeText').val(json.qpcode);
+                $('#createExamForm').removeClass('hide');
+            }
+        });
+    }
+
+
      // check if form is editable
      var id= "";
      var subId= "";

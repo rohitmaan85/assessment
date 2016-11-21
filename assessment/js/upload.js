@@ -18,8 +18,8 @@ $(function() {
 
     // Some bound handlers to preserve when cloning
     control.on({
-        change: function() { console.log("Changed") },
-        focus: function() { console.log("Focus") }
+        change: function() { console.log("Changed"); },
+        focus: function() { console.log("Focus"); }
     });
 
 
@@ -31,9 +31,7 @@ $(function() {
             //$("#fileUploadInput").val('').clone(true);
         });*/
 
-    var subjectTable = $('#courses').DataTable({
-        "ajax": '/assessment/php/Subjects.php',
-    });
+
 
     $("#uploadFileButton").click(function() {
         $("#uploadXlsForm").submit();
@@ -166,6 +164,10 @@ $(function() {
     });
 
     function submitForm(event, data) {
+
+      var subjectTable = $('#courses').DataTable({
+          "ajax": '/assessment/php/Subjects.php',
+      });
         // Create a jQuery object from the form
         $form = $(event.target);
         // Serialize the form data

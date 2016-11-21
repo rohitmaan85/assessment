@@ -118,7 +118,7 @@ function showQuestions(){
     $('#qstns tbody').on('click', 'button', function() {
         //console.log(testTable.row($(this).parents('tr')).data());
         var data =  $('#qstns').DataTable().row($(this).parents('tr')).data();
-        window.open("createQuestion.php?action=edit&id="+data[0]+"&subid="+data[2]+"&qstnid="+data[1]);
+        window.open("createQuestionPage.php?action=edit&id="+data[0]+"&subid="+data[2]+"&qstnid="+data[1]);
     });
 
 

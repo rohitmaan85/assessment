@@ -1,3 +1,4 @@
+/*menu handler*/
 $(function() {
 
     $(document).ready(function() {
@@ -33,7 +34,7 @@ $(function() {
         });
         */
 
-    })
+    });
 
 
 
@@ -42,16 +43,16 @@ $(function() {
             $('#courses').DataTable();
         });
 
-        
 
-            
-        	  $('.nav li a').each(function(){  
-        	  
+
+
+        	  $('.nav li a').each(function(){
+
         	  var activePage = "";
         	  var currentPage = "";
         		if (activePage == currentPage) {
-              $(this).parent().addClass('active'); 
-            } 
+              $(this).parent().addClass('active');
+            }
           });*/
 
     $(".nav a").on("click", function() {
@@ -59,15 +60,17 @@ $(function() {
         $(this).parent().addClass("active");
     });
 
+/*
     $('.navbar-toggle').click(function() {
         $('.navbar-nav').toggleClass('slide-in');
         $('.side-body').toggleClass('body-slide-in');
         $('#search').removeClass('in').addClass('collapse').slideUp(200);
 
         /// uncomment code for absolute positioning tweek see top comment in css
-        $('.absolute-wrapper').toggleClass('slide-in');
+       //  $('.absolute-wrapper').toggleClass('slide-in');
 
     });
+
 
     // Remove menu for searching
     $('#search-trigger').click(function() {
@@ -78,7 +81,15 @@ $(function() {
         $('.absolute-wrapper').removeClass('slide-in');
 
     });
+*/
 
+// Remove active for all items.
+$('.page-sidebar-menu li').removeClass('active');
 
+// highlight submenu item
+$('li a[href="' + this.location.pathname + '"]').parent().addClass('active');
+
+// Highlight parent menu item.
+$('ul a[href="' + this.location.pathname + '"]').parents('li').addClass('active');
 
 });

@@ -5,6 +5,63 @@ require_once 'logging_api.php';
 
 class manageExams{
 
+
+	function getExamsList($subjectId){
+		$conn = DbConn::getDbConn();
+		$sql="SELECT * FROM `assessment`.`exam`";
+		if($subjectId!="")
+		$sql.= " where subid='".htmlspecialchars($subjectId,ENT_QUOTES)."'";
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Exam : '".$sql."'" );
+		$result = mysqli_query($conn,$sql);
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$i=0;
+		while ($row)
+		{
+			$i++;
+			//$jsonArr[0]= $i;
+			$jsonArr[0]=$row['testname'];
+			$jsonArr[1]=$row['subid'];
+			$jsonArr[2]=$row['totalquestions'];
+			$jsonArr[3]=$row['duration'];
+			$jsonArr[4]=$row['testfrom'];
+			$jsonArr[5]=$row['testto'];
+			//$jsonArr[11]=$jsonArr;
+			$jsonArr1[] =$jsonArr;
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		}
+		$final_array = array('data' => $jsonArr1);
+		// Free result set
+		mysqli_free_result($result);
+		// print json Data.
+		echo json_encode($final_array);
+	}
+	function buildInsertSql($subjectName,$qpCode,$exName,$noOfQstns,$examDesc,$examDur,$atmptCount,$startDate,$endDate,$decResult,$batchId,$negMarking,$randomQstn,$raf,$pp)
+	{
+
+		try{
+			$testcode = mt_rand(1, 50000)."_".$exName;
+			$testId = $exName."_".date("Y-m-d H:i:s", time());
+			$row_value= "'".htmlspecialchars($qpCode,ENT_QUOTES)."','".htmlspecialchars($testId,ENT_QUOTES)."','".htmlspecialchars($exName,ENT_QUOTES).
+			"','".htmlspecialchars($noOfQstns,ENT_QUOTES)."','".htmlspecialchars($examDesc,ENT_QUOTES).
+			"','".htmlspecialchars($examDur,ENT_QUOTES)."','".htmlspecialchars($atmptCount,ENT_QUOTES).
+			"','".htmlspecialchars($startDate,ENT_QUOTES)."','".htmlspecialchars($endDate,ENT_QUOTES)."','".htmlspecialchars($decResult,ENT_QUOTES).
+			"','".htmlspecialchars($batchId,ENT_QUOTES)."','".htmlspecialchars($negMarking,ENT_QUOTES).
+			"','".htmlspecialchars($randomQstn,ENT_QUOTES)."','".htmlspecialchars($raf,ENT_QUOTES)."','".htmlspecialchars($pp,ENT_QUOTES).
+			"','".$testcode."','".date("Y-m-d H:i:s", time())."'";
+
+			$sql = "INSERT INTO `assessment`.`exam`(`subid`,`testid`,`testname`,`totalquestions`,`testdesc`,
+				  `duration`,`attemptedstudents`,`testfrom`,`testto`,`declareResult`,`batchid`,`negativemarking`,`randomqstn`,
+				   `raf`,`pp`,`testcode`,`createDate`)
+					VALUES(".$row_value.");";
+
+			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to insert Exam : '".$sql."'" );
+			$this->insertSQL .=$sql;
+		}
+		catch (Exception $e) {
+			echo 'Caught exception: ',  $e->getMessage(), "\n";
+		}
+	}
+
 	function createExam()
 	{
 		$conn = DbConn::getDbConn();
@@ -16,6 +73,10 @@ class manageExams{
 			return false;
 		}
 	}
+
+
+
+
 
 	function updateQuestion()
 	{
@@ -32,35 +93,6 @@ class manageExams{
 			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,ERROR #" .mysqli_error($conn) );
 			return false;
 		}
-	}
-
-	function buildInsertSql($subjectName,$qpCode,$exName,$noOfQstns,$examDesc,$examDur,$atmptCount,$startDate,$endDate,$decResult,$batchId,$negMarking,$randomQstn,$raf,$pp)
-	{
-		
-		try{
-			$testcode = mt_rand(1, 50000)."_".$exName;
-			$testId = $exName."_".date("Y-m-d H:i:s", time()); 
-			$row_value= "'".htmlspecialchars($qpCode,ENT_QUOTES)."','".htmlspecialchars($testId,ENT_QUOTES)."','".htmlspecialchars($exName,ENT_QUOTES).
-			"','".htmlspecialchars($noOfQstns,ENT_QUOTES)."','".htmlspecialchars($examDesc,ENT_QUOTES).
-			"','".htmlspecialchars($examDur,ENT_QUOTES)."','".htmlspecialchars($atmptCount,ENT_QUOTES).
-			"','".htmlspecialchars($startDate,ENT_QUOTES)."','".htmlspecialchars($endDate,ENT_QUOTES)."','".htmlspecialchars($decResult,ENT_QUOTES).
-			"','".htmlspecialchars($batchId,ENT_QUOTES)."','".htmlspecialchars($negMarking,ENT_QUOTES).
-			"','".htmlspecialchars($randomQstn,ENT_QUOTES)."','".htmlspecialchars($raf,ENT_QUOTES)."','".htmlspecialchars($pp,ENT_QUOTES).
-			"','".$testcode."','".date("Y-m-d H:i:s", time())."'";
-	
-			$sql = "INSERT INTO `assessment`.`exam`(`subid`,`testid`,`testname`,`totalquestions`,`testdesc`,
-				  `duration`,`attemptedstudents`,`testfrom`,`testto`,`declareResult`,`batchid`,`negativemarking`,`randomqstn`,
-				   `raf`,`pp`,`testcode`,`createDate`)
-					VALUES(".$row_value.");";
-			
-			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to insert Exam : '".$sql."'" );
-			$this->insertSQL .=$sql;
-		}
-	catch (Exception $e) {
-    	echo 'Caught exception: ',  $e->getMessage(), "\n";
-	}
-}
-		
 	}
 
 
@@ -82,42 +114,6 @@ class manageExams{
 	}
 
 
-	function getQstnList($subjectId)
-	{
-		$conn = DbConn::getDbConn();
-		$sql="SELECT * FROM `assessment`.`question`";
-		if($subjectId!="")
-		$sql.= " where subid='".htmlspecialchars($subjectId,ENT_QUOTES)."'";
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Question : '".$sql."'" );
-		$result = mysqli_query($conn,$sql);
-		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
-		$i=0;
-		while ($row)
-		{
-			$i++;
-			$jsonArr[0]= $row['id'];
-			$jsonArr[1]=$row['qnid'];
-			$jsonArr[2]=$row['subId'];
-			$jsonArr[3]=$row['question'];
-			$jsonArr[4]=$row['optiona'];
-			$jsonArr[5]=$row['optionb'];
-			$jsonArr[6]=$row['optionc'];
-			$jsonArr[7]=$row['optiond'];
-			$jsonArr[8]="";
-			$jsonArr[9]=$row['correctanswer'];
-			$jsonArr[10]=$row['marks'];
-			$jsonArr[11]=$row['language'];
-			$jsonArr[12]=$row['no_of_options'];
-			//$jsonArr[11]=$jsonArr;
-			$jsonArr1[] =$jsonArr;
-			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
-		}
-		$final_array = array('data' => $jsonArr1);
-		// Free result set
-		mysqli_free_result($result);
-		// print json Data.
-		echo json_encode($final_array);
-	}
 
 	function getQuestionToEdit($subjectId,$qstnId)
 	{
@@ -152,21 +148,19 @@ class manageExams{
 		echo json_encode($jsonArr);
 	}
 
+}
 
 // Handle Requests from UI
 $obj = new manageExams();
 if(isset($_GET['get'])){
 	$requestParam = $_GET['get'];
 	log_event( LOG_DATABASE, "Get Request with parameter :'".$_GET['get']."'" );
-	//$obj->getQstnList("");
-
-	if($requestParam == "questions"){
+	if($requestParam == "exams"){
 		$subjectId="";
-		if(isset($_GET['subId']))
-		$subjectId = $_GET['subId'];
-
-		log_event( LOG_DATABASE, "Get Questions List for subject  : '".$_GET['get']."'" );
-		$obj->getQstnList($subjectId);
+		if(isset($_GET['subid']))
+		$subjectId = $_GET['subid'];
+		log_event( LOG_DATABASE, "Get Exam List for subject  : '".$_GET['qpCode']."'" );
+		$obj->getExamsList($subjectId);
 	}else{
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."Error : ['qstn'] not set" );
 	}
@@ -176,32 +170,30 @@ if(isset($_GET['action'])){
 	log_event( LOG_DATABASE, " Get Request to Create Exam  with action parameter." );
 	// Get defect details to edit question.
 	if($_GET['action']=="create"){
+	 $subjectName	= $_GET['subjectName'];
+	 $qpCode		= $_GET['qpCode'];
+	 $exName		= $_GET['exName'];
+	 $noOfQstns		= $_GET['noOfQstns'];
+	 $examDesc		= $_GET['examDesc'];
+	 $examDur		= $_GET['examDur'];
+	 $atmptCount	= $_GET['atmptCount'];
+	 $startDate		= $_GET['startDate'];
+	 $endDate		= $_GET['endDate'];
+	 $decResult		= $_GET['decResult'];
+	 $batchId		= $_GET['batchId'];
+	 $negMarking	= $_GET['negMarking'];
+	 $randomQstn	= $_GET['randomQstn'];
+	 $raf			= $_GET['raf'];
+	 $pp			= $_GET['pp'];
 
-	 $subjectName= $_GET['subjectName'];
-	 $qpCode= $_GET['qpCode'];
-	 $exName= $_GET['exName'];
-	 $noOfQstns= $_GET['noOfQstns'];
-	 $examDesc= $_GET['examDesc'];
-	 $examDur= $_GET['examDur'];
-	 $atmptCount= $_GET['atmptCount'];
-	 $startDate= $_GET['startDate'];
-	 $endDate= $_GET['endDate'];
-	 $decResult= $_GET['decResult'];
-	 $batchId= $_GET['batchId'];
-	 $negMarking= $_GET['negMarking'];
-	 $randomQstn= $_GET['randomQstn'];
-	 $raf= $_GET['raf'];
-	 $pp= $_GET['pp'];
 	 log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Get Request to create Exam with Values : '".
 	 $subjectName."','".$qpCode."','".$exName."','".$noOfQstns."','".$examDesc."','".$examDur."','".$atmptCount.
 		"','".$startDate."','"
 		.$endDate."','".$decResult."','".$batchId."','".$negMarking."','".$randomQstn."','".$raf."','".$pp."'");
 
-
 	 $obj->buildInsertSql($subjectName,$qpCode,$exName,$noOfQstns,$examDesc,$examDur,$atmptCount,$startDate,$endDate,$decResult,$batchId,$negMarking,$randomQstn,$raf,$pp);
 
-	 
-	 if(!$obj->createExam())
+	 if(!$ob->createExam())
 		{
 			$data =  array('error' => 'Error while creating exam.') ;
 			log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Error while inserting Question in DB.".json_encode($data) );
@@ -210,10 +202,7 @@ if(isset($_GET['action'])){
 			log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Question created successfully." );
 		}
 		echo json_encode($data);
-
 	}
-
-
 	else if($_GET['action']=="edit"){
 		log_event( LOG_DATABASE, " Get Request to get question details." );
 		if(isset($_GET['subId']) && isset($_GET['qstnId'])){

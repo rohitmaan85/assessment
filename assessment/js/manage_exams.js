@@ -6,8 +6,6 @@ $(document).ready(function() {
   var attemptCountValue="";
   var passingPercentValue="";
 
-
-
   $(function () {
       $('#startDate').datetimepicker();
       $('#endDate').datetimepicker();
@@ -31,7 +29,6 @@ $(document).ready(function() {
           data: { get: "jobrole", ssc: sscValue },
           dataType: 'json', //since you wait for json
           success: function(json) {
-              //showQuestions();
               // Clear dropdown
               $('#subname-dropdown-menu').children().remove();
               //now when you received json, render options
@@ -164,7 +161,6 @@ function checkMandatoryFields(){
 
 
   $("#createExamButton").click(function() {
-
        if(checkMandatoryFields()){
        //subDetails
        var qpCode      = $("#qpcodeText").val();
@@ -211,4 +207,45 @@ function checkMandatoryFields(){
     });
 
 
+// load Exams table.
+
+showExams();
+function showExams(){
+    var subjectId = $("#qpcodeText").val();
+    var examTable = $('#examTable').DataTable({
+        "ajax": {
+           'url' : '/assessment/php/manageExams.php',
+           'data': {
+                    get: 'exams',
+                    subid:subjectId
+                   },
+           'dataSrc': function (json) {
+                        if(!json.data){
+                                  $('#qstns').html('<div id=\"error_msg\"  class=\"alert alert-danger fade in\" style=\"position:relative"><strong>No Questions Found for selected Subject in Database.</strong></div>');
+                                  json.data = [];
+                              }
+                              else{
+                                    $('#error_msg').addClass('hide');
+                              }
+
+                        return json.data;
+              },
+          },
+         /* "scrollY": "200px",
+        "paging": false, */
+        'columnDefs': [
+            {
+               "targets": 1,
+               "bVisible": false,
+               "searchable": false
+             },
+            {
+                "targets": 8,
+                "data": null,
+                "defaultContent": "<button id=\"openQuestion\"  type=\"button\" class=\"btn btn-info btn-xs\" ><span class=\"glyphicon glyphicon-asterisk\"></span>Edit</button>  <button id=\"uploadFileButton\"  type=\"button\" class=\"btn btn-danger btn-xs\" ><span class=\"glyphicon glyphicon-remove\"></span>Delete</button>"
+              },
+            ],
+        "destroy" : true,
+      });
+  }
 });
