@@ -1,4 +1,9 @@
 /*menu handler*/
+
+$(window).load(function() {
+	$(".loader").fadeOut("slow");
+});
+
 $(function() {
 
     $(document).ready(function() {

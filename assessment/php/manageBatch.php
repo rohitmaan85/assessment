@@ -3,7 +3,7 @@
 require_once 'DbConn.php';
 require_once 'logging_api.php';
 
-class manageQuestions{
+class manageBatch{
 
 	function addQuestionInSubject()
 	{
@@ -107,29 +107,26 @@ class manageQuestions{
 	}
 
 
-	function getQstnListForImportPage()
+	function getBatchListForImportPage()
 	{
 		$conn = DbConn::getDbConn();
-		$sql="SELECT * FROM `assessment`.`question`";
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Question : '".$sql."'" );
+		$sql="SELECT * FROM `assessment`.`batch`";
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Batch List : '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		$i=0;
 		while ($row)
 		{
 			$i++;
+			$i++;
 			$jsonArr[0]= $i;
-			$jsonArr[1]=$row['ssc'];
-			$jsonArr[2]=$row['job_role'];
-			$jsonArr[3]=$row['category'];
-			$jsonArr[4]=$row['module'];
-			$jsonArr[5]=$row['question'];
-			$jsonArr[6]=$row['optiona'];
-			$jsonArr[7]=$row['optionb'];
-			$jsonArr[8]=$row['optionc'];
-			$jsonArr[9]=$row['optiond'];
-			$jsonArr[10]=$row['correctanswer'];
-			$jsonArr[11]=$row['type'];
+			$jsonArr[1]=$row['batch_id'];
+			$jsonArr[2]=$row['batch_name'];
+			$jsonArr[3]=$row['no_of_candidates'];
+			$jsonArr[4]=$row['job_role'];
+			$jsonArr[5]=$row['assessment_date'];
+			$jsonArr[6]=$row['center_add'];
+			$jsonArr[7]=$row['uploadDate'];
 			$jsonArr1[] =$jsonArr;
 			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		}
@@ -176,7 +173,7 @@ class manageQuestions{
 }
 
 // Handle Requests from UI
-$obj = new manageQuestions();
+$obj = new manageBatch();
 if(isset($_GET['get'])){
 	$requestParam = $_GET['get'];
 	log_event( LOG_DATABASE, "Get Request with parameter :'".$_GET['get']."'" );
@@ -186,11 +183,11 @@ if(isset($_GET['get'])){
 		$subjectId="";
 		if(isset($_GET['subId']))
 		$subjectId = $_GET['subId'];
-		log_event( LOG_DATABASE, "Get Questions List for subject  : '".$_GET['get']."'" );
+		log_event( LOG_DATABASE, "Get Batch List for subject  : '".$_GET['get']."'" );
 		$obj->getQstnList($subjectId);
-	}else if($requestParam == "qsntsList"){
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Get Questions List for import Page" );
-		$obj->getQstnListForImportPage();
+	}else if($requestParam == "batchList"){
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."Get Batch List" );
+		$obj->getBatchListForImportPage();
 
 	}else{
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."Error : Invalid Request" );

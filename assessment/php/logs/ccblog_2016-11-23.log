@@ -1,0 +1,18 @@
+2016-11-23T03:09:10+00:00 [5652] INFO  : DB Get Request with parameter :'qsntsList'
+2016-11-23T03:09:10+00:00 [5652] INFO  : DB 192  C:\wamp64\www\assessment\php\manageQuestions.php Get Questions List for import Page
+2016-11-23T03:09:10+00:00 [5652] INFO  : DB 114  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-23T03:09:13+00:00 [5652] INFO  : DB Get Request with parameter :'batchList'
+2016-11-23T03:09:13+00:00 [5652] INFO  : DB 189  C:\wamp64\www\assessment\php\manageBatch.phpGet Batch List
+2016-11-23T03:09:13+00:00 [5652] INFO  : DB 114  C:\wamp64\www\assessment\php\manageBatch.php  , SQL to get Batch List : 'SELECT * FROM `assessment`.`batch`'
+2016-11-23T03:09:16+00:00 [5652] INFO  : DB Get Request with parameter :'qsntsList'
+2016-11-23T03:09:16+00:00 [5652] INFO  : DB 192  C:\wamp64\www\assessment\php\manageQuestions.php Get Questions List for import Page
+2016-11-23T03:09:16+00:00 [5652] INFO  : DB 114  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-23T03:09:26+00:00 [5652] INFO  : DB Get Request with parameter :'questions'
+2016-11-23T03:09:26+00:00 [5652] INFO  : DB Get Questions List for subject  : 'questions'
+2016-11-23T03:09:26+00:00 [5652] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-23T03:09:29+00:00 [5652] INFO  : DB Get Request with parameter :'exams'
+2016-11-23T03:09:29+00:00 [5652] INFO  : DB Get Exam List for subject  : ''
+2016-11-23T03:09:29+00:00 [5652] INFO  : DB 14  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
+2016-11-23T03:09:42+00:00 [5652] INFO  : DB Get Request with parameter :'qsntsList'
+2016-11-23T03:09:42+00:00 [5652] INFO  : DB 192  C:\wamp64\www\assessment\php\manageQuestions.php Get Questions List for import Page
+2016-11-23T03:09:42+00:00 [5652] INFO  : DB 114  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'

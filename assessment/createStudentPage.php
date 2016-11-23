@@ -49,8 +49,8 @@ if(isset($_GET['action'])){
   </head>
 
 <body>
+  <div class="loader"></div>
   <!-- <script src="js/jquery-3.1.0.js"></script> -->
-  <script src="js/main.js"></script>
   <div class="row">
     <!-- uncomment code for absolute positioning tweek see top comment in css -->
     <div class="absolute-wrapper"> </div>
@@ -87,6 +87,8 @@ if(isset($_GET['action'])){
         <div class="side-menu-container">
           <ul class="nav navbar-nav" >
             <li><a  href="uploadSubjectPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Subjects</a></li>
+            <li><a  href="importQuestionsPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Questions</a></li>
+            <li><a  href="importBatchPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Batches</a></li>
             <li><a  href="manageSubjectsPage.php"><span class="glyphicon glyphicon-paperclip"></span>Manage Questions</a></li>
             <li><a  href="manageExamsPage.php"><span class="glyphicon glyphicon-pencil"></span>Manage Exams</a></li>
             <li><a  href="createQuestionPage.php" ><span class="glyphicon glyphicon-pushpin"></span>Create Question</a></li>

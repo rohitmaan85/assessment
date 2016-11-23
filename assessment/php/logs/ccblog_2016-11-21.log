@@ -1,63 +1,828 @@
-2016-11-21T03:12:56+00:00 [5652] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-21T03:12:56+00:00 [5652] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :''
-2016-11-21T03:12:56+00:00 [5652] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import`'
-2016-11-21T03:12:57+00:00 [5652] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-21T03:12:57+00:00 [5652] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :''
-2016-11-21T03:12:57+00:00 [5652] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import`'
-2016-11-21T04:54:11+00:00 [5652] INFO  : DB Get Request with parameter :'jobrole'
-2016-11-21T04:54:12+00:00 [5652] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :''
-2016-11-21T04:54:12+00:00 [5652] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import`'
-2016-11-21T04:54:13+00:00 [5652] INFO  : DB Get Request with parameter :'qpcode'
-2016-11-21T04:54:13+00:00 [5652] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Green House Operator'
-2016-11-21T04:54:13+00:00 [5652] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Green House Operator''
-2016-11-21T04:54:30+00:00 [5652] INFO  : DB Get Request with parameter :'questions'
-2016-11-21T04:54:30+00:00 [5652] INFO  : DB Get Questions List for subject  : 'questions'
-2016-11-21T04:54:30+00:00 [5652] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
-2016-11-21T04:54:30+00:00 [5652] INFO  : DB Get Request with parameter :'exams'
-2016-11-21T04:54:30+00:00 [5652] INFO  : DB Get Exam List for subject  : ''
-2016-11-21T04:54:31+00:00 [5652] INFO  : DB 14  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
-2016-11-21T04:54:34+00:00 [5652] INFO  : DB Get Request with parameter :'questions'
-2016-11-21T04:54:34+00:00 [5652] INFO  : DB Get Questions List for subject  : 'questions'
-2016-11-21T04:54:34+00:00 [5652] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
-2016-11-21T04:54:55+00:00 [5652] INFO  : DB Get Request with parameter :'questions'
-2016-11-21T04:54:55+00:00 [5652] INFO  : DB Get Questions List for subject  : 'questions'
-2016-11-21T04:54:55+00:00 [5652] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
-2016-11-21T04:54:58+00:00 [5652] INFO  : DB Get Request with parameter :'exams'
-2016-11-21T04:54:58+00:00 [5652] INFO  : DB Get Exam List for subject  : ''
-2016-11-21T04:54:58+00:00 [5652] INFO  : DB 14  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
-2016-11-21T04:59:13+00:00 [5652] INFO  : DB Get Request with parameter :'questions'
-2016-11-21T04:59:13+00:00 [5652] INFO  : DB Get Questions List for subject  : 'questions'
-2016-11-21T04:59:13+00:00 [5652] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
-2016-11-21T04:59:21+00:00 [5652] INFO  : DB Get Request with parameter :'exams'
-2016-11-21T04:59:21+00:00 [5652] INFO  : DB Get Exam List for subject  : ''
-2016-11-21T04:59:21+00:00 [5652] INFO  : DB 14  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
-2016-11-21T04:59:38+00:00 [5652] INFO  : DB Get Request with parameter :'exams'
-2016-11-21T04:59:38+00:00 [5652] INFO  : DB Get Exam List for subject  : ''
-2016-11-21T04:59:38+00:00 [5652] INFO  : DB 14  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
-2016-11-21T04:59:44+00:00 [5652] INFO  : DB Get Request with parameter :'exams'
-2016-11-21T04:59:44+00:00 [5652] INFO  : DB Get Exam List for subject  : ''
-2016-11-21T04:59:44+00:00 [5652] INFO  : DB 14  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
-2016-11-21T04:59:45+00:00 [5652] INFO  : DB Get Request with parameter :'questions'
-2016-11-21T04:59:45+00:00 [5652] INFO  : DB Get Questions List for subject  : 'questions'
-2016-11-21T04:59:45+00:00 [5652] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
-2016-11-21T05:03:24+00:00 [5652] INFO  : DB Get Request with parameter :'questions'
-2016-11-21T05:03:24+00:00 [5652] INFO  : DB Get Questions List for subject  : 'questions'
-2016-11-21T05:03:24+00:00 [5652] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
-2016-11-21T05:03:58+00:00 [5652] INFO  : DB Get Request with parameter :'questions'
-2016-11-21T05:03:58+00:00 [5652] INFO  : DB Get Questions List for subject  : 'questions'
-2016-11-21T05:03:58+00:00 [5652] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
-2016-11-21T05:04:41+00:00 [5652] INFO  : DB Get Request with parameter :'questions'
-2016-11-21T05:04:41+00:00 [5652] INFO  : DB Get Questions List for subject  : 'questions'
-2016-11-21T05:04:41+00:00 [5652] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
-2016-11-21T05:05:20+00:00 [5652] INFO  : DB Get Request with parameter :'exams'
-2016-11-21T05:05:20+00:00 [5652] INFO  : DB Get Exam List for subject  : ''
-2016-11-21T05:05:20+00:00 [5652] INFO  : DB 14  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
-2016-11-21T05:05:32+00:00 [5652] INFO  : DB Get Request with parameter :'questions'
-2016-11-21T05:05:32+00:00 [5652] INFO  : DB Get Questions List for subject  : 'questions'
-2016-11-21T05:05:32+00:00 [5652] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
-2016-11-21T05:09:37+00:00 [5652] INFO  : DB Get Request with parameter :'questions'
-2016-11-21T05:09:37+00:00 [5652] INFO  : DB Get Questions List for subject  : 'questions'
-2016-11-21T05:09:37+00:00 [5652] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
-2016-11-21T05:09:48+00:00 [5652] INFO  : DB Get Request with parameter :'exams'
-2016-11-21T05:09:48+00:00 [5652] INFO  : DB Get Exam List for subject  : ''
-2016-11-21T05:09:48+00:00 [5652] INFO  : DB 14  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
+2016-11-21T15:04:52+00:00 [5652] INFO  : DB '../uploads/questions/Qstn_format.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-21T15:04:52+00:00 [5652] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadQuestions.php , Excel File '../uploads/questions/Qstn_format.xlsx' has been uploaded successfully.
+2016-11-21T15:04:52+00:00 [5652] INFO  : DB 27C:\wamp64\www\assessment\php\ImportQuestions.php  , ERROR #Error loading file "": Could not open  for reading! File does not exist.
+2016-11-21T15:04:52+00:00 [5652] INFO  : DB 102  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while reading excel file.
+2016-11-21T15:04:52+00:00 [5652] INFO  : DB 42  C:\wamp64\www\assessment\php\uploadQuestions.php , Going to Read Excel from Sheet No0' , start row : '2' , endRow='20',' no_of
+		  		 col : '16'
+2016-11-21T15:04:52+00:00 [5652] INFO  : DB 69  C:\wamp64\www\assessment\php\ImportQuestions.php  ,  SQL to insert Question 'INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('1','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','a','2','eng','4','2016-11-21 15:04:52',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('2','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','b','3','eng','4','2016-11-21 15:04:52',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('3','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','c','2','eng','4','2016-11-21 15:04:52',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('4','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','d','3','eng','4','2016-11-21 15:04:52',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('5','Agriculture','Animal Health Worker','AGR/Q4804','Theory','English','normal','qstn1','a','b','c','d','a','2','eng','4','2016-11-21 15:04:52',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('6','Agriculture','Animal Health Worker','AGR/Q4804','Theory','SoftSkills','normal','qstn1','a','b','c','d','b','3','eng','4','2016-11-21 15:04:52',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('7','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','c','2','eng','4','2016-11-21 15:04:52',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('8','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','d','3','eng','4','2016-11-21 15:04:52',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('9','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','a','2','eng','4','2016-11-21 15:04:52',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('10','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','b','3','eng','4','2016-11-21 15:04:52',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('11','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','c','2','eng','4','2016-11-21 15:04:52',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('12','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','d','3','eng','4','2016-11-21 15:04:52',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('13','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','a','2','eng','4','2016-11-21 15:04:52',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('14','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','b','3','eng','4','2016-11-21 15:04:52',null);'
+2016-11-21T15:04:52+00:00 [5652] INFO  : DB 86  C:\wamp64\www\assessment\php\ImportQuestions.php  ,ERROR #You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`opti' at line 1
+2016-11-21T15:04:52+00:00 [5652] INFO  : DB 97  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while inserting questions in database.
+2016-11-21T15:04:52+00:00 [5652] INFO  : DB 46  C:\wamp64\www\assessment\php\uploadQuestions.php Set Error to true to send the response to page.
+2016-11-21T15:05:31+00:00 [5652] INFO  : DB '../uploads/questions/Qstn_format.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-21T15:05:31+00:00 [5652] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadQuestions.php , Excel File '../uploads/questions/Qstn_format.xlsx' has been uploaded successfully.
+2016-11-21T15:05:31+00:00 [5652] INFO  : DB 27C:\wamp64\www\assessment\php\ImportQuestions.php  , ERROR #Error loading file "": Could not open  for reading! File does not exist.
+2016-11-21T15:05:31+00:00 [5652] INFO  : DB 102  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while reading excel file.
+2016-11-21T15:05:31+00:00 [5652] INFO  : DB 42  C:\wamp64\www\assessment\php\uploadQuestions.php , Going to Read Excel from Sheet No0' , start row : '2' , endRow='20',' no_of
+		  		 col : '16'
+2016-11-21T15:05:32+00:00 [5652] INFO  : DB 69  C:\wamp64\www\assessment\php\ImportQuestions.php  ,  SQL to insert Question 'INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('1','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','a','2','eng','4','2016-11-21 15:05:32',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('2','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','b','3','eng','4','2016-11-21 15:05:32',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('3','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','c','2','eng','4','2016-11-21 15:05:32',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('4','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','d','3','eng','4','2016-11-21 15:05:32',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('5','Agriculture','Animal Health Worker','AGR/Q4804','Theory','English','normal','qstn1','a','b','c','d','a','2','eng','4','2016-11-21 15:05:32',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('6','Agriculture','Animal Health Worker','AGR/Q4804','Theory','SoftSkills','normal','qstn1','a','b','c','d','b','3','eng','4','2016-11-21 15:05:32',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('7','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','c','2','eng','4','2016-11-21 15:05:32',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('8','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','d','3','eng','4','2016-11-21 15:05:32',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('9','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','a','2','eng','4','2016-11-21 15:05:32',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('10','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','b','3','eng','4','2016-11-21 15:05:32',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('11','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','c','2','eng','4','2016-11-21 15:05:32',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('12','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','d','3','eng','4','2016-11-21 15:05:32',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('13','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','a','2','eng','4','2016-11-21 15:05:32',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type``question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('14','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','b','3','eng','4','2016-11-21 15:05:32',null);'
+2016-11-21T15:05:32+00:00 [5652] INFO  : DB 86  C:\wamp64\www\assessment\php\ImportQuestions.php  ,ERROR #Column count doesn't match value count at row 1
+2016-11-21T15:05:32+00:00 [5652] INFO  : DB 97  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while inserting questions in database.
+2016-11-21T15:05:32+00:00 [5652] INFO  : DB 46  C:\wamp64\www\assessment\php\uploadQuestions.php Set Error to true to send the response to page.
+2016-11-21T15:08:10+00:00 [5652] INFO  : DB '../uploads/questions/Qstn_format.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-21T15:08:10+00:00 [5652] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadQuestions.php , Excel File '../uploads/questions/Qstn_format.xlsx' has been uploaded successfully.
+2016-11-21T15:08:10+00:00 [5652] INFO  : DB 27C:\wamp64\www\assessment\php\ImportQuestions.php  , ERROR #Error loading file "": Could not open  for reading! File does not exist.
+2016-11-21T15:08:10+00:00 [5652] INFO  : DB 102  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while reading excel file.
+2016-11-21T15:08:10+00:00 [5652] INFO  : DB 42  C:\wamp64\www\assessment\php\uploadQuestions.php , Going to Read Excel from Sheet No0' , start row : '2' , endRow='20',' no_of
+		  		 col : '16'
+2016-11-21T15:08:10+00:00 [5652] INFO  : DB 69  C:\wamp64\www\assessment\php\ImportQuestions.php  ,  SQL to insert Question 'INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('1','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','a','2','eng','4','2016-11-21 15:08:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('2','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','b','3','eng','4','2016-11-21 15:08:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('3','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','c','2','eng','4','2016-11-21 15:08:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('4','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','d','3','eng','4','2016-11-21 15:08:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('5','Agriculture','Animal Health Worker','AGR/Q4804','Theory','English','normal','qstn1','a','b','c','d','a','2','eng','4','2016-11-21 15:08:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('6','Agriculture','Animal Health Worker','AGR/Q4804','Theory','SoftSkills','normal','qstn1','a','b','c','d','b','3','eng','4','2016-11-21 15:08:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('7','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','c','2','eng','4','2016-11-21 15:08:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('8','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','d','3','eng','4','2016-11-21 15:08:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('9','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','a','2','eng','4','2016-11-21 15:08:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('10','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','b','3','eng','4','2016-11-21 15:08:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('11','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','c','2','eng','4','2016-11-21 15:08:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('12','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','d','3','eng','4','2016-11-21 15:08:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('13','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','a','2','eng','4','2016-11-21 15:08:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('14','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','b','3','eng','4','2016-11-21 15:08:10',null);'
+2016-11-21T15:08:10+00:00 [5652] INFO  : DB 86  C:\wamp64\www\assessment\php\ImportQuestions.php  ,ERROR #Data truncated for column 'correctanswer' at row 1
+2016-11-21T15:08:10+00:00 [5652] INFO  : DB 97  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while inserting questions in database.
+2016-11-21T15:08:10+00:00 [5652] INFO  : DB 46  C:\wamp64\www\assessment\php\uploadQuestions.php Set Error to true to send the response to page.
+2016-11-21T15:09:55+00:00 [5652] INFO  : DB '../uploads/questions/Qstn_format.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-21T15:09:55+00:00 [5652] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadQuestions.php , Excel File '../uploads/questions/Qstn_format.xlsx' has been uploaded successfully.
+2016-11-21T15:09:55+00:00 [5652] INFO  : DB 27C:\wamp64\www\assessment\php\ImportQuestions.php  , ERROR #Error loading file "": Could not open  for reading! File does not exist.
+2016-11-21T15:09:55+00:00 [5652] INFO  : DB 102  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while reading excel file.
+2016-11-21T15:09:55+00:00 [5652] INFO  : DB 42  C:\wamp64\www\assessment\php\uploadQuestions.php , Going to Read Excel from Sheet No0' , start row : '2' , endRow='20',' no_of
+		  		 col : '16'
+2016-11-21T15:09:55+00:00 [5652] INFO  : DB 69  C:\wamp64\www\assessment\php\ImportQuestions.php  ,  SQL to insert Question 'INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('1','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:09:55',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('2','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 15:09:55',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('3','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:09:55',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('4','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optionb','3','eng','4','2016-11-21 15:09:55',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('5','Agriculture','Animal Health Worker','AGR/Q4804','Theory','English','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:09:55',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('6','Agriculture','Animal Health Worker','AGR/Q4804','Theory','SoftSkills','normal','qstn1','a','b','c','d','optiond','3','eng','4','2016-11-21 15:09:55',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('7','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:09:55',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('8','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 15:09:55',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('9','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:09:55',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('10','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 15:09:55',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('11','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optionc','2','eng','4','2016-11-21 15:09:55',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('12','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 15:09:55',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('13','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:09:55',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('14','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiond','3','eng','4','2016-11-21 15:09:55',null);'
+2016-11-21T15:09:55+00:00 [5652] INFO  : DB 82  C:\wamp64\www\assessment\php\ImportQuestions.php  , Success !  Questions inserted successfully in Database : '14'
+2016-11-21T15:09:55+00:00 [5652] INFO  : DB Get Request with parameter :'qsntsList'
+2016-11-21T15:09:56+00:00 [5652] INFO  : DB 192  C:\wamp64\www\assessment\php\manageQuestions.phpError : ['qstn'] not set
+2016-11-21T15:09:56+00:00 [5652] INFO  : DB 114  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-21T15:11:40+00:00 [5652] INFO  : DB '../uploads/questions/Qstn_format.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-21T15:11:40+00:00 [5652] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadQuestions.php , Excel File '../uploads/questions/Qstn_format.xlsx' has been uploaded successfully.
+2016-11-21T15:11:40+00:00 [5652] INFO  : DB 27C:\wamp64\www\assessment\php\ImportQuestions.php  , ERROR #Error loading file "": Could not open  for reading! File does not exist.
+2016-11-21T15:11:40+00:00 [5652] INFO  : DB 102  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while reading excel file.
+2016-11-21T15:11:40+00:00 [5652] INFO  : DB 42  C:\wamp64\www\assessment\php\uploadQuestions.php , Going to Read Excel from Sheet No0' , start row : '2' , endRow='20',' no_of
+		  		 col : '16'
+2016-11-21T15:11:40+00:00 [5652] INFO  : DB 69  C:\wamp64\www\assessment\php\ImportQuestions.php  ,  SQL to insert Question 'INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('1','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:11:40',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('2','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 15:11:40',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('3','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:11:40',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('4','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optionb','3','eng','4','2016-11-21 15:11:40',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('5','Agriculture','Animal Health Worker','AGR/Q4804','Theory','English','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:11:40',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('6','Agriculture','Animal Health Worker','AGR/Q4804','Theory','SoftSkills','normal','qstn1','a','b','c','d','optiond','3','eng','4','2016-11-21 15:11:40',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('7','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:11:40',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('8','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 15:11:40',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('9','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:11:40',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('10','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 15:11:40',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('11','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optionc','2','eng','4','2016-11-21 15:11:40',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('12','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 15:11:40',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('13','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:11:40',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('14','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiond','3','eng','4','2016-11-21 15:11:40',null);'
+2016-11-21T15:11:40+00:00 [5652] INFO  : DB 82  C:\wamp64\www\assessment\php\ImportQuestions.php  , Success !  Questions inserted successfully in Database : '14'
+2016-11-21T15:11:40+00:00 [5652] INFO  : DB Get Request with parameter :'qsntsList'
+2016-11-21T15:11:40+00:00 [5652] INFO  : DB 192  C:\wamp64\www\assessment\php\manageQuestions.phpError : ['qstn'] not set
+2016-11-21T15:11:40+00:00 [5652] INFO  : DB 114  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-21T15:15:10+00:00 [5652] INFO  : DB '../uploads/questions/Qstn_format.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-21T15:15:10+00:00 [5652] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadQuestions.php , Excel File '../uploads/questions/Qstn_format.xlsx' has been uploaded successfully.
+2016-11-21T15:15:10+00:00 [5652] INFO  : DB 27C:\wamp64\www\assessment\php\ImportQuestions.php  , ERROR #Error loading file "": Could not open  for reading! File does not exist.
+2016-11-21T15:15:10+00:00 [5652] INFO  : DB 102  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while reading excel file.
+2016-11-21T15:15:10+00:00 [5652] INFO  : DB 42  C:\wamp64\www\assessment\php\uploadQuestions.php , Going to Read Excel from Sheet No0' , start row : '2' , endRow='20',' no_of
+		  		 col : '16'
+2016-11-21T15:15:10+00:00 [5652] INFO  : DB 69  C:\wamp64\www\assessment\php\ImportQuestions.php  ,  SQL to insert Question 'INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('1','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:15:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('2','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 15:15:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('3','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:15:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('4','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optionb','3','eng','4','2016-11-21 15:15:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('5','Agriculture','Animal Health Worker','AGR/Q4804','Theory','English','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:15:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('6','Agriculture','Animal Health Worker','AGR/Q4804','Theory','SoftSkills','normal','qstn1','a','b','c','d','optiond','3','eng','4','2016-11-21 15:15:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('7','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:15:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('8','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 15:15:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('9','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:15:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('10','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 15:15:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('11','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optionc','2','eng','4','2016-11-21 15:15:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('12','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 15:15:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('13','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:15:10',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('14','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiond','3','eng','4','2016-11-21 15:15:10',null);'
+2016-11-21T15:15:11+00:00 [5652] INFO  : DB 82  C:\wamp64\www\assessment\php\ImportQuestions.php  , Success !  Questions inserted successfully in Database : '14'
+2016-11-21T15:16:13+00:00 [5652] INFO  : DB '../uploads/questions/Qstn_format.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-21T15:16:13+00:00 [5652] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadQuestions.php , Excel File '../uploads/questions/Qstn_format.xlsx' has been uploaded successfully.
+2016-11-21T15:16:13+00:00 [5652] INFO  : DB 27C:\wamp64\www\assessment\php\ImportQuestions.php  , ERROR #Error loading file "": Could not open  for reading! File does not exist.
+2016-11-21T15:16:13+00:00 [5652] INFO  : DB 102  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while reading excel file.
+2016-11-21T15:16:13+00:00 [5652] INFO  : DB 42  C:\wamp64\www\assessment\php\uploadQuestions.php , Going to Read Excel from Sheet No0' , start row : '2' , endRow='20',' no_of
+		  		 col : '16'
+2016-11-21T15:16:13+00:00 [5652] INFO  : DB 69  C:\wamp64\www\assessment\php\ImportQuestions.php  ,  SQL to insert Question 'INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('1','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:16:13',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('2','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 15:16:13',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('3','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:16:13',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('4','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optionb','3','eng','4','2016-11-21 15:16:13',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('5','Agriculture','Animal Health Worker','AGR/Q4804','Theory','English','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:16:13',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('6','Agriculture','Animal Health Worker','AGR/Q4804','Theory','SoftSkills','normal','qstn1','a','b','c','d','optiond','3','eng','4','2016-11-21 15:16:13',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('7','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:16:13',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('8','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 15:16:13',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('9','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:16:13',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('10','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 15:16:13',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('11','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optionc','2','eng','4','2016-11-21 15:16:13',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('12','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 15:16:13',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('13','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:16:13',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('14','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiond','3','eng','4','2016-11-21 15:16:13',null);'
+2016-11-21T15:16:14+00:00 [5652] INFO  : DB 82  C:\wamp64\www\assessment\php\ImportQuestions.php  , Success !  Questions inserted successfully in Database : '14'
+2016-11-21T15:16:14+00:00 [5652] INFO  : DB Get Request with parameter :'qsntsList'
+2016-11-21T15:16:14+00:00 [5652] INFO  : DB 192  C:\wamp64\www\assessment\php\manageQuestions.phpError : ['qstn'] not set
+2016-11-21T15:16:14+00:00 [5652] INFO  : DB 114  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-21T15:17:36+00:00 [5652] INFO  : DB '../uploads/questions/Qstn_format.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-21T15:17:36+00:00 [5652] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadQuestions.php , Excel File '../uploads/questions/Qstn_format.xlsx' has been uploaded successfully.
+2016-11-21T15:17:36+00:00 [5652] INFO  : DB 27C:\wamp64\www\assessment\php\ImportQuestions.php  , ERROR #Error loading file "": Could not open  for reading! File does not exist.
+2016-11-21T15:17:36+00:00 [5652] INFO  : DB 102  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while reading excel file.
+2016-11-21T15:17:36+00:00 [5652] INFO  : DB 42  C:\wamp64\www\assessment\php\uploadQuestions.php , Going to Read Excel from Sheet No0' , start row : '2' , endRow='20',' no_of
+		  		 col : '16'
+2016-11-21T15:17:36+00:00 [5652] INFO  : DB 69  C:\wamp64\www\assessment\php\ImportQuestions.php  ,  SQL to insert Question 'INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('1','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:17:36',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('2','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 15:17:36',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('3','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:17:36',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('4','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optionb','3','eng','4','2016-11-21 15:17:36',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('5','Agriculture','Animal Health Worker','AGR/Q4804','Theory','English','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:17:36',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('6','Agriculture','Animal Health Worker','AGR/Q4804','Theory','SoftSkills','normal','qstn1','a','b','c','d','optiond','3','eng','4','2016-11-21 15:17:36',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('7','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:17:36',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('8','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 15:17:36',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('9','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:17:36',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('10','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 15:17:36',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('11','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optionc','2','eng','4','2016-11-21 15:17:36',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('12','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 15:17:36',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('13','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 15:17:36',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('14','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiond','3','eng','4','2016-11-21 15:17:36',null);'
+2016-11-21T15:17:36+00:00 [5652] INFO  : DB 82  C:\wamp64\www\assessment\php\ImportQuestions.php  , Success !  Questions inserted successfully in Database : '14'
+2016-11-21T15:17:36+00:00 [5652] INFO  : DB Get Request with parameter :'qsntsList'
+2016-11-21T15:17:36+00:00 [5652] INFO  : DB 192  C:\wamp64\www\assessment\php\manageQuestions.phpError : ['qstn'] not set
+2016-11-21T15:17:36+00:00 [5652] INFO  : DB 114  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-21T15:18:05+00:00 [5652] INFO  : DB Get Request with parameter :'questions'
+2016-11-21T15:18:05+00:00 [5652] INFO  : DB Get Questions List for subject  : 'questions'
+2016-11-21T15:18:05+00:00 [5652] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-21T15:18:07+00:00 [5652] INFO  : DB Get Request with parameter :'exams'
+2016-11-21T15:18:07+00:00 [5652] INFO  : DB Get Exam List for subject  : ''
+2016-11-21T15:18:07+00:00 [5652] INFO  : DB 14  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
+2016-11-21T15:18:12+00:00 [5652] INFO  : DB Get Request with parameter :'jobrole'
+2016-11-21T15:18:12+00:00 [5652] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :''
+2016-11-21T15:18:12+00:00 [5652] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import`'
+2016-11-21T15:18:13+00:00 [5652] INFO  : DB Get Request with parameter :'jobrole'
+2016-11-21T15:18:13+00:00 [5652] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :''
+2016-11-21T15:18:13+00:00 [5652] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import`'
+2016-11-21T15:18:17+00:00 [5652] INFO  : DB Get Request with parameter :'jobrole'
+2016-11-21T15:18:17+00:00 [5652] INFO  : DB Get Job Roles List with parameter :'jobrole' for SSC :''
+2016-11-21T15:18:17+00:00 [5652] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import`'
+2016-11-21T15:18:17+00:00 [5652] INFO  : DB Get Request with parameter :'qpcode'
+2016-11-21T15:18:17+00:00 [5652] INFO  : DB Get QP Code with parameter :'qpcode' for Job Role :'Aquaculture worker'
+2016-11-21T15:18:17+00:00 [5652] INFO  : DB SQL = 'SELECT qp_code FROM `assessment`.`jobroles_excel_import` where job_role='Aquaculture worker''
+2016-11-21T15:49:28+00:00 [5652] INFO  : DB Get Request with parameter :'exams'
+2016-11-21T15:49:28+00:00 [5652] INFO  : DB Get Exam List for subject  : ''
+2016-11-21T15:49:28+00:00 [5652] INFO  : DB 14  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
+2016-11-21T15:49:28+00:00 [5652] INFO  : DB Get Request with parameter :'questions'
+2016-11-21T15:49:28+00:00 [5652] INFO  : DB Get Questions List for subject  : 'questions'
+2016-11-21T15:49:29+00:00 [5652] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-21T15:51:06+00:00 [5652] INFO  : DB Get Request with parameter :'qsntsList'
+2016-11-21T15:51:06+00:00 [5652] INFO  : DB 192  C:\wamp64\www\assessment\php\manageQuestions.phpError : ['qstn'] not set
+2016-11-21T15:51:06+00:00 [5652] INFO  : DB 114  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-21T15:51:32+00:00 [5652] INFO  : DB Get Request with parameter :'qsntsList'
+2016-11-21T15:51:32+00:00 [5652] INFO  : DB 192  C:\wamp64\www\assessment\php\manageQuestions.phpError : ['qstn'] not set
+2016-11-21T15:51:32+00:00 [5652] INFO  : DB 114  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-21T15:51:38+00:00 [5652] INFO  : DB Get Request with parameter :'qsntsList'
+2016-11-21T15:51:38+00:00 [5652] INFO  : DB 192  C:\wamp64\www\assessment\php\manageQuestions.phpError : ['qstn'] not set
+2016-11-21T15:51:38+00:00 [5652] INFO  : DB 114  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-21T15:51:45+00:00 [5652] INFO  : DB '../uploads/questions/Qstn_format.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-21T15:51:45+00:00 [5652] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadQuestions.php , Excel File '../uploads/questions/Qstn_format.xlsx' has been uploaded successfully.
+2016-11-21T15:51:46+00:00 [5652] INFO  : DB 27C:\wamp64\www\assessment\php\ImportQuestions.php  , ERROR #Error loading file "": Could not open  for reading! File does not exist.
+2016-11-21T15:51:46+00:00 [5652] INFO  : DB 102  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while reading excel file.
+2016-11-21T15:51:46+00:00 [5652] INFO  : DB 42  C:\wamp64\www\assessment\php\uploadQuestions.php , Going to Read Excel from Sheet No0' , start row : '2' , endRow='20',' no_of
+		  		 col : '15'
+2016-11-21T15:51:47+00:00 [5652] INFO  : DB 69  C:\wamp64\www\assessment\php\ImportQuestions.php  ,  SQL to insert Question 'INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('1','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:51:47',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('2','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','3','eng','2016-11-21 15:51:47',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('3','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:51:47',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('4','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optionb','3','eng','2016-11-21 15:51:47',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('5','Agriculture','Animal Health Worker','AGR/Q4804','Theory','English','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:51:47',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('6','Agriculture','Animal Health Worker','AGR/Q4804','Theory','SoftSkills','normal','qstn1','a','b','c','d','optiond','3','eng','2016-11-21 15:51:47',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('7','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:51:47',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('8','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','3','eng','2016-11-21 15:51:47',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('9','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:51:47',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('10','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','2016-11-21 15:51:47',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('11','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optionc','2','eng','2016-11-21 15:51:47',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('12','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','2016-11-21 15:51:47',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('13','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:51:47',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('14','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiond','3','eng','2016-11-21 15:51:47',null);'
+2016-11-21T15:51:47+00:00 [5652] INFO  : DB 86  C:\wamp64\www\assessment\php\ImportQuestions.php  ,ERROR #Column count doesn't match value count at row 1
+2016-11-21T15:51:47+00:00 [5652] INFO  : DB 97  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while inserting questions in database.
+2016-11-21T15:51:47+00:00 [5652] INFO  : DB 46  C:\wamp64\www\assessment\php\uploadQuestions.php Set Error to true to send the response to page.
+2016-11-21T15:54:07+00:00 [5652] INFO  : DB '../uploads/questions/Qstn_format.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-21T15:54:07+00:00 [5652] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadQuestions.php , Excel File '../uploads/questions/Qstn_format.xlsx' has been uploaded successfully.
+2016-11-21T15:54:07+00:00 [5652] INFO  : DB 27C:\wamp64\www\assessment\php\ImportQuestions.php  , ERROR #Error loading file "": Could not open  for reading! File does not exist.
+2016-11-21T15:54:07+00:00 [5652] INFO  : DB 102  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while reading excel file.
+2016-11-21T15:54:07+00:00 [5652] INFO  : DB 42  C:\wamp64\www\assessment\php\uploadQuestions.php , Going to Read Excel from Sheet No0' , start row : '2' , endRow='20',' no_of
+		  		 col : '15'
+2016-11-21T15:54:08+00:00 [5652] INFO  : DB 69  C:\wamp64\www\assessment\php\ImportQuestions.php  ,  SQL to insert Question 'INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('1','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:54:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('2','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','3','eng','2016-11-21 15:54:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('3','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:54:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('4','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optionb','3','eng','2016-11-21 15:54:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('5','Agriculture','Animal Health Worker','AGR/Q4804','Theory','English','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:54:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('6','Agriculture','Animal Health Worker','AGR/Q4804','Theory','SoftSkills','normal','qstn1','a','b','c','d','optiond','3','eng','2016-11-21 15:54:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('7','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:54:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('8','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','3','eng','2016-11-21 15:54:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('9','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:54:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('10','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','2016-11-21 15:54:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('11','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optionc','2','eng','2016-11-21 15:54:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('12','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','2016-11-21 15:54:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('13','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:54:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('14','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiond','3','eng','2016-11-21 15:54:08',null);'
+2016-11-21T15:54:08+00:00 [5652] INFO  : DB 86  C:\wamp64\www\assessment\php\ImportQuestions.php  ,ERROR #Column count doesn't match value count at row 1
+2016-11-21T15:54:08+00:00 [5652] INFO  : DB 97  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while inserting questions in database.
+2016-11-21T15:54:08+00:00 [5652] INFO  : DB 46  C:\wamp64\www\assessment\php\uploadQuestions.php Set Error to true to send the response to page.
+2016-11-21T15:56:55+00:00 [5652] INFO  : DB '../uploads/questions/Qstn_format.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-21T15:56:55+00:00 [5652] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadQuestions.php , Excel File '../uploads/questions/Qstn_format.xlsx' has been uploaded successfully.
+2016-11-21T15:56:56+00:00 [5652] INFO  : DB 27C:\wamp64\www\assessment\php\ImportQuestions.php  , ERROR #Error loading file "": Could not open  for reading! File does not exist.
+2016-11-21T15:56:56+00:00 [5652] INFO  : DB 102  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while reading excel file.
+2016-11-21T15:56:56+00:00 [5652] INFO  : DB 42  C:\wamp64\www\assessment\php\uploadQuestions.php , Going to Read Excel from Sheet No0' , start row : '2' , endRow='20',' no_of
+		  		 col : '15'
+2016-11-21T15:56:56+00:00 [5652] INFO  : DB 69  C:\wamp64\www\assessment\php\ImportQuestions.php  ,  SQL to insert Question 'INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('1','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:56:56',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('2','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','3','eng','2016-11-21 15:56:56',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('3','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:56:56',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('4','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optionb','3','eng','2016-11-21 15:56:56',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('5','Agriculture','Animal Health Worker','AGR/Q4804','Theory','English','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:56:56',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('6','Agriculture','Animal Health Worker','AGR/Q4804','Theory','SoftSkills','normal','qstn1','a','b','c','d','optiond','3','eng','2016-11-21 15:56:56',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('7','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:56:56',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('8','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','3','eng','2016-11-21 15:56:56',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('9','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:56:56',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('10','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','2016-11-21 15:56:56',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('11','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optionc','2','eng','2016-11-21 15:56:56',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('12','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','2016-11-21 15:56:56',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('13','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:56:56',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('14','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiond','3','eng','2016-11-21 15:56:56',null);'
+2016-11-21T15:56:56+00:00 [5652] INFO  : DB 86  C:\wamp64\www\assessment\php\ImportQuestions.php  ,ERROR #Column count doesn't match value count at row 1
+2016-11-21T15:56:56+00:00 [5652] INFO  : DB 97  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while inserting questions in database.
+2016-11-21T15:56:56+00:00 [5652] INFO  : DB 46  C:\wamp64\www\assessment\php\uploadQuestions.php Set Error to true to send the response to page.
+2016-11-21T15:57:27+00:00 [5652] INFO  : DB '../uploads/questions/Qstn_format.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-21T15:57:27+00:00 [5652] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadQuestions.php , Excel File '../uploads/questions/Qstn_format.xlsx' has been uploaded successfully.
+2016-11-21T15:57:27+00:00 [5652] INFO  : DB 27C:\wamp64\www\assessment\php\ImportQuestions.php  , ERROR #Error loading file "": Could not open  for reading! File does not exist.
+2016-11-21T15:57:27+00:00 [5652] INFO  : DB 102  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while reading excel file.
+2016-11-21T15:57:27+00:00 [5652] INFO  : DB 42  C:\wamp64\www\assessment\php\uploadQuestions.php , Going to Read Excel from Sheet No0' , start row : '2' , endRow='20',' no_of
+		  		 col : '15'
+2016-11-21T15:57:27+00:00 [5652] INFO  : DB 69  C:\wamp64\www\assessment\php\ImportQuestions.php  ,  SQL to insert Question 'INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('1','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:57:27',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('2','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','3','eng','2016-11-21 15:57:27',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('3','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:57:27',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('4','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optionb','3','eng','2016-11-21 15:57:27',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('5','Agriculture','Animal Health Worker','AGR/Q4804','Theory','English','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:57:27',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('6','Agriculture','Animal Health Worker','AGR/Q4804','Theory','SoftSkills','normal','qstn1','a','b','c','d','optiond','3','eng','2016-11-21 15:57:27',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('7','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:57:27',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('8','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','3','eng','2016-11-21 15:57:27',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('9','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:57:27',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('10','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','2016-11-21 15:57:27',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('11','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optionc','2','eng','2016-11-21 15:57:27',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('12','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','2016-11-21 15:57:27',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('13','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:57:27',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('14','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiond','3','eng','2016-11-21 15:57:27',null);'
+2016-11-21T15:57:27+00:00 [5652] INFO  : DB 86  C:\wamp64\www\assessment\php\ImportQuestions.php  ,ERROR #Column count doesn't match value count at row 1
+2016-11-21T15:57:27+00:00 [5652] INFO  : DB 97  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while inserting questions in database.
+2016-11-21T15:57:27+00:00 [5652] INFO  : DB 46  C:\wamp64\www\assessment\php\uploadQuestions.php Set Error to true to send the response to page.
+2016-11-21T15:59:05+00:00 [5652] INFO  : DB '../uploads/questions/Qstn_format.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-21T15:59:05+00:00 [5652] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadQuestions.php , Excel File '../uploads/questions/Qstn_format.xlsx' has been uploaded successfully.
+2016-11-21T15:59:05+00:00 [5652] INFO  : DB 27C:\wamp64\www\assessment\php\ImportQuestions.php  , ERROR #Error loading file "": Could not open  for reading! File does not exist.
+2016-11-21T15:59:05+00:00 [5652] INFO  : DB 102  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while reading excel file.
+2016-11-21T15:59:05+00:00 [5652] INFO  : DB 42  C:\wamp64\www\assessment\php\uploadQuestions.php , Going to Read Excel from Sheet No0' , start row : '2' , endRow='20',' no_of
+		  		 col : '15'
+2016-11-21T15:59:06+00:00 [5652] INFO  : DB 69  C:\wamp64\www\assessment\php\ImportQuestions.php  ,  SQL to insert Question 'INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('1','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:59:06',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('2','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','3','eng','2016-11-21 15:59:06',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('3','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:59:06',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('4','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optionb','3','eng','2016-11-21 15:59:06',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('5','Agriculture','Animal Health Worker','AGR/Q4804','Theory','English','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:59:06',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('6','Agriculture','Animal Health Worker','AGR/Q4804','Theory','SoftSkills','normal','qstn1','a','b','c','d','optiond','3','eng','2016-11-21 15:59:06',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('7','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:59:06',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('8','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','3','eng','2016-11-21 15:59:06',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('9','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:59:06',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('10','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','2016-11-21 15:59:06',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('11','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optionc','2','eng','2016-11-21 15:59:06',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('12','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','2016-11-21 15:59:06',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('13','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','2016-11-21 15:59:06',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('14','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiond','3','eng','2016-11-21 15:59:06',null);'
+2016-11-21T15:59:06+00:00 [5652] INFO  : DB 86  C:\wamp64\www\assessment\php\ImportQuestions.php  ,ERROR #Column count doesn't match value count at row 1
+2016-11-21T15:59:06+00:00 [5652] INFO  : DB 97  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while inserting questions in database.
+2016-11-21T15:59:06+00:00 [5652] INFO  : DB 46  C:\wamp64\www\assessment\php\uploadQuestions.php Set Error to true to send the response to page.
+2016-11-21T16:03:08+00:00 [5652] INFO  : DB '../uploads/questions/Qstn_format.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-21T16:03:08+00:00 [5652] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadQuestions.php , Excel File '../uploads/questions/Qstn_format.xlsx' has been uploaded successfully.
+2016-11-21T16:03:08+00:00 [5652] INFO  : DB 27C:\wamp64\www\assessment\php\ImportQuestions.php  , ERROR #Error loading file "": Could not open  for reading! File does not exist.
+2016-11-21T16:03:08+00:00 [5652] INFO  : DB 102  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while reading excel file.
+2016-11-21T16:03:08+00:00 [5652] INFO  : DB 42  C:\wamp64\www\assessment\php\uploadQuestions.php , Going to Read Excel from Sheet No0' , start row : '2' , endRow='20',' no_of
+		  		 col : '16'
+2016-11-21T16:03:09+00:00 [5652] INFO  : DB 69  C:\wamp64\www\assessment\php\ImportQuestions.php  ,  SQL to insert Question 'INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('1','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 16:03:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('2','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 16:03:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('3','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 16:03:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('4','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optionb','3','eng','4','2016-11-21 16:03:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('5','Agriculture','Animal Health Worker','AGR/Q4804','Theory','English','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 16:03:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('6','Agriculture','Animal Health Worker','AGR/Q4804','Theory','SoftSkills','normal','qstn1','a','b','c','d','optiond','3','eng','4','2016-11-21 16:03:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('7','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 16:03:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('8','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 16:03:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('9','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 16:03:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('10','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 16:03:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('11','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optionc','2','eng','4','2016-11-21 16:03:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('12','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 16:03:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('13','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 16:03:08',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('14','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiond','3','eng','4','2016-11-21 16:03:08',null);'
+2016-11-21T16:03:09+00:00 [5652] INFO  : DB 82  C:\wamp64\www\assessment\php\ImportQuestions.php  , Success !  Questions inserted successfully in Database : '14'
+2016-11-21T16:03:09+00:00 [5652] INFO  : DB Get Request with parameter :'qsntsList'
+2016-11-21T16:03:09+00:00 [5652] INFO  : DB 192  C:\wamp64\www\assessment\php\manageQuestions.phpError : ['qstn'] not set
+2016-11-21T16:03:09+00:00 [5652] INFO  : DB 114  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-21T16:03:10+00:00 [5652] INFO  : DB Get Request with parameter :'qsntsList'
+2016-11-21T16:03:10+00:00 [5652] INFO  : DB 192  C:\wamp64\www\assessment\php\manageQuestions.phpError : ['qstn'] not set
+2016-11-21T16:03:10+00:00 [5652] INFO  : DB 114  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-21T16:03:18+00:00 [5652] INFO  : DB '../uploads/questions/Qstn_format.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-21T16:03:18+00:00 [5652] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadQuestions.php , Excel File '../uploads/questions/Qstn_format.xlsx' has been uploaded successfully.
+2016-11-21T16:03:18+00:00 [5652] INFO  : DB 27C:\wamp64\www\assessment\php\ImportQuestions.php  , ERROR #Error loading file "": Could not open  for reading! File does not exist.
+2016-11-21T16:03:18+00:00 [5652] INFO  : DB 102  C:\wamp64\www\assessment\php\ImportQuestions.php ,  ERROR while reading excel file.
+2016-11-21T16:03:18+00:00 [5652] INFO  : DB 42  C:\wamp64\www\assessment\php\uploadQuestions.php , Going to Read Excel from Sheet No0' , start row : '2' , endRow='20',' no_of
+		  		 col : '16'
+2016-11-21T16:03:18+00:00 [5652] INFO  : DB 69  C:\wamp64\www\assessment\php\ImportQuestions.php  ,  SQL to insert Question 'INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('1','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 16:03:18',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('2','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 16:03:18',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('3','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 16:03:18',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('4','Agriculture','Animal Health Worker','AGR/Q4804','Theory','Agriculture','normal','qstn1','a','b','c','d','optionb','3','eng','4','2016-11-21 16:03:18',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('5','Agriculture','Animal Health Worker','AGR/Q4804','Theory','English','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 16:03:18',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('6','Agriculture','Animal Health Worker','AGR/Q4804','Theory','SoftSkills','normal','qstn1','a','b','c','d','optiond','3','eng','4','2016-11-21 16:03:18',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('7','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 16:03:18',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('8','Agriculture','Animal Health Worker','AGR/Q4804','Practical','','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 16:03:18',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('9','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 16:03:18',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('10','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 16:03:18',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('11','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optionc','2','eng','4','2016-11-21 16:03:18',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('12','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','3','eng','4','2016-11-21 16:03:18',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('13','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiona','2','eng','4','2016-11-21 16:03:18',null);INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
+		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		 VALUES('14','Automotive','Welding and Quality Technician','ASC/Q3109','Theory','Automotive','normal','qstn1','a','b','c','d','optiond','3','eng','4','2016-11-21 16:03:18',null);'
+2016-11-21T16:03:19+00:00 [5652] INFO  : DB 82  C:\wamp64\www\assessment\php\ImportQuestions.php  , Success !  Questions inserted successfully in Database : '14'
+2016-11-21T16:03:19+00:00 [5652] INFO  : DB Get Request with parameter :'qsntsList'
+2016-11-21T16:03:19+00:00 [5652] INFO  : DB 192  C:\wamp64\www\assessment\php\manageQuestions.phpError : ['qstn'] not set
+2016-11-21T16:03:19+00:00 [5652] INFO  : DB 114  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-21T16:03:20+00:00 [5652] INFO  : DB Get Request with parameter :'qsntsList'
+2016-11-21T16:03:20+00:00 [5652] INFO  : DB 192  C:\wamp64\www\assessment\php\manageQuestions.phpError : ['qstn'] not set
+2016-11-21T16:03:20+00:00 [5652] INFO  : DB 114  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-11-21T16:03:49+00:00 [5652] INFO  : DB Get Request with parameter :'qsntsList'
+2016-11-21T16:03:49+00:00 [5652] INFO  : DB 192  C:\wamp64\www\assessment\php\manageQuestions.phpError : ['qstn'] not set
+2016-11-21T16:03:49+00:00 [5652] INFO  : DB 114  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'

@@ -2,31 +2,26 @@
 <html>
 
 <head>
-  <title>BriskMindTest EMS</title>
-
-  <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-
-    <script src="js/jquery.dataTables.min.js"></script>
-    <script src="js/dataTables.responsive.js"></script>
-    <script src="js/dataTables.bootstrap.js"></script>
-    <script src="js/dataTables.responsive.min.js"></script>
-
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css"  href="css/main.css">
+<title>BriskMindTest EMS</title>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.responsive.js"></script>
+<script src="js/dataTables.bootstrap.js"></script>
+<script src="js/dataTables.responsive.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"  href="css/main.css">
 <link rel="stylesheet" type="text/css"  href="css/dataTables.bootstrap.css">
- <link rel="stylesheet" type="text/css"  href="css/dataTables.responsive.css">
-
-   <script src="js/toggle.js"></script>
-   <script src="js/import_subjects.js"></script>
-  <script src="js/progress.js"></script>
-    <script src="js/main.js"></script>
-
-  </head>
+<link rel="stylesheet" type="text/css"  href="css/dataTables.responsive.css">
+<script src="js/toggle.js"></script>
+<script src="js/import_questions.js"></script>
+<script src="js/progress.js"></script>
+<script src="js/main.js"></script>
+</head>
 
 <body>
-  <!-- <script src="js/jquery-3.1.0.js"></script> -->
-  <div class="loader"></div>
+  <div class="loader"></div>  <!-- <script src="js/jquery-3.1.0.js"></script> -->
+
   <div class="row">
     <!-- uncomment code for absolute positioning tweek see top comment in css -->
     <div class="absolute-wrapper"> </div>
@@ -75,7 +70,7 @@
             <!--<div class="col-lg-14 col-md-11 col-sm-2 col-xs-12"> -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                         <h2 class="panel-title pull-left"><strong>Import Data from Excel File</strong></h2>
+                         <h2 class="panel-title pull-left"><strong>Import Questions from Excel File</strong></h2>
                     </div>
                     <div class="panel-body">
                      <form id="uploadXlsForm" class="well" action="#" method="post" enctype="multipart/form-data">
@@ -85,7 +80,7 @@
                                <strong></strong>
                         </div>
                         <!--  <div class="col-lg-12 col-sm-6 col-12"> -->
-                          <h4>Upload Job Role Details From Excel File.</h4>
+                          <h4>Upload Questions From Excel File.</h4>
                           <div class="input-group">
                               <label class="input-group-btn">
                                   <span class="btn btn-primary">
@@ -108,34 +103,29 @@
                         </div>
                         </script>
                         <!-- File Upload Progress Bar End-->
-
-
                        </div>
-                       <button id="uploadFileButton"  type="button" class="btn btn-success disabled" disabled="disabled"><span class="glyphicon glyphicon-upload"></span>      Import Data...</button>
+                       <button id="uploadFileButton"  type="button" class="btn btn-success disabled" disabled="disabled"><span class="glyphicon glyphicon-upload"></span>      Import Questions ...</button>
                        <button id="cancelButton"  type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>  Cancel</button>
                        </form>
-                       <hr>
-
+                    <hr>
 
                     <div class="rowtable">
                         <div class="col-md-14">
-                            <table id="courses" class="table table-striped table-bordered table-hover dt-responsive"  cellspacing="0" width="100%">
+                            <table id="qstnsTable" class="table table-striped table-bordered table-hover dt-responsive"  cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
                                             <th>S.No</th>
                                             <th>SSC</th>
                                             <th>Job Role</th>
-                                            <th>QP Code</th>
-                                            <th>NSQF Level</th>
-                                            <th>Theory</th>
-                                            <th>Practical</th>
-                                            <th>Dur-ESAS</th>
-                                            <th>Dur-DL</th>
-                                            <th>TD</th>
-                                            <th>Curr-Avail.</th>
-                                            <th>Cont-Avail.</th>
-                                            <th>CN-Catgry.</th>
-                                            <th>Classfication</th>
+                                            <th>Category</th>
+                                            <th>Module</th>
+                                            <th>Question</th>
+                                            <th>Option A</th>
+                                            <th>Option B</th>
+                                            <th>Option C</th>
+                                            <th>Option D</th>
+                                            <th>Answer</th>
+                                            <th>type</th>
                                         </tr>
                                     </thead>
                                  </table>

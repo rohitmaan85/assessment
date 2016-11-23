@@ -1,6 +1,6 @@
 <?php
 require_once 'logging_api.php';
-include 'ImportSubjects.php';
+include 'ImportBatch.php';
 
 $data = array();
 
@@ -8,7 +8,7 @@ if(isset($_GET['files']))
 {	
 	$error = false;	
 	$files = array();	
-	$uploaddir = '../uploads/ssc/';
+	$uploaddir = '../uploads/batch/';
 	
 	// 	Remove all files from upload directory.
 	$fileToDelete = glob($uploaddir.'*');	
@@ -29,9 +29,20 @@ if(isset($_GET['files']))
 	
 			// Parse excel file and save in database.			
 			if (file_exists($excelFilePath)) {				
-                // Parse the excel file and save it in database.
-				$obj = new ImportSubjects();
-				if(!$obj->importSubject(5, 220, "fiNAL 212", $excelFilePath)){
+                 // Parse the excel file and save it in database.
+				 $obj = new ImportBatch();
+				// Get start and end row from Configuration File or table
+				 $connConf = parse_ini_file('config.ini.php');
+				 
+				 $sheet_no  		= $connConf['batch_sheet_no'];
+				 $startRow  		= $connConf['batch_start_row'];
+				 $endRow 			= $connConf['batch_end_row'];				 
+				 $no_of_columns		= $connConf['batch_no_of_columns'];
+			 				 
+		  		 log_event( LOG_DATABASE, __LINE__."  ". __FILE__. " , Going to Read Excel from Sheet No".$sheet_no."' , start row : '".$startRow."' , endRow='".$endRow."',' no_of
+		  		 col : '".$no_of_columns."'" );
+	
+ 				if(!$obj->importBatch($excelFilePath,$sheet_no,$startRow,$endRow,$no_of_columns)){
 					log_event( LOG_DATABASE, __LINE__."  ". __FILE__. " Set Error to true to send the response to page." );
 					$error = true;
 				}
@@ -54,7 +65,7 @@ if(isset($_GET['files']))
 
 else
 {	
-	$data = array('success' => 'SSC and Job Roles have been uploaded succesfully.', 'formData' => $_POST);	
+	$data = array('success' => 'Batch Information have been uploaded succesfully.', 'formData' => $_POST);	
 }
 
 echo json_encode($data);
