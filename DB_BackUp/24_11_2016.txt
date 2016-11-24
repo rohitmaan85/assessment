@@ -1,4 +1,4 @@
-CREATE TABLE `batch` (
+ CREATE TABLE `batch` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `batch_id` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `batch_name` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
