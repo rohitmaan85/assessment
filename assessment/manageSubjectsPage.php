@@ -14,8 +14,8 @@
   <link rel="stylesheet" type="text/css"  href="css/dataTables.bootstrap.css">
   <link rel="stylesheet" type="text/css"  href="css/dataTables.responsive.css">
   <script src="js/toggle.js"></script>
-   <script src="js/subjects.js"></script>
-   <script src="js/main.js"></script>
+  <script src="js/manage_subjects.js"></script>
+  <script src="js/main.js"></script>
 </head>
 
 <body>
@@ -61,18 +61,65 @@
           </ul>
         </div>
         <!-- /.navbar-collapse -->
+        </div>
       </nav>
-    </div>
+  </div>
     <!-- Main Content -->
     <div class="container-fluid">
       <div class="side-body">
             <!--<div class="col-lg-14 col-md-11 col-sm-2 col-xs-12"> -->
-                <div class="panel panel-default">
+         <div class="panel panel-default">
                     <div class="panel-heading">
                          <h3 class="panel-title pull-left"><strong>Manage Subjects</strong></h3>
                     </div>
-              <div class="panel-body">
+               <div class="panel-body">
                 <div class="col-xs-14 col-md-14">
+
+                  <div id="categoryModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Enter New Category</h4>
+                        </div>
+                        <div class="modal-body">
+                          <input type="text" id="newCatText" class="form-control"  placeholder="Enter Category">
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                          <button type="button" id="createCat" class="btn btn-success" disabled="true">Create Category</button>
+
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div id="moduleModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Enter New Module</h4>
+                        </div>
+                        <div class="modal-body">
+                          <label for="ssc_label">Category * </label><input type="text" id="selected_category" class="form-control" disabled="true">
+                          <label for="ssc_label">Module * </label><input type="text" id="newModuleText" class="form-control"  placeholder="Enter Module">
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                          <button type="button" id="createMod" class="btn btn-success" disabled="true">Create Module</button>
+
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
                   <form>
                     <div class="form-group">
                       <label for="ssc_label">Select SSC Code *</label>
@@ -85,9 +132,9 @@
                      </div>
 
 
-                     <hr>
+                    <hr>
                     <div class="form-group">
-                      <label for="jobrole_label">Select Job Role/QP Name *</label>
+                      <label for="jobrole_label">Select Job Role / QP Name   or   QPCode  *</label>
                       <div class="dropdown">
                         <button id="jobroledropdownButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Job Role
                         <span class="caret"></span></button>
@@ -95,29 +142,44 @@
                         </ul>
                        </div>
                     </div>
-
                     <hr>
-                     <div class="form-group">
-                      <label for="pwd">QP Code :</label>
-                      <span class="input-group-addon" id="sizing-addon1">QP Code</span>
-                     <strong> <input id="qpcodeText" type="text" class="form-control" aria-describedby="sizing-addon1" ></strong>
-                      <!--
-                      <div class="input-group input-group-sm">
-                        <span class="input-group-addon" id="sizing-addon1">QP Code</span>
-                        <input type="text" class="form-control" aria-describedby="sizing-addon1">
+
+                    <div class="form-group">
+                       <label for="cat" class="col-xs-1">Category</label>
+                       <div class="col-xs-3">
+                           <div class="dropdown">
+                               <button id="catButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               -Select Category-<span class="caret"></span></button>
+                                <ul id="cat-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
+                               </ul>
+                            </div>
                       </div>
-                      -->
-                    </div>
-                   </form>
-                </div>
-              </div>
+                                             <!--<input type="text" id="examDuText" class="form-control" required> -->
+                      <label for="module" class="col-xs-1">Module</label>
+                      <div class="col-xs-3">
+                             <div class="dropdown">
+                                <button id="moduleButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                -Select Module-<span class="caret"></span></button>
+                                 <ul id="module-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
+                                </ul>
+                              </div>
+                      </div>
+                        <div class="col-xs-1"></div>
+                      <div class="col-xs-4">
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#categoryModal">Create Category</button>
+                            <button id="createModuleModalButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#moduleModal" disabled="true">Create Module </button>
+                        </div>
+                      </div>
 
-
-                    <hr>
+                      </div>
+                     </form>
+                   <br>
+                <br>
                 <!-- Drop down End-->
-            <div class="rowtable">
-               <div class="col-md-14">
-                 <table id="qstns" class="table table-striped table-bordered table-hover dt-responsive"  cellspacing="0" width="100%">
+              <div class="col-xs-14">
+                <hr>
+                <table id="qstns" class="table table-striped table-bordered table-hover dt-responsive"  cellspacing="0" width="100%">
                            <thead>
                                  <tr>
                                          <th>S.No</th>
@@ -135,11 +197,10 @@
                                      </tr>
                                  </thead>
                               </table>
-                         </div>
-                     </div>
-                       </div>
-         </div>
-    </div>
-</body>
+                                </div>
+                      </div>
+                  </div>
+                </div>
+          </body>
 
 </html>

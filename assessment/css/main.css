@@ -153,6 +153,14 @@ body {
     width: 100%;
 }
 
+#catButton {
+    width: 100%;
+}
+
+#moduleButton {
+    width: 100%;
+}
+
 .dropdown-menu {
     font-size: 16px;
     left: 50%;

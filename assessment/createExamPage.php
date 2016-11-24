@@ -121,13 +121,12 @@ if(isset($_GET['action'])){
 
             <form id="createExamForm" class="form-horizontal hide" >
               <div id='createExamDiv' class="col-xs-14">
-
-                      <div class="col-xs-14 " >
+                    <div class="col-xs-14 " >
                        <div id="error_msg"  class="alert alert-danger fade" style="position:relative">
                          <button href="#" type="button" class="close">&times;</button>
                              <strong></strong>
                         </div>
-                       </div>
+                    </div>
 
                     <div class="form-group">
                          <label for="examName"  class="col-xs-2">Exam Name</label>

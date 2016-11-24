@@ -77,6 +77,32 @@ function getJobRoleList($ssc)
 		mysqli_free_result($result);
 		echo json_encode(array_unique($jsonArr));
 	}
+	
+	function getJobRoleListWithQPCode($ssc)
+	{
+		$conn = DbConn::getDbConn();
+		$sql="SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import`";
+		if($ssc!=""){
+			$sql.= " where ssc='".$ssc."'";
+		}
+		log_event( LOG_DATABASE,"SQL = '".$sql."'" );
+		$result = mysqli_query($conn,$sql);
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		while ($row)
+		{
+			//$jsonArr[]=$row['job_role']."  ( ".$row['qp_code']." )";
+			$jsonArr[]=$row['job_role'];
+			$jsonArr1[]=$row['qp_code'];
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		}
+		 $final_array = array('job_role' => array_unique($jsonArr),'qp_code' => array_unique($jsonArr1));
+		// Free result set
+		mysqli_free_result($result);
+		//echo json_encode(array_unique($jsonArr));
+		
+		echo json_encode($final_array);
+	}
+	
 
 function getQPCode($job_role)
 	{
@@ -114,6 +140,11 @@ if(isset($_GET['get'])){
 	if($requestParam =="jobrole" && isset($_GET['ssc'])){
 		log_event( LOG_DATABASE, "Get Job Roles List with parameter :'".$_GET['get']."' for SSC :'".$_GET['ssc']."'" );
 		$obj->getJobRoleList($_GET['ssc']);
+	}
+	
+	if($requestParam =="jobroleWithQPCode" && isset($_GET['ssc'])){
+		log_event( LOG_DATABASE, "Get Job Roles List with parameter :'".$_GET['get']."' for SSC :'".$_GET['ssc']."'" );
+		$obj->getJobRoleListWithQPCode($_GET['ssc']);
 	}
 
 	if($requestParam =="qpcode" && isset($_GET['jobrole'])){

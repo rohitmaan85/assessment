@@ -1,0 +1,119 @@
+CREATE TABLE `batch` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `batch_id` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `batch_name` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `batch_type` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `no_of_candidates` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `project_cat` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `team` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `date_of_assignment` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `start_date` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `end_date` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `assessment_date` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `job_role` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `center_add` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `center_disct` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `center_poc_cont_name` varchar(512) CHARACTER SET utf8 DEFAULT NULL,
+  `center_poc_cont_phone` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `uploadDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`,`batch_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `exam` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `subid` varchar(30) DEFAULT NULL,
+  `testid` varchar(40) NOT NULL,
+  `testname` varchar(30) NOT NULL,
+  `totalquestions` int(11) DEFAULT NULL,
+  `testdesc` varchar(100) DEFAULT NULL,
+  `duration` int(11) DEFAULT NULL,
+  `attemptedstudents` bigint(20) DEFAULT NULL,
+  `testfrom` varchar(50) NOT NULL,
+  `testto` varchar(50) NOT NULL,
+  `declareResult` varchar(3) NOT NULL,
+  `batchid` varchar(45) DEFAULT NULL,
+  `negativemarking` varchar(3) NOT NULL,
+  `randomqstn` varchar(3) NOT NULL,
+  `raf` varchar(3) NOT NULL,
+  `pp` varchar(3) NOT NULL,
+  `testcode` varchar(40) NOT NULL,
+  `createDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`,`testid`),
+  UNIQUE KEY `testname` (`testname`),
+  KEY `test_fk1` (`subid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `jobroles_excel_import` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `s.no` varchar(45) DEFAULT NULL,
+  `ssc` varchar(512) DEFAULT NULL,
+  `job_role` varchar(512) DEFAULT NULL,
+  `qp_code` varchar(45) DEFAULT NULL,
+  `nsqf_level` varchar(45) DEFAULT NULL,
+  `theory` varchar(45) DEFAULT NULL,
+  `practical` varchar(45) DEFAULT NULL,
+  `add_dur_entr_n_sftskill` varchar(45) DEFAULT NULL,
+  `add_dur_digital_literacy` varchar(45) DEFAULT NULL,
+  `training_duration` varchar(45) DEFAULT NULL,
+  `curriculum_available` varchar(45) DEFAULT NULL,
+  `content_available` varchar(45) DEFAULT NULL,
+  `common_norms_category` varchar(45) DEFAULT NULL,
+  `classfication` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=433 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `question` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `s.no` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ssc` varchar(512) CHARACTER SET utf8 NOT NULL,
+  `job_role` varchar(512) CHARACTER SET utf8 NOT NULL,
+  `qp_code` varchar(100) CHARACTER SET latin1 NOT NULL DEFAULT '0',
+  `category` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
+  `module` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
+  `type` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
+  `question` varchar(500) CHARACTER SET utf8 DEFAULT NULL,
+  `optiona` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `optionb` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `optionc` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `optiond` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `correctanswer` enum('optiona','optionb','optionc','optiond') CHARACTER SET latin1 DEFAULT NULL,
+  `marks` int(11) DEFAULT NULL,
+  `language` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `no_of_options` int(11) DEFAULT '4',
+  `uploadDate` datetime DEFAULT NULL,
+  `createDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `question_category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `subId` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `category` varchar(512) CHARACTER SET utf8 NOT NULL,
+  `module` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `subject` (
+  `subid` int(11) NOT NULL,
+  `subname` varchar(40) CHARACTER SET latin1 DEFAULT NULL,
+  `subdesc` varchar(100) CHARACTER SET latin1 DEFAULT NULL,
+  `tcid` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`subid`),
+  UNIQUE KEY `subname` (`subname`),
+  KEY `subject_fk1` (`tcid`),
+  CONSTRAINT `subject_fk1` FOREIGN KEY (`tcid`) REFERENCES `testconductor` (`tcid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `testconductor` (
+  `tcid` bigint(20) NOT NULL,
+  `tcname` varchar(40) DEFAULT NULL,
+  `tcpassword` varchar(40) DEFAULT NULL,
+  `emailid` varchar(40) DEFAULT NULL,
+  `contactno` varchar(20) DEFAULT NULL,
+  `address` varchar(40) DEFAULT NULL,
+  `city` varchar(40) DEFAULT NULL,
+  `pincode` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`tcid`),
+  UNIQUE KEY `stdname` (`tcname`),
+  UNIQUE KEY `emailid` (`emailid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
