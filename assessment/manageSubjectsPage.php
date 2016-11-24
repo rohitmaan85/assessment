@@ -75,9 +75,26 @@
                <div class="panel-body">
                 <div class="col-xs-14 col-md-14">
 
+
+                  <div id="displayQstnModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          <textarea rows="5" cols="4" id="qstnCompleteVal" class="form-control" disabled="true"></textarea>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+
                   <div id="categoryModal" class="modal fade" role="dialog">
                     <div class="modal-dialog">
-
                       <!-- Modal content-->
                       <div class="modal-content">
                         <div class="modal-header">
@@ -90,10 +107,8 @@
                         <div class="modal-footer">
                           <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                           <button type="button" id="createCat" class="btn btn-success" disabled="true">Create Category</button>
-
                         </div>
                       </div>
-
                     </div>
                   </div>
 
@@ -182,18 +197,19 @@
                 <table id="qstns" class="table table-striped table-bordered table-hover dt-responsive"  cellspacing="0" width="100%">
                            <thead>
                                  <tr>
-                                         <th>S.No</th>
-                                         <th>QstnId</th>
-                                         <th>Subject</th>
-                                         <th>Question</th>
-                                         <th>Option A</th>
-                                         <th>Option B</th>
-                                         <th>Option C</th>
-                                         <th>Option D</th>
-                                         <th>Action</th>
-                                         <th>Correct Opt</th>
-                                         <th>Marks</th>
-                                         <th>Lang</th>
+                                       <th>S.No</th>
+                                       <th>SSC</th>
+                                       <th>Job Role</th>
+                                       <th>Category</th>
+                                       <th>Module</th>
+                                       <th>Question</th>
+                                       <th>Action</th>
+                                       <th>Option A</th>
+                                       <th>Option B</th>
+                                       <th>Option C</th>
+                                       <th>Option D</th>
+                                       <th>Answer</th>
+                                       <th>type</th>
                                      </tr>
                                  </thead>
                               </table>

@@ -69,33 +69,44 @@ class manageQuestions{
 	}
 
 
-	function getQstnList($subjectId)
+	function getQstnList($ssc,$subjectId,$category,$module)
 	{
 		$conn = DbConn::getDbConn();
 		$sql="SELECT * FROM `assessment`.`question`";
-		if($subjectId!="")
-		$sql.= " where qp_code='".htmlspecialchars($subjectId,ENT_QUOTES)."'";
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Question : '".$sql."'" );
+		
+		if($ssc!=""){
+			$sql.= " where ssc='".htmlspecialchars($ssc,ENT_QUOTES)."'";
+		}
+		if($subjectId!=""){
+			$sql.= " and qp_code='".htmlspecialchars($subjectId,ENT_QUOTES)."'";
+		}
+		if($category!=""){
+			$sql.= " and category='".htmlspecialchars($category,ENT_QUOTES)."'";
+		}
+		if($module!=""){
+			$sql.= " and module='".htmlspecialchars($module,ENT_QUOTES)."'";
+		}
+		
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Question List: '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		$i=0;
 		while ($row)
 		{
 			$i++;
-			$jsonArr[0]= $row['id'];
-			$jsonArr[1]=$row['qnid'];
-			$jsonArr[2]=$row['subId'];
-			$jsonArr[3]=$row['question'];
-			$jsonArr[4]=$row['optiona'];
-			$jsonArr[5]=$row['optionb'];
-			$jsonArr[6]=$row['optionc'];
-			$jsonArr[7]=$row['optiond'];
-			$jsonArr[8]="";
-			$jsonArr[9]=$row['correctanswer'];
-			$jsonArr[10]=$row['marks'];
-			$jsonArr[11]=$row['language'];
-			$jsonArr[12]=$row['no_of_options'];
-			//$jsonArr[11]=$jsonArr;
+			$jsonArr[0]= $i;
+			$jsonArr[1]=$row['ssc'];
+			$jsonArr[2]=$row['job_role'];
+			$jsonArr[3]=$row['category'];
+			$jsonArr[4]=$row['module'];
+			$jsonArr[5]=$row['question'];
+			$jsonArr[6]="";
+			$jsonArr[7]=$row['optiona'];
+			$jsonArr[8]=$row['optionb'];
+			$jsonArr[9]=$row['optionc'];
+			$jsonArr[10]=$row['optiond'];
+			$jsonArr[11]=$row['correctanswer'];
+			$jsonArr[12]=$row['type'];
 			$jsonArr1[] =$jsonArr;
 			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		}
@@ -183,11 +194,26 @@ if(isset($_GET['get'])){
 	//$obj->getQstnList("");
 
 	if($requestParam == "questions"){
+		$ssc="";
 		$subjectId="";
+		$category="";
+		$module="";
+		
+		if(isset($_GET['ssc']))
+			$ssc = $_GET['ssc'];
+			
 		if(isset($_GET['subId']))
-		$subjectId = $_GET['subId'];
-		log_event( LOG_DATABASE, "Get Questions List for subject  : '".$_GET['get']."'" );
-		$obj->getQstnList($subjectId);
+			$subjectId = $_GET['subId'];
+			
+		if(isset($_GET['category']))
+			$category = $_GET['category'];
+			
+		if(isset($_GET['module']))
+			$module = $_GET['module'];
+			
+		log_event( LOG_DATABASE, "Get Questions List for ssc :".$ssc."' and subject  : '".$subjectId."' 
+		and category :'".$category."' and module : '".$module."'" );
+		$obj->getQstnList($ssc,$subjectId,$category,$module);
 	}else if($requestParam == "qsntsList"){
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Get Questions List for import Page" );
 		$obj->getQstnListForImportPage();
