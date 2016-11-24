@@ -124,6 +124,14 @@ body {
     margin-bottom: 0;
 }
 
+
+ul.dt-button-collection.dropdown-menu{
+width: 10%;
+top: 486px;
+margin-left: 56px
+}
+
+
 .dropdown-menu {
     width: 100%;
 }

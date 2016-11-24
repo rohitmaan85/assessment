@@ -13,9 +13,16 @@ $(document).ready(function() {
     });
 
     function showQuestions(sscValue,subId,category,module) {
-         quesstionsTable = $('#qstns').DataTable({
-          "maxAutoWidth " : 500,
-          "ajax": {
+           quesstionsTable = $('#qstns').DataTable({
+
+           // serverSide: true,
+           initComplete : function () {
+            quesstionsTable.buttons().container()
+                              .appendTo( '#qstns_wrapper .col-sm-6:eq(0)' );
+          },
+
+           buttons: [ 'copy', 'excel', 'pdf', 'colvis' ],
+           "ajax": {
                 'url': '/assessment/php/manageQuestions.php',
                 'data': {
                     get: 'questions',
@@ -36,11 +43,7 @@ $(document).ready(function() {
             },
             /* "scrollY": "200px",
             "paging": false, */
-            'columnDefs': [{
-                    "targets": 1,
-                    "bVisible": false,
-                    "searchable": false
-                }, {
+            'columnDefs': [ {
                     "targets": 6,
                     "data": null,
                     "defaultContent": "<button id=\"openQuestion\"  type=\"button\" class=\"btn btn-info btn-xs\" ><span class=\"glyphicon glyphicon-asterisk\"></span>Edit</button>  <button id=\"uploadFileButton\"  type=\"button\" class=\"btn btn-danger btn-xs\" ><span class=\"glyphicon glyphicon-remove\"></span>Delete</button>"

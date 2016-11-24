@@ -7,12 +7,27 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery.dataTables.min.js"></script>
   <script src="js/dataTables.responsive.js"></script>
-  <script src="js/dataTables.bootstrap.js"></script>
+  <script src="js/dataTables.bootstrap.min.js"></script>
   <script src="js/dataTables.responsive.min.js"></script>
+
+
+  <script src="js/dataTables.buttons.min.js"></script>
+  <script src="js/buttons.bootstrap.min.js"></script>
+  <script src="js/jszip.min.js"></script>
+  <script src="js/pdfmake.min.js"></script>
+  <script src="js/vfs_fonts.js"></script>
+  <script src="js/buttons.html5.min.js"></script>
+  <script src="js/buttons.print.min.js"></script>
+  <script src="js/buttons.colVis.min.js"></script>
+
+
+
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css"  href="css/main.css">
   <link rel="stylesheet" type="text/css"  href="css/dataTables.bootstrap.css">
   <link rel="stylesheet" type="text/css"  href="css/dataTables.responsive.css">
+  <link rel="stylesheet" type="text/css"  href="css/buttons.bootstrap.min.css">
+
   <script src="js/toggle.js"></script>
   <script src="js/manage_subjects.js"></script>
   <script src="js/main.js"></script>
