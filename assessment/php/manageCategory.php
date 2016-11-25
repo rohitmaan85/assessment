@@ -2,10 +2,12 @@
 
 require_once 'DbConn.php';
 require_once 'logging_api.php';
+require_once 'manageQuestions.php';
+
 
 class manageCategory{
 
-	
+
 	function buildInsertSql($qpCode,$category,$module){
 		$row_value= "'".htmlspecialchars($qpCode,ENT_QUOTES)."','".htmlspecialchars($category,ENT_QUOTES).
 		"','".htmlspecialchars($module,ENT_QUOTES)."','active'";
@@ -16,7 +18,7 @@ class manageCategory{
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to insert cateogory and module : '".$sql."'" );
 		$this->insertSQL .=$sql;
 	}
-	
+
 	function addCategory()
 	{
 		$conn = DbConn::getDbConn();
@@ -29,7 +31,7 @@ class manageCategory{
 		}
 	}
 
-	
+
 	function getCategoryList($subjectId)
 	{
 		$conn = DbConn::getDbConn();
@@ -52,13 +54,13 @@ class manageCategory{
 		// print json Data.
 		echo json_encode(array_unique($jsonArr));
 	}
-	
+
 	function getModuleList($subjectId,$category)
 	{
 		$conn = DbConn::getDbConn();
 		$sql="SELECT module FROM `assessment`.`question_category`";
 		if($subjectId!="")
-			$sql.= " where subId='".htmlspecialchars($subjectId,ENT_QUOTES)."' and category='".htmlspecialchars($category,ENT_QUOTES)."'";
+		$sql.= " where subId='".htmlspecialchars($subjectId,ENT_QUOTES)."' and category='".htmlspecialchars($category,ENT_QUOTES)."'";
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Categories : '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -75,13 +77,14 @@ class manageCategory{
 		// print json Data.
 		echo json_encode($jsonArr);
 	}
-	
+
 	function getModuleListForTestCreation($subjectId,$category)
 	{
 		$conn = DbConn::getDbConn();
+		$manageQstnsObj = new manageQuestions();
 		$sql="SELECT module FROM `assessment`.`question_category` where module!=''";
 		if($subjectId!="")
-			$sql.= " and subId='".htmlspecialchars($subjectId,ENT_QUOTES)."' and category='".htmlspecialchars($category,ENT_QUOTES)."'";
+		$sql.= " and subId='".htmlspecialchars($subjectId,ENT_QUOTES)."' and category='".htmlspecialchars($category,ENT_QUOTES)."'";
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Categories : '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -89,49 +92,53 @@ class manageCategory{
 		while ($row)
 		{
 			$i++;
-			$jsonArr[]= $row['module'];
+			$jsonArr["moduleName"]= $row['module'];
+			$jsonArr["noOfQstns"] = $manageQstnsObj->getQuestionCount($subjectId,$category,$row['module']);
+			$jsonArrFinal[]=$jsonArr;
 			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		}
-		return $jsonArr;
+		return $jsonArrFinal;
 	}
-	
+
 	function getModuleCategoryForTestCreation($subjectId)
 	{
 		$conn = DbConn::getDbConn();
+		$manageQstnsObj = new manageQuestions();
 		$sql="SELECT distinct(category) FROM `assessment`.`question_category`";
 		if($subjectId!="")
-			$sql.= " where subId='".htmlspecialchars($subjectId,ENT_QUOTES)."' and status='active'";
+		$sql.= " where subId='".htmlspecialchars($subjectId,ENT_QUOTES)."' and status='active'";
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Categories  and Modules : '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		$i=0;
 		//$categoryArray =
 		while ($row)
-		{	
-			$category=$row['category'];
-			// Get all modules			
-			$moduleArray = $this->getModuleListForTestCreation($subjectId,$category);
-			$catModArray["category"] = $category;
+		{
+			$catModArray["category"] = $row['category'];
+			// Get all Modules
+			$moduleArray = $this->getModuleListForTestCreation($subjectId,$row['category']);
 			$catModArray["modules"] = $moduleArray;
+			$catModArray["noOfQstnsInCategory"] = $manageQstnsObj->getQuestionCount($subjectId,$row['category'],"");
+		
 			$jsonArr[]=$catModArray;
 			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		}
 		$final_array = array('data' => $jsonArr);
 		// Free result set
 		mysqli_free_result($result);
-    	//$final_array = array('category' => array_unique($final_array));
+		//$final_array = array('category' => array_unique($final_array));
 		// print json Data.
 		echo json_encode($final_array);
 	}
-	
-	
-	
-	
+
+
+
+
 	function displayModulesRows(){
 		$conn = DbConn::getDbConn();
 		$sql="SELECT module FROM `assessment`.`question_category`";
 		if($subjectId!="")
-			$sql.= " where subId='".htmlspecialchars($subjectId,ENT_QUOTES)."' and category='".htmlspecialchars($category,ENT_QUOTES)."'";
+		$sql.= " where subId='".htmlspecialchars($subjectId,ENT_QUOTES)."' and category='".htmlspecialchars($category,ENT_QUOTES)."'";
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Categories : '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -146,11 +153,11 @@ class manageCategory{
 		// Free result set
 		mysqli_free_result($result);
 		// print json Data.
-		echo json_encode($jsonArr);		
+		echo json_encode($jsonArr);
 	}
-	
-	
-	
+
+
+
 	function updateQuestion()
 	{
 		$conn = DbConn::getDbConn();
@@ -258,7 +265,7 @@ class manageCategory{
 // Handle Requests from UI
 $obj = new manageCategory();
 
-//$obj->getModuleCategoryForTestCreation("AGR/Q4904");
+//$obj->getModuleCategoryForTestCreation("AGR/Q4804");
 
 if(isset($_GET['get'])){
 	$requestParam = $_GET['get'];
@@ -277,15 +284,15 @@ if(isset($_GET['get'])){
 			$subjectId = $_GET['subId'];
 			log_event( LOG_DATABASE, "Get Module List for subject : '".$_GET['subId']."' and category '".$_GET['category']."'" );
 			$obj->getModuleList($subjectId,$_GET['category']);
-	  }		
+		}
 	} else if ($requestParam == "catNModules"){
 		if(isset($_GET['subId'])){
 			$subjectId = $_GET['subId'];
 			log_event( LOG_DATABASE, "Get Category and Module List for subject : '".$_GET['subId']."' and category '".$_GET['category']."'" );
 			$obj->getModuleCategoryForTestCreation($subjectId);
-	  }	
+		}
 	}
-	
+
 	else{
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."Error : Invalid Request" );
 		$data =  array('error' => "Error :  Invalid Request parameter.") ;
@@ -293,73 +300,73 @@ if(isset($_GET['get'])){
 	}
 }
 else if($_GET['action']=="create"){
-		log_event( LOG_DATABASE, "Get Request to create category or module." );
-		if(isset($_GET['subId']) && isset($_GET['category']) &&  $_GET['subId']!="" && $_GET['category']!="" ){
-			$subId = $_GET['subId'];
-			if(isset($_GET['module'])){
-				log_event( LOG_DATABASE, "Get Request to create Module." );
-				$obj->buildInsertSql($subId, $_GET['category'],$_GET['module']);
-				if(!$obj->addCategory())
-				{
-					$data =  array('message' => 'Error while inserting Module in DB.') ;
-					log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Error while inserting Module in DB.".json_encode($data) );
-				} else {
-					$data =  array('message' => 'Module Created Successfully.') ;
-					log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Module created successfully." );
-				}
-					
-			}else{
-				log_event( LOG_DATABASE, "Get Request to create Category." );			
-				$obj->buildInsertSql($subId, $_GET['category'],"");
-				if(!$obj->addCategory())
-				{
-					$data =  array('message' => 'Error while inserting Category in DB.') ;
-					log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Error while inserting Category in DB.".json_encode($data) );
-				} else {
-					$data =  array('message' => 'Category Created Successfully.') ;
-					log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Category created successfully." );
-				}
-			}
-			echo json_encode($data);
-		}else{
-			log_event( LOG_DATABASE, "Error : 'category' or 'subid' not set in request.");
-			$data =  array('message' => "Error : 'category' or 'subid' is not set to create Category.") ;
-			echo json_encode($data);
-		}
-	}
-	// Update defect details.
-else if($_GET['action']=="update"){
-		log_event( LOG_DATABASE, " Get Request to update question." );
-		if(isset($_GET['subId']) && isset($_GET['qstnId'])){
-			$id = $_GET['id'];
-			$subId = $_GET['subId'];
-			$qstnId = $_GET['qstnId'];
-			$question = $_GET['qstn'];
-			$optiona = $_GET['opta'];
-			$optionb = $_GET['optb'];
-			$optionc = $_GET['optc'];
-			$optiond = $_GET['optd'];
-			$correctanswer = $_GET['corrans'];
-			$marks = $_GET['mark'];
-			$lang  = $_GET['language'];
-			$noOfOption  = $_GET['noOfOptions'];
-			$obj->buildUpdateSql($id,$qstnId,$subId,$question, $optiona, $optionb, $optionc, $optiond, $correctanswer, $marks,$lang,$noOfOption);
-			if(!$obj->updateQuestion())
+	log_event( LOG_DATABASE, "Get Request to create category or module." );
+	if(isset($_GET['subId']) && isset($_GET['category']) &&  $_GET['subId']!="" && $_GET['category']!="" ){
+		$subId = $_GET['subId'];
+		if(isset($_GET['module'])){
+			log_event( LOG_DATABASE, "Get Request to create Module." );
+			$obj->buildInsertSql($subId, $_GET['category'],$_GET['module']);
+			if(!$obj->addCategory())
 			{
-				$data =  array('error' => 'Error while updating Question in DB.') ;
-				log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Error while inserting Question in DB.".json_encode($data) );
+				$data =  array('message' => 'Error while inserting Module in DB.') ;
+				log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Error while inserting Module in DB.".json_encode($data) );
 			} else {
-				$data =  array('success' => 'Question saved Successfully.') ;
-				log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Question saved successfully." );
+				$data =  array('message' => 'Module Created Successfully.') ;
+				log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Module created successfully." );
 			}
-			echo json_encode($data);
 
 		}else{
-			log_event( LOG_DATABASE, "Error : 'subId' && 'qstnId' are not set to edit Question.");
-			$data =  array('error' => "Error : 'subId' && 'qstnId' are not set to edit Question.") ;
-			echo json_encode($data);
+			log_event( LOG_DATABASE, "Get Request to create Category." );
+			$obj->buildInsertSql($subId, $_GET['category'],"");
+			if(!$obj->addCategory())
+			{
+				$data =  array('message' => 'Error while inserting Category in DB.') ;
+				log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Error while inserting Category in DB.".json_encode($data) );
+			} else {
+				$data =  array('message' => 'Category Created Successfully.') ;
+				log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Category created successfully." );
+			}
 		}
+		echo json_encode($data);
+	}else{
+		log_event( LOG_DATABASE, "Error : 'category' or 'subid' not set in request.");
+		$data =  array('message' => "Error : 'category' or 'subid' is not set to create Category.") ;
+		echo json_encode($data);
 	}
+}
+// Update defect details.
+else if($_GET['action']=="update"){
+	log_event( LOG_DATABASE, " Get Request to update question." );
+	if(isset($_GET['subId']) && isset($_GET['qstnId'])){
+		$id = $_GET['id'];
+		$subId = $_GET['subId'];
+		$qstnId = $_GET['qstnId'];
+		$question = $_GET['qstn'];
+		$optiona = $_GET['opta'];
+		$optionb = $_GET['optb'];
+		$optionc = $_GET['optc'];
+		$optiond = $_GET['optd'];
+		$correctanswer = $_GET['corrans'];
+		$marks = $_GET['mark'];
+		$lang  = $_GET['language'];
+		$noOfOption  = $_GET['noOfOptions'];
+		$obj->buildUpdateSql($id,$qstnId,$subId,$question, $optiona, $optionb, $optionc, $optiond, $correctanswer, $marks,$lang,$noOfOption);
+		if(!$obj->updateQuestion())
+		{
+			$data =  array('error' => 'Error while updating Question in DB.') ;
+			log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Error while inserting Question in DB.".json_encode($data) );
+		} else {
+			$data =  array('success' => 'Question saved Successfully.') ;
+			log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Question saved successfully." );
+		}
+		echo json_encode($data);
+
+	}else{
+		log_event( LOG_DATABASE, "Error : 'subId' && 'qstnId' are not set to edit Question.");
+		$data =  array('error' => "Error : 'subId' && 'qstnId' are not set to edit Question.") ;
+		echo json_encode($data);
+	}
+}
 
 
 ?>

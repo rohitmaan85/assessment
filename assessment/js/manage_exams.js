@@ -16,7 +16,7 @@ $(document).ready(function() {
             url: '/assessment/php/manageCategory.php',
             data: {
                 get: "catNModules",
-                subId: "AGR/Q4904"
+                subId: "AGR/Q4804"
             },
             dataType: 'json', //since you wait for json
             success: function(json) {
@@ -33,19 +33,20 @@ $(document).ready(function() {
                         $.each(option.modules, function(i, module) {
                             moduleRowDiv = "";
                             var categoryDiv = '<div class="form-group"><div class="col-xs-2"><input id="category_' + counter + '" class="form-control" type="text" 	value="' + option.category + '" disabled="true"></div>';
-                            var moduleDiv = '<div class="col-xs-2"><input id="module_' + counter + '" class="form-control" type="text" value="' + module + '" disabled="true"></div>';
-                            var moduleQstnsAvailDiv = ' <label for="qstnsAvailable"  class="col-xs-1">Available Qstns</label><div class="col-xs-1"><input type="text" id="moduleAvailQstns_' + counter + '" class="form-control" disabled="true"></div>';
+                            var moduleDiv = '<div class="col-xs-2"><input id="module_' + counter + '" class="form-control" type="text" value="' + module.moduleName + '" disabled="true"></div>';
+                            var moduleQstnsAvailDiv = ' <label for="qstnsAvailable"  class="col-xs-1">Available Qstns</label><div class="col-xs-1"><input type="text" id="moduleAvailQstns_' + counter + '" class="form-control" disabled="true" value="'+module.noOfQstns+'" ></div>';
                             var moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control"></div>';
                             var moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control"></div>';
                             var moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox"></div></div>';
                             moduleRowDiv = categoryDiv + moduleDiv + moduleQstnsAvailDiv + moduleMarksDiv + moduleRequiredQstnsDiv + moduleAdditionalDiv;
+                            moduleCompleteDiv = moduleCompleteDiv + moduleRowDiv;
                         });
-                        moduleCompleteDiv = moduleCompleteDiv + moduleRowDiv;
+
                     }else{
                       moduleRowDiv = "";
                       var categoryDiv = '<div class="form-group"><div class="col-xs-2"><input id="category_' + counter + '" class="form-control" type="text" 	value="' + option.category + '" disabled="true"></div>';
                       var moduleDiv = '<div class="col-xs-2"><input id="module_' + counter + '" class="form-control" type="text" value="No Module Found" disabled="true"></div>';
-                      var moduleQstnsAvailDiv = ' <label for="qstnsAvailable"  class="col-xs-1">Available Qstns</label><div class="col-xs-1"><input type="text" id="moduleAvailQstns_' + counter + '" class="form-control" disabled="true"></div>';
+                      var moduleQstnsAvailDiv = ' <label for="qstnsAvailable"  class="col-xs-1">Available Qstns</label><div class="col-xs-1"><input type="text" id="moduleAvailQstns_' + counter + '" class="form-control" disabled="true" value="'+option.noOfQstnsInCategory+'"></div>';
                       var moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control"></div>';
                       var moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control"></div>';
                       var moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox"></div></div>';

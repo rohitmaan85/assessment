@@ -69,11 +69,43 @@ class manageQuestions{
 	}
 
 
+	function getQuestionCount($subjectId,$category,$module){
+		try{
+			$conn = DbConn::getDbConn();
+			$sql="SELECT * FROM `assessment`.`question` where";
+
+			if($subjectId!=""){
+				$sql.= " qp_code='".htmlspecialchars($subjectId,ENT_QUOTES)."'";
+			}
+			if($category!=""){
+				$sql.= " and category='".htmlspecialchars($category,ENT_QUOTES)."'";
+			}
+			if($module!=""){
+				$sql.= " and module='".htmlspecialchars($module,ENT_QUOTES)."'";
+			}
+			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Question Count : '".$sql."'" );
+			$result = mysqli_query($conn,$sql);
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+			$i=0;
+			while ($row)
+			{
+				$i++;
+				$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+			}
+			mysqli_free_result($result);
+			return $i;
+		}
+		catch(Exception $e) {
+			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Exception while getting Question Count : '".$sql."'" );
+			return 0;
+		}
+	}
+
 	function getQstnList($ssc,$subjectId,$category,$module)
 	{
 		$conn = DbConn::getDbConn();
 		$sql="SELECT * FROM `assessment`.`question`";
-		
+
 		if($ssc!=""){
 			$sql.= " where ssc='".htmlspecialchars($ssc,ENT_QUOTES)."'";
 		}
@@ -86,7 +118,7 @@ class manageQuestions{
 		if($module!=""){
 			$sql.= " and module='".htmlspecialchars($module,ENT_QUOTES)."'";
 		}
-		
+
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Question List: '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -198,20 +230,20 @@ if(isset($_GET['get'])){
 		$subjectId="";
 		$category="";
 		$module="";
-		
+
 		if(isset($_GET['ssc']))
-			$ssc = $_GET['ssc'];
+		$ssc = $_GET['ssc'];
 			
 		if(isset($_GET['subId']))
-			$subjectId = $_GET['subId'];
+		$subjectId = $_GET['subId'];
 			
 		if(isset($_GET['category']))
-			$category = $_GET['category'];
+		$category = $_GET['category'];
 			
 		if(isset($_GET['module']))
-			$module = $_GET['module'];
+		$module = $_GET['module'];
 			
-		log_event( LOG_DATABASE, "Get Questions List for ssc :".$ssc."' and subject  : '".$subjectId."' 
+		log_event( LOG_DATABASE, "Get Questions List for ssc :".$ssc."' and subject  : '".$subjectId."'
 		and category :'".$category."' and module : '".$module."'" );
 		$obj->getQstnList($ssc,$subjectId,$category,$module);
 	}else if($requestParam == "qsntsList"){
@@ -220,8 +252,8 @@ if(isset($_GET['get'])){
 
 	}else{
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."Error : Invalid Request" );
-		$data =  array('error' => "Error :  Invalid Request parameter.") ;
-		echo json_encode($data);
+		//$data =  array('error' => "Error :  Invalid Request parameter.") ;
+		//echo json_encode($data);
 	}
 }
 
