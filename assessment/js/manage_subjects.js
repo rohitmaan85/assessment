@@ -130,8 +130,6 @@ $(document).ready(function() {
         });
     }
 
-
-
     $("#sscdropdownButton").click(function() {
         $.ajax({
             url: '/assessment/php/getSubjectDetails.php',

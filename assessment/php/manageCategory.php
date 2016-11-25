@@ -8,10 +8,10 @@ class manageCategory{
 	
 	function buildInsertSql($qpCode,$category,$module){
 		$row_value= "'".htmlspecialchars($qpCode,ENT_QUOTES)."','".htmlspecialchars($category,ENT_QUOTES).
-		"','".htmlspecialchars($module,ENT_QUOTES)."'";
+		"','".htmlspecialchars($module,ENT_QUOTES)."','active'";
 
 		$sql = "INSERT INTO `assessment`.`question_category`
-				   (`subId`,`category`,`module`)
+				   (`subId`,`category`,`module`,`status`)
 					 VALUES(".$row_value.");";
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to insert cateogory and module : '".$sql."'" );
 		$this->insertSQL .=$sql;
@@ -75,6 +75,81 @@ class manageCategory{
 		// print json Data.
 		echo json_encode($jsonArr);
 	}
+	
+	function getModuleListForTestCreation($subjectId,$category)
+	{
+		$conn = DbConn::getDbConn();
+		$sql="SELECT module FROM `assessment`.`question_category` where module!=''";
+		if($subjectId!="")
+			$sql.= " and subId='".htmlspecialchars($subjectId,ENT_QUOTES)."' and category='".htmlspecialchars($category,ENT_QUOTES)."'";
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Categories : '".$sql."'" );
+		$result = mysqli_query($conn,$sql);
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$i=0;
+		while ($row)
+		{
+			$i++;
+			$jsonArr[]= $row['module'];
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		}
+		return $jsonArr;
+	}
+	
+	function getModuleCategoryForTestCreation($subjectId)
+	{
+		$conn = DbConn::getDbConn();
+		$sql="SELECT distinct(category) FROM `assessment`.`question_category`";
+		if($subjectId!="")
+			$sql.= " where subId='".htmlspecialchars($subjectId,ENT_QUOTES)."' and status='active'";
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Categories  and Modules : '".$sql."'" );
+		$result = mysqli_query($conn,$sql);
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$i=0;
+		//$categoryArray =
+		while ($row)
+		{	
+			$category=$row['category'];
+			// Get all modules			
+			$moduleArray = $this->getModuleListForTestCreation($subjectId,$category);
+			$catModArray["category"] = $category;
+			$catModArray["modules"] = $moduleArray;
+			$jsonArr[]=$catModArray;
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		}
+		$final_array = array('data' => $jsonArr);
+		// Free result set
+		mysqli_free_result($result);
+    	//$final_array = array('category' => array_unique($final_array));
+		// print json Data.
+		echo json_encode($final_array);
+	}
+	
+	
+	
+	
+	function displayModulesRows(){
+		$conn = DbConn::getDbConn();
+		$sql="SELECT module FROM `assessment`.`question_category`";
+		if($subjectId!="")
+			$sql.= " where subId='".htmlspecialchars($subjectId,ENT_QUOTES)."' and category='".htmlspecialchars($category,ENT_QUOTES)."'";
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Categories : '".$sql."'" );
+		$result = mysqli_query($conn,$sql);
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$i=0;
+		while ($row)
+		{
+			$i++;
+			$jsonArr[]= $row['module'];
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		}
+		$final_array = array('data' => $jsonArr);
+		// Free result set
+		mysqli_free_result($result);
+		// print json Data.
+		echo json_encode($jsonArr);		
+	}
+	
+	
 	
 	function updateQuestion()
 	{
@@ -182,9 +257,12 @@ class manageCategory{
 
 // Handle Requests from UI
 $obj = new manageCategory();
+
+//$obj->getModuleCategoryForTestCreation("AGR/Q4904");
+
 if(isset($_GET['get'])){
 	$requestParam = $_GET['get'];
-	log_event( LOG_DATABASE, "Get Request with parameter :'".$_GET['get']."'" );
+	log_event( LOG_DATABASE, "Get Request with parameter : '".$_GET['get']."'" );
 	//$obj->getQstnList("");
 
 	if($requestParam == "categories"){
@@ -200,7 +278,15 @@ if(isset($_GET['get'])){
 			log_event( LOG_DATABASE, "Get Module List for subject : '".$_GET['subId']."' and category '".$_GET['category']."'" );
 			$obj->getModuleList($subjectId,$_GET['category']);
 	  }		
-	}else{
+	} else if ($requestParam == "catNModules"){
+		if(isset($_GET['subId'])){
+			$subjectId = $_GET['subId'];
+			log_event( LOG_DATABASE, "Get Category and Module List for subject : '".$_GET['subId']."' and category '".$_GET['category']."'" );
+			$obj->getModuleCategoryForTestCreation($subjectId);
+	  }	
+	}
+	
+	else{
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."Error : Invalid Request" );
 		$data =  array('error' => "Error :  Invalid Request parameter.") ;
 		echo json_encode($data);
