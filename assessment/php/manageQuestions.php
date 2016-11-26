@@ -251,7 +251,7 @@ if(isset($_GET['get'])){
 		$obj->getQstnListForImportPage();
 
 	}else{
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."Error : Invalid Request" );
+		//log_event( LOG_DATABASE, __LINE__."  ". __FILE__."Error : Invalid Request" );
 		//$data =  array('error' => "Error :  Invalid Request parameter.") ;
 		//echo json_encode($data);
 	}

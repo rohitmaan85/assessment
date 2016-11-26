@@ -53,10 +53,10 @@ class ImportBatch{
 
 	function buildInsertSql($row_value){
 		// Add Upload Date in the end.
-		$row_value.=",'".date("Y-m-d H:i:s", time())."'";	
+		$row_value.=",'".date("Y-m-d H:i:s", time())."','active','".date("Y-m-d H:i:s", time())."'";	
 		$sql = "INSERT INTO `assessment`.`batch`(`batch_id`,`batch_name`,`batch_type`,`no_of_candidates`,`project_cat`,`team`,
 				`date_of_assignment`,`start_date`,`end_date`,`assessment_date`,`job_role`,`center_add`,`center_disct`,`center_poc_cont_name`,
-				`center_poc_cont_phone`,`uploadDate`) VALUES(".$row_value.");";		
+				`center_poc_cont_phone`,`uploadDate`,`status`,`last_modified_on`) VALUES(".$row_value.");";		
 			$this->insertSQL .=$sql;
 		}
 

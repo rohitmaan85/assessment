@@ -149,32 +149,36 @@
 
                     </div>
                   </div>
+                  <div class="form-group">
+                    <label for="ssc_label" class="col-xs-1">SSC *</label>
+                      <div class="col-xs-4">
+                        <div class="dropdown">
+                          <button id="sscdropdownButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select    SSC
+                            <span class="caret"></span></button>
+                            <ul id="ssc-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
+                            </ul>
+                          </div>
+                      </div>
 
-                  <form>
-                    <div class="form-group">
-                      <label for="ssc_label">Select SSC Code *</label>
-                      <div class="dropdown">
-                        <button id="sscdropdownButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select    SSC
-                        <span class="caret"></span></button>
-                         <ul id="ssc-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
-                        </ul>
-                       </div>
+
+
+                    <label for="jobrole_label" class="col-xs-1">Job Role*</label>
+                    <div class="col-xs-6">
+                          <div class="dropdown">
+                            <button id="jobroledropdownButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Job Role
+                            <span class="caret"></span></button>
+                             <ul id="jobrole-dropdown-menu" class="dropdown-menu dropdown-menu-center">
+                            </ul>
+                           </div>
                      </div>
+                 </div>
+                 <br>
 
-
-                    <hr>
-                    <div class="form-group">
-                      <label for="jobrole_label">Select Job Role / QP Name   or   QPCode  *</label>
-                      <div class="dropdown">
-                        <button id="jobroledropdownButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Job Role
-                        <span class="caret"></span></button>
-                         <ul id="jobrole-dropdown-menu" class="dropdown-menu dropdown-menu-center">
-                        </ul>
-                       </div>
-                    </div>
-                    <hr>
-
-                    <div class="form-group">
+                  <form id="manageQstnForm" class="form-horizontal hide">
+                  <div id='createExamDiv' class="col-xs-14">
+                  <hr>
+                  </div>
+                    <div class="form-group" >
                        <label for="cat" class="col-xs-1">Category</label>
                        <div class="col-xs-3">
                            <div class="dropdown">
@@ -204,11 +208,11 @@
 
                       </div>
                      </form>
-                   <br>
-                <br>
+
                 <!-- Drop down End-->
               <div class="col-xs-14">
                 <hr>
+                                <br>
                 <table id="qstns" class="table table-striped table-bordered table-hover dt-responsive"  cellspacing="0" width="100%">
                            <thead>
                                  <tr>

@@ -97,6 +97,26 @@ if(isset($_GET['action'])){
                  <h4 id = "heading" class="form-signin-heading pull-left"><strong>Create New Exam</strong></h4>
                  </div>
                <div class="panel-body">
+
+                 <div id="alertModal" class="modal fade" role="dialog">
+                   <div class="modal-dialog">
+                     <!-- Modal content-->
+                     <div class="modal-content">
+                       <div class="modal-header">
+                         <button type="button" class="close" data-dismiss="modal">&times;</button>
+                         <h4 class="modal-title">Mandatory Fields Missing !!</h4>
+                       </div>
+                       <div class="modal-body">
+                        <strong> <textarea  style="color: red;"  id="alertMessage"  disabled="true"rows="5" cols="4" class="form-control"></textarea>
+                        </strong>
+                         </div>
+                       <div class="modal-footer">
+                         <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+
                  <!--  Start Create Exam <Form-->
                <div class="form-group">
                     <label for="ssc"  class="col-xs-1">SSC*</label>
@@ -119,7 +139,7 @@ if(isset($_GET['action'])){
                           </div>
                  </div>
                  <br>
-            <form id="createExamForm" class="form-horizontal" >
+            <form id="createExamForm" class="form-horizontal hide" >
               <div id='createExamDiv' class="col-xs-14">
                     <div class="col-xs-14 " >
                        <div id="error_msg"  class="alert alert-danger fade" style="position:relative">
@@ -129,14 +149,18 @@ if(isset($_GET['action'])){
                     </div>
 
                     <div class="form-group">
-                         <label for="examName"  class="col-xs-2">Exam Name</label>
+                       <div class="form-group-inline required">
+                         <label for="examName"  class="col-xs-2 control-label">Exam Name</label>
+                       </div>
                          <div class="col-xs-3">
-                           <input type="text" id="examNameText" class="form-control" placeholder="Enter Exam Name" required>
+                           <input type="text" id="examNameText" class="form-control required" placeholder="Enter Exam Name" required="required">
                          </div>
                          <div class="col-xs-2"></div>
-                         <label for="noOfQstns" class="col-xs-2">Number of Questions</label>
+                         <div class="form-group-inline required">
+                           <label for="noOfQstns"  class="col-xs-2 control-label">Number of Questions</label>
+                         </div>
                          <div class="col-xs-3">
-                           <input type="text" id="noOfQstnsText" class="form-control" placeholder="Number of Question" required>
+                           <input type="text" id="noOfQstnsText" class="form-control" placeholder="Number of Question" maxlength="3" required>
                         </div>
                       </div>
 
@@ -147,44 +171,14 @@ if(isset($_GET['action'])){
                       </div>
 
 
-                      <div id='showModuleDiv' class="col-xs-14 hide">
-                        <!--
-                               <div class="col-xs-14">
-                                 <hr>
-                               </div>
-                                <div class="form-group">
-                                   <div class="col-xs-2">
-                                     <input id="category" class="form-control" type="text" value="Theory" disabled="true">
-                                    </div>
-                                    <div class="col-xs-2">
-                                      <input id="module" class="form-control" type="text" value="Agriculture" disabled="true">
-                                    </div>
-                                    <label for="qstnsAvailable"  class="col-xs-1">Available Qstns</label>
-                                    <div class="col-xs-1">
-                                      <input type="text" id="marks" class="form-control" disabled="true">
-                                   </div>
-                                    <label for="marks"  class="col-xs-1">Module Marks</label>
-                                    <div class="col-xs-1">
-                                      <input type="text" id="marks" class="form-control">
-                                   </div>
-                                     <label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label>
-                                     <div class="col-xs-1">
-                                        <input type="text" id="moduleQstns" class="form-control">
-                                    </div>
-                                    <label for="addModule" class="col-xs-1">Additional</label>
-                                    <div class="col-xs-1">
-                                      <input id="showModules-checkbox" type="checkbox">
-                                    </div>
-                              </div>
-                              <div class="col-xs-14">
-                                <hr>
-                              </div>
-                            -->
-                          </div>
+                      <div id='showModuleDiv' class="col-xs-14">
+                      </div>
 
                        <div class="form-group">
-                          <label for="examDur" class="col-xs-2">Exam Duration(Min.)</label>
-                          <div class="col-xs-3">
+                         <div class="form-group-inline required">
+                           <label for="examDur"  class="col-xs-2 control-label">Exam Duration(Min.)</label>
+                         </div>
+                        <div class="col-xs-3">
                               <div class="dropdown">
                                   <button id="examDurButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                   --Select Duration--<span class="caret"></span></button>
@@ -209,8 +203,10 @@ if(isset($_GET['action'])){
                              </div>
                          </div>
                          <div class="form-group">
-                           <label for="examStart" class="col-xs-2">Start Date</label>
-                           <div class="col-xs-3">
+                           <div class="form-group-inline required">
+                             <label for="startDate"  class="col-xs-2 control-label">Start Date</label>
+                           </div>
+                         <div class="col-xs-3">
                              <div class='input-group date' id='startDate'>
                                  <input type='text' class="form-control" />
                                  <span class="input-group-addon">
@@ -220,8 +216,9 @@ if(isset($_GET['action'])){
                             </div>
 
                             <div class="col-xs-2"></div>
-
-                            <label for="examEnd" class="col-xs-2">End Date</label>
+                            <div class="form-group-inline required">
+                              <label for="examEnd"  class="col-xs-2 control-label">End Date</label>
+                            </div>
 
                            <div class="col-xs-3">
                             <div class='input-group date' id='endDate'>
@@ -245,7 +242,9 @@ if(isset($_GET['action'])){
                                  </div>
                               </div>
                                <div class="col-xs-2"></div>
-                             <label  class="col-xs-2" for="batch">Select Batch</label>
+                               <div class="form-group-inline required">
+                                 <label for="batch"  class="col-xs-2 control-label">Select Batch</label>
+                               </div>
                               <div class="col-xs-3">
                                    <select class="form-control" id="selGroupDropdown">
                                     <option>None Selected</option>
@@ -282,9 +281,11 @@ if(isset($_GET['action'])){
                                   </div>
                                 </div>
                                 <div class="form-group">
-                                        <label for="totalMarks"  class="col-xs-2">Total Marks</label>
-                                        <div class="col-xs-3">
-                                          <input type="text" id="totalMarksText" class="form-control" placeholder="Total Marks" required>
+                                  <div class="form-group-inline required">
+                                    <label for="totalMarks"  class="col-xs-2 control-label">Total Marks</label>
+                                  </div>
+                                  <div class="col-xs-3">
+                                          <input type="text" maxlength="4" id="totalMarksText" class="form-control" placeholder="Total Marks" required>
                                         </div>
                                   <div class="col-xs-2"></div>
                                     <label for="pasingPer" class="col-xs-2">Passing Percent</label>
@@ -300,8 +301,11 @@ if(isset($_GET['action'])){
                                   </div>
 
                                 <div class="form-group">
-                                     <label for="enterDesc" class="col-xs-2">Exam Instruction</label>
-                                     <div class="col-xs-9">
+                                  <div class="form-group-inline required">
+                                    <label for="enterDesc"  class="col-xs-2 control-label">Exam Instruction</label>
+                                  </div>
+
+                                     <div class="col-xs-12">
                                        <div id="hindiTextArea" class="textarea.form-control hide">
                                          <script language="javascript">
                                              CreateHindiTextArea("hindiTextQstn");

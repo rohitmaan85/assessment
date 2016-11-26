@@ -52,10 +52,12 @@ class ImportSubjects{
 	}
 
 	function buildInsertSql($row_value){
+		$row_value.=",'".date("Y-m-d H:i:s", time())."','".date("Y-m-d H:i:s", time())."','active'";	
+	
 		$sql = "INSERT INTO `assessment`.`jobroles_excel_import`
 				   (`s.no`,`ssc`,`job_role`,`qp_code`,`nsqf_level`,`theory`,`practical`,`add_dur_entr_n_sftskill`,
 					`add_dur_digital_literacy`,`training_duration`,`curriculum_available`,
-					`content_available`,`common_norms_category`,`classfication`)
+					`content_available`,`common_norms_category`,`classfication`,`upload_date`,`last_modified_on`,`status`)
 					 VALUES(".$row_value.");";		
 		$this->insertSQL .=$sql;
 	}

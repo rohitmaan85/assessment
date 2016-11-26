@@ -1,14 +1,23 @@
 $(document).ready(function() {
+  // Bind Enter Key to 'Create Button'
+  $(document).keypress(function(e){
+    if (e.which == 13){
+        $("#createExamButton").click();
+    }
+  });
 
+
+    var sscValue = "";
     var subId = "";
-    var subjectName = "";
     var qpCode = "";
+    var subjectName = "";
     var examDurationValue = "";
     var attemptCountValue = "";
     var passingPercentValue = "";
+    var counterforRequiredQstns = 0;
 
     //Create Module Section dynamically
-    displayModuleSection();
+    //displayModuleSection();
 
     function displayModuleSection() {
 
@@ -16,7 +25,7 @@ $(document).ready(function() {
             url: '/assessment/php/manageCategory.php',
             data: {
                 get: "catNModules",
-                subId: "AGR/Q4804"
+                subId: subId
             },
             dataType: 'json', //since you wait for json
             success: function(json) {
@@ -26,37 +35,56 @@ $(document).ready(function() {
                 var moduleRowDiv = "";
                 var startDiv = '<div class="col-xs-14"><hr></div>';
                 var endDiv = '<div class="col-xs-14"><hr></div></div>';
-                var counter = 1;
+                var counter = 0;
+                var categoryExist = false;
                 $.each(json.data, function(i, option) {
                     // Iterate Modules if exists
                     if (option.modules !== null) {
                         $.each(option.modules, function(i, module) {
+                            counter++;
+                            counterforRequiredQstns ++;
+                            categoryExist = true;
                             moduleRowDiv = "";
                             var categoryDiv = '<div class="form-group"><div class="col-xs-2"><input id="category_' + counter + '" class="form-control" type="text" 	value="' + option.category + '" disabled="true"></div>';
                             var moduleDiv = '<div class="col-xs-2"><input id="module_' + counter + '" class="form-control" type="text" value="' + module.moduleName + '" disabled="true"></div>';
-                            var moduleQstnsAvailDiv = ' <label for="qstnsAvailable"  class="col-xs-1">Available Qstns</label><div class="col-xs-1"><input type="text" id="moduleAvailQstns_' + counter + '" class="form-control" disabled="true" value="'+module.noOfQstns+'" ></div>';
-                            var moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control"></div>';
-                            var moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control"></div>';
-                            var moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox"></div></div>';
+                            var moduleQstnsAvailDiv = ' <label for="qstnsAvailable"  class="col-xs-1">Available Qstns</label><div class="col-xs-1"><input type="text" id="moduleAvailQstns_' + counter + '" class="form-control" disabled="true" value="' + module.noOfQstns + '" ></div>';
+                            var moduleRequiredQstnsDiv = "";
+                            var moduleAdditionalDiv = "";
+                            var moduleMarksDiv = "";
+                            if (module.noOfQstns > 0) {
+                                moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control"></div>';
+                                moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control"></div>';
+                                moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox"></div></div>';
+                            } else {
+                                moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control" disabled="true"></div>';
+                                moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control" disabled="true"></div>';
+                                moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox" disabled="true"></div></div>';
+                            }
                             moduleRowDiv = categoryDiv + moduleDiv + moduleQstnsAvailDiv + moduleMarksDiv + moduleRequiredQstnsDiv + moduleAdditionalDiv;
                             moduleCompleteDiv = moduleCompleteDiv + moduleRowDiv;
                         });
-
-                    }else{
-                      moduleRowDiv = "";
-                      var categoryDiv = '<div class="form-group"><div class="col-xs-2"><input id="category_' + counter + '" class="form-control" type="text" 	value="' + option.category + '" disabled="true"></div>';
-                      var moduleDiv = '<div class="col-xs-2"><input id="module_' + counter + '" class="form-control" type="text" value="No Module Found" disabled="true"></div>';
-                      var moduleQstnsAvailDiv = ' <label for="qstnsAvailable"  class="col-xs-1">Available Qstns</label><div class="col-xs-1"><input type="text" id="moduleAvailQstns_' + counter + '" class="form-control" disabled="true" value="'+option.noOfQstnsInCategory+'"></div>';
-                      var moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control"></div>';
-                      var moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control"></div>';
-                      var moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox"></div></div>';
-                      moduleRowDiv = categoryDiv + moduleDiv + moduleQstnsAvailDiv + moduleMarksDiv + moduleRequiredQstnsDiv + moduleAdditionalDiv;
-                      moduleCompleteDiv = moduleCompleteDiv + moduleRowDiv;
+                    } else {
+                        counter++;
+                        counterforRequiredQstns ++;
+                        categoryExist = true;
+                        moduleRowDiv = "";
+                        var categoryDiv = '<div class="form-group"><div class="col-xs-2"><input id="category_' + counter + '" class="form-control" type="text" 	value="' + option.category + '" disabled="true"></div>';
+                        var moduleDiv = '<div class="col-xs-2"><input style="color: red;" id="module_' + counter + '" class="form-control" type="text" value="No Module Found" disabled="true"></div>';
+                        var moduleQstnsAvailDiv = ' <label for="qstnsAvailable"  class="col-xs-1">Available Qstns</label><div class="col-xs-1"><input type="text" id="moduleAvailQstns_' + counter + '" class="form-control" disabled="true" value="' + option.noOfQstnsInCategory + '"></div>';
+                        var moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control"></div>';
+                        var moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control"></div>';
+                        var moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox"></div></div>';
+                        moduleRowDiv = categoryDiv + moduleDiv + moduleQstnsAvailDiv + moduleMarksDiv + moduleRequiredQstnsDiv + moduleAdditionalDiv;
+                        moduleCompleteDiv = moduleCompleteDiv + moduleRowDiv;
                     }
-                    counter++;
+
                 });
-                // Displat module Rows
-                $('#showModuleDiv').html(startDiv + moduleCompleteDiv + endDiv);
+                // Display module Rows
+                if (categoryExist)
+                    $('#showModuleDiv').html(startDiv + moduleCompleteDiv + endDiv);
+                else {
+                    $('#showModuleDiv').html('<div class="form-group"><div class="col-xs-14"><input style="color: red;" class="form-control" type="text" value="No Category Found , Please create it first" disabled="true"></div></div>');
+                }
             }
         });
 
@@ -64,7 +92,6 @@ $(document).ready(function() {
 
     $("#showModules-checkbox").change(function() {
         if (this.checked) {
-            //  displayModuleSection();
             $('#showModuleDiv').removeClass('hide');
             //Do stuff
         } else {
@@ -100,10 +127,10 @@ $(document).ready(function() {
         // control.replaceWith(control.val('').clone(true));
     });
     $('#ssctest-dropdown-menu').on('click', 'li a', function() {
-        $('#jobroletest-dropdown-menu').children().remove();
-        $('#jobroledropdownButton').html("-Select JobRole-" + '<span class="caret"></span>');
         sscValue = $(this).text();
         var selText = $(this).text();
+        $('#jobroletest-dropdown-menu').children().remove();
+        $('#jobroledropdownButton').html("-Select JobRole-" + '<span class="caret"></span>');
         $('#sscdropdownButton').html(selText + '<span class="caret"></span>');
         loadJobRoles(selText);
         $('#createExamForm').addClass('hide');
@@ -133,10 +160,41 @@ $(document).ready(function() {
 
     // Click on Jobrole DropDown Item.
     $('#jobroletest-dropdown-menu').on('click', 'li a', function() {
+        subId = $(this).attr('id');
+        displayModuleSection();
         $('#jobroledropdownButton').html($(this).text() + '<span class="caret"></span>');
         $('#createExamForm').removeClass('hide');
+
     });
 
+
+function loadBatchList(){
+  $.ajax({
+      url: '/assessment/php/manageBatch.php',
+      data: {
+          get: "batches",
+          subId: subId
+      },
+      dataType: 'json', //since you wait for json
+      success: function(json) {
+          //now when you received json, render options
+          var counter = 0;
+          $.each(json.job_role, function(i, option) {
+              var rendered_option = '<li><a href="#" id="' + json.qp_code[counter] + '">' + option + '  (' + json.qp_code[counter] + ' )</a></li>';
+              $(rendered_option).appendTo('#jobroletest-dropdown-menu');
+              counter++;
+
+                $.each(selectValues, function(key, value) {
+                   $('#mySelect')
+                       .append($("<option></option>")
+                                  .attr("value",key)
+                                  .text(value));
+                });
+
+          });
+      }
+  });
+}
     // Handle show Modules Part
 
 
@@ -194,54 +252,118 @@ $(document).ready(function() {
 
     function checkMandatoryFields() {
         var allFieldsOk = true;
+        var fieldsValue = "";
         if ($("#examNameText").val() === '') {
-            alert("Please enter Exam Name !");
-            return false;
+            fieldsValue += "* Exam Name \n";
+
+            //  $('#alertMessage').val(fieldsValue);
+            //  $('#alertModal').modal('show');
+            //  alert("Please enter Exam Name !");
+            allFieldsOk = false;
         }
         if ($("#noOfQstnsText").val() === '') {
-            alert("Please enter Number of Questions!");
-            return false;
-        }
-        if ($("#noOfQstnsText").val() === '') {
-            alert("Please enter Number of Questions!");
-            return false;
+            fieldsValue += "* Number of Questions\n";
+            //  alert("Please enter Number of Questions!");
+            allFieldsOk = false;
         }
 
         if ($("#examInstArea").val() === '') {
-            alert("Please enter Exam Instruction!");
-            return false;
+            fieldsValue += "* Exam Instruction\n";
+            //  alert("Please enter Exam Instruction!");
+            allFieldsOk = false;
         }
 
         if (examDurationValue === '') {
-            alert("Please enter Duration time !");
-            return false;
+            fieldsValue += "* Exam Duration\n";
+            //  alert("Please enter Duration time !");
+            allFieldsOk = false;
         }
+        /*
         if (attemptCountValue === '') {
-            alert("Please enter Attempt Count !");
-            return false;
+            fieldsValue += "* Exam Duration";
+            //  alert("Please enter Attempt Count !");
+            allFieldsOk = false;
         }
+        */
 
         var startDate = $("#startDate").find("input").val();
         if (startDate === '') {
-            alert("Please enter Exam Start Date !");
-            return false;
+            fieldsValue += "* Start Date \n";
+            //  alert("Please enter Exam Start Date !");
+            allFieldsOk = false;
         }
 
         var endDate = $("#endDate").find("input").val();
         if (endDate === '') {
-            alert("Please enter Exam End Date !");
-            return false;
+            fieldsValue += "* End Date \n";
+            //    alert("Please enter Exam End Date !");
+            allFieldsOk = false;
         }
         if ($("#selGroupDropdown").val() === 'None Selected') {
-            alert("Please enter Exam Batch Id !");
-            return false;
-        }
-        if (passingPercentValue === '') {
-            alert("Please enter Passing Percent!");
-            return false;
+            fieldsValue += "* Batch Id \n";
+            //  alert("Please enter Exam Batch Id !");
+            allFieldsOk = false;
         }
 
-        return true;
+        if ($("#totalMarksText").val() === '') {
+            fieldsValue += "* Total Marks \n";
+            //  alert("* Total Marks");
+            allFieldsOk = false;
+        }
+
+
+          // $("#examNameText").focus();
+        //moduleMarks_
+        // Check Total Number of Questions :
+        var qstnId = "";
+        var totalModuleQstns = parseInt(0,10);
+        //var row1 = $('#moduleReqQstns_1').val();
+        for (i = 1; i < counterforRequiredQstns; i++) {
+           qstnId = '#moduleReqQstns_'+i ;
+           var value = $(qstnId).val();
+           if(typeof value != "undefined")
+           {
+               if(value!=="" && !isNaN(value))
+                   totalModuleQstns  = totalModuleQstns +  parseInt(value) ;
+                else
+                   totalModuleQstns = totalModuleQstns + parseInt(0) ;
+           }
+       }
+
+
+        if($("#noOfQstnsText").val()!=totalModuleQstns){
+          allFieldsOk = false;
+          fieldsValue += "* Total Number of Questions '"+$("#noOfQstnsText").val()+"' in Test should be Equal to sum of all module Questions '"+totalModuleQstns+"' \n";
+        }
+
+
+        // Check Total Marks :
+        var moduleId = "";
+        var totalModuleMarks = parseInt(0,10);
+        //var row1 = $('#moduleReqQstns_1').val();
+        for (i = 1; i < counterforRequiredQstns; i++) {
+           qstnMarksId = '#moduleMarks_'+i ;
+           var marksValue = $(qstnMarksId).val();
+           if(typeof marksValue != "undefined")
+           {
+               if(marksValue!=="" && !isNaN(marksValue))
+                   totalModuleMarks  = totalModuleMarks +  parseInt(marksValue) ;
+                else
+                   totalModuleMarks = totalModuleMarks + parseInt(0) ;
+           }
+          }
+          if($("#totalMarksText").val()!=totalModuleMarks){
+            allFieldsOk = false;
+            fieldsValue += "* Total Marks '"+$("#totalMarksText").val()+"' in Test should be Equal to sum of all module Marks '"+totalModuleMarks+"' \n";
+          }
+
+
+
+        if (allFieldsOk === false){
+            $('#alertMessage').val(fieldsValue);
+            $('#alertModal').modal('show');
+          }
+        return allFieldsOk;
     }
 
 
@@ -310,7 +432,6 @@ $(document).ready(function() {
 
 
     // load Exams table.
-
     showExams();
 
     function showExams() {

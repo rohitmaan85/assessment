@@ -1,0 +1,180 @@
+2016-11-26T17:20:41+00:00 [7036] INFO  : DB '../uploads/ssc/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-26T17:20:41+00:00 [7036] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadSubjects.php , Excel File '../uploads/ssc/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' has been uploaded successfully.
+2016-11-26T17:20:43+00:00 [7036] INFO  : DB 84  C:\wamp64\www\assessment\php\ImportSubjects.php  ,ERROR #Unknown column 'last_modified_on' in 'field list'
+2016-11-26T17:20:43+00:00 [7036] INFO  : DB 95  C:\wamp64\www\assessment\php\ImportSubjects.php ,  ERROR while inserting data in database.
+2016-11-26T17:20:43+00:00 [7036] INFO  : DB 35  C:\wamp64\www\assessment\php\uploadSubjects.php Set Error to true to send the response to page.
+2016-11-26T17:21:29+00:00 [7036] INFO  : DB '../uploads/ssc/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' File already exists in uploads directory, so remove it succesfully.
+2016-11-26T17:21:29+00:00 [7036] INFO  : DB 28  C:\wamp64\www\assessment\php\uploadSubjects.php , Excel File '../uploads/ssc/Final List - PMKVY-2 Job Roles 23-08-16 ver 2.3.xlsx' has been uploaded successfully.
+2016-11-26T17:21:45+00:00 [7036] INFO  : DB 80  C:\wamp64\www\assessment\php\ImportSubjects.php  , Success !  Records inserted successfully in Database : '216'
+2016-11-26T17:27:43+00:00 [7036] INFO  : DB Get Request with parameter :'questions'
+2016-11-26T17:27:43+00:00 [7036] INFO  : DB Get Questions List for ssc :' and subject  : ''
+		and category :'' and module : ''
+2016-11-26T17:27:43+00:00 [7036] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question`'
+2016-11-26T17:27:44+00:00 [7036] INFO  : DB Get Request with parameter :'ssc'
+2016-11-26T17:27:44+00:00 [7036] INFO  : DB Get SSC List from database.
+2016-11-26T17:27:44+00:00 [7036] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-11-26T17:27:45+00:00 [7036] INFO  : DB Get Request with parameter :'questions'
+2016-11-26T17:27:45+00:00 [7036] INFO  : DB Get Questions List for ssc :Agriculture' and subject  : ''
+		and category :'' and module : ''
+2016-11-26T17:27:45+00:00 [7036] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-11-26T17:27:45+00:00 [7036] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Agriculture'
+2016-11-26T17:27:45+00:00 [7036] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question` where ssc='Agriculture''
+2016-11-26T17:27:45+00:00 [7036] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
+2016-11-26T17:27:48+00:00 [7036] INFO  : DB Get Request with parameter :'categories'
+2016-11-26T17:27:48+00:00 [7036] INFO  : DB 254  C:\wamp64\www\assessment\php\manageQuestions.phpError : Invalid Request
+2016-11-26T17:27:48+00:00 [7036] INFO  : DB Get Request with parameter : 'categories'
+2016-11-26T17:27:48+00:00 [7036] INFO  : DB Get Categories List for subject  : 'AGR/Q4804'
+2016-11-26T17:27:48+00:00 [7036] INFO  : DB 41  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT category FROM `assessment`.`question_category` where subId='AGR/Q4804''
+2016-11-26T17:27:48+00:00 [7036] INFO  : DB Get Request with parameter :'questions'
+2016-11-26T17:27:48+00:00 [7036] INFO  : DB Get Questions List for ssc :Agriculture' and subject  : 'AGR/Q4804'
+		and category :'' and module : ''
+2016-11-26T17:27:48+00:00 [7036] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question` where ssc='Agriculture' and qp_code='AGR/Q4804''
+2016-11-26T17:28:00+00:00 [7036] INFO  : DB  Get Request with action parameter.
+2016-11-26T17:28:00+00:00 [7036] INFO  : DB 264  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-26T17:28:00+00:00 [7036] INFO  : DB 49  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`,`language`,`no_of_options`)
+					 VALUES('33405_','','','','','','','','','','');'
+2016-11-26T17:28:00+00:00 [7036] INFO  : DB 15  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Unknown column 'qnid' in 'field list'
+2016-11-26T17:28:00+00:00 [7036] INFO  : DB 280  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-26T17:28:00+00:00 [7036] INFO  : DB Get Request to create category or module.
+2016-11-26T17:28:00+00:00 [7036] INFO  : DB Get Request to create Category.
+2016-11-26T17:28:00+00:00 [7036] INFO  : DB 18  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to insert cateogory and module : 'INSERT INTO `assessment`.`question_category`
+				   (`subId`,`category`,`module`,`created_on`,`last_modified_on`,`status`)
+					 VALUES('AGR/Q4804','Maths','','2016-11-26 17:28:00','2016-11-26 17:28:00','active');'
+2016-11-26T17:28:00+00:00 [7036] INFO  : DB 26  C:\wamp64\www\assessment\php\manageCategory.php  , Success !  Category inserted successfully in Database : ''
+2016-11-26T17:28:00+00:00 [7036] INFO  : DB 327  C:\wamp64\www\assessment\php\manageCategory.php Category created successfully.
+2016-11-26T17:28:05+00:00 [7036] INFO  : DB  Get Request with action parameter.
+2016-11-26T17:28:05+00:00 [7036] INFO  : DB 264  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-26T17:28:05+00:00 [7036] INFO  : DB 49  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`,`language`,`no_of_options`)
+					 VALUES('44410_','','','','','','','','','','');'
+2016-11-26T17:28:05+00:00 [7036] INFO  : DB 15  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Unknown column 'qnid' in 'field list'
+2016-11-26T17:28:05+00:00 [7036] INFO  : DB 280  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-26T17:28:05+00:00 [7036] INFO  : DB Get Request to create category or module.
+2016-11-26T17:28:05+00:00 [7036] INFO  : DB Get Request to create Category.
+2016-11-26T17:28:05+00:00 [7036] INFO  : DB 18  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to insert cateogory and module : 'INSERT INTO `assessment`.`question_category`
+				   (`subId`,`category`,`module`,`created_on`,`last_modified_on`,`status`)
+					 VALUES('AGR/Q4804','Maths','','2016-11-26 17:28:05','2016-11-26 17:28:05','active');'
+2016-11-26T17:28:05+00:00 [7036] INFO  : DB 26  C:\wamp64\www\assessment\php\manageCategory.php  , Success !  Category inserted successfully in Database : ''
+2016-11-26T17:28:05+00:00 [7036] INFO  : DB 327  C:\wamp64\www\assessment\php\manageCategory.php Category created successfully.
+2016-11-26T17:28:15+00:00 [7036] INFO  : DB  Get Request with action parameter.
+2016-11-26T17:28:15+00:00 [7036] INFO  : DB 264  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-26T17:28:15+00:00 [7036] INFO  : DB 49  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`,`language`,`no_of_options`)
+					 VALUES('22833_','','','','','','','','','','');'
+2016-11-26T17:28:15+00:00 [7036] INFO  : DB 15  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Unknown column 'qnid' in 'field list'
+2016-11-26T17:28:15+00:00 [7036] INFO  : DB 280  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-26T17:28:15+00:00 [7036] INFO  : DB Get Request to create category or module.
+2016-11-26T17:28:15+00:00 [7036] INFO  : DB Get Request to create Category.
+2016-11-26T17:28:15+00:00 [7036] INFO  : DB 18  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to insert cateogory and module : 'INSERT INTO `assessment`.`question_category`
+				   (`subId`,`category`,`module`,`created_on`,`last_modified_on`,`status`)
+					 VALUES('AGR/Q4804','Maths','','2016-11-26 17:28:15','2016-11-26 17:28:15','active');'
+2016-11-26T17:28:15+00:00 [7036] INFO  : DB 26  C:\wamp64\www\assessment\php\manageCategory.php  , Success !  Category inserted successfully in Database : ''
+2016-11-26T17:28:15+00:00 [7036] INFO  : DB 327  C:\wamp64\www\assessment\php\manageCategory.php Category created successfully.
+2016-11-26T17:31:27+00:00 [7036] INFO  : DB Get Request with parameter :'questions'
+2016-11-26T17:31:27+00:00 [7036] INFO  : DB Get Questions List for ssc :' and subject  : ''
+		and category :'' and module : ''
+2016-11-26T17:31:27+00:00 [7036] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question`'
+2016-11-26T17:31:28+00:00 [7036] INFO  : DB Get Request with parameter :'ssc'
+2016-11-26T17:31:28+00:00 [7036] INFO  : DB Get SSC List from database.
+2016-11-26T17:31:28+00:00 [7036] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-11-26T17:31:29+00:00 [7036] INFO  : DB Get Request with parameter :'questions'
+2016-11-26T17:31:29+00:00 [7036] INFO  : DB Get Questions List for ssc :Agriculture' and subject  : ''
+		and category :'' and module : ''
+2016-11-26T17:31:29+00:00 [7036] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question` where ssc='Agriculture''
+2016-11-26T17:31:29+00:00 [7036] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-11-26T17:31:29+00:00 [7036] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Agriculture'
+2016-11-26T17:31:29+00:00 [7036] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
+2016-11-26T17:31:31+00:00 [7036] INFO  : DB Get Request with parameter :'categories'
+2016-11-26T17:31:31+00:00 [7036] INFO  : DB 254  C:\wamp64\www\assessment\php\manageQuestions.phpError : Invalid Request
+2016-11-26T17:31:31+00:00 [7036] INFO  : DB Get Request with parameter : 'categories'
+2016-11-26T17:31:31+00:00 [7036] INFO  : DB Get Categories List for subject  : 'AGR/Q4804'
+2016-11-26T17:31:31+00:00 [7036] INFO  : DB 41  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT category FROM `assessment`.`question_category` where subId='AGR/Q4804''
+2016-11-26T17:31:31+00:00 [7036] INFO  : DB Get Request with parameter :'questions'
+2016-11-26T17:31:31+00:00 [7036] INFO  : DB Get Questions List for ssc :Agriculture' and subject  : 'AGR/Q4804'
+		and category :'' and module : ''
+2016-11-26T17:31:31+00:00 [7036] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question` where ssc='Agriculture' and qp_code='AGR/Q4804''
+2016-11-26T17:31:34+00:00 [7036] INFO  : DB Get Request with parameter :'questions'
+2016-11-26T17:31:34+00:00 [7036] INFO  : DB Get Questions List for ssc :Agriculture' and subject  : 'AGR/Q4804'
+		and category :'Maths' and module : ''
+2016-11-26T17:31:34+00:00 [7036] INFO  : DB Get Request with parameter :'modules'
+2016-11-26T17:31:34+00:00 [7036] INFO  : DB 254  C:\wamp64\www\assessment\php\manageQuestions.phpError : Invalid Request
+2016-11-26T17:31:34+00:00 [7036] INFO  : DB Get Request with parameter : 'modules'
+2016-11-26T17:31:34+00:00 [7036] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question` where ssc='Agriculture' and qp_code='AGR/Q4804' and category='Maths''
+2016-11-26T17:31:34+00:00 [7036] INFO  : DB Get Module List for subject : 'AGR/Q4804' and category 'Maths'
+2016-11-26T17:31:34+00:00 [7036] INFO  : DB 64  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT module FROM `assessment`.`question_category` where subId='AGR/Q4804' and category='Maths''
+2016-11-26T17:31:38+00:00 [7036] INFO  : DB Get Request with parameter :'questions'
+2016-11-26T17:31:38+00:00 [7036] INFO  : DB Get Questions List for ssc :Agriculture' and subject  : 'AGR/Q4804'
+		and category :'Theory' and module : ''
+2016-11-26T17:31:38+00:00 [7036] INFO  : DB Get Request with parameter :'modules'
+2016-11-26T17:31:38+00:00 [7036] INFO  : DB 254  C:\wamp64\www\assessment\php\manageQuestions.phpError : Invalid Request
+2016-11-26T17:31:38+00:00 [7036] INFO  : DB Get Request with parameter : 'modules'
+2016-11-26T17:31:38+00:00 [7036] INFO  : DB Get Module List for subject : 'AGR/Q4804' and category 'Theory'
+2016-11-26T17:31:38+00:00 [7036] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question` where ssc='Agriculture' and qp_code='AGR/Q4804' and category='Theory''
+2016-11-26T17:31:38+00:00 [7036] INFO  : DB 64  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT module FROM `assessment`.`question_category` where subId='AGR/Q4804' and category='Theory''
+2016-11-26T17:31:54+00:00 [7036] INFO  : DB  Get Request with action parameter.
+2016-11-26T17:31:54+00:00 [7036] INFO  : DB 264  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.
+2016-11-26T17:31:54+00:00 [7036] INFO  : DB 49  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
+					`correctanswer`,`marks`,`language`,`no_of_options`)
+					 VALUES('16367_','','','','','','','','','','');'
+2016-11-26T17:31:54+00:00 [7036] INFO  : DB 15  C:\wamp64\www\assessment\php\manageQuestions.php  ,ERROR #Unknown column 'qnid' in 'field list'
+2016-11-26T17:31:54+00:00 [7036] INFO  : DB 280  C:\wamp64\www\assessment\php\manageQuestions.php Error while inserting Question in DB.{"error":"Error while inserting Question in DB."}
+2016-11-26T17:31:57+00:00 [7036] INFO  : DB Get Request with parameter :'categories'
+2016-11-26T17:31:57+00:00 [7036] INFO  : DB 254  C:\wamp64\www\assessment\php\manageQuestions.phpError : Invalid Request
+2016-11-26T17:31:57+00:00 [7036] INFO  : DB Get Request with parameter : 'categories'
+2016-11-26T17:31:57+00:00 [7036] INFO  : DB Get Categories List for subject  : 'AGR/Q4804'
+2016-11-26T17:31:57+00:00 [7036] INFO  : DB 41  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT category FROM `assessment`.`question_category` where subId='AGR/Q4804''
+2016-11-26T17:33:17+00:00 [7036] INFO  : DB Get Request with parameter :'questions'
+2016-11-26T17:33:17+00:00 [7036] INFO  : DB Get Questions List for ssc :' and subject  : ''
+		and category :'' and module : ''
+2016-11-26T17:33:17+00:00 [7036] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question`'
+2016-11-26T17:33:18+00:00 [7036] INFO  : DB Get Request with parameter :'ssc'
+2016-11-26T17:33:18+00:00 [7036] INFO  : DB Get SSC List from database.
+2016-11-26T17:33:18+00:00 [7036] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-11-26T17:33:19+00:00 [7036] INFO  : DB Get Request with parameter :'questions'
+2016-11-26T17:33:19+00:00 [7036] INFO  : DB Get Questions List for ssc :Agriculture' and subject  : ''
+		and category :'' and module : ''
+2016-11-26T17:33:19+00:00 [7036] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question` where ssc='Agriculture''
+2016-11-26T17:33:19+00:00 [7036] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-11-26T17:33:19+00:00 [7036] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Agriculture'
+2016-11-26T17:33:19+00:00 [7036] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
+2016-11-26T17:33:21+00:00 [7036] INFO  : DB Get Request with parameter :'categories'
+2016-11-26T17:33:21+00:00 [7036] INFO  : DB Get Request with parameter : 'categories'
+2016-11-26T17:33:21+00:00 [7036] INFO  : DB Get Categories List for subject  : 'AGR/Q4804'
+2016-11-26T17:33:21+00:00 [7036] INFO  : DB 41  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT category FROM `assessment`.`question_category` where subId='AGR/Q4804''
+2016-11-26T17:33:21+00:00 [7036] INFO  : DB Get Request with parameter :'questions'
+2016-11-26T17:33:21+00:00 [7036] INFO  : DB Get Questions List for ssc :Agriculture' and subject  : 'AGR/Q4804'
+		and category :'' and module : ''
+2016-11-26T17:33:21+00:00 [7036] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question` where ssc='Agriculture' and qp_code='AGR/Q4804''
+2016-11-26T17:33:50+00:00 [7036] INFO  : DB  Get Request with action parameter.
+2016-11-26T17:33:50+00:00 [7036] INFO  : DB Get Request to create category or module.
+2016-11-26T17:33:50+00:00 [7036] INFO  : DB Get Request to create Category.
+2016-11-26T17:33:50+00:00 [7036] INFO  : DB 18  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to insert cateogory and module : 'INSERT INTO `assessment`.`question_category`
+				   (`subId`,`category`,`module`,`created_on`,`last_modified_on`,`status`)
+					 VALUES('AGR/Q4804','test1','','2016-11-26 17:33:50','2016-11-26 17:33:50','active');'
+2016-11-26T17:33:50+00:00 [7036] INFO  : DB 26  C:\wamp64\www\assessment\php\manageCategory.php  , Success !  Category inserted successfully in Database : ''
+2016-11-26T17:33:50+00:00 [7036] INFO  : DB 327  C:\wamp64\www\assessment\php\manageCategory.php Category created successfully.
+2016-11-26T17:33:52+00:00 [7036] INFO  : DB Get Request with parameter :'categories'
+2016-11-26T17:33:52+00:00 [7036] INFO  : DB Get Request with parameter : 'categories'
+2016-11-26T17:33:52+00:00 [7036] INFO  : DB Get Categories List for subject  : 'AGR/Q4804'
+2016-11-26T17:33:52+00:00 [7036] INFO  : DB 41  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT category FROM `assessment`.`question_category` where subId='AGR/Q4804''
+2016-11-26T17:34:03+00:00 [7036] INFO  : DB Get Request with parameter :'questions'
+2016-11-26T17:34:03+00:00 [7036] INFO  : DB Get Questions List for ssc :Agriculture' and subject  : 'AGR/Q4804'
+		and category :'Theory' and module : ''
+2016-11-26T17:34:03+00:00 [7036] INFO  : DB Get Request with parameter :'modules'
+2016-11-26T17:34:03+00:00 [7036] INFO  : DB Get Request with parameter : 'modules'
+2016-11-26T17:34:03+00:00 [7036] INFO  : DB Get Module List for subject : 'AGR/Q4804' and category 'Theory'
+2016-11-26T17:34:03+00:00 [7036] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question` where ssc='Agriculture' and qp_code='AGR/Q4804' and category='Theory''
+2016-11-26T17:34:03+00:00 [7036] INFO  : DB 64  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT module FROM `assessment`.`question_category` where subId='AGR/Q4804' and category='Theory''
+2016-11-26T17:34:07+00:00 [7036] INFO  : DB Get Request with parameter :'modules'
+2016-11-26T17:34:07+00:00 [7036] INFO  : DB Get Request with parameter : 'modules'
+2016-11-26T17:34:07+00:00 [7036] INFO  : DB Get Module List for subject : 'AGR/Q4804' and category 'Maths'
+2016-11-26T17:34:07+00:00 [7036] INFO  : DB Get Request with parameter :'questions'
+2016-11-26T17:34:07+00:00 [7036] INFO  : DB Get Questions List for ssc :Agriculture' and subject  : 'AGR/Q4804'
+		and category :'Maths' and module : ''
+2016-11-26T17:34:07+00:00 [7036] INFO  : DB 64  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT module FROM `assessment`.`question_category` where subId='AGR/Q4804' and category='Maths''
+2016-11-26T17:34:07+00:00 [7036] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question` where ssc='Agriculture' and qp_code='AGR/Q4804' and category='Maths''

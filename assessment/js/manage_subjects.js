@@ -14,7 +14,9 @@ $(document).ready(function() {
 
     function showQuestions(sscValue,subId,category,module) {
            quesstionsTable = $('#qstns').DataTable({
-
+             "oLanguage": {
+             "sEmptyTable": '<strong>No Questions Available for this Subject \\ category \\ Module  !</strong>'
+             },
            // serverSide: true,
            initComplete : function () {
             quesstionsTable.buttons().container()
@@ -33,7 +35,7 @@ $(document).ready(function() {
                 },
                 'dataSrc': function(json) {
                     if (!json.data) {
-                        $('#qstns').html('<div id=\"error_msg\"  class=\"alert alert-danger fade in\" style=\"position:relative"><strong>No Questions Found for selected Subject in Database.</strong></div>');
+                       //  $('#qstns').html('<div id=\"error_msg\"  class=\"alert alert-danger fade in\" style=\"position:relative"><strong>No Questions Found for selected Subject in Database.</strong></div>');
                         json.data = [];
                     } else {
                         $('#error_msg').addClass('hide');
@@ -160,6 +162,7 @@ $(document).ready(function() {
         sscValue = $(this).text();
         var selText = $(this).text();
         showQuestions(sscValue,"","","");
+          $('#manageQstnForm').addClass('hide');
         $('#sscdropdownButton').html(selText + '<span class="caret"></span>');
         //console.log($(this).text());
         //  $('#jobrole-dropdown-menu').remove();
@@ -181,7 +184,9 @@ $(document).ready(function() {
 
     // Click on Jobrole DropDown Item.
     $('#jobrole-dropdown-menu').on('click', 'li a', function() {
+        $('#manageQstnForm').removeClass('hide');
         subId = $(this).attr('id');
+        showCategory();
         showQuestions(sscValue,subId,"","");
         $('#jobroledropdownButton').html($(this).text() + '<span class="caret"></span>');
         // Reset Cateory
@@ -193,7 +198,7 @@ $(document).ready(function() {
 
     // Click on Category DropDown Button.
     $("#catButton").click(function() {
-        showCategory();
+
     });
 
 
@@ -226,7 +231,7 @@ $(document).ready(function() {
         $.ajax({
             url: '/assessment/php/manageCategory.php',
             data: {
-                action: "create",
+                action: "createCat",
                 subId: subId,
                 category: $('#newCatText').val()
             },

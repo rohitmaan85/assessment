@@ -10,10 +10,10 @@ class manageCategory{
 
 	function buildInsertSql($qpCode,$category,$module){
 		$row_value= "'".htmlspecialchars($qpCode,ENT_QUOTES)."','".htmlspecialchars($category,ENT_QUOTES).
-		"','".htmlspecialchars($module,ENT_QUOTES)."','active'";
+		"','".htmlspecialchars($module,ENT_QUOTES)."','".date("Y-m-d H:i:s", time())."','".date("Y-m-d H:i:s", time())."','active'";
 
 		$sql = "INSERT INTO `assessment`.`question_category`
-				   (`subId`,`category`,`module`,`status`)
+				   (`subId`,`category`,`module`,`created_on`,`last_modified_on`,`status`)
 					 VALUES(".$row_value.");";
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to insert cateogory and module : '".$sql."'" );
 		$this->insertSQL .=$sql;
@@ -299,7 +299,7 @@ if(isset($_GET['get'])){
 		echo json_encode($data);
 	}
 }
-else if($_GET['action']=="create"){
+else if($_GET['action']=="createCat"){
 	log_event( LOG_DATABASE, "Get Request to create category or module." );
 	if(isset($_GET['subId']) && isset($_GET['category']) &&  $_GET['subId']!="" && $_GET['category']!="" ){
 		$subId = $_GET['subId'];

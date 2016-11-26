@@ -54,11 +54,11 @@ class ImportQuestions{
 	function buildInsertSql($row_value){
 		// $qstnId = mt_rand(1, 50000)."_".$qpCode."_".date("Y-m-d H:i:s", time());
 		// $row_value = "'".$qstnId."',".$row_value;
-		$row_value.=",'".date("Y-m-d H:i:s", time())."',null";	
+		$row_value.=",'".date("Y-m-d H:i:s", time())."',null,'".date("Y-m-d H:i:s", time())."','active'";	
 		
 		$sql = "INSERT INTO `assessment`.`question`(`s.no`,`ssc`,`job_role`,`qp_code`,
 		`category`,`module`,`type`,`question`,`optiona`,`optionb`,`optionc`,
-		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`)
+		`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`,`last_modified_on`,`status`)
 		 VALUES(".$row_value.");";		
 		$this->insertSQL .=$sql;
 	}

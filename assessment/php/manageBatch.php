@@ -69,33 +69,24 @@ class manageBatch{
 	}
 
 
-	function getQstnList($subjectId)
+	function getBatches($subjectId)
 	{
-		$conn = DbConn::getDbConn();
-		$sql="SELECT * FROM `assessment`.`question`";
-		if($subjectId!="")
-		$sql.= " where subid='".htmlspecialchars($subjectId,ENT_QUOTES)."'";
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Question : '".$sql."'" );
+			$conn = DbConn::getDbConn();
+		$sql="SELECT * FROM `assessment`.`batch`";
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Batch List : '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		$i=0;
 		while ($row)
 		{
-			$i++;
-			$jsonArr[0]= $row['id'];
-			$jsonArr[1]=$row['qnid'];
-			$jsonArr[2]=$row['subId'];
-			$jsonArr[3]=$row['question'];
-			$jsonArr[4]=$row['optiona'];
-			$jsonArr[5]=$row['optionb'];
-			$jsonArr[6]=$row['optionc'];
-			$jsonArr[7]=$row['optiond'];
-			$jsonArr[8]="";
-			$jsonArr[9]=$row['correctanswer'];
-			$jsonArr[10]=$row['marks'];
-			$jsonArr[11]=$row['language'];
-			$jsonArr[12]=$row['no_of_options'];
-			//$jsonArr[11]=$jsonArr;
+			$jsonArr[0]= $i;
+			$jsonArr[1]=$row['batch_id'];
+			$jsonArr[2]=$row['batch_name'];
+			$jsonArr[3]=$row['no_of_candidates'];
+			$jsonArr[4]=$row['job_role'];
+			$jsonArr[5]=$row['assessment_date'];
+			$jsonArr[6]=$row['center_add'];
+			$jsonArr[7]=$row['uploadDate'];
 			$jsonArr1[] =$jsonArr;
 			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		}
@@ -104,6 +95,7 @@ class manageBatch{
 		mysqli_free_result($result);
 		// print json Data.
 		echo json_encode($final_array);
+
 	}
 
 
@@ -117,7 +109,6 @@ class manageBatch{
 		$i=0;
 		while ($row)
 		{
-			$i++;
 			$i++;
 			$jsonArr[0]= $i;
 			$jsonArr[1]=$row['batch_id'];
@@ -179,11 +170,11 @@ if(isset($_GET['get'])){
 	log_event( LOG_DATABASE, "Get Request with parameter :'".$_GET['get']."'" );
 	//$obj->getQstnList("");
 
-	if($requestParam == "questions"){
+	if($requestParam == "batches"){
 		$subjectId="";
 		if(isset($_GET['subId']))
-		$subjectId = $_GET['subId'];
-		log_event( LOG_DATABASE, "Get Batch List for subject  : '".$_GET['get']."'" );
+			$subjectId = $_GET['subId'];
+		log_event( LOG_DATABASE, "Get Batches for subject  : '".$_GET['subId']."'" );
 		$obj->getQstnList($subjectId);
 	}else if($requestParam == "batchList"){
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."Get Batch List" );
