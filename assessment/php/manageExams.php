@@ -5,6 +5,76 @@ require_once 'logging_api.php';
 
 class manageExams{
 
+	var	$selectedCategory = "";
+	var	$module = "";
+
+
+	function selectQuestions($subjectId,$category,$module,$noOfQstns,$exam_id){
+		$conn = DbConn::getDbConn();
+		$sql="SELECT id FROM `assessment`.`question` where";
+		if($subjectId!=""){
+			$sql.= " qp_code='".htmlspecialchars($subjectId,ENT_QUOTES)."'";
+		}
+		if($category!=""){
+			$sql.= " and category='".htmlspecialchars($category,ENT_QUOTES)."'";
+		}
+		if($module!=""){
+			$sql.= " and module='".htmlspecialchars($module,ENT_QUOTES)."'";
+		}
+		$sql.= " ORDER BY RAND() LIMIT ".$noOfQstns;
+
+		
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to select Qstns for Exam : '".$sql."'" );
+		
+		$result = mysqli_query($conn,$sql);
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		//$i=0;
+		while ($row)
+		{
+			$row_value ="";
+			$row_value .= "'".$exam_id."','".$row['id']."','".$subjectId."','".$category."','".$module."',";
+			//$i++;
+			//$jsonArr[]=$row['id'];
+			$this->buildInsertQstnsSql($row_value);
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		}
+	}
+
+	function buildInsertQstnsSql($row_value){
+		// Add Upload Date in the end.
+		$row_value.="'active','".date("Y-m-d H:i:s", time())."','".date("Y-m-d H:i:s", time())."'";
+		$sql = "INSERT INTO `assessment`.`exam_qstn`(`exam_id`,`qstn_id`,`subid`,`category`,`module`,`status`,`created_on`,`last_modified_on`) VALUES(".$row_value.");";
+		$this->insertQstnsSQL .=$sql;
+		//log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to insert Qstns in Exam : '".$this->insertQstnsSQL."'" );
+		
+	}
+
+	function insertQstnsInExam()
+	{		
+		$conn = DbConn::getDbConn();
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,  SQL to insert Question for Test'".$this->insertQstnsSQL."'" );		
+		if (mysqli_multi_query($conn, $this->insertQstnsSQL)) {
+			do{
+				//echo array_shift($query_type[1]),": ";
+				if($result=mysqli_store_result($conn)){  //if has a record set, like SELECT
+					//echo "Selected rows = ".mysqli_num_rows($result)."<br>";
+					mysqli_free_result($result);
+				}else{  //if only returning true or false, like INSERT/UPDATE/DELETE/etc.
+					$cumulative_rows+=$aff_rows=mysqli_affected_rows($conn);
+					//echo "Current Query's Affected Rows = $aff_rows, Cumulative Affected Rows = $cumulative_rows<br>";
+				}
+			} while(mysqli_more_results($conn) && mysqli_next_result($conn));
+				
+			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Success !  Questions inserted successfully in Database : '".$cumulative_rows."'" );
+			return true;
+		}
+		else {
+			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,ERROR #" .mysqli_error($conn) );
+			return false;
+		}	
+	}
+
+
 
 	function getExamsList($subjectId){
 		$conn = DbConn::getDbConn();
@@ -35,23 +105,87 @@ class manageExams{
 		// print json Data.
 		echo json_encode($final_array);
 	}
-	function buildInsertSql($subjectName,$qpCode,$exName,$noOfQstns,$examDesc,$examDur,$atmptCount,$startDate,$endDate,$decResult,$batchId,$negMarking,$randomQstn,$raf,$pp)
+
+	function getExamId($examName){
+
+		$conn = DbConn::getDbConn();
+		$sql="SELECT id FROM `assessment`.`exam`";
+		if($examName!="")
+		$sql.= " where testname='".htmlspecialchars($examName,ENT_QUOTES)."'";
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Exam  Id : '".$sql."'" );
+		$result = mysqli_query($conn,$sql);
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$i=0;
+		$examId = "";
+		while ($row)
+		{
+			$examId = $row['id'];
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		}
+		// Free result set
+		mysqli_free_result($result);
+		return $examId;
+	}
+
+	function getModuleDetails($categoryId){
+
+		$catDetails = array();
+		$conn = DbConn::getDbConn();
+		$sql="SELECT category,module FROM `assessment`.`question_category`";
+		if($categoryId!="")
+		$sql.= " where id='".htmlspecialchars($categoryId,ENT_QUOTES)."'";
+		//log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Categories Details  : '".$sql."'" );
+		$result = mysqli_query($conn,$sql);
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$i=0;
+		$category = "";
+		$module = "";
+		log_event(LOG_DATABASE, __LINE__."  ". __FILE__."Rohit Maan");
+		while ($row)
+		{
+			//log_event();
+			//log_event(LOG_DATABASE, __LINE__."  ". __FILE__.$row['category'].$row['module']);
+			$catDetails[0] = $row['category'];
+			$catDetails[1] = $row['module'];
+			// set global variable;
+			//$this->selectedCategory = $category;
+			//$this->module = $module;
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		}
+		// Free result set
+		mysqli_free_result($result);
+		return $catDetails;
+		//return $examId;
+	}
+
+
+	function buildInsertSql($subId,$exName,$noOfQstns,$examDesc,$examDur,$atmptCount,$startDate,$endDate,$decResult,$batchId,$negMarking,$randomQstn,$totalMarks,$pp,$noOfModuleQstsArr)
 	{
+		if($atmptCount == "")
+		$atmptCount=10;
+		// Handle number of questions:
+		$moduleIds = "";
+		$moduleNoOfQstns = "";
+		foreach($noOfModuleQstsArr as $d){
+			log_event( LOG_DATABASE, __LINE__."  ". __FILE__. " ,  Number of Questions in each Module : " . $d['id']. "=>" .$d['noOfQstns']);
+			$moduleIds .= $d['id'].",";
+			$moduleNoOfQstns .=$d['noOfQstns'].",";
+		}
 
 		try{
 			$testcode = mt_rand(1, 50000)."_".$exName;
 			$testId = $exName."_".date("Y-m-d H:i:s", time());
-			$row_value= "'".htmlspecialchars($qpCode,ENT_QUOTES)."','".htmlspecialchars($testId,ENT_QUOTES)."','".htmlspecialchars($exName,ENT_QUOTES).
-			"','".htmlspecialchars($noOfQstns,ENT_QUOTES)."','".htmlspecialchars($examDesc,ENT_QUOTES).
+			$row_value= "'".htmlspecialchars($subId,ENT_QUOTES)."','".htmlspecialchars($testId,ENT_QUOTES)."','".htmlspecialchars($exName,ENT_QUOTES).
+			"','".htmlspecialchars($noOfQstns,ENT_QUOTES).
 			"','".htmlspecialchars($examDur,ENT_QUOTES)."','".htmlspecialchars($atmptCount,ENT_QUOTES).
 			"','".htmlspecialchars($startDate,ENT_QUOTES)."','".htmlspecialchars($endDate,ENT_QUOTES)."','".htmlspecialchars($decResult,ENT_QUOTES).
 			"','".htmlspecialchars($batchId,ENT_QUOTES)."','".htmlspecialchars($negMarking,ENT_QUOTES).
-			"','".htmlspecialchars($randomQstn,ENT_QUOTES)."','".htmlspecialchars($raf,ENT_QUOTES)."','".htmlspecialchars($pp,ENT_QUOTES).
-			"','".$testcode."','".date("Y-m-d H:i:s", time())."'";
+			"','".htmlspecialchars($totalMarks,ENT_QUOTES)."','".htmlspecialchars($randomQstn,ENT_QUOTES)."','".htmlspecialchars($pp,ENT_QUOTES)."','".htmlspecialchars($examDesc,ENT_QUOTES).
+			"','".$testcode."','".date("Y-m-d H:i:s", time())."','".date("Y-m-d H:i:s", time())."','active','".$moduleIds."','".$moduleNoOfQstns."'";
 
-			$sql = "INSERT INTO `assessment`.`exam`(`subid`,`testid`,`testname`,`totalquestions`,`testdesc`,
-				  `duration`,`attemptedstudents`,`testfrom`,`testto`,`declareResult`,`batchid`,`negativemarking`,`randomqstn`,
-				   `raf`,`pp`,`testcode`,`createDate`)
+			$sql = "INSERT INTO `assessment`.`exam`(`subid`,`testid`,`testname`,`totalquestions`,
+				  `duration`,`attemptedstudents`,`testfrom`,`testto`,`declareResult`,`batchid`,`negativemarking`,
+				   `total_marks`,`randomqstn`,`pp`,`testdesc`,`testcode`,`createDate`,`last_modified_on`,`status`,`moduleIds`,`moduleNoOfQsnts`)
 					VALUES(".$row_value.");";
 
 			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to insert Exam : '".$sql."'" );
@@ -62,11 +196,31 @@ class manageExams{
 		}
 	}
 
-	function createExam()
+	function createExam($examName,$subjectId,$noOfModuleQstsArr)
 	{
 		$conn = DbConn::getDbConn();
 		if (mysqli_multi_query($conn, $this->insertSQL)) {
 			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Success !  Exam inserted successfully in Database : '".$cumulative_rows."'" );
+			$exam_id = $this->getExamId($examName);
+			if($exam_id != ""){
+				foreach($noOfModuleQstsArr as $d){
+					$moduleId = $d['id'];
+					$moduleNoOfQstns =$d['noOfQstns'];
+					// Get category details
+					$details = $this->getModuleDetails($moduleId);
+					if($details[0]!="")
+					//$subjectId,$category,$module,$noOfQstns,$exam_id
+						$this->selectQuestions($subjectId,$details[0],$details[1],$moduleNoOfQstns,$exam_id);
+					else
+						log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Error !  'selectedCategory' and 'module' does not exist  in Database '" );
+						
+				}
+				return $this->insertQstnsInExam();
+			}
+			else{
+				log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Error !  Exam Id does not exist with name in Database : '".$examName."'" );
+				return false;
+			}
 			return true;
 		} else {
 			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,ERROR #" .mysqli_error($conn) );
@@ -74,11 +228,22 @@ class manageExams{
 		}
 	}
 
+	/*
+	 function createExam()
+	 {
+		$conn = DbConn::getDbConn();
+		if (mysqli_multi_query($conn, $this->insertSQL)) {
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Success !  Exam inserted successfully in Database : '".$cumulative_rows."'" );
+		return true;
+		} else {
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,ERROR #" .mysqli_error($conn) );
+		return false;
+		}
+		}
 
+		*/
 
-
-
-	function updateQuestion()
+	function updateExam()
 	{
 		$conn = DbConn::getDbConn();
 		if (mysqli_query($conn, $this->updateSQL)) {
@@ -166,34 +331,40 @@ if(isset($_GET['get'])){
 	}
 }
 
-if(isset($_GET['action'])){
+if(isset($_POST['action'])){
 	log_event( LOG_DATABASE, " Get Request to Create Exam  with action parameter." );
 	// Get defect details to edit question.
-	if($_GET['action']=="create"){
-	 $subjectName	= $_GET['subjectName'];
-	 $qpCode		= $_GET['qpCode'];
-	 $exName		= $_GET['exName'];
-	 $noOfQstns		= $_GET['noOfQstns'];
-	 $examDesc		= $_GET['examDesc'];
-	 $examDur		= $_GET['examDur'];
-	 $atmptCount	= $_GET['atmptCount'];
-	 $startDate		= $_GET['startDate'];
-	 $endDate		= $_GET['endDate'];
-	 $decResult		= $_GET['decResult'];
-	 $batchId		= $_GET['batchId'];
-	 $negMarking	= $_GET['negMarking'];
-	 $randomQstn	= $_GET['randomQstn'];
-	 $raf			= $_GET['raf'];
-	 $pp			= $_GET['pp'];
+	if($_POST['action']=="create"){
+	 $subId			= $_POST['subId'];
+	 $exName		= $_POST['exName'];
+	 $noOfQstns		= $_POST['noOfQstns'];
+	 $examDesc		= $_POST['examDesc'];
+	 $examDur		= $_POST['examDur'];
+	 $atmptCount	= $_POST['atmptCount'];
+	 $startDate		= $_POST['startDate'];
+	 $endDate		= $_POST['endDate'];
+	 $decResult		= $_POST['decResult'];
+	 $batchId		= $_POST['batchId'];
+	 $negMarking	= $_POST['negMarking'];
+	 $randomQstn	= $_POST['randomQstn'];
+	 $totalMarks	= $_POST['totalMarks'];
+	 $pp			= $_POST['pp'];
+	 $noOfModuleQstsArr = json_decode(stripslashes($_POST['noOfModuleQstsArr']));
 
-	 log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Get Request to create Exam with Values : '".
-	 $subjectName."','".$qpCode."','".$exName."','".$noOfQstns."','".$examDesc."','".$examDur."','".$atmptCount.
+	 //$data = explode(",", $_POST['noOfModuleQstsArr']);
+
+
+	 // $noOfModuleQstsArr = $_GET['noOfModuleQstsArr'];
+
+	 // log_event( LOG_DATABASE, __LINE__."  ". __FILE__. " ,  Number of Questions in each Module : " . print_r($noOfModuleQstsArr));
+	 log_event( LOG_DATABASE, __LINE__."  ". __FILE__." ,  Get Request to create Exam with Values : '".
+	 $subId."','".$exName."','".$noOfQstns."','".$examDesc."','".$examDur."','".$atmptCount.
 		"','".$startDate."','"
-		.$endDate."','".$decResult."','".$batchId."','".$negMarking."','".$randomQstn."','".$raf."','".$pp."'");
+		.$endDate."','".$decResult."','".$batchId."','".$negMarking."','".$randomQstn."','".$totalMarks."','".$pp."'");
 
-	 $obj->buildInsertSql($subjectName,$qpCode,$exName,$noOfQstns,$examDesc,$examDur,$atmptCount,$startDate,$endDate,$decResult,$batchId,$negMarking,$randomQstn,$raf,$pp);
+	 $obj->buildInsertSql($subId,$exName,$noOfQstns,$examDesc,$examDur,$atmptCount,$startDate,$endDate,$decResult,$batchId,$negMarking,$randomQstn,$totalMarks,$pp,$_POST['noOfModuleQstsArr']);
 
-	 if(!$ob->createExam())
+	 if(!$obj->createExam($exName,$subId,$_POST['noOfModuleQstsArr']))
 		{
 			$data =  array('error' => 'Error while creating exam.') ;
 			log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Error while inserting Question in DB.".json_encode($data) );

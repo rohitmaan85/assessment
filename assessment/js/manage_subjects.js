@@ -258,7 +258,7 @@ $(document).ready(function() {
         $.ajax({
             url: '/assessment/php/manageCategory.php',
             data: {
-                action: "create",
+                action: "createCat",
                 subId: subId,
                 category: category,
                 module: $('#newModuleText').val()

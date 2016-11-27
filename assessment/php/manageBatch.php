@@ -71,29 +71,23 @@ class manageBatch{
 
 	function getBatches($subjectId)
 	{
-			$conn = DbConn::getDbConn();
-		$sql="SELECT * FROM `assessment`.`batch`";
+		$conn = DbConn::getDbConn();
+		$sql="SELECT * FROM `assessment`.`batch` where job_role='".$subjectId."'";
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Batch List : '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		$i=0;
 		while ($row)
 		{
-			$jsonArr[0]= $i;
-			$jsonArr[1]=$row['batch_id'];
-			$jsonArr[2]=$row['batch_name'];
-			$jsonArr[3]=$row['no_of_candidates'];
-			$jsonArr[4]=$row['job_role'];
-			$jsonArr[5]=$row['assessment_date'];
-			$jsonArr[6]=$row['center_add'];
-			$jsonArr[7]=$row['uploadDate'];
-			$jsonArr1[] =$jsonArr;
+			$jsonArr[]=$row['batch_id'];
+			$jsonArr1[]=$row['batch_name'];
 			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		}
-		$final_array = array('data' => $jsonArr1);
+		 $final_array = array('batch_id' => array_unique($jsonArr),'batch_name' => array_unique($jsonArr1));
+	
 		// Free result set
 		mysqli_free_result($result);
-		// print json Data.
+		 // print json Data.
 		echo json_encode($final_array);
 
 	}
@@ -175,7 +169,7 @@ if(isset($_GET['get'])){
 		if(isset($_GET['subId']))
 			$subjectId = $_GET['subId'];
 		log_event( LOG_DATABASE, "Get Batches for subject  : '".$_GET['subId']."'" );
-		$obj->getQstnList($subjectId);
+		$obj->getBatches($subjectId);
 	}else if($requestParam == "batchList"){
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."Get Batch List" );
 		$obj->getBatchListForImportPage();

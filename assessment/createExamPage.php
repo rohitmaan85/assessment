@@ -248,11 +248,7 @@ if(isset($_GET['action'])){
                               <div class="col-xs-3">
                                    <select class="form-control" id="selGroupDropdown">
                                     <option>None Selected</option>
-                                     <option>1</option>
-                                     <option>2</option>
-                                     <option>3</option>
-                                     <option>4</option>
-                                   </select>
+                                    </select>
                              </div>
                            </div>
                             <div class="form-group">

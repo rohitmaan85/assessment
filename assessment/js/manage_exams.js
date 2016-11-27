@@ -1,12 +1,4 @@
 $(document).ready(function() {
-  // Bind Enter Key to 'Create Button'
-  $(document).keypress(function(e){
-    if (e.which == 13){
-        $("#createExamButton").click();
-    }
-  });
-
-
     var sscValue = "";
     var subId = "";
     var qpCode = "";
@@ -15,6 +7,36 @@ $(document).ready(function() {
     var attemptCountValue = "";
     var passingPercentValue = "";
     var counterforRequiredQstns = 0;
+    var moduleIds = [];
+    var moduleNoOfQstns = [];
+
+
+    loadSSCList();
+
+    function loadSSCList() {
+        $.ajax({
+            url: '/assessment/php/getSubjectDetails.php',
+            data: {
+                get: "ssc"
+            },
+            dataType: 'json', //since you wait for json
+            success: function(json) {
+                //now when you received json, render options
+                $.each(json, function(i, option) {
+                    var rendered_option = '<li><a href="#">' + option + '</a></li>';
+                    $(rendered_option).appendTo('#ssctest-dropdown-menu');
+                });
+            }
+        });
+    }
+
+
+    // Bind Enter Key to 'Create Button'
+    $(document).keypress(function(e) {
+        if (e.which == 13) {
+            $("#createExamButton").click();
+        }
+    });
 
     //Create Module Section dynamically
     //displayModuleSection();
@@ -41,8 +63,10 @@ $(document).ready(function() {
                     // Iterate Modules if exists
                     if (option.modules !== null) {
                         $.each(option.modules, function(i, module) {
+
+                            //  moduleIds.push(option.modules.id);
                             counter++;
-                            counterforRequiredQstns ++;
+                            counterforRequiredQstns++;
                             categoryExist = true;
                             moduleRowDiv = "";
                             var categoryDiv = '<div class="form-group"><div class="col-xs-2"><input id="category_' + counter + '" class="form-control" type="text" 	value="' + option.category + '" disabled="true"></div>';
@@ -52,6 +76,8 @@ $(document).ready(function() {
                             var moduleAdditionalDiv = "";
                             var moduleMarksDiv = "";
                             if (module.noOfQstns > 0) {
+                                moduleIds[module.moduleName] =  module.id ;
+                              //  moduleIds[module.id] = module.moduleName;
                                 moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control"></div>';
                                 moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control"></div>';
                                 moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox"></div></div>';
@@ -64,16 +90,37 @@ $(document).ready(function() {
                             moduleCompleteDiv = moduleCompleteDiv + moduleRowDiv;
                         });
                     } else {
+
                         counter++;
-                        counterforRequiredQstns ++;
+                        counterforRequiredQstns++;
                         categoryExist = true;
                         moduleRowDiv = "";
+                        var moduleRequiredQstnsDiv = "";
+                        var moduleAdditionalDiv = "";
+                        var moduleMarksDiv = "";
+
                         var categoryDiv = '<div class="form-group"><div class="col-xs-2"><input id="category_' + counter + '" class="form-control" type="text" 	value="' + option.category + '" disabled="true"></div>';
                         var moduleDiv = '<div class="col-xs-2"><input style="color: red;" id="module_' + counter + '" class="form-control" type="text" value="No Module Found" disabled="true"></div>';
                         var moduleQstnsAvailDiv = ' <label for="qstnsAvailable"  class="col-xs-1">Available Qstns</label><div class="col-xs-1"><input type="text" id="moduleAvailQstns_' + counter + '" class="form-control" disabled="true" value="' + option.noOfQstnsInCategory + '"></div>';
-                        var moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control"></div>';
-                        var moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control"></div>';
-                        var moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox"></div></div>';
+
+                        if (option.noOfQstnsInCategory > 0) {
+                          //  moduleIds[option.id] = option.category;
+                          moduleIds[option.category] =  option.id ;
+                            moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control"></div>';
+                            moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control"></div>';
+                            moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox"></div></div>';
+
+                        } else {
+                            moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control" disabled="true"></div>';
+                            moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control" disabled="true"></div>';
+                            moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox" disabled="true"></div></div>';
+
+                        }
+                        /*
+                            var moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control"></div>';
+                            var moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control"></div>';
+                            var moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox"></div></div>';
+                       */
                         moduleRowDiv = categoryDiv + moduleDiv + moduleQstnsAvailDiv + moduleMarksDiv + moduleRequiredQstnsDiv + moduleAdditionalDiv;
                         moduleCompleteDiv = moduleCompleteDiv + moduleRowDiv;
                     }
@@ -109,27 +156,12 @@ $(document).ready(function() {
         loadJobRoles("");
     });
 
-    $("#sscdropdownButton").click(function() {
-        $.ajax({
-            url: '/assessment/php/getSubjectDetails.php',
-            data: {
-                get: "ssc"
-            },
-            dataType: 'json', //since you wait for json
-            success: function(json) {
-                //now when you received json, render options
-                $.each(json, function(i, option) {
-                    var rendered_option = '<li><a href="#">' + option + '</a></li>';
-                    $(rendered_option).appendTo('#ssctest-dropdown-menu');
-                });
-            }
-        });
-        // control.replaceWith(control.val('').clone(true));
-    });
+
     $('#ssctest-dropdown-menu').on('click', 'li a', function() {
         sscValue = $(this).text();
         var selText = $(this).text();
         $('#jobroletest-dropdown-menu').children().remove();
+        $('#selGroupDropdown').children().remove();
         $('#jobroledropdownButton').html("-Select JobRole-" + '<span class="caret"></span>');
         $('#sscdropdownButton').html(selText + '<span class="caret"></span>');
         loadJobRoles(selText);
@@ -162,39 +194,42 @@ $(document).ready(function() {
     $('#jobroletest-dropdown-menu').on('click', 'li a', function() {
         subId = $(this).attr('id');
         displayModuleSection();
+        loadBatchList();
         $('#jobroledropdownButton').html($(this).text() + '<span class="caret"></span>');
         $('#createExamForm').removeClass('hide');
 
     });
 
 
-function loadBatchList(){
-  $.ajax({
-      url: '/assessment/php/manageBatch.php',
-      data: {
-          get: "batches",
-          subId: subId
-      },
-      dataType: 'json', //since you wait for json
-      success: function(json) {
-          //now when you received json, render options
-          var counter = 0;
-          $.each(json.job_role, function(i, option) {
-              var rendered_option = '<li><a href="#" id="' + json.qp_code[counter] + '">' + option + '  (' + json.qp_code[counter] + ' )</a></li>';
-              $(rendered_option).appendTo('#jobroletest-dropdown-menu');
-              counter++;
+    function loadBatchList() {
+        $.ajax({
+            url: '/assessment/php/manageBatch.php',
+            data: {
+                get: "batches",
+                subId: subId
+            },
+            dataType: 'json', //since you wait for json
+            success: function(json) {
+                //now when you received json, render options
+                var counter = 0;
 
-                $.each(selectValues, function(key, value) {
-                   $('#mySelect')
-                       .append($("<option></option>")
-                                  .attr("value",key)
-                                  .text(value));
+                //var rendered_option = '<li><a href="#" id="' + json.qp_code[counter] + '">' + option + '  (' + json.qp_code[counter] + ' )</a></li>';
+                //$(rendered_option).appendTo('#jobroletest-dropdown-menu');
+                //counter++;
+                $('#selGroupDropdown').children().remove();
+                $('#selGroupDropdown')
+                    .append($("<option></option>").attr("value", "None Selected")
+                        .text("None Selected"));
+                $.each(json.batch_name, function(i, option) {
+                    $('#selGroupDropdown')
+                        .append($("<option></option>")
+                            .attr("value", json.batch_id[counter])
+                            .text(option));
+                    counter++;
                 });
-
-          });
-      }
-  });
-}
+            }
+        });
+    }
     // Handle show Modules Part
 
 
@@ -312,57 +347,102 @@ function loadBatchList(){
         }
 
 
-          // $("#examNameText").focus();
+        // $("#examNameText").focus();
         //moduleMarks_
         // Check Total Number of Questions :
         var qstnId = "";
-        var totalModuleQstns = parseInt(0,10);
+        var categoryNameId = "";
+        var categoryName = "";
+        var categoryId = "";
+
+        var moduleNameId = "";
+        var moduleName = "";
+        var moduleId = "";
+
+        var totalModuleQstns = parseInt(0, 10);
+        moduleNoOfQstns= [];
+      //  var moduleRequiedQstnsByUser = [];
         //var row1 = $('#moduleReqQstns_1').val();
         for (i = 1; i < counterforRequiredQstns; i++) {
-           qstnId = '#moduleReqQstns_'+i ;
-           var value = $(qstnId).val();
-           if(typeof value != "undefined")
-           {
-               if(value!=="" && !isNaN(value))
-                   totalModuleQstns  = totalModuleQstns +  parseInt(value) ;
+            qstnId = '#moduleReqQstns_' + i;
+            var value = $(qstnId).val();
+            if (typeof value != "undefined") {
+                if (value !== '' && !isNaN(value)){
+                    totalModuleQstns = totalModuleQstns + parseInt(value);
+
+                    // Get category id from array
+                    categoryNameId = '#category_'+i;
+                    categoryName = $(categoryNameId).val();
+                    categoryId =  moduleIds[categoryName];
+
+                    // If category does not exist then check module name
+                    if(typeof categoryId === 'undefined'){
+                      moduleNameId = '#module_'+i;
+                      moduleName = $(moduleNameId).val();
+                      moduleId =  moduleIds[moduleName];
+                      moduleNoOfQstns.push({
+                        id : moduleId,
+                       noOfQstns : parseInt(value)
+                      });
+                      //moduleNoOfQstns.id =moduleId;
+                      //moduleNoOfQstns.noOfQstns =parseInt(value);
+                    }
+                    else
+                    {
+                    //  moduleNoOfQstns.id =categoryId;
+                    //  moduleNoOfQstns.noOfQstns =parseInt(value);
+                      moduleNoOfQstns.push({
+                        id : categoryId,
+                       noOfQstns : parseInt(value)
+                      });
+                      //  moduleNoOfQstns[categoryId]=parseInt(value);
+                    }
+
+
+
+                                      /*
+                    $.each(moduleNoOfQstns, function(key, value) {
+                      if(value===)
+                          //alert(key)
+                    });*/
+                  }
                 else
-                   totalModuleQstns = totalModuleQstns + parseInt(0) ;
-           }
-       }
+                    totalModuleQstns = totalModuleQstns + parseInt(0);
+            }
+        }
 
-
-        if($("#noOfQstnsText").val()!=totalModuleQstns){
-          allFieldsOk = false;
-          fieldsValue += "* Total Number of Questions '"+$("#noOfQstnsText").val()+"' in Test should be Equal to sum of all module Questions '"+totalModuleQstns+"' \n";
+        alert(moduleNoOfQstns.length);
+        if ($("#noOfQstnsText").val() != totalModuleQstns) {
+            allFieldsOk = false;
+            fieldsValue += "* Total Number of Questions '" + $("#noOfQstnsText").val() + "' in Test should be Equal to sum of all module Questions '" + totalModuleQstns + "' \n";
         }
 
 
         // Check Total Marks :
-        var moduleId = "";
-        var totalModuleMarks = parseInt(0,10);
+        // var moduleId = "";
+        var totalModuleMarks = parseInt(0, 10);
         //var row1 = $('#moduleReqQstns_1').val();
         for (i = 1; i < counterforRequiredQstns; i++) {
-           qstnMarksId = '#moduleMarks_'+i ;
-           var marksValue = $(qstnMarksId).val();
-           if(typeof marksValue != "undefined")
-           {
-               if(marksValue!=="" && !isNaN(marksValue))
-                   totalModuleMarks  = totalModuleMarks +  parseInt(marksValue) ;
+            qstnMarksId = '#moduleMarks_' + i;
+            var marksValue = $(qstnMarksId).val();
+            if (typeof marksValue != "undefined") {
+                if (marksValue !== "" && !isNaN(marksValue))
+                    totalModuleMarks = totalModuleMarks + parseInt(marksValue);
                 else
-                   totalModuleMarks = totalModuleMarks + parseInt(0) ;
-           }
-          }
-          if($("#totalMarksText").val()!=totalModuleMarks){
+                    totalModuleMarks = totalModuleMarks + parseInt(0);
+            }
+        }
+        if ($("#totalMarksText").val() != totalModuleMarks) {
             allFieldsOk = false;
-            fieldsValue += "* Total Marks '"+$("#totalMarksText").val()+"' in Test should be Equal to sum of all module Marks '"+totalModuleMarks+"' \n";
-          }
+            fieldsValue += "* Total Marks '" + $("#totalMarksText").val() + "' in Test should be Equal to sum of all module Marks '" + totalModuleMarks + "' \n";
+        }
 
 
 
-        if (allFieldsOk === false){
+        if (allFieldsOk === false) {
             $('#alertMessage').val(fieldsValue);
             $('#alertModal').modal('show');
-          }
+        }
         return allFieldsOk;
     }
 
@@ -381,14 +461,14 @@ function loadBatchList(){
             var batchId = $("#selGroupDropdown").val();
             var negMarking = $('#negMarkingRadio input:radio:checked').val();
             var randomQstn = $('#radomQstnRadio input:radio:checked').val();
-            var raf = $('#rafRadio input:radio:checked').val();
+            var totalMarks = $("#totalMarksText").val();
             // alert('test');
             $.ajax({
+                type: 'POST',
                 url: '/assessment/php/manageExams.php',
                 data: {
                     action: "create",
-                    subjectName: subjectName,
-                    qpCode: qpCode,
+                    subId: subId,
                     exName: examName,
                     noOfQstns: noOfQstns,
                     examDesc: examdesc,
@@ -400,8 +480,9 @@ function loadBatchList(){
                     batchId: batchId,
                     negMarking: negMarking,
                     randomQstn: randomQstn,
-                    raf: raf,
-                    pp: passingPercentValue
+                    totalMarks: totalMarks,
+                    pp: passingPercentValue,
+                    noOfModuleQstsArr: moduleNoOfQstns
                 },
                 dataType: 'json', //since you wait for json
                 success: function(data) {
@@ -438,6 +519,7 @@ function loadBatchList(){
         var subjectId = $("#qpcodeText").val();
         var examTable = $('#examTable').DataTable({
             "ajax": {
+                'type': 'POST',
                 'url': '/assessment/php/manageExams.php',
                 'data': {
                     get: 'exams',
