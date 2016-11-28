@@ -9,7 +9,117 @@ class manageExams{
 	var	$module = "";
 
 
-	function selectQuestions($subjectId,$category,$module,$noOfQstns,$exam_id){
+function getExamQuestions($testId,$testName){
+	$conn = DbConn::getDbConn();
+	$sql="SELECT qstn_id FROM `assessment`.`exam_qstn` where id=''".$testId."'";
+	log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get all Questions of Exam with name : '".$testName."'" );
+	$result = 	mysqli_query($conn,$sql);
+	$row		= 	mysqli_fetch_array($result, MYSQLI_ASSOC);
+	$i=0;
+	while ($row)
+	{
+		$i++;
+		//$jsonArr[0]= $i;
+		$qstnId	 =	$row['qstn_id'];
+		$qstnDetails  = $this->getQuestionDetail($qstnId);
+		/*
+		$jsonArr[1]=$row['subid'];
+		$jsonArr[2]=$row['totalquestions'];
+		$jsonArr[3]=$row['duration'];
+		$jsonArr[4]=$row['testfrom'];
+		$jsonArr[5]=$row['testto'];
+		//$jsonArr[11]=$jsonArr;
+		$jsonArr1[] =$jsonArr;*/
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+	}
+	$final_array = array('data' => $jsonArr1);
+	// Free result set
+	mysqli_free_result($result);
+	// print json Data.
+	//echo json_encode($final_array);
+}
+
+function getExamQuestionsDivs($testId,$testName){
+	$completeDiv = "";
+	$conn = DbConn::getDbConn();
+	$sql="SELECT qstn_id FROM `assessment`.`exam_qstn` where exam_id='".$testId."'";
+	log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get all Questions of Exam with name : '".$sql."'" );
+	$result = 	mysqli_query($conn,$sql);
+	$row		= 	mysqli_fetch_array($result, MYSQLI_ASSOC);
+	$i=0;
+	while ($row)
+	{
+		$i++;
+		//$jsonArr[0]= $i;
+		$qstnId	 =	$row['qstn_id'];
+		$qstnDiv  = $this->getQuestionDetailDiv($qstnId);
+		$completeDiv.= $qstnDiv;
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+	}
+	//	$final_array = array('data' => $jsonArr1);
+	// Free result set
+	mysqli_free_result($result);
+	// print json Data.
+	//echo json_encode($final_array);
+	log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,Complete Qstn Div = '".$completeDiv."'" );
+	return $completeDiv;
+}
+
+
+function getQuestionDetailDiv($question_id){
+	$questionDiv="";
+	$conn = DbConn::getDbConn();
+	$sql="SELECT * FROM `assessment`.`question` where id='".$question_id."'";
+	log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Question Detail : '".$sql."'" );
+	$result = 	mysqli_query($conn,$sql);
+	$row		= 	mysqli_fetch_array($result, MYSQLI_ASSOC);
+	$i=0;
+	while ($row)
+	{
+		$i++;
+		$qstn=$row['question'];
+		$optiona=$row['optiona'];
+		$optionb=$row['optionb'];
+		$optionc=$row['optionc'];
+		$optiond=$row['optiond'];
+
+    $questionDiv = '<div id="'.$question_id.'" class="col-xs-14">
+				<p id="qstn_p">'.$i.'. '.$qstn.'</p>
+				<div><br></div>
+				<div id="optiona"><p id="qstn_p"><input id="qstn_checkbox" type="checkbox">
+				'.$optiona.'</p></div>
+				<div><br></div>
+				<div id="optionb"><p id="qstn_p"> <input id="qstn_checkbox" type="checkbox">
+				'.$optionb.'</p>
+				</div>
+				<div><br></div>
+				<div id="optionc"><p id="qstn_p"> <input id="qstn_checkbox" type="checkbox">
+				'.$optionc.'</p>
+				</div>
+				<div><br></div>
+				<div id="optiond"><p id="qstn_p"><input id="qstn_checkbox" type="checkbox">
+				'.$optiond.'</p>
+				</div>
+				<div><br></div>
+			 </div>
+			<div id="examQuestions" class="col-xs-14"><hr></div>';
+
+		//$jsonArr[11]=$jsonArr;
+	//	$jsonArr1[] =$jsonArr;*/
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		break;
+	}
+//	$final_array = array('data' => $jsonArr1);
+	// Free result set
+ 	log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Qstn Div = '".$questionDiv."'" );
+	mysqli_free_result($result);
+	return $questionDiv;
+	// print json Data.
+	//echo json_encode($final_array);
+}
+
+
+function selectQuestions($subjectId,$category,$module,$noOfQstns,$exam_id){
 		$conn = DbConn::getDbConn();
 		$sql="SELECT id FROM `assessment`.`question` where";
 		if($subjectId!=""){
@@ -23,9 +133,9 @@ class manageExams{
 		}
 		$sql.= " ORDER BY RAND() LIMIT ".$noOfQstns;
 
-		
+
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to select Qstns for Exam : '".$sql."'" );
-		
+
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		//$i=0;
@@ -46,13 +156,13 @@ class manageExams{
 		$sql = "INSERT INTO `assessment`.`exam_qstn`(`exam_id`,`qstn_id`,`subid`,`category`,`module`,`status`,`created_on`,`last_modified_on`) VALUES(".$row_value.");";
 		$this->insertQstnsSQL .=$sql;
 		//log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to insert Qstns in Exam : '".$this->insertQstnsSQL."'" );
-		
+
 	}
 
 	function insertQstnsInExam()
-	{		
+	{
 		$conn = DbConn::getDbConn();
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,  SQL to insert Question for Test'".$this->insertQstnsSQL."'" );		
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,  SQL to insert Question for Test'".$this->insertQstnsSQL."'" );
 		if (mysqli_multi_query($conn, $this->insertQstnsSQL)) {
 			do{
 				//echo array_shift($query_type[1]),": ";
@@ -64,14 +174,14 @@ class manageExams{
 					//echo "Current Query's Affected Rows = $aff_rows, Cumulative Affected Rows = $cumulative_rows<br>";
 				}
 			} while(mysqli_more_results($conn) && mysqli_next_result($conn));
-				
+
 			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Success !  Questions inserted successfully in Database : '".$cumulative_rows."'" );
 			return true;
 		}
 		else {
 			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,ERROR #" .mysqli_error($conn) );
 			return false;
-		}	
+		}
 	}
 
 
@@ -213,7 +323,7 @@ class manageExams{
 						$this->selectQuestions($subjectId,$details[0],$details[1],$moduleNoOfQstns,$exam_id);
 					else
 						log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Error !  'selectedCategory' and 'module' does not exist  in Database '" );
-						
+
 				}
 				return $this->insertQstnsInExam();
 			}

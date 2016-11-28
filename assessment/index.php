@@ -48,7 +48,7 @@
             <li><a  href="createExamPage.php"><span class="glyphicon glyphicon-education"></span>Create Test</a></li>
             <li><a  href="createStudentPage.php"><span class="glyphicon glyphicon-user"></span>Create Student</a></li>
             <li><a  href="login.php"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-            <li><a  href="login.php"><span class="glyphicon glyphicon-paperclip"></span>Reports</a></li>
+            <li><a  href="backupFPDF.php"><span class="glyphicon glyphicon-paperclip"></span>Reports</a></li>
           </ul>
         </div>
         <!-- /.navbar-collapse -->
