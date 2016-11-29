@@ -1,5 +1,4 @@
 <?php
-
 require_once 'DbConn.php';
 require_once 'logging_api.php';
 
@@ -10,89 +9,121 @@ class manageExams{
 	var $global_qstn_counter = 0;
 
 
-function getExamQuestions($testId,$testName){
-	$conn = DbConn::getDbConn();
-	$sql="SELECT qstn_id FROM `assessment`.`exam_qstn` where id=''".$testId."'";
-	log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get all Questions of Exam with name : '".$testName."'" );
-	$result = 	mysqli_query($conn,$sql);
-	$row		= 	mysqli_fetch_array($result, MYSQLI_ASSOC);
-	$i=0;
-	while ($row)
-	{
-		$i++;
-		//$jsonArr[0]= $i;
-		$qstnId	 =	$row['qstn_id'];
-		$qstnDetails  = $this->getQuestionDetail($qstnId);
-		/*
-		$jsonArr[1]=$row['subid'];
-		$jsonArr[2]=$row['totalquestions'];
-		$jsonArr[3]=$row['duration'];
-		$jsonArr[4]=$row['testfrom'];
-		$jsonArr[5]=$row['testto'];
-		//$jsonArr[11]=$jsonArr;
-		$jsonArr1[] =$jsonArr;*/
-		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
-	}
-	$final_array = array('data' => $jsonArr1);
-	// Free result set
-	mysqli_free_result($result);
-	// print json Data.
-	//echo json_encode($final_array);
-}
-
-function getExamQuestionsDivs($examId,$examName){
-	$completeDiv = "";
-	$conn = DbConn::getDbConn();
-	if($examName!="" && $examId=="")
+	function getExamQuestions($examId,$examName){
+		$conn = DbConn::getDbConn();
+		if($examName!="" && $examId=="")
 		$examId= $this->getExamId($examName);
-	$sql="SELECT qstn_id FROM `assessment`.`exam_qstn` where exam_id='".$examId."'";
-	log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get all Questions of Exam with name : '".$sql."'" );
-	$result = 	mysqli_query($conn,$sql);
-	$row		= 	mysqli_fetch_array($result, MYSQLI_ASSOC);
-	$i=0;
-	while ($row)
-	{
-		$i++;
-		//$jsonArr[0]= $i;
-		$qstnId	 =	$row['qstn_id'];
-		$qstnDiv  = $this->getQuestionDetailDiv($qstnId);
-		$completeDiv.= $qstnDiv;
-		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
-	}
-	//	$final_array = array('data' => $jsonArr1);
-	// Free result set
-	mysqli_free_result($result);
-	// print json Data.
-	//echo json_encode($final_array);
-	log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,Complete Qstn Div = '".$completeDiv."'" );
-	return $completeDiv;
-}
+		$sql="SELECT qstn_id FROM `assessment`.`exam_qstn` where exam_id='".$examId."'";
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get all Questions of Exam with name : '".$sql."'" );
+		$result = 	mysqli_query($conn,$sql);
+		$row	= 	mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$i=0;
+		while ($row)
+		{
+			$this->global_qstn_counter++;
+			//$jsonArr[0]= $i;
+			$qstnId	 =	$row['qstn_id'];
+			$qstnDetails  = $this->getQuestionDetail($qstnId);
+			//print_r($qstnDetails);
 
+			$jsonArr[$this->global_qstn_counter]=$qstnDetails;
+			// $jsonArr[2]=$row['totalquestions'];
 
-function getQuestionDetailDiv($question_id){
-	$questionDiv="";
-	$conn = DbConn::getDbConn();
-	$sql="SELECT * FROM `assessment`.`question` where id='".$question_id."'";
-	log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Question Detail : '".$sql."'" );
-	$result = 	mysqli_query($conn,$sql);
-	$row		= 	mysqli_fetch_array($result, MYSQLI_ASSOC);
-	$i=0;
-	while ($row)
-	{
-		$this->global_qstn_counter++;
-		$qstn=$row['question'];
-		$optiona=$row['optiona'];
-		$optionb=$row['optionb'];
-		$optionc=$row['optionc'];
-		$optiond=$row['optiond'];
-
-		$divBackGround = "";
-		if($this->global_qstn_counter % 2 == 0){
-			$divBackGround="evenQstn";
-		}else{
-			$divBackGround="oddQstn";
+			$jsonArr1[] =$jsonArr;
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		}
-    $questionDiv = ' <div class="form-group"><div id="'.$divBackGround.'"><div id="'.$question_id.'" class="col-xs-14">
+		$final_array = array('data' => $jsonArr);
+		// Free result set
+		mysqli_free_result($result);
+		return $final_array;
+		//echo json_encode($final_array);
+	}
+
+
+	function getQuestionDetail($question_id){
+		$questionDiv="";
+		$conn = DbConn::getDbConn();
+		$sql="SELECT * FROM `assessment`.`question` where id='".$question_id."'";
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Question Detail : '".$sql."'" );
+		$result = 	mysqli_query($conn,$sql);
+		$row		= 	mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+		while ($row)
+		{
+
+			$qstn=$row['question'];
+			$optiona=$row['optiona'];
+			$optionb=$row['optionb'];
+			$optionc=$row['optionc'];
+			$optiond=$row['optiond'];
+
+			$QstnDetail["question"]=$qstn;
+			$QstnDetail["optiona"]=$optiona;
+			$QstnDetail["optionb"]=$optionb;
+			$QstnDetail["optionc"]=$optionc;
+			$QstnDetail["optiond"]=$optiond;
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+			break;
+		}
+		mysqli_free_result($result);
+		return $QstnDetail;
+	}
+
+
+	function getExamQuestionsDivs($examId,$examName){
+		$completeDiv = "";
+		$conn = DbConn::getDbConn();
+		if($examName!="" && $examId=="")
+		$examId= $this->getExamId($examName);
+		$sql="SELECT qstn_id FROM `assessment`.`exam_qstn` where exam_id='".$examId."'";
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get all Questions of Exam with name : '".$sql."'" );
+		$result = 	mysqli_query($conn,$sql);
+		$row		= 	mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$i=0;
+		while ($row)
+		{
+			$i++;
+			//$jsonArr[0]= $i;
+			$qstnId	 =	$row['qstn_id'];
+			$qstnDiv  = $this->getQuestionDetailDiv($qstnId);
+			$completeDiv.= $qstnDiv;
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		}
+		//	$final_array = array('data' => $jsonArr1);
+		// Free result set
+		mysqli_free_result($result);
+		// print json Data.
+		//echo json_encode($final_array);
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,Complete Qstn Div = '".$completeDiv."'" );
+		return $completeDiv;
+	}
+
+
+	function getQuestionDetailDiv($question_id){
+		$questionDiv="";
+		$conn = DbConn::getDbConn();
+		$sql="SELECT * FROM `assessment`.`question` where id='".$question_id."'";
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Question Detail : '".$sql."'" );
+		$result = 	mysqli_query($conn,$sql);
+		$row		= 	mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$i=0;
+		while ($row)
+		{
+			$this->global_qstn_counter++;
+			$qstn=$row['question'];
+			$optiona=$row['optiona'];
+			$optionb=$row['optionb'];
+			$optionc=$row['optionc'];
+			$optiond=$row['optiond'];
+
+			$divBackGround = "";
+			if($this->global_qstn_counter % 2 == 0){
+				$divBackGround="evenQstn";
+			}else{
+				$divBackGround="oddQstn";
+			}
+
+			$questionDiv = ' <div class="form-group"><div id="'.$divBackGround.'"><div id="'.$question_id.'" class="col-xs-14">
 				<p id="qstn_p">'.$this->global_qstn_counter.'. '.$qstn.'</p>
 				<div><br></div>
 				<div id="optiona"><p id="qstn_p"><input id="qstn_checkbox" type="checkbox">
@@ -112,20 +143,20 @@ function getQuestionDetailDiv($question_id){
 				<div><br></div>
 			 </div></div>
 			<div class="col-xs-14"><hr></div></div>';
-		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
-		break;
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+			break;
+		}
+		//	$final_array = array('data' => $jsonArr1);
+		// Free result set
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Qstn Div = '".$questionDiv."'" );
+		mysqli_free_result($result);
+		return $questionDiv;
+		// print json Data.
+		//echo json_encode($final_array);
 	}
-//	$final_array = array('data' => $jsonArr1);
-	// Free result set
- 	log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Qstn Div = '".$questionDiv."'" );
-	mysqli_free_result($result);
-	return $questionDiv;
-	// print json Data.
-	//echo json_encode($final_array);
-}
 
 
-function selectQuestions($subjectId,$category,$module,$noOfQstns,$exam_id){
+	function selectQuestions($subjectId,$category,$module,$noOfQstns,$exam_id){
 		$conn = DbConn::getDbConn();
 		$sql="SELECT id FROM `assessment`.`question` where";
 		if($subjectId!=""){
@@ -212,10 +243,10 @@ function selectQuestions($subjectId,$category,$module,$noOfQstns,$exam_id){
 			$jsonArr[4]=$row['duration'];
 			$jsonArr[5]=$row['testfrom'];
 			$jsonArr[6]=$row['testto'];
-			$jsonArr[7]=$row['total_marks'];	
+			$jsonArr[7]=$row['total_marks'];
 			$jsonArr[8]="";
-			
-			
+
+
 			//$jsonArr[11]=$jsonArr;
 			$jsonArr1[] =$jsonArr;
 			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -331,9 +362,9 @@ function selectQuestions($subjectId,$category,$module,$noOfQstns,$exam_id){
 					$details = $this->getModuleDetails($moduleId);
 					if($details[0]!="")
 					//$subjectId,$category,$module,$noOfQstns,$exam_id
-						$this->selectQuestions($subjectId,$details[0],$details[1],$moduleNoOfQstns,$exam_id);
+					$this->selectQuestions($subjectId,$details[0],$details[1],$moduleNoOfQstns,$exam_id);
 					else
-						log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Error !  'selectedCategory' and 'module' does not exist  in Database '" );
+					log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Error !  'selectedCategory' and 'module' does not exist  in Database '" );
 
 				}
 				return $this->insertQstnsInExam();
@@ -438,13 +469,15 @@ function selectQuestions($subjectId,$category,$module,$noOfQstns,$exam_id){
 
 // Handle Requests from UI
 $obj = new manageExams();
+//$obj->getExamQuestions("","rohit_123");
+
 if(isset($_GET['get'])){
 	$requestParam = $_GET['get'];
 	log_event( LOG_DATABASE, "Get Request with parameter :'".$_GET['get']."'" );
 	if($requestParam == "exams"){
 		$subjectId="";
 		if(isset($_GET['subid']))
-			$subjectId = $_GET['subid'];
+		$subjectId = $_GET['subid'];
 		log_event( LOG_DATABASE, "Get Exam List for subject  : '".$_GET['qpCode']."'" );
 		$obj->getExamsList($subjectId);
 	}else{

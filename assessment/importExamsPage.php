@@ -1,13 +1,19 @@
 <?php
 //ini_set('error_reporting', E_ALL);
 //include("./php/lib/MPDF_5_7/MPDF57/mpdf.php");
-include('./php/manageExams.php');
-if(isset($_GET['examname'])){
-    $testName   =   $_GET['examname'];
-}
-//$testId     =   5;
-$obj = new manageExams();
-$qstnDivs = $obj->getExamQuestionsDivs($testId,$testName);
+include('./php/EncryptQuestionPaper.php');
+
+$obj = new EncryptQuestionPaperClass();
+// Read Encrypted File
+$examInJSONFormat = $obj->decodeExamsFromFile('./importTests/EncryptQstnPaper.enq');
+$pos = strripos($examInJSONFormat, '}'); // $pos = 7, not 0
+//echo $pos;
+$data=substr($examInJSONFormat,0,$pos+1);
+//echo $data;
+//echo $examInJSONFormat;
+$qstnDivs = $obj->getExamDivsFromJSON($data);
+
+//$qstnDivs = $obj->decodeJSONFile('./importTests/cob_details.json');
 $htmlContent='<!DOCTYPE HTML>
 <html>
 <head>
