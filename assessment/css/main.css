@@ -1,5 +1,13 @@
+  #oddQstn{
+  background: #b8d1f3
+}
+
+#evenQstn{
+  background: #dae5f4
+}
 
 p { word-break: break-all }
+
 #qstn_p{
   	font-size: 18
 }

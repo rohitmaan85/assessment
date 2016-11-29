@@ -7,6 +7,7 @@ class manageExams{
 
 	var	$selectedCategory = "";
 	var	$module = "";
+	var $global_qstn_counter = 0;
 
 
 function getExamQuestions($testId,$testName){
@@ -39,10 +40,12 @@ function getExamQuestions($testId,$testName){
 	//echo json_encode($final_array);
 }
 
-function getExamQuestionsDivs($testId,$testName){
+function getExamQuestionsDivs($examId,$examName){
 	$completeDiv = "";
 	$conn = DbConn::getDbConn();
-	$sql="SELECT qstn_id FROM `assessment`.`exam_qstn` where exam_id='".$testId."'";
+	if($examName!="" && $examId=="")
+		$examId= $this->getExamId($examName);
+	$sql="SELECT qstn_id FROM `assessment`.`exam_qstn` where exam_id='".$examId."'";
 	log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get all Questions of Exam with name : '".$sql."'" );
 	$result = 	mysqli_query($conn,$sql);
 	$row		= 	mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -76,15 +79,21 @@ function getQuestionDetailDiv($question_id){
 	$i=0;
 	while ($row)
 	{
-		$i++;
+		$this->global_qstn_counter++;
 		$qstn=$row['question'];
 		$optiona=$row['optiona'];
 		$optionb=$row['optionb'];
 		$optionc=$row['optionc'];
 		$optiond=$row['optiond'];
 
-    $questionDiv = '<div id="'.$question_id.'" class="col-xs-14">
-				<p id="qstn_p">'.$i.'. '.$qstn.'</p>
+		$divBackGround = "";
+		if($this->global_qstn_counter % 2 == 0){
+			$divBackGround="evenQstn";
+		}else{
+			$divBackGround="oddQstn";
+		}
+    $questionDiv = ' <div class="form-group"><div id="'.$divBackGround.'"><div id="'.$question_id.'" class="col-xs-14">
+				<p id="qstn_p">'.$this->global_qstn_counter.'. '.$qstn.'</p>
 				<div><br></div>
 				<div id="optiona"><p id="qstn_p"><input id="qstn_checkbox" type="checkbox">
 				'.$optiona.'</p></div>
@@ -101,11 +110,8 @@ function getQuestionDetailDiv($question_id){
 				'.$optiond.'</p>
 				</div>
 				<div><br></div>
-			 </div>
-			<div id="examQuestions" class="col-xs-14"><hr></div>';
-
-		//$jsonArr[11]=$jsonArr;
-	//	$jsonArr1[] =$jsonArr;*/
+			 </div></div>
+			<div class="col-xs-14"><hr></div></div>';
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		break;
 	}
@@ -201,10 +207,15 @@ function selectQuestions($subjectId,$category,$module,$noOfQstns,$exam_id){
 			//$jsonArr[0]= $i;
 			$jsonArr[0]=$row['testname'];
 			$jsonArr[1]=$row['subid'];
-			$jsonArr[2]=$row['totalquestions'];
-			$jsonArr[3]=$row['duration'];
-			$jsonArr[4]=$row['testfrom'];
-			$jsonArr[5]=$row['testto'];
+			$jsonArr[2]=$row['batchid'];
+			$jsonArr[3]=$row['totalquestions'];
+			$jsonArr[4]=$row['duration'];
+			$jsonArr[5]=$row['testfrom'];
+			$jsonArr[6]=$row['testto'];
+			$jsonArr[7]=$row['total_marks'];	
+			$jsonArr[8]="";
+			
+			
 			//$jsonArr[11]=$jsonArr;
 			$jsonArr1[] =$jsonArr;
 			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -433,7 +444,7 @@ if(isset($_GET['get'])){
 	if($requestParam == "exams"){
 		$subjectId="";
 		if(isset($_GET['subid']))
-		$subjectId = $_GET['subid'];
+			$subjectId = $_GET['subid'];
 		log_event( LOG_DATABASE, "Get Exam List for subject  : '".$_GET['qpCode']."'" );
 		$obj->getExamsList($subjectId);
 	}else{

@@ -7,15 +7,28 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery.dataTables.min.js"></script>
   <script src="js/dataTables.responsive.js"></script>
-  <script src="js/dataTables.bootstrap.js"></script>
+  <script src="js/dataTables.bootstrap.min.js"></script>
   <script src="js/dataTables.responsive.min.js"></script>
+
+  <script src="js/dataTables.buttons.min.js"></script>
+  <script src="js/buttons.bootstrap.min.js"></script>
+  <script src="js/jszip.min.js"></script>
+  <script src="js/pdfmake.min.js"></script>
+  <script src="js/vfs_fonts.js"></script>
+  <script src="js/buttons.html5.min.js"></script>
+  <script src="js/buttons.print.min.js"></script>
+  <script src="js/buttons.colVis.min.js"></script>
+
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css"  href="css/main.css">
   <link rel="stylesheet" type="text/css"  href="css/dataTables.bootstrap.css">
   <link rel="stylesheet" type="text/css"  href="css/dataTables.responsive.css">
+  <link rel="stylesheet" type="text/css"  href="css/buttons.bootstrap.min.css">
+
   <script src="js/toggle.js"></script>
   <script src="js/exams.js"></script>
-    <script src="js/main.js"></script>
+  <script src="js/main.js"></script>
+
   </head>
 
 <body>
@@ -94,36 +107,28 @@
                               </ul>
                              </div>
                           </div>
-
                           <hr>
-                           <div class="form-group">
-                            <label for="pwd">QP Code :</label>
-                             <strong> <input id="qpcodeText" type="text" class="form-control" aria-describedby="sizing-addon1" ></strong>
-                            <!--
-                            <div class="input-group input-group-sm">
-                              <span class="input-group-addon" id="sizing-addon1">QP Code</span>
-                              <input type="text" class="form-control" aria-describedby="sizing-addon1">
-                            </div>
-                            -->
-                          </div>
                          </form>
                       </div>
                     </div>
                   </div>
                   <div class="col-xs-14 col-md-14">
                       <hr>
+                      <br>
                   </div>
                   <div class="rowtable">
                         <div class="col-md-12">
-                            <table id="examTable" class="table table-striped table-bordered table-hover dt-responsive"  cellspacing="0" width="100%">
+                            <table id="exams" class="table table-striped table-bordered table-hover dt-responsive"  cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
                                             <th>Exam Name</th>
-                                            <th>QPCode</th>
+                                            <th>JobRole</th>
+                                            <th>BatchId</th>
                                             <th>Qstns</th>
-                                            <th>Dur(Mints.)</th>
+                                            <th>Dur</th>
                                             <th>Valid From</th>
                                             <th>Valid To</th>
+                                            <th>Total Marks</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
