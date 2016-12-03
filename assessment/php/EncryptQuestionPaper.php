@@ -43,14 +43,15 @@ class EncryptQuestionPaperClass{
 	function getEncryptedQuestionPaper($examId, $examName){
 
 		$manageExamsObj = new manageExams();
-		$questionPaperJSONString  = $manageExamsObj->getExamQuestions($examId, $examName);
-		echo json_encode($questionPaperJSONString);
+		$questionPaperJSONString  = $manageExamsObj->getExamQuestionsInJSONString($examId, $examName);
+		log_event( LOG_ENCRYPTION, __LINE__."  ". __FILE__.", JSON String for Exam '".$questionPaperJSONString."'" );
+		//echo json_encode($questionPaperJSONString);
 		return $this->encryptQuestionPaper(json_encode($questionPaperJSONString));
 
 	}
-
-
-
+	
+	// -------------------- Decryption Start here ----------------- //
+	
 	function decryptQuestionPaper($encryptedQuestionPaper)
 	{
 		# --- DECRYPTION ---
@@ -90,8 +91,7 @@ class EncryptQuestionPaperClass{
 		//echo "Decrypt Data = " . $questionPaperJSONString;	
 		return $questionPaperJSONString;
 	}
-
-
+	
 	function decodeJSONFile($fileName)
 	{
 		$questionDiv="";
@@ -244,6 +244,9 @@ function getExamDivsFromJSON($data)
 		//echo $questionDiv;
 	}
 }
+
+$manageExamsObj = new manageExams();
+echo json_encode($manageExamsObj->getExamQuestionsInJSONString("","rohit_123"));
 
 //$obj = new EncryptQuestionPaperClass();
 //$obj->decodeJSONFile('cob_details.json');

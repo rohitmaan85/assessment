@@ -83,7 +83,8 @@ $htmlContent='<!DOCTYPE HTML>
           </div>
           <div class="panel-body">
             <button id="exportExamAsPDF"  type="button" class="btn btn-info"><span class="glyphicon glyphicon-floppy-saved"></span> Export Questions in PDF File.  </button>
-            <div><br></div>
+            <button id="exportEncryptedExam"  type="button" class="btn btn-warning"><span class="glyphicon glyphicon-floppy-saved"></span> Export Questions in Encrypted File.  </button>
+          <div><br></div>
               <div id="examQuestions" class="col-xs-12">
                 <form id="createQuestionForm" class="form-horizontal" >
                   '.$qstnDivs.'

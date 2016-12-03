@@ -1,8 +1,8 @@
-
 <!DOCTYPE HTML>
 <html>
 
-<head><title>BriskMindTest EMS</title>
+<head>
+<title>BriskMindTest EMS</title>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.dataTables.min.js"></script>
@@ -13,14 +13,16 @@
 <link rel="stylesheet" type="text/css"  href="css/main.css">
 <link rel="stylesheet" type="text/css"  href="css/dataTables.bootstrap.css">
 <link rel="stylesheet" type="text/css"  href="css/dataTables.responsive.css">
+<link rel="stylesheet" type="text/css"  href="css/font-awesome.min.css">
 <script src="js/toggle.js"></script>
-<script src="js/import_questions.js"></script>
+<script src="js/import_encrypt_exam.js"></script>
 <script src="js/progress.js"></script>
 <script src="js/main.js"></script>
 </head>
 
 <body>
-  <div class="loader"></div>  <!-- <script src="js/jquery-3.1.0.js"></script> -->
+  <div class="loader"></div>
+  <!-- <script src="js/jquery-3.1.0.js"></script> -->
 
   <div class="row">
     <!-- uncomment code for absolute positioning tweek see top comment in css -->
@@ -70,17 +72,16 @@
             <!--<div class="col-lg-14 col-md-11 col-sm-2 col-xs-12"> -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                         <h2 class="panel-title pull-left"><strong>Import Questions from Excel File</strong></h2>
+                         <h2 class="panel-title pull-left"><strong>Import Batch Details from Excel File</strong></h2>
                     </div>
                     <div class="panel-body">
-                     <form id="uploadXlsForm" class="well" action="#" method="post" enctype="multipart/form-data">
+                    <form id="uploadEncryptExamForm" class="well" action="#" method="post" enctype="multipart/form-data">
                       <div class="row" style="position:relative">
                          <div id="error_msg"  class="alert alert-danger fade" style="position:relative">
                            <button href="#" type="button" class="close">&times;</button>
                                <strong></strong>
-                        </div>
-                        <!--  <div class="col-lg-12 col-sm-6 col-12"> -->
-                          <h4>Upload Questions From Excel File.</h4>
+                         </div>
+                          <h4>Upload Exam File to conduct Exams.</h4>
                           <div class="input-group">
                               <label class="input-group-btn">
                                   <span class="btn btn-primary">
@@ -90,7 +91,7 @@
                               <input type="text" class="form-control" readonly>
                           </div>
                           <span class="help-block">
-                              Select file to be uploaded , Only Excel files are allowed.
+                              Select file to be uploaded , Only file with extension ".bme" are allowed.
                           </span>
 
                         <!-- File Upload Progress Bar -->
@@ -103,39 +104,16 @@
                         </div>
                         </script>
                         <!-- File Upload Progress Bar End-->
-                       </div>
-                       <button id="uploadFileButton"  type="button" class="btn btn-success disabled" disabled="disabled"><span class="glyphicon glyphicon-upload"></span>      Import Questions ...</button>
+
+                       <button id="uploadFileButton"  type="button" class="btn btn-warning" disabled="disabled"><span class="glyphicon glyphicon-upload"></span>      Import Exams information ...</button>
                        <button id="cancelButton"  type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>  Cancel</button>
                        </form>
                     <hr>
-
-                    <div class="rowtable">
-                        <div class="col-md-14">
-                            <table id="qstnsTable" class="table table-striped table-bordered table-hover dt-responsive"  cellspacing="0" width="100%">
-                                    <thead>
-                                        <tr>
-                                            <th>S.No</th>
-                                            <th>SSC</th>
-                                            <th>Job Role</th>
-                                            <th>Category</th>
-                                            <th>Module</th>
-                                            <th>Question</th>
-                                            <th>Option A</th>
-                                            <th>Option B</th>
-                                            <th>Option C</th>
-                                            <th>Option D</th>
-                                            <th>Answer</th>
-                                            <th>type</th>
-                                        </tr>
-                                    </thead>
-                                 </table>
-                            </div>
-                        </div>
                     </div>
                 </div>
-        <!-- </div> -->
-    </div>
-    </div>
+              </div>
+            </div>
+          </div>
 </body>
 
 </html>

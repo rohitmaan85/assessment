@@ -34,6 +34,6 @@ $mpdf=new mPDF();
 $mpdf->WriteHTML($stylesheet,1);
 $mpdf->WriteHTML($qstnDivs,2);
 //$mpdf->Output();
-$mpdf->Output('qstns.pdf','D'); // For Download
+$mpdf->Output($testName.'_'.date("Y-m-d H:i:s", time()).'.pdf','D'); // For Download
 
 ?>

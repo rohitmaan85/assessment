@@ -9,10 +9,11 @@ class manageExams{
 	var $global_qstn_counter = 0;
 
 
-	function getExamQuestions($examId,$examName){
+	function getExamQuestionsInJSONString($examId,$examName){
+		$examId="";
 		$conn = DbConn::getDbConn();
 		if($examName!="" && $examId=="")
-		$examId= $this->getExamId($examName);
+			$examId= $this->getExamId($examName);
 		$sql="SELECT qstn_id FROM `assessment`.`exam_qstn` where exam_id='".$examId."'";
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get all Questions of Exam with name : '".$sql."'" );
 		$result = 	mysqli_query($conn,$sql);
@@ -32,11 +33,51 @@ class manageExams{
 			$jsonArr1[] =$jsonArr;
 			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		}
-		$final_array = array('data' => $jsonArr);
+		
+		// Get Exam Details
+		$examDetailsArr = $this->getExamDetails($examId);
+		
+		$final_array = array('exam_details'=>$examDetailsArr,'data' => $jsonArr);
 		// Free result set
 		mysqli_free_result($result);
 		return $final_array;
 		//echo json_encode($final_array);
+	}
+	
+	
+function getExamDetails($examId){
+		$conn = DbConn::getDbConn();
+		$sql="SELECT * FROM `assessment`.`exam`";
+		if(examId!="")
+		$sql.= " where id='".htmlspecialchars($examId,ENT_QUOTES)."'";
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Exam Details : '".$sql."'" );
+		$result = mysqli_query($conn,$sql);
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$i=0;
+		while ($row)
+		{
+			$i++;
+			//$jsonArr[0]= $i;
+			$jsonArr["examname"]=$row['testname'];
+			$jsonArr["subid"]=$row['subid'];
+			$jsonArr["batchid"]=$row['batchid'];
+			$jsonArr["totalquestions"]=$row['totalquestions'];
+			$jsonArr["duration"]=$row['duration'];
+			$jsonArr["testfrom"]=$row['testfrom'];
+			$jsonArr["testto"]=$row['testto'];
+			$jsonArr["total_marks"]=$row['total_marks'];
+	
+			//$jsonArr[11]=$jsonArr;
+			//$jsonArr1[] =$jsonArr;
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		}
+		$final_array = array('exam_details' => $jsonArr);
+		// Free result set
+		mysqli_free_result($result);
+		// print json Data.
+		//echo json_encode($final_array);
+		//return $final_array;
+		return $jsonArr;
 	}
 
 
@@ -259,7 +300,6 @@ class manageExams{
 	}
 
 	function getExamId($examName){
-
 		$conn = DbConn::getDbConn();
 		$sql="SELECT id FROM `assessment`.`exam`";
 		if($examName!="")

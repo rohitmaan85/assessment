@@ -1,3 +1,12 @@
+<?php
+$uid = isset($_POST['uid']) ? $_POST['uid'] : $_SESSION['uid'];
+$pwd = isset($_POST['pwd']) ? $_POST['pwd'] : $_SESSION['pwd'];
+
+if(!isset($_SESSION['name']))
+{
+        header("location: login.php");
+}
+?>
 <!DOCTYPE HTML>
 <html>
 

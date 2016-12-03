@@ -15,6 +15,8 @@ $g_log_levels = array(
 	LOG_REST => 'REST',
 	LOG_LDAP => 'LDAP',
 	LOG_DATABASE => 'DB',
+	LOG_ENCRYPTION=> 'ENCRYPTION',
+	READ_ATTENDENCE=> 'READ ATTENDENCE',
 );
 
 function log_event( $p_level, $p_msg ) {
