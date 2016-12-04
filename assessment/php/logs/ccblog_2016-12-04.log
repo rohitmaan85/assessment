@@ -1,0 +1,1252 @@
+2016-12-04T13:35:31+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:35:31+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:35:31+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` and batch_id='325068''
+2016-12-04T13:36:33+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T13:36:33+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T13:36:33+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T13:36:43+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:36:43+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:36:43+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T13:37:27+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:37:27+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:37:27+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T13:37:30+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:37:30+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:37:30+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T13:38:00+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:38:00+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:38:00+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T13:38:04+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:38:04+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:38:04+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T13:41:11+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:41:11+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:41:11+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T13:41:23+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:41:23+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:41:23+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T13:42:01+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T13:42:01+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T13:42:01+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T13:42:23+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T13:42:23+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T13:42:23+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T13:42:26+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:42:26+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:42:26+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T13:42:52+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:42:52+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:42:52+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T13:42:56+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:42:56+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:42:56+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T13:44:38+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T13:44:38+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T13:44:38+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T13:44:39+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:44:39+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:44:39+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T13:45:16+00:00 [5156] INFO  : DB Get Request with parameter :'batchList'
+2016-12-04T13:45:16+00:00 [5156] INFO  : DB 174  C:\wamp64\www\assessment\php\manageBatch.phpGet Batch List
+2016-12-04T13:45:16+00:00 [5156] INFO  : DB 100  C:\wamp64\www\assessment\php\manageBatch.php  , SQL to get Batch List : 'SELECT * FROM `assessment`.`batch`'
+2016-12-04T13:45:18+00:00 [5156] INFO  : DB Get Request with parameter :'qsntsList'
+2016-12-04T13:45:18+00:00 [5156] INFO  : DB 250  C:\wamp64\www\assessment\php\manageQuestions.php Get Questions List for import Page
+2016-12-04T13:45:18+00:00 [5156] INFO  : DB 157  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-12-04T13:46:04+00:00 [5156] INFO  : DB Get Request with parameter :'qsntsList'
+2016-12-04T13:46:04+00:00 [5156] INFO  : DB 250  C:\wamp64\www\assessment\php\manageQuestions.php Get Questions List for import Page
+2016-12-04T13:46:04+00:00 [5156] INFO  : DB 157  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-12-04T13:46:14+00:00 [5156] INFO  : DB Get Request with parameter :'questions'
+2016-12-04T13:46:14+00:00 [5156] INFO  : DB Get Questions List for ssc :' and subject  : ''
+		and category :'' and module : ''
+2016-12-04T13:46:14+00:00 [5156] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question`'
+2016-12-04T13:46:19+00:00 [5156] INFO  : DB Get Request with parameter :'qsntsList'
+2016-12-04T13:46:19+00:00 [5156] INFO  : DB 250  C:\wamp64\www\assessment\php\manageQuestions.php Get Questions List for import Page
+2016-12-04T13:46:19+00:00 [5156] INFO  : DB 157  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-12-04T13:46:20+00:00 [5156] INFO  : DB Get Request with parameter :'batchList'
+2016-12-04T13:46:20+00:00 [5156] INFO  : DB 174  C:\wamp64\www\assessment\php\manageBatch.phpGet Batch List
+2016-12-04T13:46:20+00:00 [5156] INFO  : DB 100  C:\wamp64\www\assessment\php\manageBatch.php  , SQL to get Batch List : 'SELECT * FROM `assessment`.`batch`'
+2016-12-04T13:46:21+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T13:46:21+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T13:46:21+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T13:46:48+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:46:48+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:46:48+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T13:47:20+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:47:20+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:47:20+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T13:51:30+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T13:51:30+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T13:51:30+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T13:51:31+00:00 [5156] INFO  : DB Get Request with parameter :'ssc'
+2016-12-04T13:51:31+00:00 [5156] INFO  : DB Get SSC List from database.
+2016-12-04T13:51:31+00:00 [5156] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-04T13:51:32+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T13:51:32+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T13:51:32+00:00 [5156] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-12-04T13:51:32+00:00 [5156] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Apparel, Madeups & Home Furnishing'
+2016-12-04T13:51:32+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T13:51:32+00:00 [5156] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Apparel, Madeups & Home Furnishing''
+2016-12-04T13:51:33+00:00 [5156] INFO  : DB Get Request with parameter :'categories'
+2016-12-04T13:51:33+00:00 [5156] INFO  : DB Get Request with parameter : 'categories'
+2016-12-04T13:51:33+00:00 [5156] INFO  : DB Get Categories List for subject  : 'AMH/Q1407'
+2016-12-04T13:51:33+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T13:51:33+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T13:51:33+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T13:51:33+00:00 [5156] INFO  : DB 103  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT category FROM `assessment`.`question_category` where subId='AMH/Q1407''
+2016-12-04T13:51:36+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:51:36+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:51:36+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T13:53:19+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T13:53:19+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T13:53:19+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T13:53:21+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:53:21+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:53:21+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T13:53:52+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:53:52+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:53:52+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T13:56:24+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:56:24+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:56:24+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T13:57:55+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:57:55+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:57:55+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T13:58:07+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:58:07+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:58:07+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T13:58:33+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:58:33+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:58:33+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T13:58:43+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T13:58:43+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T13:58:43+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:00:03+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:00:03+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:00:03+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:00:06+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:00:06+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:00:06+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:13:05+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:13:05+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:13:05+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:13:06+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:13:06+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:13:06+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:13:13+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:13:13+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:13:13+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:13:43+00:00 [5156] INFO  : DB Get Request with parameter :'questions'
+2016-12-04T14:13:43+00:00 [5156] INFO  : DB Get Questions List for ssc :' and subject  : ''
+		and category :'' and module : ''
+2016-12-04T14:13:43+00:00 [5156] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question`'
+2016-12-04T14:13:44+00:00 [5156] INFO  : DB Get Request with parameter :'ssc'
+2016-12-04T14:13:44+00:00 [5156] INFO  : DB Get SSC List from database.
+2016-12-04T14:13:44+00:00 [5156] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-04T14:13:45+00:00 [5156] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-12-04T14:13:45+00:00 [5156] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Agriculture'
+2016-12-04T14:13:45+00:00 [5156] INFO  : DB Get Request with parameter :'questions'
+2016-12-04T14:13:45+00:00 [5156] INFO  : DB Get Questions List for ssc :Agriculture' and subject  : ''
+		and category :'' and module : ''
+2016-12-04T14:13:45+00:00 [5156] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
+2016-12-04T14:13:45+00:00 [5156] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question` where ssc='Agriculture''
+2016-12-04T14:13:47+00:00 [5156] INFO  : DB Get Request with parameter :'categories'
+2016-12-04T14:13:47+00:00 [5156] INFO  : DB Get Request with parameter : 'categories'
+2016-12-04T14:13:47+00:00 [5156] INFO  : DB Get Categories List for subject  : 'AGR/Q4804'
+2016-12-04T14:13:47+00:00 [5156] INFO  : DB 103  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT category FROM `assessment`.`question_category` where subId='AGR/Q4804''
+2016-12-04T14:13:47+00:00 [5156] INFO  : DB Get Request with parameter :'questions'
+2016-12-04T14:13:47+00:00 [5156] INFO  : DB Get Questions List for ssc :Agriculture' and subject  : 'AGR/Q4804'
+		and category :'' and module : ''
+2016-12-04T14:13:47+00:00 [5156] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question` where ssc='Agriculture' and qp_code='AGR/Q4804''
+2016-12-04T14:13:55+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:13:55+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:13:55+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:17:34+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:17:34+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:17:34+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:17:35+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:17:35+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:17:35+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:18:18+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:18:18+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:18:18+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:18:20+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:18:20+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:18:20+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:20:38+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:20:38+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:20:38+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:20:41+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:20:41+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:20:41+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:20:52+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:20:52+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:20:52+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:24:37+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:24:37+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:24:37+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:25:08+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:25:08+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:25:08+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:25:29+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:25:29+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:25:29+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:25:30+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:25:30+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:25:30+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:25:39+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:25:39+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:25:39+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:25:43+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:25:43+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:25:43+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:25:44+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:25:44+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:25:44+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:26:02+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:26:02+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:26:02+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:26:03+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:26:03+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:26:03+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:26:19+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:26:19+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:26:19+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:26:20+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:26:20+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:26:20+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:26:43+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:26:43+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:26:43+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:26:44+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:26:44+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:26:44+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:27:01+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:27:01+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:27:01+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:27:01+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:27:01+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:27:01+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:27:56+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:27:56+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:27:56+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:27:58+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:27:58+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:27:58+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:28:38+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:28:38+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:28:38+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:28:39+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:28:39+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:28:39+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:29:10+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:29:10+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:29:10+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:29:11+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:29:11+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:29:11+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:30:11+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:30:11+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:30:11+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:30:12+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:30:12+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:30:12+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:31:13+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:31:13+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:31:13+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:31:14+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:31:14+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:31:14+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:31:31+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:31:31+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:31:31+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:31:32+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:31:32+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:31:32+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:31:45+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:31:45+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:31:45+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:31:46+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:31:46+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:31:46+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:31:53+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:31:53+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:31:53+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:33:22+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:33:22+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:33:22+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:33:29+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:33:29+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:33:29+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:35:32+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:35:32+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:35:32+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:35:34+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:35:34+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:35:34+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:36:24+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:36:24+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:36:24+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:36:25+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:36:25+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:36:25+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:36:35+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:36:35+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:36:35+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:38:17+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:38:17+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:38:17+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:38:18+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:38:18+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:38:18+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:38:44+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:38:44+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:38:44+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:38:45+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:38:45+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:38:45+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:39:25+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:39:25+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:39:25+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:39:26+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:39:26+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:39:26+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:39:50+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:39:50+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:39:50+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:39:51+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:39:51+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:39:51+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:40:23+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:40:23+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:40:23+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:40:24+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:40:24+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:40:24+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:40:55+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:40:55+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:40:55+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:40:56+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:40:56+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:40:56+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:41:27+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:41:27+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:41:27+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:41:28+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:41:28+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:41:28+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:41:39+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:41:39+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:41:39+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:41:40+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:41:40+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:41:40+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:41:47+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:41:47+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:41:47+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:41:48+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:41:48+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:41:48+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:41:57+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:41:57+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:41:57+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:41:58+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:41:58+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:41:58+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:42:14+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:42:14+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:42:14+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:42:15+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:42:15+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:42:15+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:43:04+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:43:04+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:43:04+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:43:32+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:43:32+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:43:32+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:43:48+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:43:48+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:43:48+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:43:49+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:43:49+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:43:49+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:44:17+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:44:17+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:44:17+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:44:17+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:44:17+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:44:17+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:44:33+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:44:33+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:44:33+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:44:34+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:44:34+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:44:34+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:44:46+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:44:46+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:44:46+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:44:46+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:44:46+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:44:46+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:45:04+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:45:04+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:45:04+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:45:05+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:45:05+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:45:05+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:45:31+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:45:31+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:45:31+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:45:32+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:45:32+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:45:32+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:45:58+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:45:58+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:45:58+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:45:59+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:45:59+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:45:59+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:46:17+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:46:17+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:46:17+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:46:18+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:46:18+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:46:18+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:46:37+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:46:37+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:46:37+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:46:38+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:46:38+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:46:38+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:46:47+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:46:47+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:46:47+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:46:48+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:46:48+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:46:48+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:47:19+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:47:19+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:47:19+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:47:19+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:47:19+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:47:19+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T14:47:29+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T14:47:29+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T14:47:29+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T14:47:29+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T14:47:29+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T14:47:29+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:12:24+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:12:24+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:12:24+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:12:26+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:12:26+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:12:26+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:13:59+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:13:59+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:13:59+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:14:50+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:14:50+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:14:50+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:14:54+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:14:54+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:14:54+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:15:00+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:15:00+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:15:00+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:15:31+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:15:31+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:15:31+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:15:34+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:15:34+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:15:34+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:15:51+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:15:51+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:15:51+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:15:52+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:15:52+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:15:52+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:16:45+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:16:45+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:16:45+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:16:46+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:16:46+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:16:46+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:17:38+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:17:38+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:17:38+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:18:20+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:18:20+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:18:20+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:18:21+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:18:21+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:18:21+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:19:06+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:19:06+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:19:06+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:19:07+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:19:07+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:19:07+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:19:18+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:19:18+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:19:18+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:19:19+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:19:19+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:19:19+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:20:17+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:20:17+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:20:17+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:20:18+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:20:18+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:20:18+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:20:31+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:20:31+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:20:31+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:20:32+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:20:32+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:20:32+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:20:43+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:20:43+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:20:43+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:20:43+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:20:43+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:20:44+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:21:57+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:21:57+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:21:57+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:21:59+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:21:59+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:21:59+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:22:49+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:22:49+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:22:49+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:22:50+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:22:50+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:22:50+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:23:00+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:23:00+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:23:00+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:23:01+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:23:01+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:23:01+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:23:10+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:23:10+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:23:10+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:23:12+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:23:12+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:23:12+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:23:21+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:23:21+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:23:21+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:23:24+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:23:24+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:23:24+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:23:35+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:23:35+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:23:35+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:23:36+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:23:36+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:23:36+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:23:43+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:23:43+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:23:43+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:23:44+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:23:44+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:23:44+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:23:52+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:23:52+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:23:52+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:23:55+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:23:55+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:23:55+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:24:13+00:00 [5156] INFO  : DB Get Request with parameter :'questions'
+2016-12-04T15:24:13+00:00 [5156] INFO  : DB Get Questions List for ssc :' and subject  : ''
+		and category :'' and module : ''
+2016-12-04T15:24:13+00:00 [5156] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question`'
+2016-12-04T15:24:52+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:24:52+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:24:52+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:25:23+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:25:23+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:25:23+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:25:53+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:25:53+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:25:53+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:25:55+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:25:55+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:25:55+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:26:13+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:26:13+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:26:13+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:26:19+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:26:19+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:26:19+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:26:20+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:26:20+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:26:20+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:26:31+00:00 [5156] INFO  : DB Get Request with parameter :'questions'
+2016-12-04T15:26:31+00:00 [5156] INFO  : DB Get Questions List for ssc :' and subject  : ''
+		and category :'' and module : ''
+2016-12-04T15:26:31+00:00 [5156] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question`'
+2016-12-04T15:26:39+00:00 [5156] INFO  : DB Get Request with parameter :'ssc'
+2016-12-04T15:26:39+00:00 [5156] INFO  : DB Get SSC List from database.
+2016-12-04T15:26:39+00:00 [5156] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-04T15:26:40+00:00 [5156] INFO  : DB Get Request with parameter :'exams'
+2016-12-04T15:26:40+00:00 [5156] INFO  : DB Get Exam List for subject  : ''
+2016-12-04T15:26:40+00:00 [5156] INFO  : DB 272  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
+2016-12-04T15:26:53+00:00 [5156] INFO  : DB Get Request with parameter :'qsntsList'
+2016-12-04T15:26:53+00:00 [5156] INFO  : DB 250  C:\wamp64\www\assessment\php\manageQuestions.php Get Questions List for import Page
+2016-12-04T15:26:53+00:00 [5156] INFO  : DB 157  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-12-04T15:27:11+00:00 [5156] INFO  : DB Get Request with parameter :'questions'
+2016-12-04T15:27:11+00:00 [5156] INFO  : DB Get Questions List for ssc :' and subject  : ''
+		and category :'' and module : ''
+2016-12-04T15:27:11+00:00 [5156] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question`'
+2016-12-04T15:27:13+00:00 [5156] INFO  : DB Get Request with parameter :'ssc'
+2016-12-04T15:27:13+00:00 [5156] INFO  : DB Get SSC List from database.
+2016-12-04T15:27:13+00:00 [5156] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-04T15:27:14+00:00 [5156] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-12-04T15:27:14+00:00 [5156] INFO  : DB Get Request with parameter :'questions'
+2016-12-04T15:27:14+00:00 [5156] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Agriculture'
+2016-12-04T15:27:14+00:00 [5156] INFO  : DB Get Questions List for ssc :Agriculture' and subject  : ''
+		and category :'' and module : ''
+2016-12-04T15:27:14+00:00 [5156] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
+2016-12-04T15:27:14+00:00 [5156] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question` where ssc='Agriculture''
+2016-12-04T15:27:17+00:00 [5156] INFO  : DB Get Request with parameter :'categories'
+2016-12-04T15:27:17+00:00 [5156] INFO  : DB Get Request with parameter : 'categories'
+2016-12-04T15:27:17+00:00 [5156] INFO  : DB Get Categories List for subject  : 'AGR/Q4804'
+2016-12-04T15:27:17+00:00 [5156] INFO  : DB 103  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT category FROM `assessment`.`question_category` where subId='AGR/Q4804''
+2016-12-04T15:27:18+00:00 [5156] INFO  : DB Get Request with parameter :'questions'
+2016-12-04T15:27:18+00:00 [5156] INFO  : DB Get Questions List for ssc :Agriculture' and subject  : 'AGR/Q4804'
+		and category :'' and module : ''
+2016-12-04T15:27:18+00:00 [5156] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question` where ssc='Agriculture' and qp_code='AGR/Q4804''
+2016-12-04T15:27:25+00:00 [5156] INFO  : DB Get Request with parameter :'modules'
+2016-12-04T15:27:25+00:00 [5156] INFO  : DB Get Request with parameter :'questions'
+2016-12-04T15:27:25+00:00 [5156] INFO  : DB Get Request with parameter : 'modules'
+2016-12-04T15:27:25+00:00 [5156] INFO  : DB Get Module List for subject : 'AGR/Q4804' and category 'Practical'
+2016-12-04T15:27:25+00:00 [5156] INFO  : DB Get Questions List for ssc :Agriculture' and subject  : 'AGR/Q4804'
+		and category :'Practical' and module : ''
+2016-12-04T15:27:25+00:00 [5156] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question` where ssc='Agriculture' and qp_code='AGR/Q4804' and category='Practical''
+2016-12-04T15:27:25+00:00 [5156] INFO  : DB 149  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT module FROM `assessment`.`question_category` where subId='AGR/Q4804' and category='Practical''
+2016-12-04T15:27:43+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:27:43+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:27:43+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:28:02+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:28:02+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:28:02+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:28:05+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:28:05+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:28:05+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:28:19+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:28:19+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:28:19+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:29:00+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:29:00+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:29:00+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:29:01+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:29:01+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:29:01+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:29:38+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:29:38+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:29:38+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:29:39+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:29:39+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:29:39+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:30:48+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:30:48+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:30:48+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:30:49+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:30:49+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:30:49+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:30:55+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:30:55+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:30:55+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:31:11+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:31:11+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:31:11+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:31:12+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:31:12+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:31:12+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:31:38+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:31:38+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:31:38+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:31:40+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:31:40+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:31:40+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:31:59+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:31:59+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:31:59+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:32:00+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:32:00+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:32:00+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:32:17+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:32:18+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:32:18+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:32:19+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:32:19+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:32:19+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:32:26+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:32:26+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:32:26+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:32:27+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:32:27+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:32:27+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:32:32+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:32:32+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:32:32+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:32:33+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:32:33+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:32:33+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:32:39+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:32:39+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:32:39+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:32:40+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:32:40+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:32:40+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:32:44+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:32:44+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:32:44+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:37:06+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:37:06+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:37:06+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:37:08+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:37:08+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:37:08+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:37:33+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:37:33+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:37:33+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:37:36+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:37:36+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:37:36+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:37:40+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:37:40+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:37:40+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:38:11+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:38:11+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:38:11+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:38:11+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:38:11+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:38:11+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:38:19+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:38:19+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:38:19+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:38:20+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:38:20+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:38:20+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:38:35+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:38:35+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:38:35+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:38:36+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:38:36+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:38:36+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:38:57+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:38:57+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:38:57+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:38:58+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:38:58+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:38:58+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:39:05+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:39:05+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:39:05+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:39:06+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:39:06+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:39:06+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:39:34+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:39:34+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:39:34+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:39:36+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:39:36+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:39:36+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:40:48+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:40:48+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:40:48+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:40:49+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:40:49+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:40:49+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:41:08+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:41:08+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:41:08+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:41:09+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:41:09+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:41:09+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:41:22+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:41:22+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:41:22+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:41:23+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:41:23+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:41:23+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:42:31+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:42:31+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:42:31+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:42:33+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:42:33+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:42:33+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:42:47+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:42:47+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:42:47+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:42:48+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:42:48+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:42:48+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:43:01+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:43:01+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:43:01+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:43:02+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:43:02+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:43:02+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:43:24+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:43:24+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:43:24+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:43:28+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:43:28+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:43:28+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:44:57+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:44:57+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:44:57+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:44:59+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:44:59+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:44:59+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:46:00+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:46:00+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:46:00+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:47:13+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:47:13+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:47:13+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:47:14+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:47:14+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:47:14+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:47:33+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:47:33+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:47:33+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:47:34+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:47:34+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:47:34+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:47:57+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:47:57+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:47:57+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:47:58+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:47:58+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:47:58+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:48:14+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:48:14+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:48:15+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:48:15+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:48:15+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:48:16+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:48:26+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:48:26+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:48:26+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:48:27+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:48:27+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:48:27+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:48:45+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:48:45+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:48:45+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:48:46+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:48:46+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:48:46+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:48:58+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:48:58+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:48:58+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:48:59+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:48:59+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:48:59+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:49:23+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:49:23+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:49:23+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:49:24+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:49:24+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:49:24+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:49:51+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:49:51+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:49:51+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:50:10+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:50:10+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:50:10+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:50:11+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:50:11+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:50:11+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:50:56+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:50:56+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:50:56+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:50:57+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:50:57+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:50:57+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:51:17+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:51:17+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:51:17+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:51:48+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:51:48+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:51:48+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:51:49+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:51:49+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:51:49+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:52:11+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:52:11+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:52:11+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:52:12+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:52:12+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:52:12+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:53:06+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:53:06+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:53:06+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:53:07+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:53:07+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:53:07+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:53:13+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:53:13+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:53:13+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:53:38+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:53:38+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:53:38+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:53:39+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:53:39+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:53:39+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:53:58+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:53:58+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:53:58+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:53:59+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:53:59+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:53:59+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:54:26+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:54:26+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:54:26+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:54:27+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:54:27+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:54:28+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:55:08+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:55:08+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:55:08+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:55:09+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:55:09+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:55:09+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:55:21+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:55:21+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:55:21+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:55:22+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:55:22+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:55:22+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:55:38+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:55:38+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:55:38+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:55:39+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:55:39+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:55:39+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:55:42+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:55:42+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:55:42+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:55:44+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:55:44+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:55:44+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:56:03+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:56:03+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:56:03+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:56:04+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:56:04+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:56:04+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:56:15+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:56:15+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:56:15+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:56:16+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:56:16+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:56:16+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:57:05+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:57:05+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:57:05+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:57:06+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:57:06+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:57:06+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:57:57+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:57:57+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:57:57+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:57:58+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:57:58+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:57:58+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T15:58:11+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T15:58:11+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T15:58:11+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T15:58:13+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T15:58:13+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T15:58:13+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T16:09:02+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T16:09:02+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T16:09:02+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T16:09:07+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:09:07+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:09:07+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T16:09:38+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T16:09:38+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T16:09:38+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T16:09:43+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:09:43+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:09:43+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T16:10:32+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:10:32+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:10:32+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T16:15:28+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T16:15:28+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T16:15:28+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T16:15:29+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:15:29+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:15:29+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T16:16:22+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T16:16:22+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T16:16:22+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T16:16:23+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:16:23+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:16:23+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T16:17:21+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T16:17:21+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T16:17:21+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T16:17:22+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:17:22+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:17:22+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T16:17:51+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T16:17:51+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T16:17:51+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T16:17:52+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:17:52+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:17:53+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T16:19:25+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T16:19:25+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T16:19:25+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T16:19:28+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:19:28+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:19:28+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T16:22:35+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T16:22:35+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T16:22:35+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T16:22:36+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:22:36+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:22:36+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T16:22:51+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:22:51+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:22:51+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T16:24:49+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T16:24:49+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T16:24:49+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T16:24:50+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:24:50+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:24:50+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T16:33:09+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T16:33:09+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T16:33:09+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T16:33:26+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T16:33:26+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T16:33:26+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T16:33:29+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:33:29+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:33:29+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T16:33:36+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:33:36+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:33:36+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T16:35:46+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T16:35:46+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T16:35:46+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T16:40:56+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:40:56+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:40:56+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T16:41:10+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:41:10+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:41:10+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T16:42:01+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:42:01+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:42:01+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T16:42:43+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T16:42:43+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T16:42:43+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T16:43:44+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T16:43:44+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T16:43:44+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T16:43:48+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:43:48+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:43:48+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T16:43:59+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:43:59+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:43:59+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T16:45:58+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T16:45:58+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T16:45:58+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T16:46:01+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:46:01+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:46:01+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T16:46:01+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:46:01+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:46:01+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T16:46:05+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:46:05+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:46:05+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T16:58:10+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:58:10+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:58:10+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T16:58:13+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T16:58:13+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T16:58:13+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T17:00:01+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T17:00:01+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T17:00:01+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T17:00:07+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T17:00:07+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T17:00:07+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T17:00:10+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T17:00:10+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T17:00:10+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325068''
+2016-12-04T17:04:27+00:00 [5156] INFO  : DB Get Request with parameter :'batchList'
+2016-12-04T17:04:27+00:00 [5156] INFO  : DB 174  C:\wamp64\www\assessment\php\manageBatch.phpGet Batch List
+2016-12-04T17:04:27+00:00 [5156] INFO  : DB 100  C:\wamp64\www\assessment\php\manageBatch.php  , SQL to get Batch List : 'SELECT * FROM `assessment`.`batch`'
+2016-12-04T17:04:33+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T17:04:33+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T17:04:33+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T17:04:53+00:00 [5156] INFO  : DB Get Request with parameter :'batchList'
+2016-12-04T17:04:53+00:00 [5156] INFO  : DB 174  C:\wamp64\www\assessment\php\manageBatch.phpGet Batch List
+2016-12-04T17:04:53+00:00 [5156] INFO  : DB 100  C:\wamp64\www\assessment\php\manageBatch.php  , SQL to get Batch List : 'SELECT * FROM `assessment`.`batch`'
+2016-12-04T17:06:13+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getAllAttendence'
+2016-12-04T17:06:13+00:00 [5156] INFO  : MANAGE ATTENDENCE 163  C:\wamp64\www\assessment\php\manageAttendence.php  Get All attendence .
+2016-12-04T17:06:13+00:00 [5156] INFO  : MANAGE ATTENDENCE 13  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Attendence List : 'SELECT * FROM `assessment`.`batch_students`'
+2016-12-04T17:06:34+00:00 [5156] INFO  : READ ATTENDENCE 54  C:\wamp64\www\assessment\php\uploadAttendenceSheet.php , Excel File '../uploads/Attendance/Attendance Sheet -  Batch 325069.xls' has been uploaded successfully.
+2016-12-04T17:06:34+00:00 [5156] INFO  : READ ATTENDENCE 68  C:\wamp64\www\assessment\php\uploadAttendenceSheet.php , Going to Read Excel from Sheet No0' , start row : '2' , endRow='10',' no_of
+		  		 col : '10'
+2016-12-04T17:06:34+00:00 [5156] INFO  : READ ATTENDENCE C:\wamp64\www\assessment\php\ImportAttendenceSheet.php112  , Going to commit batch details in Database.
+2016-12-04T17:06:34+00:00 [5156] INFO  : DB 150  C:\wamp64\www\assessment\php\ImportAttendenceSheet.php  ,  SQL to insert Batch Information 'INSERT INTO `assessment`.`batch_details`(`job_role`,`batch_id`,`exam_date`,`no_of_students_schedule`,`center_id_n_location`,`training_partner_name`,
+				`center_skill_counsil`,`upload_date`,`status`,`last_updated_at`) VALUES('Iron & Steel - Fitter - Instrumentation','325069','APRIL/09/2016 ','20','Centre ID-67499, Location-Baraut','Brisk Mind','Indian Iron & Steel Sector Skill Council','2016-12-04 17:06:34','active','2016-12-04 17:06:34');'
+2016-12-04T17:06:34+00:00 [5156] INFO  : DB 163  C:\wamp64\www\assessment\php\ImportAttendenceSheet.php  , Success !  Batch Information inserted successfully in Database : '1'
+2016-12-04T17:06:34+00:00 [5156] INFO  : DB 175  C:\wamp64\www\assessment\php\ImportAttendenceSheet.php  ,  SQL to insert Student Information 'INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','1','Arun Pratap Singh','Iron & Steel - Fitter - Instrumentation','8884233','Anar Singh','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','2','Susheel Kumar','Iron & Steel - Fitter - Instrumentation','8884234','Grish Chandra','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','3','Satish Kumar','Iron & Steel - Fitter - Instrumentation','8884235','Pop Singh','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','4','Prateek Kumar Jain','Iron & Steel - Fitter - Instrumentation','8884236','Sunilkumar Jain','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','5','Ashish Jain','Iron & Steel - Fitter - Instrumentation','8884237','Pradip Kumar Jain','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','6','Neeraj','Iron & Steel - Fitter - Instrumentation','8884238','Hari Shankar','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','7','Satya Pal singh','Iron & Steel - Fitter - Instrumentation','8884239','Prabhu Dayal','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','8','Ranjeet Kumar','Iron & Steel - Fitter - Instrumentation','8884240','Raghuveer Singh','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','9','Dig Pal Singh','Iron & Steel - Fitter - Instrumentation','8884241','Prem Singh','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','10','Ku Namrata Singh','Iron & Steel - Fitter - Instrumentation','8884242','Satya Prakash Vyas','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','11','Sudhir Kumar','Iron & Steel - Fitter - Instrumentation','8884243','Shukhdayal Singh','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','12','Sagar Singh','Iron & Steel - Fitter - Instrumentation','8884244','Rajkumar','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','13','Sumit Yadav','Iron & Steel - Fitter - Instrumentation','8884245','Gulab Singh Yadav','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','14','Ram Kumar','Iron & Steel - Fitter - Instrumentation','8884246','Girendra Singh','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','15','Ashish Kumar','Iron & Steel - Fitter - Instrumentation','8884247','Kamlesh Kumar','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','16','Ku Mona','Iron & Steel - Fitter - Instrumentation','8884248','Chandrapal Sharma','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','17','Harendra Singh','Iron & Steel - Fitter - Instrumentation','8884249','Rakshapal Singh','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','18','Bhuvnendra Kumar','Iron & Steel - Fitter - Instrumentation','8884250','Tej Pratap Singh','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','19','Ashwanee Kumar','Iron & Steel - Fitter - Instrumentation','8884251','Ikram Singh','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','20','Suneel Kumar','Iron & Steel - Fitter - Instrumentation','8884252','Amar Singh','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','21','Dinesh Kumar','Iron & Steel - Fitter - Instrumentation','8884253','Shri Mahavir Singh','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','22','Bhagvendra Kumar','Iron & Steel - Fitter - Instrumentation','8884254','Rakesh Kumar','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','23','Niteshkumar','Iron & Steel - Fitter - Instrumentation','8884255','Rakesh Kumar','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','24','Kuldeep Sahai','Iron & Steel - Fitter - Instrumentation','8884256','Rajendra Prasad','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','25','Dhirendr Kumar','Iron & Steel - Fitter - Instrumentation','8884257','Rajendra Kumar','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','26','Avadhesh Kumar','Iron & Steel - Fitter - Instrumentation','8884258','Karan Singh','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','27','Akash Kumar','Iron & Steel - Fitter - Instrumentation','8884259','Virendra Singh','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','28','Vishnu Kumar','Iron & Steel - Fitter - Instrumentation','8884260','Subhash Chandra','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','29','Vivek Kumar','Iron & Steel - Fitter - Instrumentation','8884261','Hari Om','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','30','Durgesh Kumar','Iron & Steel - Fitter - Instrumentation','8884262','Dinesh Chandra','','','','','','2016-12-04 17:06:34','active','2016-12-04 17:06:34');'
+2016-12-04T17:06:36+00:00 [5156] INFO  : DB 188  C:\wamp64\www\assessment\php\ImportAttendenceSheet.php  , Success !  Batch Students Information inserted successfully in Database : '30'
+2016-12-04T17:06:36+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getAllAttendence'
+2016-12-04T17:06:36+00:00 [5156] INFO  : MANAGE ATTENDENCE 163  C:\wamp64\www\assessment\php\manageAttendence.php  Get All attendence .
+2016-12-04T17:06:36+00:00 [5156] INFO  : MANAGE ATTENDENCE 13  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Attendence List : 'SELECT * FROM `assessment`.`batch_students`'
+2016-12-04T17:06:48+00:00 [5156] INFO  : READ ATTENDENCE C:\wamp64\www\assessment\php\uploadAttendenceSheet.php  Line: 41  , '../uploads/Attendance/Attendance Sheet -  Batch 325069.xls' already exist , Moving it to archive dir '../uploads/Attendance/archives/Attendance Sheet -  Batch 325069.xls_2016-12-04 17-06-48'
+2016-12-04T17:06:48+00:00 [5156] INFO  : READ ATTENDENCE 54  C:\wamp64\www\assessment\php\uploadAttendenceSheet.php , Excel File '../uploads/Attendance/Attendance Sheet -  Batch 325069.xls' has been uploaded successfully.
+2016-12-04T17:06:48+00:00 [5156] INFO  : READ ATTENDENCE 68  C:\wamp64\www\assessment\php\uploadAttendenceSheet.php , Going to Read Excel from Sheet No0' , start row : '2' , endRow='10',' no_of
+		  		 col : '10'
+2016-12-04T17:06:49+00:00 [5156] INFO  : READ ATTENDENCE C:\wamp64\www\assessment\php\ImportAttendenceSheet.php112  , Going to commit batch details in Database.
+2016-12-04T17:06:49+00:00 [5156] INFO  : DB 150  C:\wamp64\www\assessment\php\ImportAttendenceSheet.php  ,  SQL to insert Batch Information 'INSERT INTO `assessment`.`batch_details`(`job_role`,`batch_id`,`exam_date`,`no_of_students_schedule`,`center_id_n_location`,`training_partner_name`,
+				`center_skill_counsil`,`upload_date`,`status`,`last_updated_at`) VALUES('Iron & Steel - Fitter - Instrumentation','325069','APRIL/09/2016 ','20','Centre ID-67499, Location-Baraut','Brisk Mind','Indian Iron & Steel Sector Skill Council','2016-12-04 17:06:49','active','2016-12-04 17:06:49');'
+2016-12-04T17:06:49+00:00 [5156] INFO  : DB 163  C:\wamp64\www\assessment\php\ImportAttendenceSheet.php  , Success !  Batch Information inserted successfully in Database : '1'
+2016-12-04T17:06:49+00:00 [5156] INFO  : DB 175  C:\wamp64\www\assessment\php\ImportAttendenceSheet.php  ,  SQL to insert Student Information 'INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','1','Arun Pratap Singh','Iron & Steel - Fitter - Instrumentation','8884233','Anar Singh','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','2','Susheel Kumar','Iron & Steel - Fitter - Instrumentation','8884234','Grish Chandra','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','3','Satish Kumar','Iron & Steel - Fitter - Instrumentation','8884235','Pop Singh','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','4','Prateek Kumar Jain','Iron & Steel - Fitter - Instrumentation','8884236','Sunilkumar Jain','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','5','Ashish Jain','Iron & Steel - Fitter - Instrumentation','8884237','Pradip Kumar Jain','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','6','Neeraj','Iron & Steel - Fitter - Instrumentation','8884238','Hari Shankar','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','7','Satya Pal singh','Iron & Steel - Fitter - Instrumentation','8884239','Prabhu Dayal','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','8','Ranjeet Kumar','Iron & Steel - Fitter - Instrumentation','8884240','Raghuveer Singh','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','9','Dig Pal Singh','Iron & Steel - Fitter - Instrumentation','8884241','Prem Singh','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','10','Ku Namrata Singh','Iron & Steel - Fitter - Instrumentation','8884242','Satya Prakash Vyas','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','11','Sudhir Kumar','Iron & Steel - Fitter - Instrumentation','8884243','Shukhdayal Singh','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','12','Sagar Singh','Iron & Steel - Fitter - Instrumentation','8884244','Rajkumar','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','13','Sumit Yadav','Iron & Steel - Fitter - Instrumentation','8884245','Gulab Singh Yadav','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','14','Ram Kumar','Iron & Steel - Fitter - Instrumentation','8884246','Girendra Singh','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','15','Ashish Kumar','Iron & Steel - Fitter - Instrumentation','8884247','Kamlesh Kumar','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','16','Ku Mona','Iron & Steel - Fitter - Instrumentation','8884248','Chandrapal Sharma','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','17','Harendra Singh','Iron & Steel - Fitter - Instrumentation','8884249','Rakshapal Singh','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','18','Bhuvnendra Kumar','Iron & Steel - Fitter - Instrumentation','8884250','Tej Pratap Singh','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','19','Ashwanee Kumar','Iron & Steel - Fitter - Instrumentation','8884251','Ikram Singh','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','20','Suneel Kumar','Iron & Steel - Fitter - Instrumentation','8884252','Amar Singh','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','21','Dinesh Kumar','Iron & Steel - Fitter - Instrumentation','8884253','Shri Mahavir Singh','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','22','Bhagvendra Kumar','Iron & Steel - Fitter - Instrumentation','8884254','Rakesh Kumar','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','23','Niteshkumar','Iron & Steel - Fitter - Instrumentation','8884255','Rakesh Kumar','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','24','Kuldeep Sahai','Iron & Steel - Fitter - Instrumentation','8884256','Rajendra Prasad','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','25','Dhirendr Kumar','Iron & Steel - Fitter - Instrumentation','8884257','Rajendra Kumar','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','26','Avadhesh Kumar','Iron & Steel - Fitter - Instrumentation','8884258','Karan Singh','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','27','Akash Kumar','Iron & Steel - Fitter - Instrumentation','8884259','Virendra Singh','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','28','Vishnu Kumar','Iron & Steel - Fitter - Instrumentation','8884260','Subhash Chandra','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','29','Vivek Kumar','Iron & Steel - Fitter - Instrumentation','8884261','Hari Om','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325069','30','Durgesh Kumar','Iron & Steel - Fitter - Instrumentation','8884262','Dinesh Chandra','','','','','','2016-12-04 17:06:49','active','2016-12-04 17:06:49');'
+2016-12-04T17:06:50+00:00 [5156] INFO  : DB 188  C:\wamp64\www\assessment\php\ImportAttendenceSheet.php  , Success !  Batch Students Information inserted successfully in Database : '30'
+2016-12-04T17:06:50+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getAllAttendence'
+2016-12-04T17:06:50+00:00 [5156] INFO  : MANAGE ATTENDENCE 163  C:\wamp64\www\assessment\php\manageAttendence.php  Get All attendence .
+2016-12-04T17:06:50+00:00 [5156] INFO  : MANAGE ATTENDENCE 13  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Attendence List : 'SELECT * FROM `assessment`.`batch_students`'
+2016-12-04T17:06:54+00:00 [5156] INFO  : READ ATTENDENCE 54  C:\wamp64\www\assessment\php\uploadAttendenceSheet.php , Excel File '../uploads/Attendance/Attendance Sheet -  Batch 325070.xls' has been uploaded successfully.
+2016-12-04T17:06:54+00:00 [5156] INFO  : READ ATTENDENCE 68  C:\wamp64\www\assessment\php\uploadAttendenceSheet.php , Going to Read Excel from Sheet No0' , start row : '2' , endRow='10',' no_of
+		  		 col : '10'
+2016-12-04T17:06:54+00:00 [5156] INFO  : READ ATTENDENCE C:\wamp64\www\assessment\php\ImportAttendenceSheet.php112  , Going to commit batch details in Database.
+2016-12-04T17:06:54+00:00 [5156] INFO  : DB 150  C:\wamp64\www\assessment\php\ImportAttendenceSheet.php  ,  SQL to insert Batch Information 'INSERT INTO `assessment`.`batch_details`(`job_role`,`batch_id`,`exam_date`,`no_of_students_schedule`,`center_id_n_location`,`training_partner_name`,
+				`center_skill_counsil`,`upload_date`,`status`,`last_updated_at`) VALUES('Iron & Steel - Fitter - Instrumentation','325070','MAR/09/2016 ','30','Centre ID-67488, Location-Bhahpat','Maan Consultancy','Indian Iron & Steel Sector Skill Council','2016-12-04 17:06:54','active','2016-12-04 17:06:54');'
+2016-12-04T17:06:54+00:00 [5156] INFO  : DB 163  C:\wamp64\www\assessment\php\ImportAttendenceSheet.php  , Success !  Batch Information inserted successfully in Database : '1'
+2016-12-04T17:06:54+00:00 [5156] INFO  : DB 175  C:\wamp64\www\assessment\php\ImportAttendenceSheet.php  ,  SQL to insert Student Information 'INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','1','Arun Pratap Singh','Iron & Steel - Fitter - Instrumentation','8884233','Anar Singh','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','2','Susheel Kumar','Iron & Steel - Fitter - Instrumentation','8884234','Grish Chandra','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','3','Satish Kumar','Iron & Steel - Fitter - Instrumentation','8884235','Pop Singh','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','4','Prateek Kumar Jain','Iron & Steel - Fitter - Instrumentation','8884236','Sunilkumar Jain','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','5','Ashish Jain','Iron & Steel - Fitter - Instrumentation','8884237','Pradip Kumar Jain','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','6','Neeraj','Iron & Steel - Fitter - Instrumentation','8884238','Hari Shankar','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','7','Satya Pal singh','Iron & Steel - Fitter - Instrumentation','8884239','Prabhu Dayal','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','8','Ranjeet Kumar','Iron & Steel - Fitter - Instrumentation','8884240','Raghuveer Singh','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','9','Dig Pal Singh','Iron & Steel - Fitter - Instrumentation','8884241','Prem Singh','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','10','Ku Namrata Singh','Iron & Steel - Fitter - Instrumentation','8884242','Satya Prakash Vyas','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','11','Sudhir Kumar','Iron & Steel - Fitter - Instrumentation','8884243','Shukhdayal Singh','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','12','Sagar Singh','Iron & Steel - Fitter - Instrumentation','8884244','Rajkumar','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','13','Sumit Yadav','Iron & Steel - Fitter - Instrumentation','8884245','Gulab Singh Yadav','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','14','Ram Kumar','Iron & Steel - Fitter - Instrumentation','8884246','Girendra Singh','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','15','Ashish Kumar','Iron & Steel - Fitter - Instrumentation','8884247','Kamlesh Kumar','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','16','Ku Mona','Iron & Steel - Fitter - Instrumentation','8884248','Chandrapal Sharma','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','17','Harendra Singh','Iron & Steel - Fitter - Instrumentation','8884249','Rakshapal Singh','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','18','Bhuvnendra Kumar','Iron & Steel - Fitter - Instrumentation','8884250','Tej Pratap Singh','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','19','Ashwanee Kumar','Iron & Steel - Fitter - Instrumentation','8884251','Ikram Singh','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','20','Suneel Kumar','Iron & Steel - Fitter - Instrumentation','8884252','Amar Singh','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','21','Dinesh Kumar','Iron & Steel - Fitter - Instrumentation','8884253','Shri Mahavir Singh','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','22','Bhagvendra Kumar','Iron & Steel - Fitter - Instrumentation','8884254','Rakesh Kumar','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','23','Niteshkumar','Iron & Steel - Fitter - Instrumentation','8884255','Rakesh Kumar','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','24','Kuldeep Sahai','Iron & Steel - Fitter - Instrumentation','8884256','Rajendra Prasad','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','25','Dhirendr Kumar','Iron & Steel - Fitter - Instrumentation','8884257','Rajendra Kumar','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','26','Avadhesh Kumar','Iron & Steel - Fitter - Instrumentation','8884258','Karan Singh','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','27','Akash Kumar','Iron & Steel - Fitter - Instrumentation','8884259','Virendra Singh','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','28','Vishnu Kumar','Iron & Steel - Fitter - Instrumentation','8884260','Subhash Chandra','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','29','Vivek Kumar','Iron & Steel - Fitter - Instrumentation','8884261','Hari Om','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');INSERT INTO `assessment`.`batch_students`(`batch_id`,`s.no`,`name`,`job_role`,`enrollment_id`,`father_n_husband_name`,`aadhar_number`,
+				`gender`,`mobile_no`,`address`,`email`,`uploadDate`,`status`,`last_modified_on`) VALUES('325070','30','Durgesh Kumar','Iron & Steel - Fitter - Instrumentation','8884262','Dinesh Chandra','','','','','','2016-12-04 17:06:54','active','2016-12-04 17:06:54');'
+2016-12-04T17:06:56+00:00 [5156] INFO  : DB 188  C:\wamp64\www\assessment\php\ImportAttendenceSheet.php  , Success !  Batch Students Information inserted successfully in Database : '30'
+2016-12-04T17:06:56+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getAllAttendence'
+2016-12-04T17:06:56+00:00 [5156] INFO  : MANAGE ATTENDENCE 163  C:\wamp64\www\assessment\php\manageAttendence.php  Get All attendence .
+2016-12-04T17:06:56+00:00 [5156] INFO  : MANAGE ATTENDENCE 13  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Attendence List : 'SELECT * FROM `assessment`.`batch_students`'
+2016-12-04T17:07:21+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2016-12-04T17:07:21+00:00 [5156] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2016-12-04T17:07:21+00:00 [5156] INFO  : MANAGE ATTENDENCE 51  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2016-12-04T17:07:26+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T17:07:26+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T17:07:26+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325068''
+2016-12-04T17:07:29+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T17:07:29+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T17:07:29+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325069''
+2016-12-04T17:07:32+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getBatchInfo'
+2016-12-04T17:07:32+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T17:07:32+00:00 [5156] INFO  : MANAGE ATTENDENCE 129  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Information : 'SELECT * FROM `assessment`.`batch_details` where batch_id='325070''
+2016-12-04T17:07:36+00:00 [5156] INFO  : DB  Get Request with action parameter  :'getStudentList'
+2016-12-04T17:07:36+00:00 [5156] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-04T17:07:36+00:00 [5156] INFO  : MANAGE ATTENDENCE 101  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Student List : 'SELECT * FROM `assessment`.`batch_students` where batch_id='325070''
+2016-12-04T17:10:27+00:00 [5156] INFO  : DB Get Request with parameter :'questions'
+2016-12-04T17:10:27+00:00 [5156] INFO  : DB Get Questions List for ssc :' and subject  : ''
+		and category :'' and module : ''
+2016-12-04T17:10:27+00:00 [5156] INFO  : DB 122  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question`'
+2016-12-04T17:10:29+00:00 [5156] INFO  : DB Get Request with parameter :'ssc'
+2016-12-04T17:10:29+00:00 [5156] INFO  : DB Get SSC List from database.
+2016-12-04T17:10:29+00:00 [5156] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'

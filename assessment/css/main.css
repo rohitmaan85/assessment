@@ -180,6 +180,23 @@ margin-left: 56px
     width: 100%;
 }
 
+
+#batchButton {
+    width: 100%;
+}
+
+#centerIdButton {
+    width: 100%;
+}
+
+#trainingPartnerButton {
+    width: 100%;
+}
+
+#statusButton {
+    width: 100%;
+}
+
 #sscdropdownButton {
     width: 100%;
 }
@@ -332,12 +349,12 @@ margin-left: 56px
 }
 
 .panel-default>.panel-heading{
-  background-color: #D3D3D3;
+  background-color: #3aa27b;
   height: 50px;
 }
 
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-  background-color: #D5D546   ;
+  background-color: #3aa27b   ;
 }
 
 /*

@@ -301,7 +301,7 @@ if(isset($_GET['action'])){
                                     <label for="enterDesc"  class="col-xs-2 control-label">Exam Instruction</label>
                                   </div>
 
-                                     <div class="col-xs-12">
+                                <div class="col-xs-12">
                                        <div id="hindiTextArea" class="textarea.form-control hide">
                                          <script language="javascript">
                                              CreateHindiTextArea("hindiTextQstn");
@@ -309,7 +309,7 @@ if(isset($_GET['action'])){
                                        </div>
                                         <textarea rows="5" cols="4" class="form-control" id="examInstArea" placeholder="Exam Instruction" required></textarea>
                                       </div>
-                                   </div>
+                                </div>
 
                    <hr>
                    <div class="form-group">

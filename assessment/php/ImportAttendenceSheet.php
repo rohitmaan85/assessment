@@ -16,6 +16,8 @@ class ImportAttendenceSheet{
 	var $dbConnObj = "";
 	var $readActualDataRow = 8;
 	var $batch_id="";
+	var $job_role="";
+	
 	var $headerRowIndex =  array("center_skill_counsil" => 2, "date" => 2,
 						 "training_partner_name" => 3, "no_of_students_schedule" => 3,
 						 "batch_id" => 4, "center_id_n_location" => 5);
@@ -26,9 +28,9 @@ class ImportAttendenceSheet{
 
 	//var $headerAttributes = array("center_skill_counsil" => "","date" => "","training_partner_name" => ""
 	//,"no_of_students_schedule" => "","batch_id" => "", "center_id_n_location" => "");
-	
+
 	var $headerAttributes = array("batch_id" => "","date" => "","no_of_students_schedule" => ""
-		,"center_id_n_location" => "","training_partner_name" => "","center_skill_counsil" => "");
+	,"center_id_n_location" => "","training_partner_name" => "","center_skill_counsil" => "");
 
 	function readExcel($inputFileName,$sheetNo,$startRow,$endROw,$no_of_columns)
 	{
@@ -50,6 +52,7 @@ class ImportAttendenceSheet{
 			$sheet = $objPHPExcel->getSheet($sheetNo);
 			$rowIndex  = $startRow;
 			$row_value ="";
+			$header_row_value ="";
 			foreach( $sheet->getRowIterator($startRow, $endRow) as $row ){
 				if($rowIndex<$this->readActualDataRow){
 					//log_event( READ_ATTENDENCE,__FILE__. __LINE__. "  , Skip this row , belongs to Header" );
@@ -78,21 +81,15 @@ class ImportAttendenceSheet{
 					//log_event( READ_ATTENDENCE,__FILE__. __LINE__. "  , Start Reading Actual Data from this row." );
 					$columnIndex = 0;
 					// Add Header Values
+
 					if(!$commitBatchDetails){
 						foreach ($this->headerAttributes as $key => $attrValue) {
-							// Insert batch Header details in Database.							
-							$row_value .= "'".$attrValue."',";
 							if($key=="batch_id"){
 								$this->batch_id = $attrValue;
 							}
 						}
-						log_event( READ_ATTENDENCE,__FILE__. __LINE__. "  , Going to commit batch details in Database." );
-						$this->buildInsertSqlForBatchDetails(substr($row_value, 0,(strlen($row_value)-1)));
-						if($this->insertBatchInDatabase())
-							$commitBatchDetails = true;
-						else
-							throw new Exception('Batch Details not commited in Database.');
 					}
+
 					$row_value ="'".$this->batch_id."',";
 					foreach( $row->getCellIterator() as $cell ){
 						$columnIndex++;
@@ -100,7 +97,26 @@ class ImportAttendenceSheet{
 						$row_value .= "'".$value."',";
 						if($columnIndex==$no_of_columns)
 						break;
+						if($columnIndex==3){
+							$this->job_role = $value;
+						}
 					}
+
+
+					if(!$commitBatchDetails){
+						$header_row_value .= "'".$this->job_role ."',";
+						foreach ($this->headerAttributes as $key => $attrValue) {
+							// Insert batch Header details in Database.
+							$header_row_value .= "'".$attrValue."',";
+						}
+						log_event( READ_ATTENDENCE,__FILE__. __LINE__. "  , Going to commit batch details in Database." );
+						$this->buildInsertSqlForBatchDetails(substr($header_row_value, 0,(strlen($header_row_value)-1)));
+						if($this->insertBatchInDatabase())
+						$commitBatchDetails = true;
+						else
+						throw new Exception('Batch Details not commited in Database.');
+					}
+
 					$this->buildInsertSqlForStudents(substr($row_value, 0,(strlen($row_value)-1)));
 				}
 				$rowIndex++;
@@ -115,7 +131,7 @@ class ImportAttendenceSheet{
 	function buildInsertSqlForBatchDetails($row_value){
 		// Add Upload Date in the end.
 		$row_value.=",'".date("Y-m-d H:i:s", time())."','active','".date("Y-m-d H:i:s", time())."'";
-		$sql = "INSERT INTO `assessment`.`batch_details`(`batch_id`,`exam_date`,`no_of_students_schedule`,`center_id_n_location`,`training_partner_name`,
+		$sql = "INSERT INTO `assessment`.`batch_details`(`job_role`,`batch_id`,`exam_date`,`no_of_students_schedule`,`center_id_n_location`,`training_partner_name`,
 				`center_skill_counsil`,`upload_date`,`status`,`last_updated_at`) VALUES(".$row_value.");";		
 		$this->insertSqlForBatchDetails .=$sql;
 	}
@@ -131,7 +147,7 @@ class ImportAttendenceSheet{
 	function insertBatchInDatabase()
 	{
 		$conn = DbConn::getDbConn();
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,  SQL to insert Batch Information '".$this->insertSQL."'" );
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,  SQL to insert Batch Information '".$this->insertSqlForBatchDetails."'" );
 		if (mysqli_multi_query($conn, $this->insertSqlForBatchDetails)) {
 			do{
 				//echo array_shift($query_type[1]),": ";
@@ -195,10 +211,10 @@ class ImportAttendenceSheet{
 	}
 }
 
-
-$excelFilePath='Attendance Sheet -  Batch 325068.xls';
-$obj = new ImportAttendenceSheet();
-$obj->importBatchStudents($excelFilePath,0,2,10,10);
-
+/*
+ $excelFilePath='Attendance Sheet -  Batch 325068.xls';
+ $obj = new ImportAttendenceSheet();
+ $obj->importBatchStudents($excelFilePath,0,2,10,10);
+ */
 
 ?>

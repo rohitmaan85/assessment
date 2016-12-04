@@ -92,7 +92,7 @@ if(isset($_GET['files']))
 
 else
 {
-	$data = array('success' => 'Batch Information have been uploaded succesfully.', 'formData' => $_POST);
+	$data = array('success' => 'Exams have been uploaded succesfully.', 'formData' => $_POST);
 }
 
 echo json_encode($data);

@@ -1,4 +1,5 @@
 <?php
+/*
 $uid = isset($_POST['uid']) ? $_POST['uid'] : $_SESSION['uid'];
 $pwd = isset($_POST['pwd']) ? $_POST['pwd'] : $_SESSION['pwd'];
 
@@ -6,7 +7,10 @@ if(!isset($_SESSION['name']))
 {
         header("location: login.php");
 }
+*/
 ?>
+
+
 <!DOCTYPE HTML>
 <html>
 
@@ -51,8 +55,10 @@ if(!isset($_SESSION['name']))
             <li><a  href="uploadSubjectPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Subjects</a></li>
             <li><a  href="importQuestionsPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Questions</a></li>
             <li><a  href="importBatchPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Batches</a></li>
+            <li><a  href="importStudentsPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Students</a></li>
             <li><a  href="manageSubjectsPage.php"><span class="glyphicon glyphicon-paperclip"></span>Manage Questions</a></li>
             <li><a  href="manageExamsPage.php"><span class="glyphicon glyphicon-pencil"></span>Manage Exams</a></li>
+            <li><a  href="manageAttendencePage.php"><span class="glyphicon glyphicon-pencil"></span>Manage Batch Attendence</a></li>
             <li><a  href="createQuestionPage.php" ><span class="glyphicon glyphicon-pushpin"></span>Create Question</a></li>
             <li><a  href="createExamPage.php"><span class="glyphicon glyphicon-education"></span>Create Test</a></li>
             <li><a  href="createStudentPage.php"><span class="glyphicon glyphicon-user"></span>Create Student</a></li>
