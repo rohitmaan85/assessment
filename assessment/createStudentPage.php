@@ -36,9 +36,7 @@ if(isset($_GET['action'])){
     <script src="js/validator.js"></script>
     <script src="js/main.js"></script>
     <script src="js/keyboard.js"></script>
-    <script src="js/manage_exams.js"></script>
-
-
+    
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css"  href="css/main.css">
     <link rel="stylesheet" type="text/css"  href="css/dataTables.bootstrap.css">

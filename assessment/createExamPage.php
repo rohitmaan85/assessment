@@ -25,13 +25,13 @@ if(isset($_GET['action'])){
     <script src="js/dataTables.responsive.js"></script>
     <script src="js/dataTables.bootstrap.js"></script>
     <script src="js/dataTables.responsive.min.js"></script>
-        <script src="js/moment.js"></script>
+    <script src="js/moment.js"></script>
     <script src="js/bootstrap-datetimepicker.min.js"></script>
     <script src="js/toggle.js"></script>
     <script src="js/validator.js"></script>
     <script src="js/main.js"></script>
     <script src="js/keyboard.js"></script>
-    <script src="js/manage_exams.js"></script>
+    <script src="js/create_exams.js"></script>
 
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -92,6 +92,50 @@ if(isset($_GET['action'])){
     <!-- Main Content -->
     <div class="container-fluid">
       <div class="side-body">
+
+
+        <div id="displayBatchDetailsModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Batch Details</h4>
+              </div>
+              <div class="modal-body">
+                <form id="showDetailsForm" class="form-horizontal" >
+                  <label for="batchlbl"  >Batch Id :</label>
+                  <input type="text" maxlength="4" id="batch_text" class="form-control" disabled="true">
+
+                  <label for="exam_date_lbl" >Exam Date :</label>
+                  <input type="text" id="exam_date_text" class="form-control" disabled="true">
+
+                  <label for="no_stdents_lbl" >No. Of Students :</label>
+                  <input type="text" id="no_students_text" class="form-control" disabled="true">
+
+                  <label for="center_lbl">Center Id / Address :</label>
+                  <input type="text" id="center_text" class="form-control" disabled="true">
+
+                  <label for="training_lbl">Training Partner :</label>
+                  <input type="text" id="training_text" class="form-control" disabled="true">
+
+                  <label for="status_lbl">Status :</label>
+                  <input type="text" id="status_text" class="form-control" disabled="true">
+
+                </form>
+
+              </div>
+
+               <div class="modal-footer">
+                   <button type="button" class="btn btn-warning" data-dismiss="modal">Close Batch Information</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
           <div class="panel panel-default">
               <div class="panel-heading">
                  <h4 id = "heading" class="form-signin-heading pull-left"><strong>Create New Exam</strong></h4>
@@ -138,7 +182,7 @@ if(isset($_GET['action'])){
                           </div>
                           </div>
                  </div>
-                 <br>
+
             <form id="createExamForm" class="form-horizontal hide" >
               <div id='createExamDiv' class="col-xs-14">
                     <div class="col-xs-14 " >
@@ -245,11 +289,13 @@ if(isset($_GET['action'])){
                                <div class="form-group-inline required">
                                  <label for="batch"  class="col-xs-2 control-label">Select Batch</label>
                                </div>
-                              <div class="col-xs-3">
+                              <div class="col-xs-2">
                                    <select class="form-control" id="selGroupDropdown">
                                     <option>None Selected</option>
                                     </select>
                              </div>
+                             <button id="batch_info" type="button" class="btn btn-info">Info</button>
+
                            </div>
                             <div class="form-group">
                                <label for="negMarking" class="col-xs-2">Negative Marking</label>

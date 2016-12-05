@@ -149,6 +149,30 @@ class manageAttendence{
 		echo json_encode($final_array);
 	}
 	
+	function getBatchList($subjectId)
+	{
+		$conn = DbConn::getDbConn();
+		$sql="SELECT batch_id FROM `assessment`.`batch_details`";
+		if($subjectId!="")
+			//$sql.= " where job_role='".htmlspecialchars($subjectId,ENT_QUOTES)."'";
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get List of batch for subject : '".$sql."'" );
+		$result = mysqli_query($conn,$sql);
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$i=0;
+		while ($row)
+		{
+			//$i++;
+			$jsonArr[]=$row['batch_id'];
+			//$jsonArr1[]="";
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		}
+		$final_array = array(array_unique($jsonArr));	
+		// Free result set
+		mysqli_free_result($result);
+		// print json Data.
+		echo json_encode(array_unique($jsonArr));
+	}
+	
 
 
 }
@@ -185,6 +209,13 @@ if(isset($_POST['action'])){
 		if(isset($_POST['batch_id'])){
 			$batch_id = $_POST['batch_id'];
 			$obj->getBatchInformationForDialogBox($batch_id);
+		}
+	}
+	else if($_POST['action']=="getBatchList"){
+		log_event( MANAGE_ATTENDENCE, "Get Request to get Student List." );
+		if(isset($_POST['subId'])){
+			$subjectId = $_POST['subId'];
+			$obj->getBatchList($subjectId);
 		}
 	}
 }

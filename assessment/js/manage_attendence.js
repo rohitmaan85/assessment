@@ -233,25 +233,6 @@
           $("#selected_category").val(category);
       });
 
-      /*
-         $('#qstns tbody')
-             .on( 'click', 'td', function () {
-                 var colIdx = quesstionsTable.cell(this).index().column;
-                // if(colIdx==5){
-                     var data = $('#qstns').DataTable().row($(this).parents('tr')).data();
-                     $('#qstnCompleteVal').val(data[colIdx]);
-                     $('#displayQstnModal').modal('show');
-                //  }
-             } );
-        */
-
-      //  $('#qstns tbody').on('click', 'button', function() {
-      //console.log(testTable.row($(this).parents('tr')).data());
-      //  var data = $('#qstns').DataTable().row($(this).parents('tr')).data();
-      //  window.open("createQuestionPage.php?action=edit&id=" + data[0] + "&subid=" + data[2] + "&qstnid=" + data[1]);
-      //  });
-
-
       $('#qstns tbody').on( 'click', '#openDetails', function () {
         var data = $('#qstns').DataTable().row($(this).parents('tr')).data();
         row_batch_id = data[0];
@@ -266,7 +247,7 @@
         showStudentsList();
       } );
 
-    
+
       // Function to display students table when click on table Row.
       function showStudentsList() {
           var studentsTable = $('#showStdntsTable').DataTable({

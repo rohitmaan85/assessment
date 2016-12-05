@@ -26,7 +26,7 @@
   <link rel="stylesheet" type="text/css"  href="css/buttons.bootstrap.min.css">
 
   <script src="js/toggle.js"></script>
-  <script src="js/exams.js"></script>
+  <script src="js/manage_exams.js"></script>
   <script src="js/main.js"></script>
 
   </head>
@@ -78,6 +78,54 @@
     <!-- Main Content -->
     <div class="container-fluid">
       <div class="side-body">
+
+          <!--  Modal to display Exam details -->
+          <div id="displayExamDetailsModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Exam Details</h4>
+                </div>
+                <div class="modal-body">
+                  <form id="showExamDetailsForm" class="form-horizontal" >
+                    <label for="namelbl"  >Exam Name :</label>
+                    <input type="text" maxlength="4" id="name_text" class="form-control" disabled="true">
+
+                    <label for="batch_lbl" >Batch Id :</label>
+                    <input type="text" id="batch_text" class="form-control" disabled="true">
+
+                    <label for="no_of_qstns_lbl" >Number of Questions :</label>
+                    <input type="text" id="no_of_qstns_text" class="form-control" disabled="true">
+
+                    <label for="duration_lbl" >Duration of Exam :</label>
+                    <input type="text" id="duration_text" class="form-control" disabled="true">
+
+                    <label for="exam_from_lbl">Exam Valid From :</label>
+                    <input type="text" id="exam_from_text" class="form-control" disabled="true">
+
+                    <label for="exam_to_lbl">Exam Valid To :</label>
+                    <input type="text" id="exam_to_text" class="form-control" disabled="true">
+
+                    <label for="total_marks_lbl">Total Marks :</label>
+                    <input type="text" id="total_marks_text" class="form-control" disabled="true">
+
+                    <label for="pass_percent_lbl">Passing Percentage :</label>
+                    <input type="text" id="pass_percent_text" class="form-control" disabled="true">
+
+                  </form>
+
+                </div>
+
+                 <div class="modal-footer">
+                     <button type="button" class="btn btn-warning" data-dismiss="modal">Close Batch Information</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
             <!--<div class="col-lg-14 col-md-11 col-sm-2 col-xs-12"> -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -87,49 +135,45 @@
                       <div class="col-xs-14 col-md-14">
                         <form>
                           <div class="form-group">
-                            <label for="ssc_label">Select SSC Code *</label>
-                            <div class="dropdown">
-                              <button id="sscdropdownButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select    SSC
-                              <span class="caret"></span></button>
-                               <ul id="ssc-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
-                              </ul>
-                             </div>
+                               <label for="ssc"  class="col-xs-1">SSC*</label>
+                                 <div class="col-xs-4">
+                                     <div class="dropdown">
+                                       <button id="sscdropdownButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                         --Select SSC--<span class="caret"></span></button>
+                                          <ul id="ssctest-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
+                                     </ul>
+                                   </div>
                            </div>
-
-
-                           <hr>
-                          <div class="form-group">
-                            <label for="jobrole_label">Select Job Role/QP Name *</label>
-                            <div class="dropdown">
-                              <button id="jobroledropdownButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Job Role
-                              <span class="caret"></span></button>
-                               <ul id="jobrole-dropdown-menu" class="dropdown-menu dropdown-menu-center">
-                              </ul>
-                             </div>
-                          </div>
-                          <hr>
+                           <label for="jobrole"  class="col-xs-1">JobRole*</label>
+                                   <div class="col-xs-6">
+                                     <div class="dropdown">
+                                         <button id="jobroledropdownButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                             --Select JobRole--<span class="caret"></span></button>
+                                                  <ul id="jobroletest-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
+                                             </ul>
+                                     </div>
+                                     </div>
+                            </div>
                          </form>
                       </div>
                     </div>
                   </div>
                   <div class="col-xs-14 col-md-14">
-                      <hr>
                       <br>
                   </div>
                   <div class="rowtable">
-                        <div class="col-md-12">
+                        <div class="col-md-14">
                             <table id="exams" class="table table-striped table-bordered table-hover dt-responsive"  cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
                                             <th>Exam Name</th>
-                                            <th>JobRole</th>
                                             <th>BatchId</th>
+                                            <th>Action</th>
+                                    <!--
+                                            <th>JobRole</th>
                                             <th>Qstns</th>
                                             <th>Dur</th>
-                                            <th>Valid From</th>
-                                            <th>Valid To</th>
-                                            <th>Total Marks</th>
-                                            <th>Action</th>
+                                            <th>Total Marks</th> -->
                                         </tr>
                                     </thead>
                                  </table>

@@ -18,6 +18,8 @@ $g_log_levels = array(
 	LOG_ENCRYPTION=> 'ENCRYPTION',
 	READ_ATTENDENCE=> 'READ ATTENDENCE',
 	MANAGE_ATTENDENCE=> 'MANAGE ATTENDENCE',
+	MANAGE_TEST=> 'MANAGE TEST',
+	
 );
 
 function log_event( $p_level, $p_msg ) {

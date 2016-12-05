@@ -1,0 +1,13 @@
+1. Archive old files in archive folder for all upload functionality.
+
+2. Manage Attendence list  : Fix Modal Dialogue box footer and dimension.
+
+3. Add ssc , jobrole ,category , module filter when questions are impport.
+
+4. Add History in all modules.
+
+5. On Hover : On batch , display batch information on hovering.
+
+6. Duplicate import check on all upload functioanality.
+
+7. While Creating Exam , Display only those jobrole which have Questions exist.

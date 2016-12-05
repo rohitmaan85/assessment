@@ -15,7 +15,7 @@ class manageExams{
 		if($examName!="" && $examId=="")
 			$examId= $this->getExamId($examName);
 		$sql="SELECT qstn_id FROM `assessment`.`exam_qstn` where exam_id='".$examId."'";
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get all Questions of Exam with name : '".$sql."'" );
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get all Questions of Exam with name : '".$sql."'" );
 		$result = 	mysqli_query($conn,$sql);
 		$row	= 	mysqli_fetch_array($result, MYSQLI_ASSOC);
 		$i=0;
@@ -50,7 +50,7 @@ function getExamDetails($examId){
 		$sql="SELECT * FROM `assessment`.`exam`";
 		if(examId!="")
 		$sql.= " where id='".htmlspecialchars($examId,ENT_QUOTES)."'";
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Exam Details : '".$sql."'" );
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get Exam Details : '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		$i=0;
@@ -79,13 +79,47 @@ function getExamDetails($examId){
 		//return $final_array;
 		return $jsonArr;
 	}
+	
+	
+	function getExamDetailsForDialogueBox($examName){
+		$conn = DbConn::getDbConn();
+		$sql="SELECT * FROM `assessment`.`exam`";
+		if(examId!="")
+		$sql.= " where testname='".htmlspecialchars($examName,ENT_QUOTES)."'";
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get Exam Details : '".$sql."'" );
+		$result = mysqli_query($conn,$sql);
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$i=0;
+		while ($row)
+		{
+			$i++;
+			//$jsonArr[0]= $i;
+			$jsonArr[0]=$row['testname'];
+			$jsonArr[1]=$row['batchid'];
+			$jsonArr[2]=$row['totalquestions'];
+			$jsonArr[3]=$row['duration'];
+			$jsonArr[4]=$row['testfrom'];
+			$jsonArr[5]=$row['testto'];
+			$jsonArr[6]=$row['total_marks'];
+			$jsonArr[7]=$row['pp'];
+			$jsonArr1[] =$jsonArr;
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+			break;
+		}
+		$final_array = array('data' => $jsonArr1);
+		// Free result set
+		mysqli_free_result($result);
+		// print json Data.
+		echo json_encode($final_array);
+	}
+	
 
 
 	function getQuestionDetail($question_id){
 		$questionDiv="";
 		$conn = DbConn::getDbConn();
 		$sql="SELECT * FROM `assessment`.`question` where id='".$question_id."'";
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Question Detail : '".$sql."'" );
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get Question Detail : '".$sql."'" );
 		$result = 	mysqli_query($conn,$sql);
 		$row		= 	mysqli_fetch_array($result, MYSQLI_ASSOC);
 
@@ -117,7 +151,7 @@ function getExamDetails($examId){
 		if($examName!="" && $examId=="")
 		$examId= $this->getExamId($examName);
 		$sql="SELECT qstn_id FROM `assessment`.`exam_qstn` where exam_id='".$examId."'";
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get all Questions of Exam with name : '".$sql."'" );
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get all Questions of Exam with name : '".$sql."'" );
 		$result = 	mysqli_query($conn,$sql);
 		$row		= 	mysqli_fetch_array($result, MYSQLI_ASSOC);
 		$i=0;
@@ -135,7 +169,7 @@ function getExamDetails($examId){
 		mysqli_free_result($result);
 		// print json Data.
 		//echo json_encode($final_array);
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,Complete Qstn Div = '".$completeDiv."'" );
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  ,Complete Qstn Div = '".$completeDiv."'" );
 		return $completeDiv;
 	}
 
@@ -144,7 +178,7 @@ function getExamDetails($examId){
 		$questionDiv="";
 		$conn = DbConn::getDbConn();
 		$sql="SELECT * FROM `assessment`.`question` where id='".$question_id."'";
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Question Detail : '".$sql."'" );
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get Question Detail : '".$sql."'" );
 		$result = 	mysqli_query($conn,$sql);
 		$row		= 	mysqli_fetch_array($result, MYSQLI_ASSOC);
 		$i=0;
@@ -189,7 +223,7 @@ function getExamDetails($examId){
 		}
 		//	$final_array = array('data' => $jsonArr1);
 		// Free result set
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Qstn Div = '".$questionDiv."'" );
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , Qstn Div = '".$questionDiv."'" );
 		mysqli_free_result($result);
 		return $questionDiv;
 		// print json Data.
@@ -212,7 +246,7 @@ function getExamDetails($examId){
 		$sql.= " ORDER BY RAND() LIMIT ".$noOfQstns;
 
 
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to select Qstns for Exam : '".$sql."'" );
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to select Qstns for Exam : '".$sql."'" );
 
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -233,14 +267,14 @@ function getExamDetails($examId){
 		$row_value.="'active','".date("Y-m-d H:i:s", time())."','".date("Y-m-d H:i:s", time())."'";
 		$sql = "INSERT INTO `assessment`.`exam_qstn`(`exam_id`,`qstn_id`,`subid`,`category`,`module`,`status`,`created_on`,`last_modified_on`) VALUES(".$row_value.");";
 		$this->insertQstnsSQL .=$sql;
-		//log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to insert Qstns in Exam : '".$this->insertQstnsSQL."'" );
+		//log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to insert Qstns in Exam : '".$this->insertQstnsSQL."'" );
 
 	}
 
 	function insertQstnsInExam()
 	{
 		$conn = DbConn::getDbConn();
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,  SQL to insert Question for Test'".$this->insertQstnsSQL."'" );
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  ,  SQL to insert Question for Test'".$this->insertQstnsSQL."'" );
 		if (mysqli_multi_query($conn, $this->insertQstnsSQL)) {
 			do{
 				//echo array_shift($query_type[1]),": ";
@@ -253,11 +287,11 @@ function getExamDetails($examId){
 				}
 			} while(mysqli_more_results($conn) && mysqli_next_result($conn));
 
-			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Success !  Questions inserted successfully in Database : '".$cumulative_rows."'" );
+			log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , Success !  Questions inserted successfully in Database : '".$cumulative_rows."'" );
 			return true;
 		}
 		else {
-			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,ERROR #" .mysqli_error($conn) );
+			log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  ,ERROR #" .mysqli_error($conn) );
 			return false;
 		}
 	}
@@ -269,7 +303,7 @@ function getExamDetails($examId){
 		$sql="SELECT * FROM `assessment`.`exam`";
 		if($subjectId!="")
 		$sql.= " where subid='".htmlspecialchars($subjectId,ENT_QUOTES)."'";
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Exam : '".$sql."'" );
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get Exam : '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		$i=0;
@@ -304,7 +338,7 @@ function getExamDetails($examId){
 		$sql="SELECT id FROM `assessment`.`exam`";
 		if($examName!="")
 		$sql.= " where testname='".htmlspecialchars($examName,ENT_QUOTES)."'";
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Exam  Id : '".$sql."'" );
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get Exam  Id : '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		$i=0;
@@ -326,17 +360,17 @@ function getExamDetails($examId){
 		$sql="SELECT category,module FROM `assessment`.`question_category`";
 		if($categoryId!="")
 		$sql.= " where id='".htmlspecialchars($categoryId,ENT_QUOTES)."'";
-		//log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Categories Details  : '".$sql."'" );
+		//log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get Categories Details  : '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		$i=0;
 		$category = "";
 		$module = "";
-		log_event(LOG_DATABASE, __LINE__."  ". __FILE__."Rohit Maan");
+		log_event(MANAGE_TEST, __LINE__."  ". __FILE__."Rohit Maan");
 		while ($row)
 		{
 			//log_event();
-			//log_event(LOG_DATABASE, __LINE__."  ". __FILE__.$row['category'].$row['module']);
+			//log_event(MANAGE_TEST, __LINE__."  ". __FILE__.$row['category'].$row['module']);
 			$catDetails[0] = $row['category'];
 			$catDetails[1] = $row['module'];
 			// set global variable;
@@ -359,7 +393,7 @@ function getExamDetails($examId){
 		$moduleIds = "";
 		$moduleNoOfQstns = "";
 		foreach($noOfModuleQstsArr as $d){
-			log_event( LOG_DATABASE, __LINE__."  ". __FILE__. " ,  Number of Questions in each Module : " . $d['id']. "=>" .$d['noOfQstns']);
+			log_event( MANAGE_TEST, __LINE__."  ". __FILE__. " ,  Number of Questions in each Module : " . $d['id']. "=>" .$d['noOfQstns']);
 			$moduleIds .= $d['id'].",";
 			$moduleNoOfQstns .=$d['noOfQstns'].",";
 		}
@@ -380,7 +414,7 @@ function getExamDetails($examId){
 				   `total_marks`,`randomqstn`,`pp`,`testdesc`,`testcode`,`createDate`,`last_modified_on`,`status`,`moduleIds`,`moduleNoOfQsnts`)
 					VALUES(".$row_value.");";
 
-			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to insert Exam : '".$sql."'" );
+			log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to insert Exam : '".$sql."'" );
 			$this->insertSQL .=$sql;
 		}
 		catch (Exception $e) {
@@ -392,7 +426,7 @@ function getExamDetails($examId){
 	{
 		$conn = DbConn::getDbConn();
 		if (mysqli_multi_query($conn, $this->insertSQL)) {
-			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Success !  Exam inserted successfully in Database : '".$cumulative_rows."'" );
+			log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , Success !  Exam inserted successfully in Database : '".$cumulative_rows."'" );
 			$exam_id = $this->getExamId($examName);
 			if($exam_id != ""){
 				foreach($noOfModuleQstsArr as $d){
@@ -404,18 +438,18 @@ function getExamDetails($examId){
 					//$subjectId,$category,$module,$noOfQstns,$exam_id
 					$this->selectQuestions($subjectId,$details[0],$details[1],$moduleNoOfQstns,$exam_id);
 					else
-					log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Error !  'selectedCategory' and 'module' does not exist  in Database '" );
+					log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , Error !  'selectedCategory' and 'module' does not exist  in Database '" );
 
 				}
 				return $this->insertQstnsInExam();
 			}
 			else{
-				log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Error !  Exam Id does not exist with name in Database : '".$examName."'" );
+				log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , Error !  Exam Id does not exist with name in Database : '".$examName."'" );
 				return false;
 			}
 			return true;
 		} else {
-			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,ERROR #" .mysqli_error($conn) );
+			log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  ,ERROR #" .mysqli_error($conn) );
 			return false;
 		}
 	}
@@ -425,10 +459,10 @@ function getExamDetails($examId){
 	 {
 		$conn = DbConn::getDbConn();
 		if (mysqli_multi_query($conn, $this->insertSQL)) {
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Success !  Exam inserted successfully in Database : '".$cumulative_rows."'" );
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , Success !  Exam inserted successfully in Database : '".$cumulative_rows."'" );
 		return true;
 		} else {
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,ERROR #" .mysqli_error($conn) );
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  ,ERROR #" .mysqli_error($conn) );
 		return false;
 		}
 		}
@@ -440,14 +474,14 @@ function getExamDetails($examId){
 		$conn = DbConn::getDbConn();
 		if (mysqli_query($conn, $this->updateSQL)) {
 			if(mysqli_affected_rows($conn)>0){
-				log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Success !  Question save successfully in Database : '".mysqli_affected_rows($con)."'" );
+				log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , Success !  Question save successfully in Database : '".mysqli_affected_rows($con)."'" );
 				return true;
 			}else{
-				log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , ERROR #! No records found to update " );
+				log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , ERROR #! No records found to update " );
 				return false;
 			}
 		} else {
-			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,ERROR #" .mysqli_error($conn) );
+			log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  ,ERROR #" .mysqli_error($conn) );
 			return false;
 		}
 	}
@@ -466,7 +500,7 @@ function getExamDetails($examId){
 				"`no_of_options`='".htmlspecialchars($noOfOption,ENT_QUOTES)."' ";
 		$sql.="where qnid='".$qstnId."' and subId='".$subId."' and id=".$id;
 
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to update Question : '".$sql."'" );
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to update Question : '".$sql."'" );
 		$this->updateSQL .=$sql;
 	}
 
@@ -478,7 +512,7 @@ function getExamDetails($examId){
 		$sql="SELECT * FROM `assessment`.`question`";
 		if($subjectId!="")
 		$sql.= " where subid='".htmlspecialchars($subjectId,ENT_QUOTES)."' and qnid='".htmlspecialchars($qstnId,ENT_QUOTES)."'";
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Question for editing : '".$sql."'" );
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get Question for editing : '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		$i=0;
@@ -511,22 +545,28 @@ function getExamDetails($examId){
 $obj = new manageExams();
 //$obj->getExamQuestions("","rohit_123");
 
-if(isset($_GET['get'])){
-	$requestParam = $_GET['get'];
-	log_event( LOG_DATABASE, "Get Request with parameter :'".$_GET['get']."'" );
+if(isset($_POST['get'])){
+	$requestParam = $_POST['get'];
+	log_event( MANAGE_TEST, "Get Request with parameter :'".$_POST['get']."'" );
 	if($requestParam == "exams"){
 		$subjectId="";
-		if(isset($_GET['subid']))
-		$subjectId = $_GET['subid'];
-		log_event( LOG_DATABASE, "Get Exam List for subject  : '".$_GET['qpCode']."'" );
+		if(isset($_POST['subid']))
+		$subjectId = $_POST['subid'];
+		log_event( MANAGE_TEST, "Get Exam List for subject  : '".$_POST['qpCode']."'" );
 		$obj->getExamsList($subjectId);
-	}else{
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."Error : ['qstn'] not set" );
+	}
+	
+	if($requestParam == "examDetailsForInfo"){
+		$subjectId="";
+		if(isset($_POST['exam_name']))
+		$examName = $_POST['exam_name'];
+		log_event( MANAGE_TEST, "Get Exam Information for exam  : '".$examName."'" );
+		$obj->getExamDetailsForDialogueBox($examName);
 	}
 }
 
 if(isset($_POST['action'])){
-	log_event( LOG_DATABASE, " Get Request to Create Exam  with action parameter." );
+	log_event( MANAGE_TEST, " Get Request to Create Exam  with action parameter." );
 	// Get defect details to edit question.
 	if($_POST['action']=="create"){
 	 $subId			= $_POST['subId'];
@@ -545,13 +585,8 @@ if(isset($_POST['action'])){
 	 $pp			= $_POST['pp'];
 	 $noOfModuleQstsArr = json_decode(stripslashes($_POST['noOfModuleQstsArr']));
 
-	 //$data = explode(",", $_POST['noOfModuleQstsArr']);
-
-
-	 // $noOfModuleQstsArr = $_GET['noOfModuleQstsArr'];
-
-	 // log_event( LOG_DATABASE, __LINE__."  ". __FILE__. " ,  Number of Questions in each Module : " . print_r($noOfModuleQstsArr));
-	 log_event( LOG_DATABASE, __LINE__."  ". __FILE__." ,  Get Request to create Exam with Values : '".
+	 // log_event( MANAGE_TEST, __LINE__."  ". __FILE__. " ,  Number of Questions in each Module : " . print_r($noOfModuleQstsArr));
+	 log_event( MANAGE_TEST, __LINE__."  ". __FILE__." ,  Get Request to create Exam with Values : '".
 	 $subId."','".$exName."','".$noOfQstns."','".$examDesc."','".$examDur."','".$atmptCount.
 		"','".$startDate."','"
 		.$endDate."','".$decResult."','".$batchId."','".$negMarking."','".$randomQstn."','".$totalMarks."','".$pp."'");
@@ -561,28 +596,28 @@ if(isset($_POST['action'])){
 	 if(!$obj->createExam($exName,$subId,$_POST['noOfModuleQstsArr']))
 		{
 			$data =  array('error' => 'Error while creating exam.') ;
-			log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Error while inserting Question in DB.".json_encode($data) );
+			log_event( MANAGE_TEST, __LINE__."  ". __FILE__." Error while inserting Question in DB.".json_encode($data) );
 		} else {
 			$data =  array('success' => 'Exam Created Successfully.') ;
-			log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Question created successfully." );
+			log_event( MANAGE_TEST, __LINE__."  ". __FILE__." Question created successfully." );
 		}
 		echo json_encode($data);
 	}
 	else if($_GET['action']=="edit"){
-		log_event( LOG_DATABASE, " Get Request to get question details." );
+		log_event( MANAGE_TEST, " Get Request to get question details." );
 		if(isset($_GET['subId']) && isset($_GET['qstnId'])){
 			$subId = $_GET['subId'];
 			$qstnId = $_GET['qstnId'];
 			$obj->getQuestionToEdit($subId, $qstnId);
 		}else{
-			log_event( LOG_DATABASE, "Error : 'subId' && 'qstnId' are not set to edit Question.");
+			log_event( MANAGE_TEST, "Error : 'subId' && 'qstnId' are not set to edit Question.");
 			$data =  array('error' => "Error : 'subId' && 'qstnId' are not set to edit Question.") ;
 			echo json_encode($data);
 		}
 	}
 	// Update defect details.
 	else if($_GET['action']=="update"){
-		log_event( LOG_DATABASE, " Get Request to update question." );
+		log_event( MANAGE_TEST, " Get Request to update question." );
 		if(isset($_GET['subId']) && isset($_GET['qstnId'])){
 			$id = $_GET['id'];
 			$subId = $_GET['subId'];
@@ -600,15 +635,15 @@ if(isset($_POST['action'])){
 			if(!$obj->updateQuestion())
 			{
 				$data =  array('error' => 'Error while updating Question in DB.') ;
-				log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Error while inserting Question in DB.".json_encode($data) );
+				log_event( MANAGE_TEST, __LINE__."  ". __FILE__." Error while inserting Question in DB.".json_encode($data) );
 			} else {
 				$data =  array('success' => 'Question saved Successfully.') ;
-				log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Question saved successfully." );
+				log_event( MANAGE_TEST, __LINE__."  ". __FILE__." Question saved successfully." );
 			}
 			echo json_encode($data);
 
 		}else{
-			log_event( LOG_DATABASE, "Error : 'subId' && 'qstnId' are not set to edit Question.");
+			log_event( MANAGE_TEST, "Error : 'subId' && 'qstnId' are not set to edit Question.");
 			$data =  array('error' => "Error : 'subId' && 'qstnId' are not set to edit Question.") ;
 			echo json_encode($data);
 		}
