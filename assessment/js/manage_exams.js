@@ -116,8 +116,8 @@ $(document).ready(function() {
                 "targets": 2,
                 "searchable": false,
                 "data": null,
-                "width": "40%",
-                "defaultContent": "<button id=\"manQstsButton\"  type=\"button\" class=\"btn btn-success btn-sm\" ><span class=\"glyphicon glyphicon-edit\"></span>Manage Questions</button> <button id=\"showExamDetails\"  type=\"button\" class=\"btn btn-info btn-sm\" ><span class=\"glyphicon glyphicon-asterisk\"></span>Show Details</button>  <button id=\"showQuestions\"  type=\"button\" class=\"btn btn-warning btn-sm\" ><span class=\"glyphicon glyphicon-edit\"></span>Show Questions</button>"
+                "width": "60%",
+                "defaultContent": " <button id=\"editExam\"  type=\"button\" class=\"btn btn-warning btn-sm\" ><span class=\"glyphicon glyphicon-edit\"></span>Edit</button>  <button id=\"manQstsButton\"  type=\"button\" class=\"btn btn-success btn-sm\" ><span class=\"glyphicon glyphicon-edit\"></span>Manage Questions</button> <button id=\"showExamDetails\"  type=\"button\" class=\"btn btn-info btn-sm\" ><span class=\"glyphicon glyphicon-asterisk\"></span>Show Details</button>  <button id=\"showQuestions\"  type=\"button\" class=\"btn btn-warning btn-sm\" ><span class=\"glyphicon glyphicon-edit\"></span>Show Questions</button>"
             }, ],
             "destroy": true,
         });
@@ -139,6 +139,15 @@ $(document).ready(function() {
         getExamInformationForDialog();
         $('#displayExamDetailsModal').modal('show');
     });
+
+    $('#exams tbody').on('click', '#manQstsButton', function() {
+        var data = $('#exams').DataTable().row($(this).parents('tr')).data();
+        exam_name = data[0];
+        window.open("manageExamQuestions.php?action=manageExamQstn&examName=" + exam_name);
+    });
+
+
+
 
     function getExamInformationForDialog() {
         $.ajax({

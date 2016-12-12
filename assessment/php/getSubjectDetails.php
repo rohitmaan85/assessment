@@ -123,6 +123,47 @@ function getQPCode($job_role)
 		mysqli_free_result($result);
 		echo json_encode(array('qpcode' => $qpCode));
 	}
+	
+function getJobRole($qp_code)
+	{
+		$jobRole = "";
+		$conn = DbConn::getDbConn();
+		$sql="SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='".$qp_code."'";
+		log_event( LOG_DATABASE,"SQL = '".$sql."'" );
+
+		$result = mysqli_query($conn,$sql);
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		while ($row)
+		{
+			$jobRole=$row['job_role'];
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		}
+		 //$final_array = array('job_role' => array_unique($jsonArr));
+		// Free result set
+		mysqli_free_result($result);
+		return $jobRole;
+	}
+	
+	
+function getSSC($qp_code)
+	{
+		$ssc = "";
+		$conn = DbConn::getDbConn();
+		$sql="SELECT ssc FROM `assessment`.`jobroles_excel_import` where qp_code='".$qp_code."'";
+		log_event( LOG_DATABASE,"SQL = '".$sql."'" );
+
+		$result = mysqli_query($conn,$sql);
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		while ($row)
+		{
+			$ssc=$row['ssc'];
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		}
+		 //$final_array = array('job_role' => array_unique($jsonArr));
+		// Free result set
+		mysqli_free_result($result);
+		return $ssc;
+	}
 
 }
 $obj = new getSubjectDetails();

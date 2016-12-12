@@ -6,8 +6,8 @@ if(isset($_GET['action'])){
   if($action=="edit"){
      echo '<input type="hidden" value="yes" id="isEditable" name="isEditable"/>';
     // get Question id to edit
-     $id      = $_GET['id'];
-     echo '<input type="hidden" value="'.$getExamName.'" id="getExamName" name="getExamName">';
+     $exam_id      = $_GET['id'];
+     echo '<input type="hidden" value="'.$exam_id.'" id="getExamName" name="getExamName">';
   } else{
      echo '<input type="hidden" value="no" id="isEditable" name="isEditable"/>';
   }

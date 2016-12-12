@@ -229,6 +229,7 @@
                                        <th>Option D</th>
                                        <th>Answer</th>
                                        <th>type</th>
+                                        <th>id</th>
                                      </tr>
                                  </thead>
                               </table>

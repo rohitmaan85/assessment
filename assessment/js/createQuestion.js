@@ -1,57 +1,68 @@
 $(document).ready(function() {
 
+  var qstnId= "";
+  var qp_code ="";
+  var ssc = "";
+  var job_role="";
+
+  loadSSCList();
+  function loadSSCList() {
+      $.ajax({
+          url: '/assessment/php/getSubjectDetails.php',
+          data: {
+              get: "ssc"
+          },
+          dataType: 'json', //since you wait for json
+          success: function(json) {
+              //now when you received json, render options
+              $.each(json, function(i, option) {
+                  var rendered_option = '<li><a href="#">' + option + '</a></li>';
+                  $(rendered_option).appendTo('#ssctest-dropdown-menu');
+              });
+          }
+      });
+  }
 
 
-    $("#subNameButton").click(function() {
-        var selText = $(this).text();
-        loadJobRoles("");
+  $('#ssctest-dropdown-menu').on('click', 'li a', function() {
+      ssc = $(this).text();
+      var selText = $(this).text();
+      $('#jobroletest-dropdown-menu').children().remove();
+      $('#jobroledropdownButton').html("- Select JobRole -" + '<span class="caret"></span>');
+      $('#sscdropdownButton').html(selText + '<span class="caret"></span>');
+      loadJobRoles(selText);
+  });
+
+
+  function loadJobRoles(sscValue) {
+      $.ajax({
+          url: '/assessment/php/getSubjectDetails.php',
+          data: {
+              get: "jobroleWithQPCode",
+              ssc: ssc
+          },
+          dataType: 'json', //since you wait for json
+          success: function(json) {
+              //now when you received json, render options
+              var counter = 0;
+              $.each(json.job_role, function(i, option) {
+                  var rendered_option = '<li><a href="#" id="' + json.qp_code[counter] + ":"+option +'">' + option + '  (' + json.qp_code[counter] + ' )</a></li>';
+                  $(rendered_option).appendTo('#jobroletest-dropdown-menu');
+                  counter++;
+              });
+          }
+      });
+  }
+
+  // Click on Jobrole DropDown Item.
+  $('#jobroletest-dropdown-menu').on('click', 'li a', function() {
+      var res =  $(this).attr('id').split(":");
+      qp_code = res[0];
+      job_role = res[1];
+      $('#jobroledropdownButton').html($(this).text() + '<span class="caret"></span>');
     });
 
-    $('#subname-dropdown-menu').on('click', 'li a', function() {
-        var selText = $(this).text();
-        subjectName = selText;
-        $('#subNameButton').html(selText + '<span class="caret"></span>');
-        loadQpCode(selText);
-    });
-
-    function loadJobRoles(sscValue) {
-        $.ajax({
-            url: '/assessment/php/getSubjectDetails.php',
-            data: { get: "jobrole", ssc: sscValue },
-            dataType: 'json', //since you wait for json
-            success: function(json) {
-                // Clear dropdown
-                $('#subname-dropdown-menu').children().remove();
-                //now when you received json, render options
-                $.each(json, function(i, option) {
-                    var rendered_option = '<li><a href="#">' + option + '</a></li>';
-                    $(rendered_option).appendTo('#subname-dropdown-menu');
-                });
-            }
-        });
-    }
-
-
-    function loadQpCode(jobroleValue) {
-        $.ajax({
-            url: '/assessment/php/getSubjectDetails.php',
-            data: { get: "qpcode", jobrole: jobroleValue },
-            dataType: 'json', //since you wait for json
-            success: function(json) {
-                // Clear Text
-                //  $('#qpcodeText').remove();
-                $('#qpcodeText').val(json.qpcode);
-                $('#createExamForm').removeClass('hide');
-            }
-        });
-    }
-
-
-     // check if form is editable
-     var id= "";
-     var subId= "";
-     var qstnId= "";
-
+   // check if form is editable
      isEditable() ;
      function isEditable(){
        // For testing
@@ -64,10 +75,9 @@ $(document).ready(function() {
       if($('#isEditable').val()=="yes")
         {
           $('#heading').html("Edit Question");
-           id= ($('#id').val());
-           subId= ($('#subId').val());
+           //id= ($('#id').val());
            qstnId= ($('#qstnId').val());
-          enableEditMode(id,subId,qstnId);
+            enableEditMode(qstnId);
           $('#newModeButton').addClass('hide');
           $('#editModeButton').removeClass('hide');
          }
@@ -78,16 +88,25 @@ $(document).ready(function() {
           }
      }
 
-  function enableEditMode(id,subId,qstnId){
+  function enableEditMode(qstnId){
        // Get Data from Database using subId and qstnId
        $.ajax({
            url: '/assessment/php/manageQuestions.php',
-           data: { action :"edit" ,subId: subId, qstnId : qstnId },
+           data: { action :"edit" , qstnId : qstnId },
            dataType: 'json', //since you wait for json
            success: function(data) {
                if (typeof data.error === 'undefined') {
                    // Success so call function to process the form
+
+
                    console.log('SUCCESS: ' + data.question);
+                   // Select SSC and job Role dropdown
+                   ssc = data.ssc;
+                   job_role=data.job_role;
+                   qp_code=data.qp_code;
+
+                   $('#sscdropdownButton').html(data.ssc + '<span class="caret"></span>');
+                   $('#jobroledropdownButton').html(data.job_role + " (" + data.qp_code + ")" + '<span class="caret"></span>');
                     // populate English Form
                    $("#questionInputTextArea").val(data.question);
                    $("#optionATextAreaInput").val(data.optiona);
@@ -224,10 +243,11 @@ function showEnglishOptions(){
         var marks = $("#marksText").val();
         var noOfOptions = $('#noOfOptions').find("option:selected").text();
 
+
         // alert('test');
         $.ajax({
             url: '/assessment/php/manageQuestions.php',
-            data: {action:"create",qpcode: "AGR/Q4804", qstn: question, opta: optiona, optb: optionb, optc: optionc, optd: optiond, corrans: correctanswer, mark: marks,language:lang,noOfOptions:noOfOptions },
+            data: {action:"create",ssc:ssc,job_role:job_role,qpcode:qp_code, qstn: question, opta: optiona, optb: optionb, optc: optionc, optd: optiond, corrans: correctanswer, mark: marks,language:lang,noOfOptions:noOfOptions },
             dataType: 'json', //since you wait for json
             success: function(data) {
                 if (typeof data.error === 'undefined') {
@@ -302,7 +322,7 @@ function saveQuestion(){
    var noOfOptions = $('#noOfOptions').find("option:selected").text();
    $.ajax({
        url: '/assessment/php/manageQuestions.php',
-       data: { action :"update" ,id:id,subId: subId, qstnId : qstnId, qstn: question, opta: optiona, optb: optionb, optc: optionc, optd: optiond, corrans: correctanswer, mark: marks,language:lang,noOfOptions:noOfOptions },
+       data: { action :"update" ,id:qstnId, ssc:ssc,job_role:job_role,qpcode:qp_code,qstn: question, opta: optiona, optb: optionb, optc: optionc, optd: optiond, corrans: correctanswer, mark: marks,language:lang,noOfOptions:noOfOptions },
        dataType: 'json', //since you wait for json
        success: function(data) {
            if (typeof data.error === 'undefined') {

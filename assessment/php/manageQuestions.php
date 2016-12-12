@@ -34,24 +34,34 @@ class manageQuestions{
 		}
 	}
 
-	function buildInsertSql($qpCode,$question,$optiona,$optionb,$optionc,$optiond,$correctanswer,$marks,$lang,$noOfOption){
-		$qstnId = mt_rand(1, 50000)."_".$qpCode;
-		$row_value= "'".htmlspecialchars($qstnId,ENT_QUOTES)."','".htmlspecialchars($qpCode,ENT_QUOTES).
+	function buildInsertSql($ssc,$job_role,$qp_code,$category,$module,$type,$question,$optiona,$optionb,
+	$optionc,$optiond,$correctanswer,$marks,$lang,$noOfOption){
+
+		$sNo = "";
+
+		$row_value= "'".htmlspecialchars($sNo,ENT_QUOTES)."','".htmlspecialchars($ssc,ENT_QUOTES).
+		"','".htmlspecialchars($job_role,ENT_QUOTES)."','".htmlspecialchars($qp_code,ENT_QUOTES).
+		"','".htmlspecialchars($category,ENT_QUOTES)."','".htmlspecialchars($module,ENT_QUOTES).
+		"','".htmlspecialchars($type,ENT_QUOTES).
 		"','".htmlspecialchars($question,ENT_QUOTES)."','".htmlspecialchars($optiona,ENT_QUOTES).
 		"','".htmlspecialchars($optionb,ENT_QUOTES)."','".htmlspecialchars($optionc,ENT_QUOTES).
-		"','".htmlspecialchars($optiond,ENT_QUOTES)."','".htmlspecialchars($correctanswer,ENT_QUOTES)."','".htmlspecialchars($marks,ENT_QUOTES).
-		"','".htmlspecialchars($lang,ENT_QUOTES)."','".htmlspecialchars($noOfOption,ENT_QUOTES)."'";
+		"','".htmlspecialchars($optiond,ENT_QUOTES)."','".htmlspecialchars($correctanswer,ENT_QUOTES).
+		"','".htmlspecialchars($marks,ENT_QUOTES).
+		"','".htmlspecialchars($lang,ENT_QUOTES)."','".htmlspecialchars($noOfOption,ENT_QUOTES).
+		"','".date("Y-m-d H:i:s", time())."','".date("Y-m-d H:i:s", time())."','".date("Y-m-d H:i:s", time()).
+		"','active'";
 
 		$sql = "INSERT INTO `assessment`.`question`
-				   (`qnid`,`subId`,`question`,`optiona`,`optionb`,`optionc`,`optiond`,
-					`correctanswer`,`marks`,`language`,`no_of_options`)
+				   (`s.no`,`ssc`,`job_role`,`qp_code`,`category`,`module`,`type`,`question`,`optiona`,`optionb`,
+				     `optionc`,`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`,
+				     `last_modified_on`,`status`)
 					 VALUES(".$row_value.");";
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to insert Question : '".$sql."'" );
 		$this->insertSQL .=$sql;
 	}
 
 
-	function buildUpdateSql($id,$qstnId,$subId,$question,$optiona,$optionb,$optionc,$optiond,$correctanswer,$marks,$lang,$noOfOption){
+	function buildUpdateSql($id,$ssc,$job_role,$qp_code,$category,$module,$type,$question,$optiona,$optionb,$optionc,$optiond,$correctanswer,$marks,$lang,$noOfOption){
 		$sql = "update `assessment`.`question` set
 				`question`='".htmlspecialchars($question,ENT_QUOTES)."',".
 				"`optiona`='".htmlspecialchars($optiona,ENT_QUOTES)."',".
@@ -61,8 +71,9 @@ class manageQuestions{
 				"`correctanswer`='".htmlspecialchars($correctanswer,ENT_QUOTES)."',".
 				"`marks`='".htmlspecialchars($marks,ENT_QUOTES)."',".
 				"`language`='".htmlspecialchars($lang,ENT_QUOTES)."',".
-				"`no_of_options`='".htmlspecialchars($noOfOption,ENT_QUOTES)."' ";
-		$sql.="where qnid='".$qstnId."' and subId='".$subId."' and id=".$id;
+				"`no_of_options`='".htmlspecialchars($noOfOption,ENT_QUOTES)."',".
+				"`last_modified_on`='".date("Y-m-d H:i:s", time())."'";
+		$sql.="where id=".$id;
 
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to update Question : '".$sql."'" );
 		$this->updateSQL .=$sql;
@@ -139,6 +150,7 @@ class manageQuestions{
 			$jsonArr[10]=$row['optiond'];
 			$jsonArr[11]=$row['correctanswer'];
 			$jsonArr[12]=$row['type'];
+			$jsonArr[13]=$row['id'];
 			$jsonArr1[] =$jsonArr;
 			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		}
@@ -184,12 +196,11 @@ class manageQuestions{
 	}
 
 
-	function getQuestionToEdit($subjectId,$qstnId)
+	function getQuestionToEdit($qstnId)
 	{
 		$conn = DbConn::getDbConn();
 		$sql="SELECT * FROM `assessment`.`question`";
-		if($subjectId!="")
-		$sql.= " where subid='".htmlspecialchars($subjectId,ENT_QUOTES)."' and qnid='".htmlspecialchars($qstnId,ENT_QUOTES)."'";
+		$sql.= " where id='".htmlspecialchars($qstnId,ENT_QUOTES)."'";
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Question for editing : '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -197,7 +208,9 @@ class manageQuestions{
 		while ($row)
 		{
 			$i++;
-			$jsonArr["subId"]=$row['subId'];
+			$jsonArr["ssc"]=$row['ssc'];
+			$jsonArr["job_role"]=$row['job_role'];
+			$jsonArr["qp_code"]=$row['qp_code'];
 			$jsonArr["question"]=$row['question'];
 			$jsonArr["optiona"]=$row['optiona'];
 			$jsonArr["optionb"]=$row['optionb'];
@@ -216,6 +229,39 @@ class manageQuestions{
 		// print json Data.
 		echo json_encode($jsonArr);
 	}
+
+	function getQuestionDetails($qstnId)
+	{
+		$conn = DbConn::getDbConn();
+		$sql="SELECT * FROM `assessment`.`question`";
+		if($qstnId!="")
+		$sql.= " where id='".htmlspecialchars($qstnId,ENT_QUOTES)."'";
+		log_event(LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Question for editing : '".$sql."'" );
+		$result = mysqli_query($conn,$sql);
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		while ($row)
+		{
+			$jsonArr[0]=$row['subId'];
+			$jsonArr[1]=$row['question'];
+			$jsonArr[2]=$row['optiona'];
+			$jsonArr[3]=$row['optionb'];
+			$jsonArr[4]=$row['optionc'];
+			$jsonArr[5]=$row['optiond'];
+			$jsonArr[6]=$row['correctanswer'];
+			$jsonArr[7]=$row['marks'];
+			$jsonArr[8]=$row['language'];
+			$jsonArr[9]=$row['no_of_options'];
+			//$jsonArr1[] =$jsonArr;
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+			break;
+		}
+		// Free result set
+		mysqli_free_result($result);
+		//log_event(LOG_DATABASE, __LINE__."  ". __FILE__."  , Array '".print_r($jsonArr)."'" );
+
+		return $jsonArr;
+	}
+
 }
 
 // Handle Requests from UI
@@ -261,8 +307,11 @@ if(isset($_GET['action'])){
 	log_event( LOG_DATABASE, " Get Request with action parameter." );
 	// Get defect details to edit question.
 	if($_GET['action']=="create"){
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Get Request to create question." );
-		$qpCode = $_GET['qpcode'];
+		log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Get Request to create question.".print_r($_GET) );
+		
+		$ssc = $_GET['ssc'];
+		$job_role = $_GET['job_role'];
+		$qp_code = $_GET['qpcode'];
 		$question = $_GET['qstn'];
 		$optiona = $_GET['opta'];
 		$optionb = $_GET['optb'];
@@ -272,9 +321,16 @@ if(isset($_GET['action'])){
 		$marks = $_GET['mark'];
 		$lang  = $_GET['language'];
 		$noOfOption  = $_GET['noOfOptions'];
-		$obj->buildInsertSql($qpCode, $question, $optiona, $optionb, $optionc, $optiond, $correctanswer, $marks,$lang,$noOfOption);
 
-		if(!$obj->addQuestionInSubject($qpCode, $question, $optiona, $optionb, $optionc, $optiond, $correctanswer, $marks))
+		// Implement Later
+		$category="";
+		$module="";
+		$type="normal";
+
+
+		$obj->buildInsertSql($ssc,$job_role,$qp_code,$category,$module,$type, $question, $optiona, $optionb, $optionc, $optiond, $correctanswer, $marks,$lang,$noOfOption);
+
+		if(!$obj->addQuestionInSubject())
 		{
 			$data =  array('error' => 'Error while inserting Question in DB.') ;
 			log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Error while inserting Question in DB.".json_encode($data) );
@@ -288,24 +344,24 @@ if(isset($_GET['action'])){
 
 
 	else if($_GET['action']=="edit"){
-		log_event( LOG_DATABASE, " Get Request to get question details." );
-		if(isset($_GET['subId']) && isset($_GET['qstnId'])){
-			$subId = $_GET['subId'];
+		log_event( LOG_DATABASE, " Request to get question details for editing." );
+		if(isset($_GET['qstnId'])){
 			$qstnId = $_GET['qstnId'];
-			$obj->getQuestionToEdit($subId, $qstnId);
+			$obj->getQuestionToEdit($qstnId);
 		}else{
-			log_event( LOG_DATABASE, "Error : 'subId' && 'qstnId' are not set to edit Question.");
-			$data =  array('error' => "Error : 'subId' && 'qstnId' are not set to edit Question.") ;
+			log_event( LOG_DATABASE, "'qstnId' are not set to edit Question.");
+			$data =  array('error' => "'qstnId' are not set to edit Question.") ;
 			echo json_encode($data);
 		}
 	}
 	// Update defect details.
 	else if($_GET['action']=="update"){
 		log_event( LOG_DATABASE, " Get Request to update question." );
-		if(isset($_GET['subId']) && isset($_GET['qstnId'])){
-			$id = $_GET['id'];
-			$subId = $_GET['subId'];
-			$qstnId = $_GET['qstnId'];
+		if(isset($_GET['id'])){
+			$id = $_GET['id'];				
+			$ssc = $_GET['ssc'];
+			$job_role = $_GET['job_role'];
+			$qp_code = $_GET['qp_code'];				
 			$question = $_GET['qstn'];
 			$optiona = $_GET['opta'];
 			$optionb = $_GET['optb'];
@@ -315,7 +371,13 @@ if(isset($_GET['action'])){
 			$marks = $_GET['mark'];
 			$lang  = $_GET['language'];
 			$noOfOption  = $_GET['noOfOptions'];
-			$obj->buildUpdateSql($id,$qstnId,$subId,$question, $optiona, $optionb, $optionc, $optiond, $correctanswer, $marks,$lang,$noOfOption);
+				
+			// Implement Later in GET Request
+			$category="";
+			$module="";
+			$type="";
+
+			$obj->buildUpdateSql($id,$ssc,$job_role,$qp_code,$category,$module,$type,$question, $optiona, $optionb, $optionc, $optiond, $correctanswer, $marks,$lang,$noOfOption);
 			if(!$obj->updateQuestion())
 			{
 				$data =  array('error' => 'Error while updating Question in DB.') ;
@@ -327,8 +389,8 @@ if(isset($_GET['action'])){
 			echo json_encode($data);
 
 		}else{
-			log_event( LOG_DATABASE, "Error : 'subId' && 'qstnId' are not set to edit Question.");
-			$data =  array('error' => "Error : 'subId' && 'qstnId' are not set to edit Question.") ;
+			log_event( LOG_DATABASE, "Error : 'qstnId' are not set to edit Question.");
+			$data =  array('error' => "Error : 'qstnId' are not set to edit Question.") ;
 			echo json_encode($data);
 		}
 	}

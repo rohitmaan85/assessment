@@ -1,6 +1,8 @@
 <?php
 require_once 'DbConn.php';
 require_once 'logging_api.php';
+require_once 'getSubjectDetails.php';
+require_once 'manageQuestions.php';
 
 class manageExams{
 
@@ -13,7 +15,7 @@ class manageExams{
 		$examId="";
 		$conn = DbConn::getDbConn();
 		if($examName!="" && $examId=="")
-			$examId= $this->getExamId($examName);
+		$examId= $this->getExamId($examName);
 		$sql="SELECT qstn_id FROM `assessment`.`exam_qstn` where exam_id='".$examId."'";
 		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get all Questions of Exam with name : '".$sql."'" );
 		$result = 	mysqli_query($conn,$sql);
@@ -33,19 +35,19 @@ class manageExams{
 			$jsonArr1[] =$jsonArr;
 			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		}
-		
+
 		// Get Exam Details
 		$examDetailsArr = $this->getExamDetails($examId);
-		
+
 		$final_array = array('exam_details'=>$examDetailsArr,'data' => $jsonArr);
 		// Free result set
 		mysqli_free_result($result);
 		return $final_array;
 		//echo json_encode($final_array);
 	}
-	
-	
-function getExamDetails($examId){
+
+
+	function getExamDetails($examId){
 		$conn = DbConn::getDbConn();
 		$sql="SELECT * FROM `assessment`.`exam`";
 		if(examId!="")
@@ -66,7 +68,7 @@ function getExamDetails($examId){
 			$jsonArr["testfrom"]=$row['testfrom'];
 			$jsonArr["testto"]=$row['testto'];
 			$jsonArr["total_marks"]=$row['total_marks'];
-	
+
 			//$jsonArr[11]=$jsonArr;
 			//$jsonArr1[] =$jsonArr;
 			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -79,8 +81,8 @@ function getExamDetails($examId){
 		//return $final_array;
 		return $jsonArr;
 	}
-	
-	
+
+
 	function getExamDetailsForDialogueBox($examName){
 		$conn = DbConn::getDbConn();
 		$sql="SELECT * FROM `assessment`.`exam`";
@@ -112,7 +114,7 @@ function getExamDetails($examId){
 		// print json Data.
 		echo json_encode($final_array);
 	}
-	
+
 
 
 	function getQuestionDetail($question_id){
@@ -539,6 +541,81 @@ function getExamDetails($examId){
 		echo json_encode($jsonArr);
 	}
 
+	function getExamDetailsToEditQstns($exam_name)
+	{
+		$conn = DbConn::getDbConn();
+		$sql="SELECT * FROM `assessment`.`exam`";
+		if(examId!="")
+		$sql.= " where testname='".htmlspecialchars($exam_name,ENT_QUOTES)."'";
+		log_event(MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get Exam Details : '".$sql."'" );
+		$result = mysqli_query($conn,$sql);
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$i=0;
+		$qstnObj = new getSubjectDetails();
+		while ($row)
+		{
+			$i++;
+			//$jsonArr[0]= $i;
+			$jsonArr[0]=$row['testname'];
+			$jsonArr[1]=$row['totalquestions'];
+			$jsonArr[2]=$row['batchid'];
+			$jsonArr[3]=$row['testfrom'];
+			$jsonArr[4]=$row['duration']." Minutes";
+			$jsonArr[5]=$row['total_marks'];
+			$jsonArr[6]=$row['testfrom'];
+			$jsonArr[7]=$row['testto'];
+			$qp_code=$row['subid'];
+			$jsonArr[8]= $qstnObj->getJobRole($qp_code)." (".$qp_code.")";		
+			$jsonArr[9]=$qstnObj->getSSC($qp_code);
+			$jsonArr1[] =$jsonArr;
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+			break;
+		}
+		$final_array = array('data' => $jsonArr1);
+		// Free result set
+		mysqli_free_result($result);
+		// print json Data.
+		echo json_encode($final_array);
+	}
+	
+	function getExamQstnListToEdit($exam_name,$exam_id){
+		$conn = DbConn::getDbConn();
+		$qstn_id="";
+		$sql="SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '".$exam_id."'";
+		log_event(MANAGE_QUESTIONS, __LINE__."  ". __FILE__."  , SQL to get Exam Questions List: '".$sql."'" );
+		$result = mysqli_query($conn,$sql);
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$qstnObj = new manageQuestions();
+	
+		$i=0;
+		while ($row)
+		{
+			//$jsonArr[0]="";		
+			$jsonArr[0]=$row['category'];
+			$jsonArr[1]=$row['module'];
+			// Get Questions Details
+			$qstn_details = $qstnObj->getQuestionDetails($row['qstn_id']);
+			//log_event(MANAGE_QUESTIONS, __LINE__."  ". __FILE__."  , Question Details: '".print_r($qstn_details)."'" );
+			$jsonArr[2]=$qstn_details[1];
+			$jsonArr[3]=$qstn_details[2];
+			$jsonArr[4]=$qstn_details[3];
+			$jsonArr[5]=$qstn_details[4];
+			$jsonArr[6]=$qstn_details[5];
+			$jsonArr[7]=$qstn_details[6];	
+			$jsonArr[8]="";				
+			$jsonArr[9]=$row['mark'];	
+			$jsonArr[10]=$row['qstn_id'];		
+			$jsonArr1[] =$jsonArr;
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		}
+		$final_array = array('data' => $jsonArr1);
+		// Free result set
+		mysqli_free_result($result);
+		// print json Data.
+		echo json_encode($final_array);
+	}
+
+	
 }
 
 // Handle Requests from UI
@@ -555,18 +632,19 @@ if(isset($_POST['get'])){
 		log_event( MANAGE_TEST, "Get Exam List for subject  : '".$_POST['qpCode']."'" );
 		$obj->getExamsList($subjectId);
 	}
-	
-	if($requestParam == "examDetailsForInfo"){
+
+	else if($requestParam == "examDetailsForInfo"){
 		$subjectId="";
 		if(isset($_POST['exam_name']))
 		$examName = $_POST['exam_name'];
 		log_event( MANAGE_TEST, "Get Exam Information for exam  : '".$examName."'" );
 		$obj->getExamDetailsForDialogueBox($examName);
 	}
+	
 }
 
 if(isset($_POST['action'])){
-	log_event( MANAGE_TEST, " Get Request to Create Exam  with action parameter." );
+	log_event( MANAGE_TEST, " Get Request in ManageExams Page." );
 	// Get defect details to edit question.
 	if($_POST['action']=="create"){
 	 $subId			= $_POST['subId'];
@@ -613,6 +691,20 @@ if(isset($_POST['action'])){
 			log_event( MANAGE_TEST, "Error : 'subId' && 'qstnId' are not set to edit Question.");
 			$data =  array('error' => "Error : 'subId' && 'qstnId' are not set to edit Question.") ;
 			echo json_encode($data);
+		}
+	}
+	else if($_POST['action']=="getExamInfo"){
+		log_event( MANAGE_TEST, "Get Request to get Exam Details to edit Questions." );
+		if(isset($_POST['exam_name'])){
+			$exam_name = $_POST['exam_name'];
+			$obj->getExamDetailsToEditQstns($exam_name);
+		}
+	}
+	else if($_POST['action']=="getExamQstns"){
+		log_event( MANAGE_TEST, "Get Request to get Exam Questions to edit Questions." );
+		if(isset($_POST['examName'])){
+			$examName = $_POST['examName'];
+			$obj->getExamQstnListToEdit("",$obj->getExamId($examName));
 		}
 	}
 	// Update defect details.

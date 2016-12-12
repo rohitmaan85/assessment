@@ -1,0 +1,436 @@
+2016-12-12T08:08:00+00:00 [1500] INFO  : DB  Get Request with action parameter.
+2016-12-12T08:08:00+00:00 [1500] INFO  : DB 310  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.1
+2016-12-12T08:08:00+00:00 [1500] INFO  : DB 59  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`s.no`,`ssc`,`job_role`,`qp_code`,`category`,`module`,`type`,`question`,`optiona`,`optionb`,
+				     `optionc`,`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`,
+				     `last_modified_on`,`status`)
+					 VALUES('','Automotive ','Dealership Telecaller Sales Executive','ASC/Q1011','','','normal','sdfsdf','etrert','','','','optiona','34','eng','1','2016-12-12 08:08:00','2016-12-12 08:08:00','2016-12-12 08:08:00','active');'
+2016-12-12T08:08:00+00:00 [1500] INFO  : DB 12  C:\wamp64\www\assessment\php\manageQuestions.php  , Success !  Question inserted successfully in Database : ''
+2016-12-12T08:08:00+00:00 [1500] INFO  : DB 339  C:\wamp64\www\assessment\php\manageQuestions.php Question created successfully.
+2016-12-12T08:09:51+00:00 [1500] INFO  : DB Get Request with parameter :'ssc'
+2016-12-12T08:09:51+00:00 [1500] INFO  : DB Get SSC List from database.
+2016-12-12T08:09:51+00:00 [1500] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-12T08:09:56+00:00 [1500] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-12-12T08:09:56+00:00 [1500] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Food Processing'
+2016-12-12T08:09:56+00:00 [1500] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Food Processing''
+2016-12-12T08:10:05+00:00 [1500] INFO  : DB  Get Request with action parameter.
+2016-12-12T08:10:05+00:00 [1500] INFO  : DB 310  C:\wamp64\www\assessment\php\manageQuestions.php Get Request to create question.1
+2016-12-12T08:10:05+00:00 [1500] INFO  : DB 59  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to insert Question : 'INSERT INTO `assessment`.`question`
+				   (`s.no`,`ssc`,`job_role`,`qp_code`,`category`,`module`,`type`,`question`,`optiona`,`optionb`,
+				     `optionc`,`optiond`,`correctanswer`,`marks`,`language`,`no_of_options`,`uploadDate`,`createDate`,
+				     `last_modified_on`,`status`)
+					 VALUES('','Food Processing','Jam Jelly &amp; Ketchup Processing  Technician','FIC/Q0103','','','normal','rwerew','werw','wr','wrw','wrewr','optiona','45','eng','4','2016-12-12 08:10:05','2016-12-12 08:10:05','2016-12-12 08:10:05','active');'
+2016-12-12T08:10:05+00:00 [1500] INFO  : DB 12  C:\wamp64\www\assessment\php\manageQuestions.php  , Success !  Question inserted successfully in Database : ''
+2016-12-12T08:10:05+00:00 [1500] INFO  : DB 339  C:\wamp64\www\assessment\php\manageQuestions.php Question created successfully.
+2016-12-12T08:10:33+00:00 [1500] INFO  : DB Get Request with parameter :'questions'
+2016-12-12T08:10:33+00:00 [1500] INFO  : DB Get Questions List for ssc :' and subject  : ''
+		and category :'' and module : ''
+2016-12-12T08:10:33+00:00 [1500] INFO  : DB 133  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question`'
+2016-12-12T08:10:40+00:00 [1500] INFO  : DB Get Request with parameter :'ssc'
+2016-12-12T08:10:40+00:00 [1500] INFO  : DB Get SSC List from database.
+2016-12-12T08:10:40+00:00 [1500] INFO  : DB  Get Request with action parameter.
+2016-12-12T08:10:40+00:00 [1500] INFO  : DB  Request to get question details for editing.
+2016-12-12T08:10:41+00:00 [1500] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-12T08:10:41+00:00 [1500] INFO  : DB 204  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='61''
+2016-12-12T08:10:45+00:00 [1500] INFO  : DB  Get Request with action parameter.
+2016-12-12T08:10:45+00:00 [1500] INFO  : DB  Get Request to update question.
+2016-12-12T08:10:45+00:00 [1500] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to update Question : 'update `assessment`.`question` set
+				`question`='rwerew',`optiona`='werw',`optionb`='wr',`optionc`='wrw',`optiond`='wrewr',`correctanswer`='optiona',`marks`='232342',`language`='eng',`no_of_options`='4',`last_modified_on`='2016-12-12 08:10:45'where id=61'
+2016-12-12T08:10:45+00:00 [1500] INFO  : DB 25  C:\wamp64\www\assessment\php\manageQuestions.php  , Success !  Question save successfully in Database : ''
+2016-12-12T08:10:45+00:00 [1500] INFO  : DB 387  C:\wamp64\www\assessment\php\manageQuestions.php Question saved successfully.
+2016-12-12T08:10:59+00:00 [1500] INFO  : DB  Get Request with action parameter.
+2016-12-12T08:10:59+00:00 [1500] INFO  : DB  Get Request to update question.
+2016-12-12T08:10:59+00:00 [1500] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to update Question : 'update `assessment`.`question` set
+				`question`='rwerew',`optiona`='werw',`optionb`='wr',`optionc`='wrw',`optiond`='wrewr',`correctanswer`='optiona',`marks`='12',`language`='eng',`no_of_options`='4',`last_modified_on`='2016-12-12 08:10:59'where id=61'
+2016-12-12T08:10:59+00:00 [1500] INFO  : DB 25  C:\wamp64\www\assessment\php\manageQuestions.php  , Success !  Question save successfully in Database : ''
+2016-12-12T08:10:59+00:00 [1500] INFO  : DB 387  C:\wamp64\www\assessment\php\manageQuestions.php Question saved successfully.
+2016-12-12T08:11:10+00:00 [1500] INFO  : DB Get Request with parameter :'questions'
+2016-12-12T08:11:10+00:00 [1500] INFO  : DB Get Questions List for ssc :' and subject  : ''
+		and category :'' and module : ''
+2016-12-12T08:11:11+00:00 [1500] INFO  : DB 133  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question`'
+2016-12-12T08:11:18+00:00 [1500] INFO  : DB Get Request with parameter :'ssc'
+2016-12-12T08:11:18+00:00 [1500] INFO  : DB Get SSC List from database.
+2016-12-12T08:11:18+00:00 [1500] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-12T08:11:18+00:00 [1500] INFO  : DB  Get Request with action parameter.
+2016-12-12T08:11:18+00:00 [1500] INFO  : DB  Request to get question details for editing.
+2016-12-12T08:11:18+00:00 [1500] INFO  : DB 204  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='61''
+2016-12-12T08:11:23+00:00 [1500] INFO  : DB  Get Request with action parameter.
+2016-12-12T08:11:23+00:00 [1500] INFO  : DB  Get Request to update question.
+2016-12-12T08:11:23+00:00 [1500] INFO  : DB 78  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to update Question : 'update `assessment`.`question` set
+				`question`='edit question',`optiona`='werw',`optionb`='wr',`optionc`='wrw',`optiond`='wrewr',`correctanswer`='optiona',`marks`='12',`language`='eng',`no_of_options`='4',`last_modified_on`='2016-12-12 08:11:23'where id=61'
+2016-12-12T08:11:24+00:00 [1500] INFO  : DB 25  C:\wamp64\www\assessment\php\manageQuestions.php  , Success !  Question save successfully in Database : ''
+2016-12-12T08:11:24+00:00 [1500] INFO  : DB 387  C:\wamp64\www\assessment\php\manageQuestions.php Question saved successfully.
+2016-12-12T08:11:29+00:00 [1500] INFO  : DB Get Request with parameter :'questions'
+2016-12-12T08:11:29+00:00 [1500] INFO  : DB Get Questions List for ssc :' and subject  : ''
+		and category :'' and module : ''
+2016-12-12T08:11:29+00:00 [1500] INFO  : DB 133  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question`'
+2016-12-12T08:12:35+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:12:35+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:12:35+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:12:35+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:12:35+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '3''
+2016-12-12T08:12:35+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_1''
+2016-12-12T08:12:35+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='8''
+2016-12-12T08:12:35+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:12:35+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='1''
+2016-12-12T08:12:35+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:12:35+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='4''
+2016-12-12T08:12:39+00:00 [1500] INFO  : DB Get Request with parameter :'ssc'
+2016-12-12T08:12:39+00:00 [1500] INFO  : DB Get SSC List from database.
+2016-12-12T08:12:39+00:00 [1500] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-12T08:12:39+00:00 [1500] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-12T08:12:39+00:00 [1500] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-12T08:12:39+00:00 [1500] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
+2016-12-12T08:17:15+00:00 [1500] INFO  : MANAGE TEST Get Request with parameter :'examDetailsForInfo'
+2016-12-12T08:17:15+00:00 [1500] INFO  : MANAGE TEST Get Exam Information for exam  : 'rohit_1'
+2016-12-12T08:17:15+00:00 [1500] INFO  : MANAGE TEST 91  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_1''
+2016-12-12T08:21:05+00:00 [1500] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-12T08:21:05+00:00 [1500] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-12T08:21:05+00:00 [1500] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
+2016-12-12T08:21:05+00:00 [1500] INFO  : DB Get Request with parameter :'ssc'
+2016-12-12T08:21:05+00:00 [1500] INFO  : DB Get SSC List from database.
+2016-12-12T08:21:05+00:00 [1500] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-12T08:21:22+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:21:22+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:21:22+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '3''
+2016-12-12T08:21:22+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='8''
+2016-12-12T08:21:22+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:21:22+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:21:22+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='1''
+2016-12-12T08:21:22+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:21:22+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_1''
+2016-12-12T08:21:22+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='4''
+2016-12-12T08:21:22+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:21:31+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:21:31+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:21:31+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '3''
+2016-12-12T08:21:31+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:21:31+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:21:31+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_1''
+2016-12-12T08:21:31+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='8''
+2016-12-12T08:21:31+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:21:31+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='1''
+2016-12-12T08:21:32+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:21:32+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='4''
+2016-12-12T08:22:08+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:22:08+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:22:08+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:22:08+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:22:08+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '3''
+2016-12-12T08:22:08+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_1''
+2016-12-12T08:22:08+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:22:08+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='8''
+2016-12-12T08:22:08+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='1''
+2016-12-12T08:22:08+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:22:08+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='4''
+2016-12-12T08:22:14+00:00 [1500] INFO  : DB Get Request with parameter :'ssc'
+2016-12-12T08:22:14+00:00 [1500] INFO  : DB Get SSC List from database.
+2016-12-12T08:22:14+00:00 [1500] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-12T08:22:14+00:00 [1500] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-12T08:22:14+00:00 [1500] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-12T08:22:14+00:00 [1500] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
+2016-12-12T08:22:17+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:22:17+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:22:17+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:22:17+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:22:17+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_1''
+2016-12-12T08:22:17+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '3''
+2016-12-12T08:22:17+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:22:18+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='8''
+2016-12-12T08:22:18+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='1''
+2016-12-12T08:22:18+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:22:18+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='4''
+2016-12-12T08:22:58+00:00 [1500] INFO  : DB Get Request with parameter :'ssc'
+2016-12-12T08:22:58+00:00 [1500] INFO  : DB Get SSC List from database.
+2016-12-12T08:22:58+00:00 [1500] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-12T08:22:58+00:00 [1500] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-12T08:22:58+00:00 [1500] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-12T08:22:58+00:00 [1500] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
+2016-12-12T08:23:00+00:00 [1500] INFO  : DB Get Request with parameter :'ssc'
+2016-12-12T08:23:00+00:00 [1500] INFO  : DB Get SSC List from database.
+2016-12-12T08:23:00+00:00 [1500] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-12T08:23:00+00:00 [1500] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-12T08:23:00+00:00 [1500] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-12T08:23:00+00:00 [1500] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
+2016-12-12T08:23:02+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:23:02+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:23:02+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:23:02+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:23:02+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_1''
+2016-12-12T08:23:02+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '3''
+2016-12-12T08:23:02+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:23:02+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='8''
+2016-12-12T08:23:02+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='1''
+2016-12-12T08:23:02+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:23:02+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='4''
+2016-12-12T08:23:05+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:23:05+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:23:05+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '3''
+2016-12-12T08:23:05+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='8''
+2016-12-12T08:23:05+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:23:05+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:23:05+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='1''
+2016-12-12T08:23:05+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_1''
+2016-12-12T08:23:05+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:23:05+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:23:05+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='4''
+2016-12-12T08:23:10+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:23:10+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:23:10+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:23:10+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:23:10+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '3''
+2016-12-12T08:23:10+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_1''
+2016-12-12T08:23:10+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='8''
+2016-12-12T08:23:10+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:23:10+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='1''
+2016-12-12T08:23:10+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:23:10+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='4''
+2016-12-12T08:24:47+00:00 [1500] INFO  : DB Get Request with parameter :'ssc'
+2016-12-12T08:24:47+00:00 [1500] INFO  : DB Get SSC List from database.
+2016-12-12T08:24:47+00:00 [1500] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-12T08:24:47+00:00 [1500] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-12T08:24:47+00:00 [1500] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-12T08:24:47+00:00 [1500] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
+2016-12-12T08:24:50+00:00 [1500] INFO  : DB Get Request with parameter :'ssc'
+2016-12-12T08:24:50+00:00 [1500] INFO  : DB Get SSC List from database.
+2016-12-12T08:24:50+00:00 [1500] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-12T08:24:50+00:00 [1500] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-12T08:24:50+00:00 [1500] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-12T08:24:50+00:00 [1500] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
+2016-12-12T08:24:52+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:24:52+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:24:52+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:24:52+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:24:52+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '3''
+2016-12-12T08:24:52+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_1''
+2016-12-12T08:24:52+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:24:52+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='8''
+2016-12-12T08:24:52+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='1''
+2016-12-12T08:24:52+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:24:53+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='4''
+2016-12-12T08:25:00+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:25:00+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:25:00+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:25:00+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:25:00+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '3''
+2016-12-12T08:25:00+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_1''
+2016-12-12T08:25:00+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='8''
+2016-12-12T08:25:00+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:25:00+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='1''
+2016-12-12T08:25:00+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:25:00+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='4''
+2016-12-12T08:25:20+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:25:20+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:25:20+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:25:20+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:25:20+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '3''
+2016-12-12T08:25:20+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_1''
+2016-12-12T08:25:20+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='8''
+2016-12-12T08:25:20+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:25:20+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='1''
+2016-12-12T08:25:20+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:25:20+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='4''
+2016-12-12T08:26:28+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:26:28+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:26:28+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:26:28+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:26:28+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_12''
+2016-12-12T08:26:28+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '3''
+2016-12-12T08:26:28+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:26:28+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='8''
+2016-12-12T08:26:28+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='1''
+2016-12-12T08:26:28+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:26:28+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='4''
+2016-12-12T08:27:09+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:27:09+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:27:09+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:27:09+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:27:09+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_123''
+2016-12-12T08:27:09+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '3''
+2016-12-12T08:27:09+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='8''
+2016-12-12T08:27:09+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:27:09+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='1''
+2016-12-12T08:27:09+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:27:09+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='4''
+2016-12-12T08:27:15+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:27:15+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:27:15+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:27:15+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:27:15+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '3''
+2016-12-12T08:27:15+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='8''
+2016-12-12T08:27:15+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_12345''
+2016-12-12T08:27:15+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:27:15+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='1''
+2016-12-12T08:27:15+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:27:15+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='4''
+2016-12-12T08:27:29+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:27:29+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:27:29+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:27:29+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:27:29+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_12345''
+2016-12-12T08:27:29+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '3''
+2016-12-12T08:27:29+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:27:29+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='8''
+2016-12-12T08:27:29+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='1''
+2016-12-12T08:27:29+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:27:29+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='4''
+2016-12-12T08:29:58+00:00 [1500] INFO  : DB Get Request with parameter :'ssc'
+2016-12-12T08:29:58+00:00 [1500] INFO  : DB Get SSC List from database.
+2016-12-12T08:29:58+00:00 [1500] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-12T08:29:58+00:00 [1500] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-12T08:29:58+00:00 [1500] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-12T08:29:58+00:00 [1500] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
+2016-12-12T08:30:00+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:30:00+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:30:00+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:30:00+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:30:00+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_1234''
+2016-12-12T08:30:00+00:00 [1500] INFO  : MANAGE TEST 343  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam  Id : 'SELECT id FROM `assessment`.`exam` where testname='rohit_1234''
+2016-12-12T08:30:00+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:30:00+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '4''
+2016-12-12T08:30:00+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='22''
+2016-12-12T08:30:00+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='46''
+2016-12-12T08:30:00+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:30:00+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='34''
+2016-12-12T08:30:07+00:00 [1500] INFO  : DB Get Request with parameter :'ssc'
+2016-12-12T08:30:07+00:00 [1500] INFO  : DB Get SSC List from database.
+2016-12-12T08:30:07+00:00 [1500] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-12T08:30:07+00:00 [1500] INFO  : DB  Get Request with action parameter.
+2016-12-12T08:30:07+00:00 [1500] INFO  : DB  Request to get question details for editing.
+2016-12-12T08:30:07+00:00 [1500] INFO  : DB 204  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='46''
+2016-12-12T08:30:40+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:30:40+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:30:40+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:30:40+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:30:40+00:00 [1500] INFO  : MANAGE TEST 343  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam  Id : 'SELECT id FROM `assessment`.`exam` where testname='rohit_12345''
+2016-12-12T08:30:40+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_12345''
+2016-12-12T08:30:40+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '5''
+2016-12-12T08:30:40+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:30:40+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='36''
+2016-12-12T08:30:40+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='44''
+2016-12-12T08:30:40+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:30:40+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='4''
+2016-12-12T08:30:56+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:30:56+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:30:56+00:00 [1500] INFO  : MANAGE TEST 343  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam  Id : 'SELECT id FROM `assessment`.`exam` where testname='rohit_12345''
+2016-12-12T08:30:56+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '5''
+2016-12-12T08:30:56+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:30:56+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:30:56+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='36''
+2016-12-12T08:30:56+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_12345''
+2016-12-12T08:30:56+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='44''
+2016-12-12T08:30:56+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:30:56+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:30:56+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='4''
+2016-12-12T08:30:59+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:30:59+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:31:00+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:31:00+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:31:00+00:00 [1500] INFO  : MANAGE TEST 343  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam  Id : 'SELECT id FROM `assessment`.`exam` where testname='rohit_1''
+2016-12-12T08:31:00+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_1''
+2016-12-12T08:31:00+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '1''
+2016-12-12T08:31:00+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:31:05+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:31:05+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:31:05+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:31:05+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:31:05+00:00 [1500] INFO  : MANAGE TEST 343  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam  Id : 'SELECT id FROM `assessment`.`exam` where testname='rohit_12''
+2016-12-12T08:31:05+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_12''
+2016-12-12T08:31:05+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '2''
+2016-12-12T08:31:05+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:31:08+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:31:08+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:31:08+00:00 [1500] INFO  : MANAGE TEST 343  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam  Id : 'SELECT id FROM `assessment`.`exam` where testname='rohit_123''
+2016-12-12T08:31:08+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:31:08+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:31:08+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '3''
+2016-12-12T08:31:08+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_123''
+2016-12-12T08:31:08+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='8''
+2016-12-12T08:31:08+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:31:08+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='1''
+2016-12-12T08:31:08+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:31:08+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='4''
+2016-12-12T08:31:16+00:00 [1500] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-12-12T08:31:16+00:00 [1500] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Automotive '
+2016-12-12T08:31:16+00:00 [1500] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Automotive ''
+2016-12-12T08:31:17+00:00 [1500] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-12T08:31:17+00:00 [1500] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-12T08:31:17+00:00 [1500] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where subid='ASC/Q1012''
+2016-12-12T08:31:19+00:00 [1500] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-12-12T08:31:19+00:00 [1500] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Agriculture'
+2016-12-12T08:31:19+00:00 [1500] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
+2016-12-12T08:31:21+00:00 [1500] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-12T08:31:21+00:00 [1500] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-12T08:31:21+00:00 [1500] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where subid='AGR/Q4804''
+2016-12-12T08:31:28+00:00 [1500] INFO  : MANAGE TEST Get Request with parameter :'examDetailsForInfo'
+2016-12-12T08:31:28+00:00 [1500] INFO  : MANAGE TEST Get Exam Information for exam  : 'rohit_12'
+2016-12-12T08:31:28+00:00 [1500] INFO  : MANAGE TEST 91  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_12''
+2016-12-12T08:31:47+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:31:47+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:31:47+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:31:47+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:31:47+00:00 [1500] INFO  : MANAGE TEST 343  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam  Id : 'SELECT id FROM `assessment`.`exam` where testname='rohit_1''
+2016-12-12T08:31:47+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_1''
+2016-12-12T08:31:47+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '1''
+2016-12-12T08:31:47+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:31:52+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:31:52+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:31:52+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:31:52+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:31:52+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_1234''
+2016-12-12T08:31:52+00:00 [1500] INFO  : MANAGE TEST 343  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam  Id : 'SELECT id FROM `assessment`.`exam` where testname='rohit_1234''
+2016-12-12T08:31:52+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '4''
+2016-12-12T08:31:52+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:31:52+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='22''
+2016-12-12T08:31:52+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='46''
+2016-12-12T08:31:52+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:31:52+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='34''
+2016-12-12T08:33:04+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:33:04+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:33:04+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:33:04+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:33:04+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_1234''
+2016-12-12T08:33:04+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:33:04+00:00 [1500] INFO  : MANAGE TEST 343  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam  Id : 'SELECT id FROM `assessment`.`exam` where testname='rohit_1234''
+2016-12-12T08:33:04+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '4''
+2016-12-12T08:33:04+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='22''
+2016-12-12T08:33:04+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='46''
+2016-12-12T08:33:04+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:33:05+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='34''
+2016-12-12T08:33:24+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:33:24+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:33:24+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:33:24+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:33:24+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_1234''
+2016-12-12T08:33:24+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:33:24+00:00 [1500] INFO  : MANAGE TEST 343  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam  Id : 'SELECT id FROM `assessment`.`exam` where testname='rohit_1234''
+2016-12-12T08:33:24+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '4''
+2016-12-12T08:33:24+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='22''
+2016-12-12T08:33:24+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='46''
+2016-12-12T08:33:24+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:33:24+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='34''
+2016-12-12T08:33:48+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:33:48+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:33:48+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_1234''
+2016-12-12T08:33:48+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:33:48+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:33:48+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:33:48+00:00 [1500] INFO  : MANAGE TEST 343  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam  Id : 'SELECT id FROM `assessment`.`exam` where testname='rohit_1234''
+2016-12-12T08:33:48+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '4''
+2016-12-12T08:33:48+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='22''
+2016-12-12T08:33:48+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='46''
+2016-12-12T08:33:48+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:33:48+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='34''
+2016-12-12T08:36:10+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:36:10+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-12T08:36:10+00:00 [1500] INFO  : MANAGE TEST 343  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam  Id : 'SELECT id FROM `assessment`.`exam` where testname='rohit_1234''
+2016-12-12T08:36:10+00:00 [1500] INFO  : MANAGE QUESTION 585  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '4''
+2016-12-12T08:36:10+00:00 [1500] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-12T08:36:10+00:00 [1500] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-12T08:36:10+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='22''
+2016-12-12T08:36:10+00:00 [1500] INFO  : MANAGE TEST 550  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_1234''
+2016-12-12T08:36:10+00:00 [1500] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:36:10+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='46''
+2016-12-12T08:36:10+00:00 [1500] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-12T08:36:10+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-12T08:36:10+00:00 [1500] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='34''
