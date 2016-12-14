@@ -73,14 +73,15 @@ $(document).ready(function() {
 
     $('#jobroletest-dropdown-menu').on('click', 'li a', function() {
         $('#jobroledropdownButton').html($(this).text() + '<span class="caret"></span>');
-        showExams($(this).attr("id"), "");
+        subId=$(this).attr("id");
+        showExams();
     });
 
 
     var examsTable = "";
-    showExams("", "");
+    showExams("");
 
-    function showExams(subjectId, batchId) {
+    function showExams() {
         examsTable = $('#exams').DataTable({
             "oLanguage": {
                 "sEmptyTable": '<strong>No Exams Available for this Subject \\ Batch  !</strong>'
@@ -97,7 +98,7 @@ $(document).ready(function() {
                 'url': '/assessment/php/manageExams.php',
                 'data': {
                     get: 'exams',
-                    subid: subjectId
+                    subid: subId
                 },
                 'dataSrc': function(json) {
                     if (!json.data) {
@@ -116,8 +117,8 @@ $(document).ready(function() {
                 "targets": 2,
                 "searchable": false,
                 "data": null,
-                "width": "60%",
-                "defaultContent": " <button id=\"editExam\"  type=\"button\" class=\"btn btn-warning btn-sm\" ><span class=\"glyphicon glyphicon-edit\"></span>Edit</button>  <button id=\"manQstsButton\"  type=\"button\" class=\"btn btn-success btn-sm\" ><span class=\"glyphicon glyphicon-edit\"></span>Manage Questions</button> <button id=\"showExamDetails\"  type=\"button\" class=\"btn btn-info btn-sm\" ><span class=\"glyphicon glyphicon-asterisk\"></span>Show Details</button>  <button id=\"showQuestions\"  type=\"button\" class=\"btn btn-warning btn-sm\" ><span class=\"glyphicon glyphicon-edit\"></span>Show Questions</button>"
+                "width": "55%",
+              "defaultContent": " <button id=\"showExamDetails\"  type=\"button\" class=\"btn btn-info btn-sm\" >Show Exam Details</button>   <button id=\"editExamButton\"  type=\"button\" class=\"btn btn-primary btn-sm\" ><span class=\"glyphicon glyphicon-edit\"></span>Edit</button>  <button id=\"manQstsButton\"  type=\"button\" class=\"btn btn-success btn-sm\" ><span class=\"glyphicon glyphicon-edit\"></span>Manage Questions</button>  <button id=\"showQuestions\"  type=\"button\" class=\"btn btn-warning btn-sm\" ><span class=\"glyphicon glyphicon-edit\"></span>Show Questions</button> <button id=\"deleteExamButton\"  type=\"button\" class=\"btn btn-danger btn-sm\" ><span class=\"glyphicon glyphicon-remove\"></span>Delete</button>  "
             }, ],
             "destroy": true,
         });
@@ -146,8 +147,52 @@ $(document).ready(function() {
         window.open("manageExamQuestions.php?action=manageExamQstn&examName=" + exam_name);
     });
 
+    $('#exams tbody').on('click', '#deleteExamButton', function() {
+
+        var data = $('#exams').DataTable().row($(this).parents('tr')).data();
+        exam_name = data[0];
+        $('#confirm').modal({
+                backdrop: 'static',
+                keyboard: false
+            })
+            .one('click', '#delete', function() {
+                deleteExam(exam_name);
+            });
+
+    });
 
 
+    function deleteExam(exam_name) {
+        $.ajax({
+           type: 'POST',
+            url: '/assessment/php/manageExams.php',
+            data: {
+                action: "delete",
+                examName: exam_name
+            },
+            dataType: 'json', //since you wait for json
+            success: function(json) {
+                //now when you received json, render options
+                $('#successMessageText').text(json.message);
+                $('#successMessage').modal('show');
+                showExams();
+                // Set a timeout to hide the element again
+                setTimeout(function(){
+                      $("#successMessage").modal('hide');
+                }, 3000);
+            },
+            error: function(data) {
+                // Handle errors here
+                console.log('ERRORS: ' + data);
+                $('#errorModal').modal('show');
+                    // Set a timeout to hide the element again
+                setTimeout(function(){
+                      $("#errorModal").modal('hide');
+                }, 3000);
+                // STOP LOADING SPINNER
+            }
+        });
+    }
 
     function getExamInformationForDialog() {
         $.ajax({

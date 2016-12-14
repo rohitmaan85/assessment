@@ -302,9 +302,9 @@ class manageExams{
 
 	function getExamsList($subjectId){
 		$conn = DbConn::getDbConn();
-		$sql="SELECT * FROM `assessment`.`exam`";
+		$sql="SELECT * FROM `assessment`.`exam` where status='active'";
 		if($subjectId!="")
-		$sql.= " where subid='".htmlspecialchars($subjectId,ENT_QUOTES)."'";
+		$sql.= " and subid='".htmlspecialchars($subjectId,ENT_QUOTES)."'";
 		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get Exam : '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -489,6 +489,24 @@ class manageExams{
 	}
 
 
+
+	function executeUpdateQuery($sql)
+	{
+		$conn = DbConn::getDbConn();
+		if (mysqli_query($conn, $sql)) {
+			if(mysqli_affected_rows($conn)>0){
+				log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , Success !  SQL executed '".mysqli_affected_rows($con)."'" );
+				return true;
+			}else{
+				log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , ERROR #! while executing query. " );
+				return false;
+			}
+		} else {
+			log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , ERROR #! while executing query. " );
+			return false;
+		}
+	}
+
 	function buildUpdateSql($id,$qstnId,$subId,$question,$optiona,$optionb,$optionc,$optiond,$correctanswer,$marks,$lang,$noOfOption){
 		$sql = "update `assessment`.`question` set
 				`question`='".htmlspecialchars($question,ENT_QUOTES)."',".
@@ -506,116 +524,132 @@ class manageExams{
 		$this->updateSQL .=$sql;
 	}
 
+	function deleteExam($exam_id){
+		$sql = "update `assessment`.`exam` set
+				`status`='inactive' , `last_modified_on`='".date("Y-m-d H:i:s", time())."' ";
+		$sql.="where id='".$exam_id."'";
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to delete Exam : '".$sql."'" );
+		if(!$this->executeUpdateQuery($sql))
+		{
+			$data =  array('message' => 'Error while delete Exam , Please try again later!') ;
+			log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Error while deleting Exam.".json_encode($data) );
+		} else {
+			$data =  array('message' => 'Exam deleted Successfully , Status is inactive now !!!.') ;
+			log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Exam deleting Successfully !!!." );
+		}
+	
+		echo json_encode($data);
+	//return $this->();
+}
 
-
-	function getQuestionToEdit($subjectId,$qstnId)
+function getQuestionToEdit($subjectId,$qstnId)
+{
+	$conn = DbConn::getDbConn();
+	$sql="SELECT * FROM `assessment`.`question`";
+	if($subjectId!="")
+	$sql.= " where subid='".htmlspecialchars($subjectId,ENT_QUOTES)."' and qnid='".htmlspecialchars($qstnId,ENT_QUOTES)."'";
+	log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get Question for editing : '".$sql."'" );
+	$result = mysqli_query($conn,$sql);
+	$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+	$i=0;
+	while ($row)
 	{
-		$conn = DbConn::getDbConn();
-		$sql="SELECT * FROM `assessment`.`question`";
-		if($subjectId!="")
-		$sql.= " where subid='".htmlspecialchars($subjectId,ENT_QUOTES)."' and qnid='".htmlspecialchars($qstnId,ENT_QUOTES)."'";
-		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get Question for editing : '".$sql."'" );
-		$result = mysqli_query($conn,$sql);
+		$i++;
+		$jsonArr["subId"]=$row['subId'];
+		$jsonArr["question"]=$row['question'];
+		$jsonArr["optiona"]=$row['optiona'];
+		$jsonArr["optionb"]=$row['optionb'];
+		$jsonArr["optionc"]=$row['optionc'];
+		$jsonArr["optiond"]=$row['optiond'];
+		$jsonArr["correctanswer"]=$row['correctanswer'];
+		$jsonArr["marks"]=$row['marks'];
+		$jsonArr["language"]=$row['language'];
+		$jsonArr["noOfOption"]=$row['no_of_options'];
+		//$jsonArr1[] =$jsonArr;
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
-		$i=0;
-		while ($row)
-		{
-			$i++;
-			$jsonArr["subId"]=$row['subId'];
-			$jsonArr["question"]=$row['question'];
-			$jsonArr["optiona"]=$row['optiona'];
-			$jsonArr["optionb"]=$row['optionb'];
-			$jsonArr["optionc"]=$row['optionc'];
-			$jsonArr["optiond"]=$row['optiond'];
-			$jsonArr["correctanswer"]=$row['correctanswer'];
-			$jsonArr["marks"]=$row['marks'];
-			$jsonArr["language"]=$row['language'];
-			$jsonArr["noOfOption"]=$row['no_of_options'];
-			//$jsonArr1[] =$jsonArr;
-			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
-		}
-		$final_array = array($jsonArr);
-		// Free result set
-		mysqli_free_result($result);
-		// print json Data.
-		echo json_encode($jsonArr);
 	}
+	$final_array = array($jsonArr);
+	// Free result set
+	mysqli_free_result($result);
+	// print json Data.
+	echo json_encode($jsonArr);
+}
 
-	function getExamDetailsToEditQstns($exam_name)
+function getExamDetailsToEditQstns($exam_name)
+{
+	$conn = DbConn::getDbConn();
+	$sql="SELECT * FROM `assessment`.`exam`";
+	if(examId!="")
+	$sql.= " where testname='".htmlspecialchars($exam_name,ENT_QUOTES)."'";
+	log_event(MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get Exam Details : '".$sql."'" );
+	$result = mysqli_query($conn,$sql);
+	$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+	$i=0;
+	$qstnObj = new getSubjectDetails();
+	while ($row)
 	{
-		$conn = DbConn::getDbConn();
-		$sql="SELECT * FROM `assessment`.`exam`";
-		if(examId!="")
-		$sql.= " where testname='".htmlspecialchars($exam_name,ENT_QUOTES)."'";
-		log_event(MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get Exam Details : '".$sql."'" );
-		$result = mysqli_query($conn,$sql);
+		$i++;
+		//$jsonArr[0]= $i;
+		$jsonArr[0]=$row['testname'];
+		$jsonArr[1]=$row['totalquestions'];
+		$jsonArr[2]=$row['batchid'];
+		$jsonArr[3]=$row['testfrom'];
+		$jsonArr[4]=$row['duration']." Minutes";
+		$jsonArr[5]=$row['total_marks'];
+		$jsonArr[6]=$row['testfrom'];
+		$jsonArr[7]=$row['testto'];
+		$qp_code=$row['subid'];
+		$jsonArr[8]= $qstnObj->getJobRole($qp_code)." (".$qp_code.")";
+		$jsonArr[9]=$qstnObj->getSSC($qp_code);
+		$jsonArr1[] =$jsonArr;
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
-		$i=0;
-		$qstnObj = new getSubjectDetails();
-		while ($row)
-		{
-			$i++;
-			//$jsonArr[0]= $i;
-			$jsonArr[0]=$row['testname'];
-			$jsonArr[1]=$row['totalquestions'];
-			$jsonArr[2]=$row['batchid'];
-			$jsonArr[3]=$row['testfrom'];
-			$jsonArr[4]=$row['duration']." Minutes";
-			$jsonArr[5]=$row['total_marks'];
-			$jsonArr[6]=$row['testfrom'];
-			$jsonArr[7]=$row['testto'];
-			$qp_code=$row['subid'];
-			$jsonArr[8]= $qstnObj->getJobRole($qp_code)." (".$qp_code.")";		
-			$jsonArr[9]=$qstnObj->getSSC($qp_code);
-			$jsonArr1[] =$jsonArr;
-			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
-			break;
-		}
-		$final_array = array('data' => $jsonArr1);
-		// Free result set
-		mysqli_free_result($result);
-		// print json Data.
-		echo json_encode($final_array);
+		break;
 	}
-	
-	function getExamQstnListToEdit($exam_name,$exam_id){
-		$conn = DbConn::getDbConn();
-		$qstn_id="";
-		$sql="SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '".$exam_id."'";
-		log_event(MANAGE_QUESTIONS, __LINE__."  ". __FILE__."  , SQL to get Exam Questions List: '".$sql."'" );
-		$result = mysqli_query($conn,$sql);
-		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
-		$qstnObj = new manageQuestions();
-	
-		$i=0;
-		while ($row)
-		{
-			//$jsonArr[0]="";		
-			$jsonArr[0]=$row['category'];
-			$jsonArr[1]=$row['module'];
-			// Get Questions Details
-			$qstn_details = $qstnObj->getQuestionDetails($row['qstn_id']);
-			//log_event(MANAGE_QUESTIONS, __LINE__."  ". __FILE__."  , Question Details: '".print_r($qstn_details)."'" );
-			$jsonArr[2]=$qstn_details[1];
-			$jsonArr[3]=$qstn_details[2];
-			$jsonArr[4]=$qstn_details[3];
-			$jsonArr[5]=$qstn_details[4];
-			$jsonArr[6]=$qstn_details[5];
-			$jsonArr[7]=$qstn_details[6];	
-			$jsonArr[8]="";				
-			$jsonArr[9]=$row['mark'];	
-			$jsonArr[10]=$row['qstn_id'];		
-			$jsonArr1[] =$jsonArr;
-			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
-		}
-		$final_array = array('data' => $jsonArr1);
-		// Free result set
-		mysqli_free_result($result);
-		// print json Data.
-		echo json_encode($final_array);
-	}
+	$final_array = array('data' => $jsonArr1);
+	// Free result set
+	mysqli_free_result($result);
+	// print json Data.
+	echo json_encode($final_array);
+}
 
-	
+function getExamQstnListToEdit($exam_name,$exam_id){
+	$conn = DbConn::getDbConn();
+	$qstn_id="";
+	$sql="SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '".$exam_id."'";
+	log_event(MANAGE_QUESTIONS, __LINE__."  ". __FILE__."  , SQL to get Exam Questions List: '".$sql."'" );
+	$result = mysqli_query($conn,$sql);
+	$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+	$qstnObj = new manageQuestions();
+
+	$i=0;
+	while ($row)
+	{
+		//$jsonArr[0]="";
+		$jsonArr[0]=$row['category'];
+		$jsonArr[1]=$row['module'];
+		// Get Questions Details
+		$qstn_details = $qstnObj->getQuestionDetails($row['qstn_id']);
+		//log_event(MANAGE_QUESTIONS, __LINE__."  ". __FILE__."  , Question Details: '".print_r($qstn_details)."'" );
+		$jsonArr[2]=$qstn_details[1];
+		$jsonArr[3]=$qstn_details[2];
+		$jsonArr[4]=$qstn_details[3];
+		$jsonArr[5]=$qstn_details[4];
+		$jsonArr[6]=$qstn_details[5];
+		$jsonArr[7]=$qstn_details[6];
+		$jsonArr[8]="";
+		$jsonArr[9]=$row['mark'];
+		$jsonArr[10]=$row['qstn_id'];
+		$jsonArr1[] =$jsonArr;
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+	}
+	$final_array = array('data' => $jsonArr1);
+	// Free result set
+	mysqli_free_result($result);
+	// print json Data.
+	echo json_encode($final_array);
+}
+
+
 }
 
 // Handle Requests from UI
@@ -640,7 +674,7 @@ if(isset($_POST['get'])){
 		log_event( MANAGE_TEST, "Get Exam Information for exam  : '".$examName."'" );
 		$obj->getExamDetailsForDialogueBox($examName);
 	}
-	
+
 }
 
 if(isset($_POST['action'])){
@@ -707,6 +741,14 @@ if(isset($_POST['action'])){
 			$obj->getExamQstnListToEdit("",$obj->getExamId($examName));
 		}
 	}
+	else if($_POST['action']=="delete"){
+		log_event( MANAGE_TEST, "Get Request to delete Exam." );
+		if(isset($_POST['examName'])){
+			$examName = $_POST['examName'];
+			$obj->deleteExam($obj->getExamId($examName));
+		}
+	}
+
 	// Update defect details.
 	else if($_GET['action']=="update"){
 		log_event( MANAGE_TEST, " Get Request to update question." );

@@ -135,7 +135,7 @@
             <!--<div class="col-lg-14 col-md-11 col-sm-2 col-xs-12"> -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                         <h3 class="panel-title pull-left"><strong>Manage Exams</strong></h3>
+                         <h3 class="panel-title pull-left"><strong>Manage Subjects Category and Modules </strong></h3>
                     </div>
                     <div class="panel-body">
                       <div id="confirm" class="modal fade" role="dialog">

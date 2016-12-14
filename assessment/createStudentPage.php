@@ -36,7 +36,7 @@ if(isset($_GET['action'])){
     <script src="js/validator.js"></script>
     <script src="js/main.js"></script>
     <script src="js/keyboard.js"></script>
-    
+
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css"  href="css/main.css">
     <link rel="stylesheet" type="text/css"  href="css/dataTables.bootstrap.css">
@@ -84,16 +84,19 @@ if(isset($_GET['action'])){
         <!-- Main Menu -->
         <div class="side-menu-container">
           <ul class="nav navbar-nav" >
-            <li><a  href="uploadSubjectPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Subjects</a></li>
+            <li><a  href="importSubjectPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Subjects</a></li>
             <li><a  href="importQuestionsPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Questions</a></li>
             <li><a  href="importBatchPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Batches</a></li>
+            <li><a  href="importStudentsPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Students</a></li>
             <li><a  href="manageSubjectsPage.php"><span class="glyphicon glyphicon-paperclip"></span>Manage Questions</a></li>
+            <li><a  href="manageSubjectCategoriesPage.php"><span class="glyphicon glyphicon-paperclip"></span>Manage Subjects</a></li>
             <li><a  href="manageExamsPage.php"><span class="glyphicon glyphicon-pencil"></span>Manage Exams</a></li>
+            <li><a  href="manageAttendencePage.php"><span class="glyphicon glyphicon-pencil"></span>Manage Batch Attendence</a></li>
             <li><a  href="createQuestionPage.php" ><span class="glyphicon glyphicon-pushpin"></span>Create Question</a></li>
             <li><a  href="createExamPage.php"><span class="glyphicon glyphicon-education"></span>Create Test</a></li>
             <li><a  href="createStudentPage.php"><span class="glyphicon glyphicon-user"></span>Create Student</a></li>
             <li><a  href="login.php"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-            <li><a  href="login.php"><span class="glyphicon glyphicon-paperclip"></span>Reports</a></li>
+            <li><a  href="backupFPDF.php"><span class="glyphicon glyphicon-paperclip"></span>Reports</a></li>
           </ul>
         <!-- /.navbar-collapse -->
        </div>

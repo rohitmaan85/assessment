@@ -1,3 +1,15 @@
+.modal-header {
+    padding:9px 15px;
+    border-bottom:1px solid #eee;
+    background-color: #0480be;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+ }
+
 #oddQstn{
   background: #b8d1f3
 }
@@ -466,7 +478,7 @@ h6 {
 }
 
 .side-menu .navbar-nav li a {
-    padding: 25px;
+    padding: 18px;
 }
 
 .side-menu .navbar-nav li a .glyphicon {
