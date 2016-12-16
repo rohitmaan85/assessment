@@ -1,3 +1,25 @@
+.pull-right
+{
+    float: right;
+
+}
+    .pull-right a
+{
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.fieldtip {
+    color: #337ab7;
+    position: relative;
+    top: 2px;
+    font-size: 14px;
+}
+
+.list-group-item:hover {
+    background-color: #eee;
+}
+
 .modal-header {
     padding:9px 15px;
     border-bottom:1px solid #eee;
@@ -192,6 +214,14 @@ margin-left: 56px
     width: 100%;
 }
 
+
+#categorydropdownButton {
+    width: 100%;
+}
+
+#moduledropdownButton {
+    width: 100%;
+}
 
 #batchButton {
     width: 100%;

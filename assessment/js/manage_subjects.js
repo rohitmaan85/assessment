@@ -5,6 +5,8 @@ $(document).ready(function() {
     var category = "";
     var module = "";
     var quesstionsTable ="";
+    var catId = "";
+    var moduleId = "";
 
     showQuestions("","","","");
 
@@ -12,7 +14,102 @@ $(document).ready(function() {
         $(this).attr("Question", $(this).html());
     });
 
-    function showQuestions(sscValue,subId,category,module) {
+    showSSC();
+    function showSSC(){
+  //  $("#sscdropdownButton").click(function() {
+        $.ajax({
+            url: '/assessment/php/getSubjectDetails.php',
+            data: {
+                get: "ssc"
+            },
+            dataType: 'json', //since you wait for json
+            success: function(json) {
+                // Clear dropdown
+                $('#ssc-dropdown-menu').children().remove();
+                //  $('#ssc-dropdown-menu').children().remove();
+                $('#cat-dropdown-menu').children().remove();
+                $('#module-dropdown-menu').children().remove();
+
+                $('#createModuleModalButton').prop('disabled', true);
+                //now when you received json, render options
+                $.each(json, function(i, option) {
+                    var rendered_option = '<li><a href="#">' + option + '</a></li>';
+                    $(rendered_option).appendTo('#ssc-dropdown-menu');
+                });
+            }
+        });
+        // control.replaceWith(control.val('').clone(true));
+    //});
+  }
+
+  $('#ssc-dropdown-menu').on('click', 'li a', function() {
+      sscValue = $(this).text();
+      var selText = $(this).text();
+      showQuestions(sscValue,"","","");
+        $('#manageQstnForm').addClass('hide');
+      $('#sscdropdownButton').html(selText + '<span class="caret"></span>');
+      //console.log($(this).text());
+      //  $('#jobrole-dropdown-menu').remove();
+      // Reset Button Value
+      $('#jobroledropdownButton').html("Select Job Role" + '<span class="caret"></span>');
+      // Reset Cateory
+      $('#catButton').html("-Select Cateory-" + '<span class="caret"></span>');
+      // Reset Module
+      $('#moduleButton').html("-Select Module-" + '<span class="caret"></span>');
+      $('#cat-dropdown-menu').children().remove();
+      $('#module-dropdown-menu').children().remove();
+
+      $('#createModuleModalButton').prop('disabled', true);
+      //    $('jobroledropdownButton').val("Select Job Role");
+      loadJobRoles();
+  });
+
+
+
+  // Click on Jobrole DropDown Item.
+  $('#jobrole-dropdown-menu').on('click', 'li a', function() {
+      $('#manageQstnForm').removeClass('hide');
+      subId = $(this).attr('id');
+      showCategory();
+      showQuestions(sscValue,subId,"","");
+      $('#jobroledropdownButton').html($(this).text() + '<span class="caret"></span>');
+      // Reset Cateory
+      $('#catButton').html("-Select Category-" + '<span class="caret"></span>');
+      // Reset Module
+      $('#moduleButton').html("-Select Module-" + '<span class="caret"></span>');
+      $('#createModuleModalButton').prop('disabled', true);
+  });
+
+
+  function loadJobRoles() {
+      $.ajax({
+          url: '/assessment/php/getSubjectDetails.php',
+          data: {
+              get: "jobroleWithQPCode",
+              ssc: sscValue
+          },
+          dataType: 'json', //since you wait for json
+          success: function(json) {
+              // Clear dropdown
+              $('#jobrole-dropdown-menu').children().remove();
+              // Reset Cateory
+              $('#catButton').html("-Select Category-" + '<span class="caret"></span>');
+              // Reset Module
+              $('#moduleButton').html("-Select Module-" + '<span class="caret"></span>');
+
+              $('#createModuleModalButton').prop('disabled', true);
+              //now when you received json, render options
+              var counter = 0;
+              $.each(json.job_role, function(i, option) {
+                  var rendered_option = '<li><a href="#" id="' + json.qp_code[counter] + '">' + option + '  (' + json.qp_code[counter] + ' )</a></li>';
+                  $(rendered_option).appendTo('#jobrole-dropdown-menu');
+                  counter++;
+              });
+          }
+      });
+  }
+
+  function showQuestions(sscValue,subId,category,module) {
            quesstionsTable = $('#qstns').DataTable({
              "oLanguage": {
              "sEmptyTable": '<strong>No Questions Available for this Subject \\ category \\ Module  !</strong>'
@@ -30,8 +127,8 @@ $(document).ready(function() {
                     get: 'questions',
                     ssc:sscValue,
                     subId: subId,
-                    category: category,
-                    module: module,
+                    category: catId,
+                    module: moduleId,
                 },
                 'dataSrc': function(json) {
                     if (!json.data) {
@@ -57,51 +154,26 @@ $(document).ready(function() {
     }
 
 
-    function loadJobRoles() {
-        $.ajax({
-            url: '/assessment/php/getSubjectDetails.php',
-            data: {
-                get: "jobroleWithQPCode",
-                ssc: sscValue
-            },
-            dataType: 'json', //since you wait for json
-            success: function(json) {
-                // Clear dropdown
-                $('#jobrole-dropdown-menu').children().remove();
-                // Reset Cateory
-                $('#catButton').html("-Select Category-" + '<span class="caret"></span>');
-                // Reset Module
-                $('#moduleButton').html("-Select Module-" + '<span class="caret"></span>');
 
-                $('#createModuleModalButton').prop('disabled', true);
-                //now when you received json, render options
-                var counter = 0;
-                $.each(json.job_role, function(i, option) {
-                    var rendered_option = '<li><a href="#" id="' + json.qp_code[counter] + '">' + option + '  (' + json.qp_code[counter] + ' )</a></li>';
-                    $(rendered_option).appendTo('#jobrole-dropdown-menu');
-                    counter++;
-                });
-            }
-        });
-    }
 
     function showCategory() {
         $.ajax({
+            type: 'POST',
             url: '/assessment/php/manageCategory.php',
             data: {
-                get: "categories",
+                action: "getCategories",
                 subId: subId
             },
             dataType: 'json', //since you wait for json
-            success: function(data) {
+            success: function(json) {
                 $('#cat-dropdown-menu').children().remove();
                 $('#createModuleModalButton').prop('disabled', true);
                 //now when you received json, render options
                 var counter = 0;
-                $.each(data, function(i, option) {
-                    var rendered_option = '<li><a href="#">' + option + '</a></li>';
-                    $(rendered_option).appendTo('#cat-dropdown-menu');
-
+                $.each(json.ids, function(i, cat_id) {
+                  var rendered_option = '<li><a href="#" id="' + cat_id + '">' + json.category[counter] + '</a></li>';
+                  $(rendered_option).appendTo('#cat-dropdown-menu');
+                    counter++;
                 });
             }
         });
@@ -110,91 +182,33 @@ $(document).ready(function() {
 
     function loadModules() {
         $.ajax({
+            type: 'POST',
             url: '/assessment/php/manageCategory.php',
             data: {
-                get: "modules",
+                action: "getModules",
                 subId: subId,
-                category: category
+                cat_id: catId
             },
             dataType: 'json', //since you wait for json
-            success: function(data) {
+            success: function(json) {
                 //showQuestions();
                 // Clear dropdown
                 //$('#catButton').html(selText + '<span class="caret"></span>');
                 $('#module-dropdown-menu').children().remove();
                 //now when you received json, render options
                 var counter = 0;
-                $.each(data, function(i, option) {
-                    var rendered_option = '<li><a href="#">' + option + '</a></li>';
+                $.each(json.ids, function(i, mod_id) {
+                  var rendered_option = '<li><a href="#" id="' + mod_id + '">' + json.module[counter] + '</a></li>';
                     $(rendered_option).appendTo('#module-dropdown-menu');
+                      counter++;
                 });
             }
         });
     }
 
-    $("#sscdropdownButton").click(function() {
-        $.ajax({
-            url: '/assessment/php/getSubjectDetails.php',
-            data: {
-                get: "ssc"
-            },
-            dataType: 'json', //since you wait for json
-            success: function(json) {
-                // Clear dropdown
-                $('#ssc-dropdown-menu').children().remove();
-                //  $('#ssc-dropdown-menu').children().remove();
-                $('#cat-dropdown-menu').children().remove();
-                $('#module-dropdown-menu').children().remove();
-
-                $('#createModuleModalButton').prop('disabled', true);
-                //now when you received json, render options
-                $.each(json, function(i, option) {
-                    var rendered_option = '<li><a href="#">' + option + '</a></li>';
-                    $(rendered_option).appendTo('#ssc-dropdown-menu');
-                });
-            }
-        });
-        // control.replaceWith(control.val('').clone(true));
-    });
-
-
-    $('#ssc-dropdown-menu').on('click', 'li a', function() {
-        sscValue = $(this).text();
-        var selText = $(this).text();
-        showQuestions(sscValue,"","","");
-          $('#manageQstnForm').addClass('hide');
-        $('#sscdropdownButton').html(selText + '<span class="caret"></span>');
-        //console.log($(this).text());
-        //  $('#jobrole-dropdown-menu').remove();
-        // Reset Button Value
-        $('#jobroledropdownButton').html("Select Job Role" + '<span class="caret"></span>');
-        // Reset Cateory
-        $('#catButton').html("-Select Cateory-" + '<span class="caret"></span>');
-        // Reset Module
-        $('#moduleButton').html("-Select Module-" + '<span class="caret"></span>');
-        $('#cat-dropdown-menu').children().remove();
-        $('#module-dropdown-menu').children().remove();
-
-        $('#createModuleModalButton').prop('disabled', true);
-        //    $('jobroledropdownButton').val("Select Job Role");
-        loadJobRoles();
-    });
 
 
 
-    // Click on Jobrole DropDown Item.
-    $('#jobrole-dropdown-menu').on('click', 'li a', function() {
-        $('#manageQstnForm').removeClass('hide');
-        subId = $(this).attr('id');
-        showCategory();
-        showQuestions(sscValue,subId,"","");
-        $('#jobroledropdownButton').html($(this).text() + '<span class="caret"></span>');
-        // Reset Cateory
-        $('#catButton').html("-Select Category-" + '<span class="caret"></span>');
-        // Reset Module
-        $('#moduleButton').html("-Select Module-" + '<span class="caret"></span>');
-        $('#createModuleModalButton').prop('disabled', true);
-    });
 
     // Click on Category DropDown Button.
     $("#catButton").click(function() {
@@ -205,6 +219,7 @@ $(document).ready(function() {
     $('#cat-dropdown-menu').on('click', 'li a', function() {
         var selText = $(this).text();
         category = $(this).text();
+        catId = $(this).attr("id");
         // Refresh Questions
         showQuestions(sscValue,subId,category,"");
         // Reset Module
@@ -220,7 +235,8 @@ $(document).ready(function() {
 
 
     $('#module-dropdown-menu').on('click', 'li a', function() {
-          module =  $(this).text();
+        module =  $(this).text();
+        moduleId = $(this).attr("id");
         var selText = $(this).text();
         $('#moduleButton').html(selText + '<span class="caret"></span>');
         showQuestions(sscValue,subId,category,module);
@@ -243,6 +259,7 @@ $(document).ready(function() {
             error: function(data) {
                 // Handle errors here
                 console.log('ERRORS: ' + data);
+                //alert(data.message);
                 // STOP LOADING SPINNER
             }
         });
@@ -300,9 +317,11 @@ $(document).ready(function() {
        .on( 'click', 'td', function () {
            var colIdx = quesstionsTable.cell(this).index().column;
           // if(colIdx==5){
+          if(colIdx==5 || colIdx==6 || colIdx==7 || colIdx==8){
                var data = $('#qstns').DataTable().row($(this).parents('tr')).data();
                $('#qstnCompleteVal').val(data[colIdx]);
                $('#displayQstnModal').modal('show');
+             }
           //  }
        } );
 

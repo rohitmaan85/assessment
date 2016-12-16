@@ -2,6 +2,7 @@
 
 require_once 'DbConn.php';
 require_once 'logging_api.php';
+require_once 'manageCategory.php';
 
 class manageQuestions{
 
@@ -80,7 +81,7 @@ class manageQuestions{
 	}
 
 
-	function getQuestionCount($subjectId,$category,$module){
+	function getQuestionCount($subjectId,$category_id,$module_id){
 		try{
 			$conn = DbConn::getDbConn();
 			$sql="SELECT * FROM `assessment`.`question` where";
@@ -89,10 +90,10 @@ class manageQuestions{
 				$sql.= " qp_code='".htmlspecialchars($subjectId,ENT_QUOTES)."'";
 			}
 			if($category!=""){
-				$sql.= " and category='".htmlspecialchars($category,ENT_QUOTES)."'";
+				$sql.= " and category='".htmlspecialchars($category_id,ENT_QUOTES)."'";
 			}
 			if($module!=""){
-				$sql.= " and module='".htmlspecialchars($module,ENT_QUOTES)."'";
+				$sql.= " and module='".htmlspecialchars($module_id,ENT_QUOTES)."'";
 			}
 			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Question Count : '".$sql."'" );
 			$result = mysqli_query($conn,$sql);
@@ -129,7 +130,7 @@ class manageQuestions{
 		if($module!=""){
 			$sql.= " and module='".htmlspecialchars($module,ENT_QUOTES)."'";
 		}
-
+		$obj = new manageCategory();
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Question List: '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -140,8 +141,10 @@ class manageQuestions{
 			$jsonArr[0]= $i;
 			$jsonArr[1]=$row['ssc'];
 			$jsonArr[2]=$row['job_role'];
-			$jsonArr[3]=$row['category'];
-			$jsonArr[4]=$row['module'];
+			$category_name	= $obj->getCategoryName($row['category']);
+			$module_name	= $obj->getModuleName($row['module']);
+			$jsonArr[3]=$category_name;
+			$jsonArr[4]=$module_name;
 			$jsonArr[5]=$row['question'];
 			$jsonArr[6]="";
 			$jsonArr[7]=$row['optiona'];
@@ -169,6 +172,7 @@ class manageQuestions{
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Question : '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$obj = new manageCategory();
 		$i=0;
 		while ($row)
 		{
@@ -176,8 +180,10 @@ class manageQuestions{
 			$jsonArr[0]= $i;
 			$jsonArr[1]=$row['ssc'];
 			$jsonArr[2]=$row['job_role'];
-			$jsonArr[3]=$row['category'];
-			$jsonArr[4]=$row['module'];
+			$category_name	= $obj->getCategoryName($row['category']);
+			$module_name	= $obj->getModuleName($row['module']);
+			$jsonArr[3]=$category_name;
+			$jsonArr[4]=$module_name;
 			$jsonArr[5]=$row['question'];
 			$jsonArr[6]=$row['optiona'];
 			$jsonArr[7]=$row['optionb'];
@@ -279,16 +285,16 @@ if(isset($_GET['get'])){
 
 		if(isset($_GET['ssc']))
 		$ssc = $_GET['ssc'];
-			
+
 		if(isset($_GET['subId']))
 		$subjectId = $_GET['subId'];
-			
+
 		if(isset($_GET['category']))
 		$category = $_GET['category'];
-			
+
 		if(isset($_GET['module']))
 		$module = $_GET['module'];
-			
+
 		log_event( LOG_DATABASE, "Get Questions List for ssc :".$ssc."' and subject  : '".$subjectId."'
 		and category :'".$category."' and module : '".$module."'" );
 		$obj->getQstnList($ssc,$subjectId,$category,$module);
@@ -308,7 +314,7 @@ if(isset($_GET['action'])){
 	// Get defect details to edit question.
 	if($_GET['action']=="create"){
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Get Request to create question.".print_r($_GET) );
-		
+
 		$ssc = $_GET['ssc'];
 		$job_role = $_GET['job_role'];
 		$qp_code = $_GET['qpcode'];
@@ -358,10 +364,10 @@ if(isset($_GET['action'])){
 	else if($_GET['action']=="update"){
 		log_event( LOG_DATABASE, " Get Request to update question." );
 		if(isset($_GET['id'])){
-			$id = $_GET['id'];				
+			$id = $_GET['id'];
 			$ssc = $_GET['ssc'];
 			$job_role = $_GET['job_role'];
-			$qp_code = $_GET['qp_code'];				
+			$qp_code = $_GET['qp_code'];
 			$question = $_GET['qstn'];
 			$optiona = $_GET['opta'];
 			$optionb = $_GET['optb'];
@@ -371,7 +377,7 @@ if(isset($_GET['action'])){
 			$marks = $_GET['mark'];
 			$lang  = $_GET['language'];
 			$noOfOption  = $_GET['noOfOptions'];
-				
+
 			// Implement Later in GET Request
 			$category="";
 			$module="";

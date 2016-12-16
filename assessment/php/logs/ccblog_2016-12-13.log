@@ -1,0 +1,212 @@
+2016-12-13T15:11:37+00:00 [2392] INFO  : DB Get Request with parameter :'ssc'
+2016-12-13T15:11:37+00:00 [2392] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-13T15:11:38+00:00 [2392] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-13T15:11:38+00:00 [2392] INFO  : DB Get SSC List from database.
+2016-12-13T15:11:39+00:00 [2392] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
+2016-12-13T15:11:39+00:00 [2392] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-13T15:11:44+00:00 [2392] INFO  : DB Get Request with parameter :'ssc'
+2016-12-13T15:11:44+00:00 [2392] INFO  : DB Get SSC List from database.
+2016-12-13T15:11:44+00:00 [2392] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-13T15:11:44+00:00 [2392] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-13T15:11:44+00:00 [2392] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-13T15:11:44+00:00 [2392] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
+2016-12-13T15:11:52+00:00 [2392] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-13T15:11:52+00:00 [2392] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-13T15:11:52+00:00 [2392] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-13T15:11:52+00:00 [2392] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-13T15:11:52+00:00 [2392] INFO  : MANAGE TEST 343  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam  Id : 'SELECT id FROM `assessment`.`exam` where testname='rohit_1''
+2016-12-13T15:11:52+00:00 [2392] INFO  : MANAGE TEST 584  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_1''
+2016-12-13T15:11:52+00:00 [2392] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-13T15:11:52+00:00 [2392] INFO  : MANAGE QUESTION 619  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '1''
+2016-12-13T15:11:52+00:00 [2392] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-13T15:13:57+00:00 [2392] INFO  : DB Get Request with parameter :'ssc'
+2016-12-13T15:13:57+00:00 [2392] INFO  : DB Get SSC List from database.
+2016-12-13T15:13:57+00:00 [2392] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-13T15:13:57+00:00 [2392] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-13T15:13:57+00:00 [2392] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-13T15:13:57+00:00 [2392] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam`'
+2016-12-13T15:15:11+00:00 [2392] INFO  : DB Get Request with parameter :'ssc'
+2016-12-13T15:15:11+00:00 [2392] INFO  : DB Get SSC List from database.
+2016-12-13T15:15:11+00:00 [2392] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-13T15:15:11+00:00 [2392] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-13T15:15:11+00:00 [2392] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-13T15:15:11+00:00 [2392] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''
+2016-12-13T15:15:18+00:00 [2392] INFO  : MANAGE TEST Get Request with parameter :'examDetailsForInfo'
+2016-12-13T15:15:18+00:00 [2392] INFO  : MANAGE TEST Get Exam Information for exam  : 'rohit_12'
+2016-12-13T15:15:18+00:00 [2392] INFO  : MANAGE TEST 91  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_12''
+2016-12-13T15:15:30+00:00 [2392] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-13T15:15:30+00:00 [2392] INFO  : MANAGE TEST Get Request to delete Exam.
+2016-12-13T15:15:30+00:00 [2392] INFO  : MANAGE TEST 343  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam  Id : 'SELECT id FROM `assessment`.`exam` where testname='rohit_12''
+2016-12-13T15:15:30+00:00 [2392] INFO  : MANAGE TEST 531  C:\wamp64\www\assessment\php\manageExams.php  , SQL to delete Exam : 'update `assessment`.`exam` set
+				`status`='inactive' , `last_modified_on`='2016-12-13 15:15:30' where id='2''
+2016-12-13T15:15:30+00:00 [2392] INFO  : MANAGE TEST 498  C:\wamp64\www\assessment\php\manageExams.php  , Success !  SQL executed ''
+2016-12-13T15:15:30+00:00 [2392] INFO  : DB 538  C:\wamp64\www\assessment\php\manageExams.php Exam deleting Successfully !!!.
+2016-12-13T15:15:36+00:00 [2392] INFO  : DB Get Request with parameter :'ssc'
+2016-12-13T15:15:36+00:00 [2392] INFO  : DB Get SSC List from database.
+2016-12-13T15:15:36+00:00 [2392] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-13T15:15:36+00:00 [2392] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-13T15:15:36+00:00 [2392] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-13T15:15:36+00:00 [2392] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''
+2016-12-13T15:31:28+00:00 [2392] INFO  : DB Get Request with parameter :'ssc'
+2016-12-13T15:31:28+00:00 [2392] INFO  : DB Get SSC List from database.
+2016-12-13T15:31:28+00:00 [2392] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-13T15:31:28+00:00 [2392] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-13T15:31:28+00:00 [2392] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''
+2016-12-13T15:31:28+00:00 [2392] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-13T15:31:30+00:00 [2392] INFO  : DB Get Request with parameter :'ssc'
+2016-12-13T15:31:30+00:00 [2392] INFO  : DB Get SSC List from database.
+2016-12-13T15:31:30+00:00 [2392] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-13T15:31:30+00:00 [2392] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-13T15:31:30+00:00 [2392] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-13T15:31:30+00:00 [2392] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''
+2016-12-13T15:31:32+00:00 [2392] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-12-13T15:31:32+00:00 [2392] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Agriculture'
+2016-12-13T15:31:32+00:00 [2392] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
+2016-12-13T15:31:35+00:00 [2392] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-13T15:31:35+00:00 [2392] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-13T15:31:35+00:00 [2392] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active' and subid='AGR/Q0801''
+2016-12-13T15:31:37+00:00 [2392] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-13T15:31:37+00:00 [2392] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-13T15:31:37+00:00 [2392] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active' and subid='AGR/Q4804''
+2016-12-13T15:32:19+00:00 [2392] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-13T15:32:19+00:00 [2392] INFO  : MANAGE TEST Get Request to delete Exam.
+2016-12-13T15:32:19+00:00 [2392] INFO  : MANAGE TEST 343  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam  Id : 'SELECT id FROM `assessment`.`exam` where testname='rohit_12345''
+2016-12-13T15:32:19+00:00 [2392] INFO  : MANAGE TEST 531  C:\wamp64\www\assessment\php\manageExams.php  , SQL to delete Exam : 'update `assessment`.`exam` set
+				`status`='inactive' , `last_modified_on`='2016-12-13 15:32:19' where id='5''
+2016-12-13T15:32:19+00:00 [2392] INFO  : MANAGE TEST 498  C:\wamp64\www\assessment\php\manageExams.php  , Success !  SQL executed ''
+2016-12-13T15:32:19+00:00 [2392] INFO  : DB 538  C:\wamp64\www\assessment\php\manageExams.php Exam deleting Successfully !!!.
+2016-12-13T15:32:41+00:00 [2392] INFO  : DB Get Request with parameter :'ssc'
+2016-12-13T15:32:41+00:00 [2392] INFO  : DB Get SSC List from database.
+2016-12-13T15:32:41+00:00 [2392] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-13T15:32:41+00:00 [2392] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-13T15:32:41+00:00 [2392] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-13T15:32:41+00:00 [2392] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''
+2016-12-13T15:32:51+00:00 [2392] INFO  : DB Get Request with parameter :'ssc'
+2016-12-13T15:32:51+00:00 [2392] INFO  : DB Get SSC List from database.
+2016-12-13T15:32:51+00:00 [2392] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-13T15:32:51+00:00 [2392] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-13T15:32:51+00:00 [2392] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-13T15:32:51+00:00 [2392] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''
+2016-12-13T15:33:14+00:00 [2392] INFO  : DB Get Request with parameter :'ssc'
+2016-12-13T15:33:14+00:00 [2392] INFO  : DB Get SSC List from database.
+2016-12-13T15:33:14+00:00 [2392] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-13T15:33:14+00:00 [2392] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-13T15:33:14+00:00 [2392] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-13T15:33:14+00:00 [2392] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''
+2016-12-13T15:33:26+00:00 [2392] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-13T15:33:26+00:00 [2392] INFO  : MANAGE TEST Get Request to delete Exam.
+2016-12-13T15:33:26+00:00 [2392] INFO  : MANAGE TEST 343  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam  Id : 'SELECT id FROM `assessment`.`exam` where testname='rohit_1234''
+2016-12-13T15:33:26+00:00 [2392] INFO  : MANAGE TEST 531  C:\wamp64\www\assessment\php\manageExams.php  , SQL to delete Exam : 'update `assessment`.`exam` set
+				`status`='inactive' , `last_modified_on`='2016-12-13 15:33:26' where id='4''
+2016-12-13T15:33:26+00:00 [2392] INFO  : MANAGE TEST 498  C:\wamp64\www\assessment\php\manageExams.php  , Success !  SQL executed ''
+2016-12-13T15:33:26+00:00 [2392] INFO  : DB 538  C:\wamp64\www\assessment\php\manageExams.php Exam deleting Successfully !!!.
+2016-12-13T15:33:26+00:00 [2392] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-13T15:33:26+00:00 [2392] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-13T15:33:26+00:00 [2392] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''
+2016-12-13T15:33:37+00:00 [2392] INFO  : DB Get Request with parameter :'ssc'
+2016-12-13T15:33:37+00:00 [2392] INFO  : DB Get SSC List from database.
+2016-12-13T15:33:37+00:00 [2392] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-13T15:33:37+00:00 [2392] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-13T15:33:37+00:00 [2392] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-13T15:33:37+00:00 [2392] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''
+2016-12-13T15:33:57+00:00 [2392] INFO  : DB Get Request with parameter :'ssc'
+2016-12-13T15:33:57+00:00 [2392] INFO  : DB Get SSC List from database.
+2016-12-13T15:33:57+00:00 [2392] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-13T15:33:57+00:00 [2392] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-13T15:33:57+00:00 [2392] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-13T15:33:57+00:00 [2392] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''
+2016-12-13T15:34:59+00:00 [2392] INFO  : DB Get Request with parameter :'ssc'
+2016-12-13T15:34:59+00:00 [2392] INFO  : DB Get SSC List from database.
+2016-12-13T15:34:59+00:00 [2392] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-13T15:34:59+00:00 [2392] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-13T15:34:59+00:00 [2392] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-13T15:34:59+00:00 [2392] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''
+2016-12-13T15:35:13+00:00 [2392] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-13T15:35:13+00:00 [2392] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-13T15:35:13+00:00 [2392] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-13T15:35:13+00:00 [2392] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-13T15:35:13+00:00 [2392] INFO  : MANAGE TEST 343  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam  Id : 'SELECT id FROM `assessment`.`exam` where testname='rohit_123''
+2016-12-13T15:35:13+00:00 [2392] INFO  : MANAGE TEST 584  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_123''
+2016-12-13T15:35:13+00:00 [2392] INFO  : MANAGE QUESTION 619  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '3''
+2016-12-13T15:35:13+00:00 [2392] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-13T15:35:13+00:00 [2392] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-13T15:35:13+00:00 [2392] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='8''
+2016-12-13T15:35:13+00:00 [2392] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='1''
+2016-12-13T15:35:13+00:00 [2392] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-13T15:35:13+00:00 [2392] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='4''
+2016-12-13T15:37:09+00:00 [2392] INFO  : DB Get Request with parameter :'ssc'
+2016-12-13T15:37:09+00:00 [2392] INFO  : DB Get SSC List from database.
+2016-12-13T15:37:09+00:00 [2392] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-13T15:37:09+00:00 [2392] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-13T15:37:09+00:00 [2392] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-13T15:37:09+00:00 [2392] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''
+2016-12-13T15:39:04+00:00 [2392] INFO  : DB Get Request with parameter :'ssc'
+2016-12-13T15:39:04+00:00 [2392] INFO  : DB Get SSC List from database.
+2016-12-13T15:39:04+00:00 [2392] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-13T15:39:04+00:00 [2392] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-13T15:39:04+00:00 [2392] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-13T15:39:04+00:00 [2392] INFO  : MANAGE TEST 308  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''
+2016-12-13T15:39:28+00:00 [2392] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-13T15:39:28+00:00 [2392] INFO  : MANAGE TEST Get Request to get Exam Questions to edit Questions.
+2016-12-13T15:39:28+00:00 [2392] INFO  : MANAGE TEST  Get Request in ManageExams Page.
+2016-12-13T15:39:28+00:00 [2392] INFO  : MANAGE TEST Get Request to get Exam Details to edit Questions.
+2016-12-13T15:39:28+00:00 [2392] INFO  : MANAGE TEST 343  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam  Id : 'SELECT id FROM `assessment`.`exam` where testname='rohit_123''
+2016-12-13T15:39:28+00:00 [2392] INFO  : MANAGE TEST 584  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='rohit_123''
+2016-12-13T15:39:28+00:00 [2392] INFO  : MANAGE QUESTION 619  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Questions List: 'SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '3''
+2016-12-13T15:39:28+00:00 [2392] INFO  : DB SQL = 'SELECT job_role FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-13T15:39:28+00:00 [2392] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='8''
+2016-12-13T15:39:28+00:00 [2392] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import` where qp_code='AGR/Q4804''
+2016-12-13T15:39:28+00:00 [2392] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='1''
+2016-12-13T15:39:28+00:00 [2392] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='48''
+2016-12-13T15:39:28+00:00 [2392] INFO  : DB 239  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question for editing : 'SELECT * FROM `assessment`.`question` where id='4''
+2016-12-13T15:39:38+00:00 [2392] INFO  : DB Get Request with parameter :'ssc'
+2016-12-13T15:39:38+00:00 [2392] INFO  : DB Get SSC List from database.
+2016-12-13T15:39:38+00:00 [2392] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-13T15:39:43+00:00 [2392] INFO  : DB Get Request with parameter :'ssc'
+2016-12-13T15:39:43+00:00 [2392] INFO  : DB Get SSC List from database.
+2016-12-13T15:39:43+00:00 [2392] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-13T15:39:45+00:00 [2392] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-12-13T15:39:45+00:00 [2392] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Apparel, Madeups & Home Furnishing'
+2016-12-13T15:39:45+00:00 [2392] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Apparel, Madeups & Home Furnishing''
+2016-12-13T15:39:47+00:00 [2392] INFO  : DB  Get Request with action parameter  :'getBatchList'
+2016-12-13T15:39:47+00:00 [2392] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-13T15:39:47+00:00 [2392] INFO  : DB 158  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get List of batch for subject : 'SELECT batch_id FROM `assessment`.`batch_details`'
+2016-12-13T15:39:47+00:00 [2392] INFO  : DB Get Request with parameter :'catNModules'
+2016-12-13T15:39:47+00:00 [2392] INFO  : DB Get Request with parameter : 'catNModules'
+2016-12-13T15:39:47+00:00 [2392] INFO  : DB Get Category and Module List for subject : 'AMH/Q1407' and category ''
+2016-12-13T15:39:47+00:00 [2392] INFO  : DB 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories  without Modules : 'SELECT id,category FROM `assessment`.`question_category` where subId='AMH/Q1407' and status='active' and  module='''
+2016-12-13T15:39:47+00:00 [2392] INFO  : DB 223  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories  without Modules : 'SELECT distinct(category) FROM `assessment`.`question_category` where subId='AMH/Q1407' and status='active' and module!='''
+2016-12-13T16:06:11+00:00 [2392] INFO  : DB Get Request with parameter :'questions'
+2016-12-13T16:06:11+00:00 [2392] INFO  : DB Get Questions List for ssc :' and subject  : ''
+		and category :'' and module : ''
+2016-12-13T16:06:12+00:00 [2392] INFO  : DB 133  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question`'
+2016-12-13T16:06:13+00:00 [2392] INFO  : DB Get Request with parameter :'ssc'
+2016-12-13T16:06:13+00:00 [2392] INFO  : DB Get SSC List from database.
+2016-12-13T16:06:13+00:00 [2392] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-13T16:06:14+00:00 [2392] INFO  : DB Get Request with parameter :'questions'
+2016-12-13T16:06:14+00:00 [2392] INFO  : DB Get Questions List for ssc :Agriculture' and subject  : ''
+		and category :'' and module : ''
+2016-12-13T16:06:14+00:00 [2392] INFO  : DB 133  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question` where ssc='Agriculture''
+2016-12-13T16:06:14+00:00 [2392] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-12-13T16:06:14+00:00 [2392] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Agriculture'
+2016-12-13T16:06:14+00:00 [2392] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
+2016-12-13T16:06:17+00:00 [2392] INFO  : DB Get Request with parameter :'categories'
+2016-12-13T16:06:17+00:00 [2392] INFO  : DB Get Request with parameter : 'categories'
+2016-12-13T16:06:17+00:00 [2392] INFO  : DB Get Categories List for subject  : 'AGR/Q4804'
+2016-12-13T16:06:17+00:00 [2392] INFO  : DB 103  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT category FROM `assessment`.`question_category` where subId='AGR/Q4804''
+2016-12-13T16:06:18+00:00 [2392] INFO  : DB Get Request with parameter :'questions'
+2016-12-13T16:06:18+00:00 [2392] INFO  : DB Get Questions List for ssc :Agriculture' and subject  : 'AGR/Q4804'
+		and category :'' and module : ''
+2016-12-13T16:06:18+00:00 [2392] INFO  : DB 133  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question` where ssc='Agriculture' and qp_code='AGR/Q4804''
+2016-12-13T16:06:24+00:00 [2392] INFO  : DB Get Request with parameter :'questions'
+2016-12-13T16:06:24+00:00 [2392] INFO  : DB Get Questions List for ssc :Agriculture' and subject  : 'AGR/Q4804'
+		and category :'Theory' and module : ''
+2016-12-13T16:06:24+00:00 [2392] INFO  : DB 133  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question` where ssc='Agriculture' and qp_code='AGR/Q4804' and category='Theory''
+2016-12-13T16:06:24+00:00 [2392] INFO  : DB Get Request with parameter :'modules'
+2016-12-13T16:06:24+00:00 [2392] INFO  : DB Get Request with parameter : 'modules'
+2016-12-13T16:06:24+00:00 [2392] INFO  : DB Get Module List for subject : 'AGR/Q4804' and category 'Theory'
+2016-12-13T16:06:24+00:00 [2392] INFO  : DB 149  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT module FROM `assessment`.`question_category` where subId='AGR/Q4804' and category='Theory''
+2016-12-13T16:06:28+00:00 [2392] INFO  : DB Get Request with parameter :'questions'
+2016-12-13T16:06:28+00:00 [2392] INFO  : DB Get Questions List for ssc :Agriculture' and subject  : 'AGR/Q4804'
+		and category :'Theory' and module : 'Agriculture'
+2016-12-13T16:06:28+00:00 [2392] INFO  : DB 133  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question List: 'SELECT * FROM `assessment`.`question` where ssc='Agriculture' and qp_code='AGR/Q4804' and category='Theory' and module='Agriculture''

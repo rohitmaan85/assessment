@@ -12,6 +12,7 @@ sub_no_of_columns=14
 qstn_sheet_no=0
 qstn_start_row=2
 qstn_end_row=20
+qstn_start_column=6
 qstn_no_of_columns=16
 [batch excel]
 batch_sheet_no=0

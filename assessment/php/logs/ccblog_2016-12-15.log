@@ -1,0 +1,111 @@
+2016-12-15T16:27:16+00:00 [2084] INFO  : MANAGE CATEGORY Rename Category with Id for subject  : 'AGR/Q4804' and category id =4
+2016-12-15T16:27:16+00:00 [2084] INFO  : DB 152  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT id FROM `assessment`.`subject_category` where subId='AGR/Q4804' and category='test ''
+2016-12-15T16:27:16+00:00 [2084] INFO  : DB 29  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to rename Category : 'update `assessment`.`subject_category` set category='test ' where id='4''
+2016-12-15T16:27:16+00:00 [2084] INFO  : DB 54  C:\wamp64\www\assessment\php\manageCategory.php  ,ERROR #Query was empty
+2016-12-15T16:27:16+00:00 [2084] INFO  : MANAGE CATEGORY 456  C:\wamp64\www\assessment\php\manageCategory.php Error while renaming Category in DB.{"message":"Error while renaming Category in DB."}
+2016-12-15T16:28:23+00:00 [2084] INFO  : MANAGE CATEGORY Get Modules List with Ids for subject  : 'AGR/Q4804' and category id =4
+2016-12-15T16:28:23+00:00 [2084] INFO  : MANAGE CATEGORY 307  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Modules : 'SELECT id,module FROM `assessment`.`subject_category_module` where status='active' and subId='AGR/Q4804' and category_id='4''
+2016-12-15T16:28:26+00:00 [2084] INFO  : MANAGE CATEGORY Rename Category with Id for subject  : 'AGR/Q4804' and category id =4
+2016-12-15T16:28:26+00:00 [2084] INFO  : DB 152  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT id FROM `assessment`.`subject_category` where subId='AGR/Q4804' and category='test ''
+2016-12-15T16:28:26+00:00 [2084] INFO  : DB 29  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to rename Category : 'update `assessment`.`subject_category` set category='test ' where id='4''
+2016-12-15T16:28:26+00:00 [2084] INFO  : DB 54  C:\wamp64\www\assessment\php\manageCategory.php  ,ERROR #Query was empty
+2016-12-15T16:28:26+00:00 [2084] INFO  : MANAGE CATEGORY 456  C:\wamp64\www\assessment\php\manageCategory.php Error while renaming Category in DB.{"message":"Error while renaming Category in DB."}
+2016-12-15T16:30:40+00:00 [2084] INFO  : DB Get Request with parameter :'ssc'
+2016-12-15T16:30:40+00:00 [2084] INFO  : DB Get SSC List from database.
+2016-12-15T16:30:40+00:00 [2084] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-15T16:30:48+00:00 [2084] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-12-15T16:30:48+00:00 [2084] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Agriculture'
+2016-12-15T16:30:48+00:00 [2084] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
+2016-12-15T16:30:50+00:00 [2084] INFO  : MANAGE CATEGORY Get Categories List with Ids for subject  : 'AGR/Q4804'
+2016-12-15T16:30:50+00:00 [2084] INFO  : MANAGE CATEGORY 279  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT id,category FROM `assessment`.`subject_category` where status='active' and subId='AGR/Q4804''
+2016-12-15T16:30:53+00:00 [2084] INFO  : MANAGE CATEGORY Get Modules List with Ids for subject  : 'AGR/Q4804' and category id =4
+2016-12-15T16:30:53+00:00 [2084] INFO  : MANAGE CATEGORY 307  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Modules : 'SELECT id,module FROM `assessment`.`subject_category_module` where status='active' and subId='AGR/Q4804' and category_id='4''
+2016-12-15T16:31:02+00:00 [2084] INFO  : MANAGE CATEGORY Rename Category with Id for subject  : 'AGR/Q4804' and category id =4
+2016-12-15T16:31:02+00:00 [2084] INFO  : DB 152  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT id FROM `assessment`.`subject_category` where subId='AGR/Q4804' and category='ew''
+2016-12-15T16:31:02+00:00 [2084] INFO  : DB 29  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to rename Category : 'update `assessment`.`subject_category` set category='ew' where id='4''
+2016-12-15T16:31:02+00:00 [2084] INFO  : DB 54  C:\wamp64\www\assessment\php\manageCategory.php  ,ERROR #Query was empty
+2016-12-15T16:31:02+00:00 [2084] INFO  : MANAGE CATEGORY 456  C:\wamp64\www\assessment\php\manageCategory.php Error while renaming Category in DB.{"message":"Error while renaming Category in DB."}
+2016-12-15T16:31:17+00:00 [2084] INFO  : DB Get Request with parameter :'ssc'
+2016-12-15T16:31:17+00:00 [2084] INFO  : DB Get SSC List from database.
+2016-12-15T16:31:17+00:00 [2084] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-15T16:31:24+00:00 [2084] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-12-15T16:31:24+00:00 [2084] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Agriculture'
+2016-12-15T16:31:24+00:00 [2084] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
+2016-12-15T16:31:27+00:00 [2084] INFO  : MANAGE CATEGORY Get Categories List with Ids for subject  : 'AGR/Q4804'
+2016-12-15T16:31:27+00:00 [2084] INFO  : MANAGE CATEGORY 279  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT id,category FROM `assessment`.`subject_category` where status='active' and subId='AGR/Q4804''
+2016-12-15T16:31:28+00:00 [2084] INFO  : MANAGE CATEGORY Get Modules List with Ids for subject  : 'AGR/Q4804' and category id =4
+2016-12-15T16:31:28+00:00 [2084] INFO  : MANAGE CATEGORY 307  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Modules : 'SELECT id,module FROM `assessment`.`subject_category_module` where status='active' and subId='AGR/Q4804' and category_id='4''
+2016-12-15T16:31:31+00:00 [2084] INFO  : MANAGE CATEGORY Rename Category with Id for subject  : 'AGR/Q4804' and category id =4
+2016-12-15T16:31:31+00:00 [2084] INFO  : DB 152  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT id FROM `assessment`.`subject_category` where subId='AGR/Q4804' and category='ads''
+2016-12-15T16:31:31+00:00 [2084] INFO  : DB 29  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to rename Category : 'update `assessment`.`subject_category` set category='ads' where id='4''
+2016-12-15T16:31:31+00:00 [2084] INFO  : DB 54  C:\wamp64\www\assessment\php\manageCategory.php  ,ERROR #Query was empty
+2016-12-15T16:31:31+00:00 [2084] INFO  : MANAGE CATEGORY 456  C:\wamp64\www\assessment\php\manageCategory.php Error while renaming Category in DB.{"message":"Error while renaming Category in DB."}
+2016-12-15T16:31:45+00:00 [2084] INFO  : MANAGE CATEGORY Get Modules List with Ids for subject  : 'AGR/Q4804' and category id =4
+2016-12-15T16:31:45+00:00 [2084] INFO  : MANAGE CATEGORY 307  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Modules : 'SELECT id,module FROM `assessment`.`subject_category_module` where status='active' and subId='AGR/Q4804' and category_id='4''
+2016-12-15T16:31:47+00:00 [2084] INFO  : MANAGE CATEGORY Rename Category with Id for subject  : 'AGR/Q4804' and category id =4
+2016-12-15T16:31:47+00:00 [2084] INFO  : DB 152  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT id FROM `assessment`.`subject_category` where subId='AGR/Q4804' and category='ads''
+2016-12-15T16:31:47+00:00 [2084] INFO  : DB 29  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to rename Category : 'update `assessment`.`subject_category` set category='ads' where id='4''
+2016-12-15T16:31:47+00:00 [2084] INFO  : DB 54  C:\wamp64\www\assessment\php\manageCategory.php  ,ERROR #Query was empty
+2016-12-15T16:31:47+00:00 [2084] INFO  : MANAGE CATEGORY 456  C:\wamp64\www\assessment\php\manageCategory.php Error while renaming Category in DB.{"message":"Error while renaming Category in DB."}
+2016-12-15T16:32:49+00:00 [2084] INFO  : MANAGE CATEGORY Rename Category with Id for subject  : 'AGR/Q4804' and category id =4
+2016-12-15T16:32:49+00:00 [2084] INFO  : DB 152  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT id FROM `assessment`.`subject_category` where subId='AGR/Q4804' and category='ads''
+2016-12-15T16:32:49+00:00 [2084] INFO  : DB 29  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to rename Category : 'update `assessment`.`subject_category` set category='ads' where id='4''
+2016-12-15T16:32:49+00:00 [2084] INFO  : DB 77  C:\wamp64\www\assessment\php\manageCategory.php  , Success !  Category update successfully in Database : ''
+2016-12-15T16:32:49+00:00 [2084] INFO  : MANAGE CATEGORY 459  C:\wamp64\www\assessment\php\manageCategory.php Category rnamed successfully.
+2016-12-15T16:33:23+00:00 [2084] INFO  : MANAGE CATEGORY Get Categories List with Ids for subject  : 'AGR/Q4804'
+2016-12-15T16:33:23+00:00 [2084] INFO  : MANAGE CATEGORY 279  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT id,category FROM `assessment`.`subject_category` where status='active' and subId='AGR/Q4804''
+2016-12-15T16:33:25+00:00 [2084] INFO  : MANAGE CATEGORY Get Modules List with Ids for subject  : 'AGR/Q4804' and category id =4
+2016-12-15T16:33:25+00:00 [2084] INFO  : MANAGE CATEGORY 307  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Modules : 'SELECT id,module FROM `assessment`.`subject_category_module` where status='active' and subId='AGR/Q4804' and category_id='4''
+2016-12-15T16:33:31+00:00 [2084] INFO  : MANAGE CATEGORY Rename Category with Id for subject  : 'AGR/Q4804' and category id =4
+2016-12-15T16:33:31+00:00 [2084] INFO  : DB 152  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT id FROM `assessment`.`subject_category` where subId='AGR/Q4804' and category='ads''
+2016-12-15T16:33:31+00:00 [2084] INFO  : MANAGE CATEGORY 445  C:\wamp64\www\assessment\php\manageCategory.php Category already Exist  !!
+2016-12-15T16:33:36+00:00 [2084] INFO  : MANAGE CATEGORY Rename Category with Id for subject  : 'AGR/Q4804' and category id =4
+2016-12-15T16:33:37+00:00 [2084] INFO  : DB 152  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT id FROM `assessment`.`subject_category` where subId='AGR/Q4804' and category='ads''
+2016-12-15T16:33:37+00:00 [2084] INFO  : MANAGE CATEGORY 445  C:\wamp64\www\assessment\php\manageCategory.php Category already Exist  !!
+2016-12-15T16:34:48+00:00 [2084] INFO  : MANAGE CATEGORY Get Modules List with Ids for subject  : 'AGR/Q4804' and category id =4
+2016-12-15T16:34:48+00:00 [2084] INFO  : MANAGE CATEGORY 307  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Modules : 'SELECT id,module FROM `assessment`.`subject_category_module` where status='active' and subId='AGR/Q4804' and category_id='4''
+2016-12-15T16:34:50+00:00 [2084] INFO  : MANAGE CATEGORY Rename Category with Id for subject  : 'AGR/Q4804' and category id =4
+2016-12-15T16:34:50+00:00 [2084] INFO  : DB 152  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT id FROM `assessment`.`subject_category` where subId='AGR/Q4804' and category='ads''
+2016-12-15T16:34:50+00:00 [2084] INFO  : MANAGE CATEGORY 445  C:\wamp64\www\assessment\php\manageCategory.php Category already Exist  !!
+2016-12-15T16:35:57+00:00 [2084] INFO  : MANAGE CATEGORY Rename Category with Id for subject  : 'AGR/Q4804' and category id =4
+2016-12-15T16:35:57+00:00 [2084] INFO  : DB 152  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT id FROM `assessment`.`subject_category` where subId='AGR/Q4804' and category='ads''
+2016-12-15T16:35:57+00:00 [2084] INFO  : MANAGE CATEGORY 445  C:\wamp64\www\assessment\php\manageCategory.php Category already Exist  !!
+2016-12-15T16:36:09+00:00 [2084] INFO  : MANAGE CATEGORY Rename Category with Id for subject  : 'AGR/Q4804' and category id =4
+2016-12-15T16:36:09+00:00 [2084] INFO  : DB 152  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT id FROM `assessment`.`subject_category` where subId='AGR/Q4804' and category='adsr''
+2016-12-15T16:36:09+00:00 [2084] INFO  : DB 29  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to rename Category : 'update `assessment`.`subject_category` set category='adsr' where id='4''
+2016-12-15T16:36:09+00:00 [2084] INFO  : DB 77  C:\wamp64\www\assessment\php\manageCategory.php  , Success !  Category update successfully in Database : ''
+2016-12-15T16:36:09+00:00 [2084] INFO  : MANAGE CATEGORY 459  C:\wamp64\www\assessment\php\manageCategory.php Category rnamed successfully.
+2016-12-15T16:37:27+00:00 [2084] INFO  : DB Get Request with parameter :'ssc'
+2016-12-15T16:37:27+00:00 [2084] INFO  : DB Get SSC List from database.
+2016-12-15T16:37:27+00:00 [2084] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-15T16:37:34+00:00 [2084] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-12-15T16:37:34+00:00 [2084] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Agriculture'
+2016-12-15T16:37:34+00:00 [2084] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
+2016-12-15T16:37:36+00:00 [2084] INFO  : MANAGE CATEGORY Get Categories List with Ids for subject  : 'AGR/Q4804'
+2016-12-15T16:37:36+00:00 [2084] INFO  : MANAGE CATEGORY 279  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT id,category FROM `assessment`.`subject_category` where status='active' and subId='AGR/Q4804''
+2016-12-15T16:37:38+00:00 [2084] INFO  : MANAGE CATEGORY Get Modules List with Ids for subject  : 'AGR/Q4804' and category id =4
+2016-12-15T16:37:38+00:00 [2084] INFO  : MANAGE CATEGORY 307  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Modules : 'SELECT id,module FROM `assessment`.`subject_category_module` where status='active' and subId='AGR/Q4804' and category_id='4''
+2016-12-15T16:37:49+00:00 [2084] INFO  : MANAGE CATEGORY Rename Category with Id for subject  : 'AGR/Q4804' and category id =4
+2016-12-15T16:37:50+00:00 [2084] INFO  : DB 152  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT id FROM `assessment`.`subject_category` where subId='AGR/Q4804' and category='softSkills''
+2016-12-15T16:37:50+00:00 [2084] INFO  : DB 29  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to rename Category : 'update `assessment`.`subject_category` set category='softSkills' where id='4''
+2016-12-15T16:37:50+00:00 [2084] INFO  : DB 77  C:\wamp64\www\assessment\php\manageCategory.php  , Success !  Category update successfully in Database : ''
+2016-12-15T16:37:50+00:00 [2084] INFO  : MANAGE CATEGORY 459  C:\wamp64\www\assessment\php\manageCategory.php Category rnamed successfully.
+2016-12-15T16:37:50+00:00 [2084] INFO  : MANAGE CATEGORY Get Categories List with Ids for subject  : 'AGR/Q4804'
+2016-12-15T16:37:50+00:00 [2084] INFO  : MANAGE CATEGORY 279  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT id,category FROM `assessment`.`subject_category` where status='active' and subId='AGR/Q4804''
+2016-12-15T16:39:08+00:00 [2084] INFO  : DB Get Request with parameter :'ssc'
+2016-12-15T16:39:08+00:00 [2084] INFO  : DB Get SSC List from database.
+2016-12-15T16:39:08+00:00 [2084] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-15T16:39:10+00:00 [2084] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-12-15T16:39:10+00:00 [2084] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Agriculture'
+2016-12-15T16:39:10+00:00 [2084] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
+2016-12-15T16:39:12+00:00 [2084] INFO  : MANAGE CATEGORY Get Categories List with Ids for subject  : 'AGR/Q4804'
+2016-12-15T16:39:12+00:00 [2084] INFO  : MANAGE CATEGORY 279  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT id,category FROM `assessment`.`subject_category` where status='active' and subId='AGR/Q4804''
+2016-12-15T16:39:13+00:00 [2084] INFO  : MANAGE CATEGORY Get Modules List with Ids for subject  : 'AGR/Q4804' and category id =4
+2016-12-15T16:39:13+00:00 [2084] INFO  : MANAGE CATEGORY 307  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Modules : 'SELECT id,module FROM `assessment`.`subject_category_module` where status='active' and subId='AGR/Q4804' and category_id='4''
+2016-12-15T16:39:18+00:00 [2084] INFO  : MANAGE CATEGORY Rename Category with Id for subject  : 'AGR/Q4804' and category id =4
+2016-12-15T16:39:18+00:00 [2084] INFO  : DB 152  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT id FROM `assessment`.`subject_category` where subId='AGR/Q4804' and category='test1''
+2016-12-15T16:39:18+00:00 [2084] INFO  : DB 29  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to rename Category : 'update `assessment`.`subject_category` set category='test1' where id='4''
+2016-12-15T16:39:18+00:00 [2084] INFO  : DB 77  C:\wamp64\www\assessment\php\manageCategory.php  , Success !  Category update successfully in Database : ''
+2016-12-15T16:39:18+00:00 [2084] INFO  : MANAGE CATEGORY 459  C:\wamp64\www\assessment\php\manageCategory.php Category rnamed successfully.
+2016-12-15T16:39:18+00:00 [2084] INFO  : MANAGE CATEGORY Get Categories List with Ids for subject  : 'AGR/Q4804'
+2016-12-15T16:39:18+00:00 [2084] INFO  : MANAGE CATEGORY 279  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT id,category FROM `assessment`.`subject_category` where status='active' and subId='AGR/Q4804''

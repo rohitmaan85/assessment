@@ -70,15 +70,73 @@
     <!-- Main Content -->
     <div class="container-fluid">
       <div class="side-body">
+            <div class="col-xs-14 col-md-14" id="selectSubject">
+                  <div class="panel panel-info">
+                            <div class="panel-heading">
+                                       Select SSC and Job Role
+                                </div>
+                        <div class="panel-body">
+                              <div class="form-group">
+                                   <label for="ssc"  class="col-xs-1">SSC *</label>
+                                     <div class="col-xs-4">
+                                         <div class="dropdown">
+                                           <button id="sscdropdownButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                             --Select SSC--<span class="caret"></span></button>
+                                              <ul id="ssctest-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
+                                         </ul>
+                                       </div>
+                               </div>
+                               <label for="jobrole"  class="col-xs-2">JobRole *</label>
+                                       <div class="col-xs-5">
+                                         <div class="dropdown">
+                                             <button id="jobroledropdownButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                 --Select JobRole--<span class="caret"></span></button>
+                                                      <ul id="jobroletest-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
+                                                 </ul>
+                                         </div>
+                                         </div>
+                                </div>
+                                <br>
+                                <br>
+                              <div class="form-group">
+                                   <label for="ssc"  class="col-xs-1">Category</label>
+                                     <div class="col-xs-4">
+                                         <div class="dropdown">
+                                           <button id="categorydropdownButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                             -- Select Category --<span class="caret"></span></button>
+                                              <ul id="cat-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
+                                         </ul>
+                                       </div>
+                               </div>
+                               <label for="jobrole"  class="col-xs-2">Module</label>
+                                       <div class="col-xs-5">
+                                         <div class="dropdown">
+                                             <button id="moduledropdownButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                 -- Select Module --<span class="caret"></span></button>
+                                                      <ul id="module-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
+                                                 </ul>
+                                         </div>
+                                       </div>
+                          </div>
+                    </div>
+            </div>
             <!--<div class="col-lg-14 col-md-11 col-sm-2 col-xs-12"> -->
+
+
+
+
                 <div class="panel panel-default">
                     <div class="panel-heading">
                          <h2 class="panel-title pull-left"><strong>Import Questions from Excel File</strong></h2>
                     </div>
                     <div class="panel-body">
-                     <form id="uploadXlsForm" class="well" action="#" method="post" enctype="multipart/form-data">
+
+
+                      <div>
+
+                     <form id="uploadXlsForm" class="well hide" action="#" method="post" enctype="multipart/form-data">
                       <div class="row" style="position:relative">
-                         <div id="error_msg"  class="alert alert-danger fade" style="position:relative">
+                         <div id="error_msg"  class="alert alert-danger fade hide" style="position:relative">
                            <button href="#" type="button" class="close">&times;</button>
                                <strong></strong>
                         </div>
@@ -110,6 +168,7 @@
                        <button id="uploadFileButton"  type="button" class="btn btn-success disabled" disabled="disabled"><span class="glyphicon glyphicon-upload"></span>      Import Questions ...</button>
                        <button id="cancelButton"  type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>  Cancel</button>
                        </form>
+                     </div>
                     <hr>
 
                     <div class="rowtable">

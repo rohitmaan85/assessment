@@ -26,7 +26,7 @@
   <link rel="stylesheet" type="text/css"  href="css/buttons.bootstrap.min.css">
 
   <script src="js/toggle.js"></script>
-  <script src="js/manage_exams.js"></script>
+  <script src="js/manage_sub_categories.js"></script>
   <script src="js/main.js"></script>
 
   </head>
@@ -65,7 +65,7 @@
             <li><a  href="importBatchPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Batches</a></li>
             <li><a  href="importStudentsPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Students</a></li>
             <li><a  href="manageSubjectsPage.php"><span class="glyphicon glyphicon-paperclip"></span>Manage Questions</a></li>
-            <li><a  href="manageSubjectCategoriesPage.php"><span class="glyphicon glyphicon-paperclip"></span>Manage Subjects</a></li>
+            <li><a  href="manageSubjectCategoriesPage.php"><span class="glyphicon glyphicon-paperclip"></span>Manage Categories</a></li>
             <li><a  href="manageExamsPage.php"><span class="glyphicon glyphicon-pencil"></span>Manage Exams</a></li>
             <li><a  href="manageAttendencePage.php"><span class="glyphicon glyphicon-pencil"></span>Manage Batch Attendence</a></li>
             <li><a  href="createQuestionPage.php" ><span class="glyphicon glyphicon-pushpin"></span>Create Question</a></li>
@@ -137,6 +137,47 @@
                     <div class="panel-heading">
                          <h3 class="panel-title pull-left"><strong>Manage Subjects Category and Modules </strong></h3>
                     </div>
+
+
+                    <div id="categoryRenameModal" class="modal fade" role="dialog">
+                      <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Rename Category</h4>
+                          </div>
+                          <div class="modal-body">
+                            <input type="text" id="newCatText" class="form-control"  placeholder="Enter New Name">
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                            <button type="button" id="createCat" class="btn btn-success" disabled="true">Rename Category</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div id="moduleRenameModal" class="modal fade" role="dialog">
+                      <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Rename Module</h4>
+                          </div>
+                          <div class="modal-body">
+                            <input type="text" id="newModuleText" class="form-control"  placeholder="Enter New Module Name">
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                            <button type="button" id="createModule" class="btn btn-success" disabled="true">Rename Module</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div
+
                     <div class="panel-body">
                       <div id="confirm" class="modal fade" role="dialog">
                           <div class="modal-dialog">
@@ -185,7 +226,7 @@
                               </div>
                               <div class="modal-body">
 
-                                <strong> <font color="Red"><span id="errorMessageText">Error while deleting Exam , Please try again !</span></font></strong>
+                                <strong> <font color="Red"><span id="errorMessageText">Error while geting Category , Please try again !</span></font></strong>
 
                             </div>
                         <div class="modal-footer">
@@ -220,30 +261,51 @@
                             </div>
                          </form>
                       </div>
+                      <div class="col-xs-14 col-md-14">
+                        <br>
+                        <br>
+                        <br>
+                                  <hr style="width: 100%; color: black; height: 1px; background-color:green;" />
+                      </div>
+
+                      <div class="col-xs-14 col-md-14" id="showCategory">
+                        <div class="panel panel-info">
+                          <div class="panel-heading">
+                                 Categories
+                          </div>
+                        <div class="panel-body">
+                        <ul class="list-group" id="category_list_group" style="margin-top:5px">
+                        <!--  <li id="field_row_0" row="0" class="list-group-item"><span>test</span><button class="btn btn-xs btn-danger pull-right" id="delete_field_btn_0" rowid="0">X</button></li>
+                          <span class="fieldtip glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="" data-original-title="Click on a field below to edit its details.  Note: extended fields and composite fields (fields based on an existing field or model) cannot be edited.">
+							            </span>
+                          <li id="field_row_1" row="1" class="list-group-item"><span>test2</span><button class="btn btn-xs btn-danger pull-right" id="delete_field_btn_1" rowid="1">X</button></li>
+                          <li id="field_row_2" row="2" class="list-group-item"><span>test3</span><button class="btn btn-xs btn-danger pull-right" id="delete_field_btn_2" rowid="2">X</button></li></ul>
+                          -->
+                          <br>
+                      </div>
+                      </div>
+                      </div>
+
+
+                      <div class="col-xs-14 col-md-14" id="showModules">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                     Modules
+                              </div>
+                          <div class="panel-body">
+                        <ul class="list-group" id="module_list_group" style="margin-top:5px">
+                              <!--
+                                <li id="field_row_0" row="0" class="list-group-item"><span>test</span><button class="btn btn-xs btn-danger pull-right" id="delete_field_btn_0" rowid="0">X</button></li>
+                                <li id="field_row_1" row="1" class="list-group-item"><span>test2</span><button class="btn btn-xs btn-danger pull-right" id="delete_field_btn_1" rowid="1">X</button></li>
+                                <li id="field_row_2" row="2" class="list-group-item"><span>test3</span><button class="btn btn-xs btn-danger pull-right" id="delete_field_btn_2" rowid="2">X</button></li></ul>
+                              <br> -->
+                          </div>
+                          </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="col-xs-14 col-md-14">
-                      <br>
-                  </div>
-                  <div class="rowtable">
-                        <div class="col-md-14">
-                            <table id="exams" class="table table-striped table-bordered table-hover dt-responsive"  cellspacing="0" width="100%">
-                                    <thead>
-                                        <tr>
-                                            <th>Exam Name</th>
-                                            <th>BatchId</th>
-                                            <th>Action</th>
-                                    <!--
-                                            <th>JobRole</th>
-                                            <th>Qstns</th>
-                                            <th>Dur</th>
-                                            <th>Total Marks</th> -->
-                                        </tr>
-                                    </thead>
-                                 </table>
-                            </div>
-                      </div>
-                  </div>
+
+                </div>
                 </div>
               </body>
 </html>
