@@ -239,8 +239,8 @@ $(function() {
             var extension = log.substr((log.lastIndexOf('.') + 1));
             if (extension != "xls" && extension != "xlsx") {
                 // $("#error_msg").css('display', 'inline');
-                $('.alert-success').removeClass('alert-success').addClass('alert-danger');
                 $('#error_msg').addClass('in');
+              //  $('#error_msg').removeClass('hide');
                 $('#error_msg strong').text("Error! File should be in excel format.");
                 $('#uploadFileButton').addClass('disabled');
                 $('#uploadFileButton').prop('disabled', true);
@@ -249,10 +249,10 @@ $(function() {
             } else {
                 $('#uploadFileButton').addClass('disabled');
                 $('#uploadFileButton').prop('disabled', false);
+                //$('#error_msg').addClass('hide');
                 // $("#success_msg").css('display', 'inline-block');
                 //$('#error_msg').addClass('alert alert-success fade');
-                $('.alert-danger').removeClass('alert-danger').addClass('alert-success');
-                // $('#error_msg').addClass('in');
+                              // $('#error_msg').addClass('in');
                 //  $('#error_msg strong').text("Success! File has been imported successfully.");
                 $('#uploadFileButton').removeClass('disabled');
                 $('#uploadFileButton').prop('disabled', false);
@@ -326,9 +326,8 @@ $(function() {
                 } else {
                     // Handle errors here
                     console.log('ERRORS: ' + data.error);
-                    $('.alert-success').removeClass('alert-success').addClass('alert-danger');
+                    $('#error_msg').removeClass('alert-danger').addClass( 'alert-success');
                     $('#error_msg').addClass('in');
-                    $('#error_msg').removeClass('hide');
                     $('#error_msg strong').text("Error! " + data.error);
                     $('#uploadFileButton').removeClass('disabled');
                     $('#uploadFileButton').prop('disabled', false);
@@ -407,9 +406,8 @@ $(function() {
                 if (typeof data.error === 'undefined') {
                     // Success so call function to process the form
                     console.log('SUCCESS: ' + data.success);
-                    $('.alert-success').removeClass('alert-danger').addClass('alert-success');
+                    $('#error_msg').removeClass('alert-danger').addClass('alert-success');
                     $('#error_msg').addClass('in');
-                    $('#error_msg').removeClass('hide');
                     $('#error_msg strong').text("Success! " + data.success);
                     /* Get from database using jax request*/
                     //  questionTable.ajax.reload();
@@ -419,9 +417,8 @@ $(function() {
                 } else {
                     // Handle errors here
                     console.log('ERRORS: ' + data.error);
-                    $('.alert-success').removeClass('alert-success').addClass('alert-danger');
+                    $('#error_msg').removeClass( 'alert-success' ).addClass('alert-danger');
                     $('#error_msg').addClass('in');
-                    $('#error_msg').removeClass('hide');
                     $('#error_msg strong').text("Error! " + data.error);
                     $('#uploadFileButton').removeClass('disabled');
                     $('#uploadFileButton').prop('disabled', false);
@@ -429,6 +426,9 @@ $(function() {
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 // Handle errors here
+                $('#error_msg').removeClass( 'alert-success' ).addClass('alert-danger');
+                $('#error_msg').addClass('in');
+                $('#error_msg strong').text("Error! " + data.error);
                 console.log('ERRORS: ' + textStatus);
                 $('#uploadFileButton').removeClass('disabled');
                 $('#uploadFileButton').prop('disabled', false);

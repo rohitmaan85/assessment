@@ -243,6 +243,23 @@ $(document).ready(function() {
     });
 
 
+    $('#newCatText').on('keyup', function(e) {
+        if ($('#newCatText').val() === "")
+            $('#createCat').prop('disabled', true);
+        else {
+            $('#createCat').prop('disabled', false);
+        }
+    });
+
+    $('#newModuleText').on('keyup', function(e) {
+        if ($('#newModuleText').val() === "")
+            $('#createMod').prop('disabled', true);
+        else {
+            $('#createMod').prop('disabled', false);
+        }
+    });
+
+
     $("#createCat").click(function() {
         $.ajax({
             url: '/assessment/php/manageCategory.php',
@@ -295,21 +312,6 @@ $(document).ready(function() {
 
 
 
-    $('#newCatText').on('keyup', function(e) {
-        if ($('#newCatText').val() === "")
-            $('#createCat').prop('disabled', true);
-        else {
-            $('#createCat').prop('disabled', false);
-        }
-    });
-
-    $('#newModuleText').on('keyup', function(e) {
-        if ($('#newModuleText').val() === "")
-            $('#createMod').prop('disabled', true);
-        else {
-            $('#createMod').prop('disabled', false);
-        }
-    });
 
 
 

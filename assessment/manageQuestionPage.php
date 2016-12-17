@@ -29,7 +29,7 @@
   <link rel="stylesheet" type="text/css"  href="css/buttons.bootstrap.min.css">
 
   <script src="js/toggle.js"></script>
-  <script src="js/manage_attendence.js"></script>
+  <script src="js/manage_subjects.js"></script>
   <script src="js/main.js"></script>
 </head>
 
@@ -88,105 +88,70 @@
             <!--<div class="col-lg-14 col-md-11 col-sm-2 col-xs-12"> -->
          <div class="panel panel-default">
                     <div class="panel-heading">
-                         <h3 class="panel-title pull-middle"><strong>Manage Batch Attendence List</strong></h3>
+                         <h3 class="panel-title pull-left"><strong>Manage Questions </strong></h3>
                     </div>
                <div class="panel-body">
                 <div class="col-xs-14 col-md-14">
-                  <div id="displayStudentsModal" class="modal fade" role="dialog">
+
+
+                  <div id="displayQstnModal" class="modal fade" role="dialog">
                     <div class="modal-dialog">
                       <!-- Modal content-->
                       <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h4 class="modal-title">Students List</h4>
-                        </div>
                         <div class="modal-body">
-                            <table id="showStdntsTable" class="table table-striped table-bordered table-hover dt-responsive"  cellspacing="0" width="100%">
-                                 <thead>
-                                        <tr>
-                                             <th>Name</th>
-                                             <th>Enrollment Id</th>
-                                             <th>Father Name</th>
-                                         </tr>
-                                 </thead>
-                            </table>
+                          <textarea rows="5" cols="4" id="qstnCompleteVal" class="form-control" disabled="true"></textarea>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                         </div>
                       </div>
+
                     </div>
                   </div>
 
-                  <div id="displayBatchDetailsModal" class="modal fade" role="dialog">
+
+
+                  <div id="categoryModal" class="modal fade" role="dialog">
                     <div class="modal-dialog">
                       <!-- Modal content-->
                       <div class="modal-content">
-
-                        <div class="modal-body">
-
-
-                            <label for="batchlbl"  class="col-xs-4 control-label">Batch Id :</label>
-
-                            <div class="col-xs-2">  </div>
-                            <div class="col-xs-8">
-                                    <input type="text" maxlength="4" id="batch_text" class="form-control" disabled="true">
-                            </div>
-
-                             <!-- <div class="col-xs-2"></div> -->
-                            <label for="exam_date_lbl" class="col-xs-4">Exam Date :</label>
-                            <div class="col-xs-2">  </div>
-                            <div class="col-xs-8">
-                              <input type="text" id="exam_date_text" class="form-control" disabled="true">
-                            </div>
-
-
-
-                            <label for="no_stdents_lbl" class="col-xs-4">No. Of Students :</label>
-                            <div class="col-xs-2">  </div>
-                            <div class="col-xs-8">
-                              <input type="text" id="no_students_text" class="form-control" disabled="true">
-                            </div>
-
-
-                            <label for="center_lbl" class="col-xs-4">Center Id / Address :</label>
-                            <div class="col-xs-2">  </div>
-                            <div class="col-xs-8">
-                              <input type="text" id="center_text" class="form-control" disabled="true">
-                            </div>
-
-
-
-                            <label for="training_lbl" class="col-xs-4">Training Partner :</label>
-                            <div class="col-xs-2">  </div>
-                            <div class="col-xs-8">
-                              <input type="text" id="training_text" class="form-control" disabled="true">
-                            </div>
-
-
-
-                            <label for="status_lbl" class="col-xs-4">Status :</label>
-                            <div class="col-xs-2">  </div>
-                            <div class="col-xs-8">
-                              <input type="text" id="status_text" class="form-control" disabled="true">
-                            </div>
-
-
-
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Enter New Category</h4>
                         </div>
-
-                         <div class="modal-footer">
-                           <div class="col-xs-6">  </div>
-                           <div class="col-xs-8">
-                             <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-                           </div>
+                        <div class="modal-body">
+                          <input type="text" id="newCatText" class="form-control"  placeholder="Enter Category">
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                          <button type="button" id="createCat" class="btn btn-success" disabled="true">Create Category</button>
                         </div>
                       </div>
                     </div>
                   </div>
 
+                  <div id="moduleModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
 
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Enter New Module</h4>
+                        </div>
+                        <div class="modal-body">
+                          <label for="ssc_label">Category * </label><input type="text" id="selected_category" class="form-control" disabled="true">
+                          <label for="ssc_label">Module * </label><input type="text" id="newModuleText" class="form-control"  placeholder="Enter Module">
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                          <button type="button" id="createMod" class="btn btn-success" disabled="true">Create Module</button>
 
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
                   <div class="form-group">
                     <label for="ssc_label" class="col-xs-1">SSC *</label>
                       <div class="col-xs-4">
@@ -197,6 +162,7 @@
                             </ul>
                           </div>
                       </div>
+
 
 
                     <label for="jobrole_label" class="col-xs-1">Job Role*</label>
@@ -211,70 +177,40 @@
                  </div>
                  <br>
 
-              <form id="manageAttndnceForm" class="form-horizontal hide">
-                <div id='createExamDiv' class="col-xs-14">
-                <br>
-                </div>
-                <div id='createExamDiv' class="col-xs-14">
-                <hr>
-                </div>
-
-                <div class="form-group">
-                  <div class="form-group-inline required">
-                    <label for="batch"  class="col-xs-2 control-label">Batch Id</label>
+              <form id="manageQstnForm" class="form-horizontal hide">
+                  <div id='createExamDiv' class="col-xs-14">
+                  <hr>
                   </div>
-                 <div class="col-xs-3">
-                       <div class="dropdown">
-                           <button id="batchButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           -- Select Batch Id --<span class="caret"></span></button>
-                            <ul id="batch-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
-                           </ul>
-                       </div>
-                       <!--
-                          <select class="form-control" id="examDurDropdown">
-                          </select> -->
-                    </div>
-                     <!--<input type="text" id="examDuText" class="form-control" required> -->
-                     <div class="col-xs-2"></div>
-                      <label for="centerId" class="col-xs-2">Center Id and Address</label>
-                    <div class="col-xs-3">
-
-                      <div class="dropdown">
-                          <button id="centerIdButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          -- Select Center Id and Address --<span class="caret"></span></button>
-                           <ul id="centerId-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
-                          </ul>
+                    <div class="form-group" >
+                       <label for="cat" class="col-xs-1">Category</label>
+                       <div class="col-xs-3">
+                           <div class="dropdown">
+                               <button id="catButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               -Select Category-<span class="caret"></span></button>
+                                <ul id="cat-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
+                               </ul>
+                            </div>
                       </div>
-                      </div>
-                  </div>
-
-
-
-                  <div class="form-group">
-                    <div class="form-group-inline required">
-                      <label for="trainingPartner"  class="col-xs-2 control-label">Training Partner</label>
-                    </div>
-                   <div class="col-xs-3">
-                         <div class="dropdown">
-                             <button id="trainingPartnerButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                             -- Select Training Partner --<span class="caret"></span></button>
-                              <ul id="trainingPartner-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
-                             </ul>
-                         </div>
-                      </div>
-                      <div class="col-xs-2"></div>
-                      <label for="status" class="col-xs-2">Status</label>
+                                             <!--<input type="text" id="examDuText" class="form-control" required> -->
+                      <label for="module" class="col-xs-1">Module</label>
                       <div class="col-xs-3">
+                             <div class="dropdown">
+                                <button id="moduleButton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                -Select Module-<span class="caret"></span></button>
+                                 <ul id="module-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
+                                </ul>
+                              </div>
+                      </div>
+                        <div class="col-xs-1"></div>
+                      <div class="col-xs-4">
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#categoryModal">Create Category</button>
+                            <button id="createModuleModalButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#moduleModal" disabled="true">Create Module </button>
+                        </div>
+                      </div>
 
-                        <div class="dropdown">
-                            <button id="statusButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            -- Select Status --<span class="caret"></span></button>
-                             <ul id="status-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
-                            </ul>
-                        </div>
-                        </div>
-                    </div>
-               </form>
+                      </div>
+                     </form>
 
                 <!-- Drop down End-->
               <div class="col-xs-14">
@@ -283,18 +219,24 @@
                 <table id="qstns" class="table table-striped table-bordered table-hover dt-responsive"  cellspacing="0" width="100%">
                            <thead>
                                  <tr>
-                                   <th>BatchId</th>
-                                   <th>Job Role</th>
-                                   <th>Exam Date</th>
-                                   <th>Action</th>
-                                   <!-- <th>Center</th>
-                                   <th>Action</th>
-                                   <!--<th>Traiing Partner</th>
-                                   <th>No Of  Students</th> -->
-                                   </tr>
+                                       <th>S.No</th>
+                                       <th>SSC</th>
+                                       <th>Job Role</th>
+                                       <th>Category</th>
+                                       <th>Module</th>
+                                       <th>Question</th>
+                                       <th>Action</th>
+                                       <th>Option A</th>
+                                       <th>Option B</th>
+                                       <th>Option C</th>
+                                       <th>Option D</th>
+                                       <th>Answer</th>
+                                       <th>type</th>
+                                        <th>id</th>
+                                     </tr>
                                  </thead>
                               </table>
-                          </div>
+                                </div>
                       </div>
                   </div>
                 </div>

@@ -9,14 +9,28 @@ if(isset($_GET['files']))
 	$error = false;	
 	$files = array();	
 	$uploaddir = '../uploads/batch/';
+	$archiveDir ='../uploads/batch/archives/';
 	
-	// 	Remove all files from upload directory.
-	$fileToDelete = glob($uploaddir.'*');	
-	foreach($fileToDelete as $file){		
-		if(is_file($file)){
-	 	   	log_event( LOG_DATABASE,"'".$file ."' File already exists in uploads directory, so remove it succesfully." );
- 			unlink($file);		
-		}
+	if(!is_dir($uploaddir)){
+	 if( mkdir($uploaddir,0777, true) ){
+	 	log_event( UPLOAD_BATCH,  __FILE__."  Line: ". __LINE__."  , '".$uploaddir ."' does not exist , so created successfullly." );
+
+	 }
+	 else{
+	 	$error = true;
+	 	$error_msg = "Unable to create upload Directory , ". $uploaddir." does not exist";
+	 	log_event( UPLOAD_BATCH,  __FILE__."  Line: ". __LINE__."  , '".$uploaddir ."' does not exist , Error While Creating." );
+	 }
+	}
+	if(!is_dir($archiveDir)){
+	 if( @mkdir($archiveDir, 0777, true )){
+	 	log_event( UPLOAD_BATCH,  __FILE__."  Line: ". __LINE__."  , '".$archiveDir ."' archive does not exist , so created successfullly." );
+	 }
+	 else{
+	 	$error = error_get_last();
+	 	//	echo $error['message'];
+	 	log_event( UPLOAD_BATCH,  __FILE__."  Line: ". __LINE__."  , '".$archiveDir ."' archive does not exist , Error While Creating : " .  $error['message']);
+	 }
 	}
 	$error_msg = "";
 	foreach($_FILES as $file)
@@ -25,7 +39,7 @@ if(isset($_GET['files']))
 		{								
 			$files[] = $uploaddir .$file['name'];
 			$excelFilePath = $uploaddir .basename($file['name']);
-			log_event( LOG_DATABASE, __LINE__."  ". __FILE__. " , Excel File '". $excelFilePath."' has been uploaded successfully." );
+			log_event( UPLOAD_BATCH, __LINE__."  ". __FILE__. " , Excel File '". $excelFilePath."' has been uploaded successfully." );
 	
 			// Parse excel file and save in database.			
 			if (file_exists($excelFilePath)) {				
@@ -39,23 +53,23 @@ if(isset($_GET['files']))
 				 $endRow 			= $connConf['batch_end_row'];				 
 				 $no_of_columns		= $connConf['batch_no_of_columns'];
 			 				 
-		  		 log_event( LOG_DATABASE, __LINE__."  ". __FILE__. " , Going to Read Excel from Sheet No".$sheet_no."' , start row : '".$startRow."' , endRow='".$endRow."',' no_of
+		  		 log_event( UPLOAD_BATCH, __LINE__."  ". __FILE__. " , Going to Read Excel from Sheet No".$sheet_no."' , start row : '".$startRow."' , endRow='".$endRow."',' no_of
 		  		 col : '".$no_of_columns."'" );
 	
  				if(!$obj->importBatch($excelFilePath,$sheet_no,$startRow,$endRow,$no_of_columns)){
-					log_event( LOG_DATABASE, __LINE__."  ". __FILE__. " Set Error to true to send the response to page." );
+					log_event( UPLOAD_BATCH, __LINE__."  ". __FILE__. " Set Error to true to send the response to page." );
 					$error = true;
 				}
 			}	
 			else {	
 				$error_msg = "File ". $excelFilePath." does not exist";					
-				log_event( LOG_DATABASE, __LINE__."  ". __FILE__. " , File ". $excelFilePath." does not exist" );
+				log_event( UPLOAD_BATCH, __LINE__."  ". __FILE__. " , File ". $excelFilePath." does not exist" );
 				$error = true;				
 			}								
 		}		
 		else
 		{	
-			log_event( LOG_DATABASE, __LINE__."  ". __FILE__. " , Unable to move file to Directory , ". $uploaddir." does not exist" );			
+			log_event( UPLOAD_BATCH, __LINE__."  ". __FILE__. " , Unable to move file to Directory , ". $uploaddir." does not exist" );			
 			$error = true;	
 			$error_msg = "Unable to move file to Directory , ". $uploaddir." does not exist";		
 		}

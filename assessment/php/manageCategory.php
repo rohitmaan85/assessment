@@ -168,7 +168,7 @@ class manageCategory{
 		$conn = DbConn::getDbConn();
 		$sql="SELECT id FROM `assessment`.`subject_category`";
 		if($subjectId!="")
-		$sql.= " where subId='".htmlspecialchars($subjectId,ENT_QUOTES)."' and category='".htmlspecialchars($category,ENT_QUOTES)."'";
+		$sql.= " where subId='".htmlspecialchars($subjectId,ENT_QUOTES)."' and category='".htmlspecialchars($category,ENT_QUOTES)."' and status='active'";
 		log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__."  , SQL to get Category Id : '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -411,6 +411,59 @@ class manageCategory{
 		// print json Data.
 		echo json_encode($final_array);
 	}
+	
+	function deleteCategory($cat_id){
+		$sql = "update `assessment`.`subject_category` set
+				`status`='inactive' , `last_modified_on`='".date("Y-m-d H:i:s", time())."' ";
+		$sql.="where id='".$cat_id."'";
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to delete Category : '".$sql."'" );
+		if(!$this->executeUpdateQuery($sql))
+		{
+			$data =  array('message' => 'Error while delete Category , Please try again later!') ;
+			log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Error while deleting Category.".json_encode($data) );
+		} else {
+			$data =  array('message' => 'Category deleted Successfully , Status is inactive now !!!.') ;
+			log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Category deleted Successfully !!!." );
+		}
+	
+		echo json_encode($data);
+	//return $this->();
+  }
+  
+	function deleteModule($mod_id){
+		$sql = "update `assessment`.`subject_category_module` set
+				`status`='inactive' , `last_modified_on`='".date("Y-m-d H:i:s", time())."' ";
+		$sql.="where id='".$mod_id."'";
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to delete Module : '".$sql."'" );
+		if(!$this->executeUpdateQuery($sql))
+		{
+			$data =  array('message' => 'Error while delete Module , Please try again later!') ;
+			log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Error while deleting Module.".json_encode($data) );
+		} else {
+			$data =  array('message' => 'Module deleted Successfully , Status is inactive now !!!.') ;
+			log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Module deleted Successfully !!!." );
+		}
+	
+		echo json_encode($data);
+	//return $this->();
+  }
+  
+	function executeUpdateQuery($sql)
+	{
+		$conn = DbConn::getDbConn();
+		if (mysqli_query($conn, $sql)) {
+			if(mysqli_affected_rows($conn)>0){
+				log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , Success !  SQL executed '".mysqli_affected_rows($con)."'" );
+				return true;
+			}else{
+				log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , ERROR #! while executing query. " );
+				return false;
+			}
+		} else {
+			log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , ERROR #! while executing query. " );
+			return false;
+		}
+	}
 
 }
 
@@ -453,6 +506,9 @@ else if($_GET['action']=="createCat"){
 		$subId = $_GET['subId'];
 		if(isset($_GET['module'])){
 			log_event( MANAGE_CATEGORY, "Get Request to create Module." );
+			if($_GET['category'] ==""){
+					$data =  array('message' => 'Error while creating Module in DB.') ;
+			}else{			
 			//$obj->buildInsertSql($subId, $_GET['category'],$_GET['module']);
 			$obj->buildInsertModuleSql($subId, $_GET['category'],$_GET['module']);
 			if(!$obj->addModule())
@@ -463,6 +519,7 @@ else if($_GET['action']=="createCat"){
 				$data =  array('message' => 'Module Created Successfully.') ;
 				log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Module created successfully." );
 			}
+		  }
 
 		}else{
 			log_event( MANAGE_CATEGORY, "Get Request to create Category." );
@@ -512,6 +569,52 @@ else if($_POST['action']=="getCategories")
  			$obj->getModuleListWithId($subjectId,$category_id);
  		}
   }
+  
+  
+  else if($_POST['action']=="deleteCategory")
+  	{
+  		$subjectId="";
+  		if(isset($_POST['cat_id'])&& $_POST['cat_id']!="" ){
+				log_event(MANAGE_CATEGORY, "Delete Category with Id =". $_POST['cat_id']);
+				if($_POST['cat_id']==""){
+					$data =  array('message' => "Error : Category can not be blank , please select valid Category.") ;
+					echo json_encode($data);
+				}
+				else
+				{
+					$category_id = $_POST['cat_id'];
+  		  			$obj->deleteCategory($category_id);
+                }
+  		}
+  		else{
+  							$data =  array('message' => "Error : Category can not be blank , please select valid Category.") ;
+					echo json_encode($data);
+	
+  		}
+	}
+	
+  else if($_POST['action']=="deleteModule")
+  	{
+  		if(isset($_POST['mod_id'])&& $_POST['mod_id']!="" ){
+				log_event(MANAGE_CATEGORY, "Delete Module with Id =". $_POST['mod_id']);
+				if($_POST['mod_id']==""){
+					$data =  array('message' => "Error : Module can not be blank , please select valid Category.") ;
+					echo json_encode($data);
+				}
+				else
+				{
+					$mod_id = $_POST['mod_id'];
+  		  			$obj->deleteModule($mod_id);
+                }
+  		}
+  		else{
+  							$data =  array('message' => "Error : Module can not be blank , please select valid Category.") ;
+					echo json_encode($data);
+	
+  		}
+	}
+  
+  
 	else if($_POST['action']=="renameCategory")
   	{
   		$subjectId="";

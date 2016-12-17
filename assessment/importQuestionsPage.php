@@ -53,7 +53,7 @@
             <li><a  href="importQuestionsPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Questions</a></li>
             <li><a  href="importBatchPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Batches</a></li>
             <li><a  href="importStudentsPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Students</a></li>
-            <li><a  href="manageSubjectsPage.php"><span class="glyphicon glyphicon-paperclip"></span>Manage Questions</a></li>
+            <li><a  href="manageQuestionPage.php"><span class="glyphicon glyphicon-paperclip"></span>Manage Questions</a></li>
             <li><a  href="manageSubjectCategoriesPage.php"><span class="glyphicon glyphicon-paperclip"></span>Manage Subjects</a></li>
             <li><a  href="manageExamsPage.php"><span class="glyphicon glyphicon-pencil"></span>Manage Exams</a></li>
             <li><a  href="manageAttendencePage.php"><span class="glyphicon glyphicon-pencil"></span>Manage Batch Attendence</a></li>
@@ -120,23 +120,18 @@
                           </div>
                     </div>
             </div>
+          </div>
             <!--<div class="col-lg-14 col-md-11 col-sm-2 col-xs-12"> -->
-
-
-
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
                          <h2 class="panel-title pull-left"><strong>Import Questions from Excel File</strong></h2>
                     </div>
                     <div class="panel-body">
-
-
-                      <div>
-
+                     <div>
                      <form id="uploadXlsForm" class="well hide" action="#" method="post" enctype="multipart/form-data">
                       <div class="row" style="position:relative">
-                         <div id="error_msg"  class="alert alert-danger fade hide" style="position:relative">
+                         <div id="error_msg"  class="alert alert-danger fade" style="position:relative">
                            <button href="#" type="button" class="close">&times;</button>
                                <strong></strong>
                         </div>

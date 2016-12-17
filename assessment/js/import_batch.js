@@ -1,5 +1,82 @@
 $(function() {
 
+  // Populate SSC Dropdown
+
+  loadSSCList();
+
+  function loadSSCList() {
+      $.ajax({
+          url: '/assessment/php/getSubjectDetails.php',
+          data: {
+              get: "ssc"
+          },
+          dataType: 'json', //since you wait for json
+          success: function(json) {
+              //now when you received json, render options
+              $.each(json, function(i, option) {
+                  var rendered_option = '<li><a href="#">' + option + '</a></li>';
+                  $(rendered_option).appendTo('#ssctest-dropdown-menu');
+              });
+          }
+      });
+  }
+
+
+/*
+  $("#sscButton").click(function() {
+      var selText = $(this).text();
+      loadJobRoles("");
+  });
+
+*/
+
+
+  $('#ssctest-dropdown-menu').on('click', 'li a', function() {
+      sscValue = $(this).text();
+      var selText = $(this).text();
+
+      $('#jobroletest-dropdown-menu').children().remove();
+      $('#cat-dropdown-menu').children().remove();
+      $('#module-dropdown-menu').children().remove();
+
+      $('#jobroledropdownButton').html("- Select JobRole - " + '<span class="caret"></span>');
+      $('#categorydropdownButton').html("- Select Category - " + '<span class="caret"></span>');
+      $('#moduledropdownButton').html("- Select Module - " + '<span class="caret"></span>');
+
+      $('#sscdropdownButton').html(selText + '<span class="caret"></span>');
+      loadJobRoles(selText);
+      $('#uploadXlsForm').addClass('hide');
+  });
+
+
+  function loadJobRoles(sscValue) {
+      $.ajax({
+          url: '/assessment/php/getSubjectDetails.php',
+          data: {
+              get: "jobroleWithQPCode",
+              ssc: sscValue
+          },
+          dataType: 'json', //since you wait for json
+          success: function(json) {
+              //now when you received json, render options
+              var counter = 0;
+              $.each(json.job_role, function(i, option) {
+                  var rendered_option = '<li id="' + option + '"><a href="#" id="' + json.qp_code[counter] + '">' + option + '  (' + json.qp_code[counter] + ' )</a></li>';
+                  $(rendered_option).appendTo('#jobroletest-dropdown-menu');
+                  counter++;
+              });
+          }
+      });
+  }
+
+
+  $('#jobroletest-dropdown-menu').on('click', 'li a', function() {
+      $('#jobroledropdownButton').html($(this).text() + '<span class="caret"></span>');
+      jobRole = $(this).parent().attr("id");
+      subId = $(this).attr("id");
+      $('#uploadXlsForm').removeClass('hide');
+  });
+
     var input = $("#fileUploadInput");
 
     function clearFileInput() {
@@ -71,24 +148,17 @@ $(function() {
             var extension = log.substr((log.lastIndexOf('.') + 1));
             if (extension != "xls" && extension != "xlsx") {
                 // $("#error_msg").css('display', 'inline');
-                $('.alert-success').removeClass('alert-success').addClass('alert-danger');
                 $('#error_msg').addClass('in');
+              //  $('#error_msg').removeClass('hide');
                 $('#error_msg strong').text("Error! File should be in excel format.");
                 $('#uploadFileButton').addClass('disabled');
                 $('#uploadFileButton').prop('disabled', true);
 
                 //$("error_msg.alert alert-danger fade in").css("display", "inline");
             } else {
-                // $("#success_msg").css('display', 'inline-block');
-                //$('#error_msg').addClass('alert alert-success fade');
-                $('.alert-danger').removeClass('alert-danger').addClass('alert-success');
-                // $('#error_msg').addClass('in');
-                //  $('#error_msg strong').text("Success! File has been imported successfully.");
                 $('#uploadFileButton').removeClass('disabled');
                 $('#uploadFileButton').prop('disabled', false);
 
-                // $('#success_msg').addClass('in');
-                //  $('#success_msg').addClass('in');
             }
             if (input.length) {
                 input.val(log);
@@ -145,11 +215,13 @@ $(function() {
 
                 if (typeof data.error === 'undefined') {
                     // Success so call function to process the form
+                    $('#error_msg').removeClass('alert-danger').addClass( 'alert-success');
+                    $('#error_msg').addClass('in');
                     submitForm(event, data);
                 } else {
                     // Handle errors here
                     console.log('ERRORS: ' + data.error);
-                    $('.alert-success').removeClass('alert-success').addClass('alert-danger');
+                    $('#error_msg').removeClass('alert-success' ).addClass('alert-danger');
                     $('#error_msg').addClass('in');
                     $('#error_msg strong').text("Error! " + data.error);
                 }
@@ -179,7 +251,7 @@ $(function() {
                                           json.data = [];
                                       }
                                       else{
-                                            $('#error_msg').addClass('hide');
+                                            //$('#error_msg').addClass('hide');
                                   }
                                 return json.data;
                           },
@@ -212,6 +284,7 @@ function submitForm(event, data) {
                 if (typeof data.error === 'undefined') {
                     // Success so call function to process the form
                     console.log('SUCCESS: ' + data.success);
+                    $('#error_msg').removeClass('alert-danger').addClass('alert-success');
                     $('#error_msg').addClass('in');
                     $('#error_msg strong').text("Success! " + data.success);
                     /* Get from database using jax request*/
@@ -220,7 +293,7 @@ function submitForm(event, data) {
                 } else {
                     // Handle errors here
                     console.log('ERRORS: ' + data.error);
-                    $('.alert-success').removeClass('alert-success').addClass('alert-danger');
+                    $('#error_msg').removeClass( 'alert-success' ).addClass('alert-danger');
                     $('#error_msg').addClass('in');
                     $('#error_msg strong').text("Error! " + data.error);
                 }
@@ -228,6 +301,12 @@ function submitForm(event, data) {
             error: function(jqXHR, textStatus, errorThrown) {
                 // Handle errors here
                 console.log('ERRORS: ' + textStatus);
+                $('#error_msg').removeClass( 'alert-success' ).addClass('alert-danger');
+                $('#error_msg').addClass('in');
+                $('#error_msg strong').text("Error! " + data.error);
+                console.log('ERRORS: ' + textStatus);
+                $('#uploadFileButton').removeClass('disabled');
+                $('#uploadFileButton').prop('disabled', false);
             },
             complete: function() {
                 // STOP LOADING SPINNER

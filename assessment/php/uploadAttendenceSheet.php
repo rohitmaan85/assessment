@@ -34,6 +34,13 @@ if(isset($_GET['files']))
 	}
 
 
+	
+	// Get other details from dataType
+	$ssc = $_POST['ssc'];
+	$jobRole = $_POST['jobRole'];
+	$qpcode = $_POST['qpcode'];
+	
+	
 	// Check if file already exist ,if yes then rename it and  move it to archive directory.
 	foreach($_FILES as $file)
 	{
@@ -68,7 +75,7 @@ if(isset($_GET['files']))
 		  		 log_event( READ_ATTENDENCE, __LINE__."  ". __FILE__. " , Going to Read Excel from Sheet No".$sheet_no."' , start row : '".$startRow."' , endRow='".$endRow."',' no_of
 		  		 col : '".$no_of_columns."'" );
 	
- 				if(!$obj->importBatchStudents($excelFilePath,$sheet_no,$startRow,$endRow,$no_of_columns)){
+ 				if(!$obj->importBatchStudents($excelFilePath,$sheet_no,$startRow,$endRow,$no_of_columns,$ssc,$jobRole,$qpcode)){
 					log_event( READ_ATTENDENCE, __LINE__."  ". __FILE__. " Set Error to true to send the response to page." );
 					$error = true;
 				}

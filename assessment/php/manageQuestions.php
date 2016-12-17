@@ -89,13 +89,13 @@ class manageQuestions{
 			if($subjectId!=""){
 				$sql.= " qp_code='".htmlspecialchars($subjectId,ENT_QUOTES)."'";
 			}
-			if($category!=""){
+			if($category_id!=""){
 				$sql.= " and category='".htmlspecialchars($category_id,ENT_QUOTES)."'";
 			}
-			if($module!=""){
+			if($module_id!=""){
 				$sql.= " and module='".htmlspecialchars($module_id,ENT_QUOTES)."'";
 			}
-			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Question Count : '".$sql."'" );
+			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get Question Count  : '".$sql."'" );
 			$result = mysqli_query($conn,$sql);
 			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 			$i=0;

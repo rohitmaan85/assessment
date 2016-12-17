@@ -78,7 +78,7 @@ if(isset($_GET['action'])){
             <li><a  href="importQuestionsPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Questions</a></li>
             <li><a  href="importBatchPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Batches</a></li>
             <li><a  href="importStudentsPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Students</a></li>
-            <li><a  href="manageSubjectsPage.php"><span class="glyphicon glyphicon-paperclip"></span>Manage Questions</a></li>
+            <li><a  href="manageQuestionPage.php"><span class="glyphicon glyphicon-paperclip"></span>Manage Questions</a></li>
             <li><a  href="manageSubjectCategoriesPage.php"><span class="glyphicon glyphicon-paperclip"></span>Manage Subjects</a></li>
             <li><a  href="manageExamsPage.php"><span class="glyphicon glyphicon-pencil"></span>Manage Exams</a></li>
             <li><a  href="manageAttendencePage.php"><span class="glyphicon glyphicon-pencil"></span>Manage Batch Attendence</a></li>
@@ -96,6 +96,31 @@ if(isset($_GET['action'])){
     <div class="container-fluid">
       <div class="side-body">
 
+        <div id="displayStudentsModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Students List</h4>
+              </div>
+              <div class="modal-body">
+                  <table id="showStdntsTable" class="table table-striped table-bordered table-hover dt-responsive"  cellspacing="0" width="100%">
+                       <thead>
+                              <tr>
+                                   <th>Name</th>
+                                   <th>Enrollment Id</th>
+                                   <th>Father Name</th>
+                               </tr>
+                       </thead>
+                  </table>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div id="displayBatchDetailsModal" class="modal fade" role="dialog">
           <div class="modal-dialog">
@@ -105,7 +130,7 @@ if(isset($_GET['action'])){
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Batch Details</h4>
               </div>
-              <div class="modal-body">
+              <div class="modal-body" id="batchDetailBody">
                 <form id="showDetailsForm" class="form-horizontal" >
                   <label for="batchlbl"  >Batch Id :</label>
                   <input type="text" maxlength="4" id="batch_text" class="form-control" disabled="true">
@@ -136,13 +161,61 @@ if(isset($_GET['action'])){
           </div>
         </div>
 
-
+        <!--  Start Create Exam <Form-->
+  <div class="panel panel-info">
+          <div class="panel-heading">
+                   Select Batch Details :
+          </div>
+      <div class="panel-body">
+        <form id="selectDetail" class="form-horizontal" >
+          <div id='selectDetailDiv' class="col-xs-14">
+           <div class="form-group">
+            <label for="ssc"  class="col-xs-2">SSC*</label>
+             <div class="col-xs-4">
+                 <div class="dropdown">
+                   <button id="sscdropdownButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     --Select SSC--<span class="caret"></span></button>
+                      <ul id="ssctest-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
+                 </ul>
+               </div>
+       </div>
+       <label for="jobrole"  class="col-xs-1">JobRole*</label>
+               <div class="col-xs-5">
+                 <div class="dropdown">
+                     <button id="jobroledropdownButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         --Select JobRole--<span class="caret"></span></button>
+                              <ul id="jobroletest-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
+                         </ul>
+                 </div>
+                 </div>
+        </div>
+        <div class="form-group">
+               <label for="batch"  class="col-xs-2">Select Batch Id *</label>
+                   <div class="col-xs-4">
+                           <div class="dropdown">
+                             <button id="batchdropdownButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               -- Select Batch Id --<span class="caret"></span></button>
+                                <ul id="batch-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
+                           </ul>
+                         </div>
+                 </div>
+                 <div class="col-xs-3">
+                      <button type="button" id="batch_info" class="btn btn-info" disabled="true">Batch Details</button>
+                      </div>
+                    <div class="col-xs-3">
+                      <button type="button" id="studentDetails"  class="btn btn-primary" disabled="true">Student Details</button>
+                     </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          </div>
 
 
           <div class="panel panel-default">
-              <div class="panel-heading">
-                 <h4 id = "heading" class="form-signin-heading pull-left"><strong>Create New Exam</strong></h4>
-                 </div>
+               <div class="panel-heading">
+                 <h2 class="panel-title pull-left"><strong>Create New Exam</strong></h2>
+               </div>
                <div class="panel-body">
 
                  <div id="alertModal" class="modal fade" role="dialog">
@@ -162,28 +235,6 @@ if(isset($_GET['action'])){
                        </div>
                      </div>
                    </div>
-                 </div>
-
-                 <!--  Start Create Exam <Form-->
-               <div class="form-group">
-                    <label for="ssc"  class="col-xs-1">SSC*</label>
-                      <div class="col-xs-4">
-                          <div class="dropdown">
-                            <button id="sscdropdownButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              --Select SSC--<span class="caret"></span></button>
-                               <ul id="ssctest-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
-                          </ul>
-                        </div>
-                </div>
-                <label for="jobrole"  class="col-xs-1">JobRole*</label>
-                        <div class="col-xs-6">
-                          <div class="dropdown">
-                              <button id="jobroledropdownButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  --Select JobRole--<span class="caret"></span></button>
-                                       <ul id="jobroletest-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
-                                  </ul>
-                          </div>
-                          </div>
                  </div>
 
             <form id="createExamForm" class="form-horizontal hide" >
@@ -211,15 +262,7 @@ if(isset($_GET['action'])){
                         </div>
                       </div>
 
-                      <div class="form-group">
-                       <label for="showModules" class="col-xs-3">Show Categories\Modules</label>
-                          <input id="showModules-checkbox" type="checkbox">
-                       <div class="col-xs-12"> </div>
-                      </div>
 
-
-                      <div id='showModuleDiv' class="col-xs-14">
-                      </div>
 
                        <div class="form-group">
                          <div class="form-group-inline required">
@@ -297,8 +340,6 @@ if(isset($_GET['action'])){
                                     <option>None Selected</option>
                                     </select>
                              </div>
-                             <button id="batch_info" type="button" class="btn btn-info">Info</button>
-
                            </div>
                             <div class="form-group">
                                <label for="negMarking" class="col-xs-2">Negative Marking</label>
@@ -358,6 +399,15 @@ if(isset($_GET['action'])){
                                        </div>
                                         <textarea rows="5" cols="4" class="form-control" id="examInstArea" placeholder="Exam Instruction" required></textarea>
                                       </div>
+                                </div>
+                                <div class="form-group">
+                                 <label for="showModules" class="col-xs-3">Show Categories\Modules</label>
+                                    <input id="showModules-checkbox" type="checkbox">
+                                 <div class="col-xs-12"> </div>
+                                </div>
+
+
+                                <div id='showModuleDiv' class="col-xs-14">
                                 </div>
 
                    <hr>

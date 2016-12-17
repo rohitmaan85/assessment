@@ -55,7 +55,7 @@
             <li><a  href="importQuestionsPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Questions</a></li>
             <li><a  href="importBatchPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Batches</a></li>
             <li><a  href="importStudentsPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Students</a></li>
-            <li><a  href="manageSubjectsPage.php"><span class="glyphicon glyphicon-paperclip"></span>Manage Questions</a></li>
+            <li><a  href="manageQuestionPage.php"><span class="glyphicon glyphicon-paperclip"></span>Manage Questions</a></li>
             <li><a  href="manageSubjectCategoriesPage.php"><span class="glyphicon glyphicon-paperclip"></span>Manage Subjects</a></li>
             <li><a  href="manageExamsPage.php"><span class="glyphicon glyphicon-pencil"></span>Manage Exams</a></li>
             <li><a  href="manageAttendencePage.php"><span class="glyphicon glyphicon-pencil"></span>Manage Batch Attendence</a></li>
@@ -73,6 +73,37 @@
     <div class="container-fluid">
       <div class="side-body">
             <!--<div class="col-lg-14 col-md-11 col-sm-2 col-xs-12"> -->
+            <div class="col-xs-14 col-md-14" id="selectSubject">
+                  <div class="panel panel-info">
+                            <div class="panel-heading">
+                                       Select SSC and Job Role
+                                </div>
+                        <div class="panel-body">
+                              <div class="form-group">
+                                   <label for="ssc"  class="col-xs-1">SSC *</label>
+                                     <div class="col-xs-4">
+                                         <div class="dropdown">
+                                           <button id="sscdropdownButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                             --Select SSC--<span class="caret"></span></button>
+                                              <ul id="ssctest-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
+                                         </ul>
+                                       </div>
+                               </div>
+                               <label for="jobrole"  class="col-xs-2">JobRole *</label>
+                                       <div class="col-xs-5">
+                                         <div class="dropdown">
+                                             <button id="jobroledropdownButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                 --Select JobRole--<span class="caret"></span></button>
+                                                      <ul id="jobroletest-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
+                                                 </ul>
+                                         </div>
+                                         </div>
+                                </div>
+                                <br>
+
+                    </div>
+                </div>
+              </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
                          <h2 class="panel-title pull-left"><strong>Import Attendence Sheet
@@ -83,7 +114,7 @@
                     <div id="tableLoader" class="hide">
                       <i class="fa fa-circle-o-notch fa-spin" style="font-size:24px;color:green""></i>
                     </div>
-                     <form id="uploadXlsForm" class="well" action="#" method="post" enctype="multipart/form-data">
+                     <form id="uploadXlsForm" class="well hide" action="#" method="post" enctype="multipart/form-data">
                       <div class="row" style="position:relative">
                          <div id="error_msg"  class="alert alert-danger fade" style="position:relative">
                            <button href="#" type="button" class="close">&times;</button>

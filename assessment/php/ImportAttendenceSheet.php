@@ -17,7 +17,9 @@ class ImportAttendenceSheet{
 	var $readActualDataRow = 8;
 	var $batch_id="";
 	var $job_role="";
-	
+	var $qp_code="";
+
+
 	var $headerRowIndex =  array("center_skill_counsil" => 2, "date" => 2,
 						 "training_partner_name" => 3, "no_of_students_schedule" => 3,
 						 "batch_id" => 4, "center_id_n_location" => 5);
@@ -32,8 +34,10 @@ class ImportAttendenceSheet{
 	var $headerAttributes = array("batch_id" => "","date" => "","no_of_students_schedule" => ""
 	,"center_id_n_location" => "","training_partner_name" => "","center_skill_counsil" => "");
 
-	function readExcel($inputFileName,$sheetNo,$startRow,$endROw,$no_of_columns)
+	function readExcel($inputFileName,$sheetNo,$startRow,$endROw,$no_of_columns,$ssc,$jobRole,$qpcode)
 	{
+		$this->qpcode = $qpcode;
+		//log_event( READ_ATTENDENCE,__FILE__. __LINE__. "  , QP Code".$qpcode.$this->qpcode );
 		$row_value = "";
 		//Read your Excel workbook
 		try {
@@ -94,12 +98,20 @@ class ImportAttendenceSheet{
 					foreach( $row->getCellIterator() as $cell ){
 						$columnIndex++;
 						$value = $cell->getCalculatedValue();
-						$row_value .= "'".$value."',";
+						//$row_value .= "'".$value."',";
+						if($columnIndex==3){
+							//$this->job_role = $value;
+							$this->job_role=$jobRole;
+							$row_value .= "'".$jobRole."',";
+							//log_event( READ_ATTENDENCE, __LINE__."  ". __FILE__."  Setting job role" );
+						}
+						else{
+							
+							$row_value .= "'".$value."',";
+							//log_event( READ_ATTENDENCE, __LINE__."  ". __FILE__."  Normal column role"  );
+						}
 						if($columnIndex==$no_of_columns)
 						break;
-						if($columnIndex==3){
-							$this->job_role = $value;
-						}
 					}
 
 
@@ -130,9 +142,9 @@ class ImportAttendenceSheet{
 
 	function buildInsertSqlForBatchDetails($row_value){
 		// Add Upload Date in the end.
-		$row_value.=",'".date("Y-m-d H:i:s", time())."','active','".date("Y-m-d H:i:s", time())."'";
+		$row_value.=",'".date("Y-m-d H:i:s", time())."','active','".date("Y-m-d H:i:s", time())."','".$this->qpcode."'";
 		$sql = "INSERT INTO `assessment`.`batch_details`(`job_role`,`batch_id`,`exam_date`,`no_of_students_schedule`,`center_id_n_location`,`training_partner_name`,
-				`center_skill_counsil`,`upload_date`,`status`,`last_updated_at`) VALUES(".$row_value.");";		
+				`center_skill_counsil`,`upload_date`,`status`,`last_updated_at`,`qp_code`) VALUES(".$row_value.");";		
 		$this->insertSqlForBatchDetails .=$sql;
 	}
 
@@ -160,11 +172,11 @@ class ImportAttendenceSheet{
 				}
 			} while(mysqli_more_results($conn) && mysqli_next_result($conn));
 
-			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Success !  Batch Information inserted successfully in Database : '".$cumulative_rows."'" );
+			log_event( READ_ATTENDENCE, __LINE__."  ". __FILE__."  , Success !  Batch Information inserted successfully in Database : '".$cumulative_rows."'" );
 			return true;
 		}
 		else {
-			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,ERROR # " .mysqli_error($conn) );
+			log_event( READ_ATTENDENCE, __LINE__."  ". __FILE__."  ,ERROR # " .mysqli_error($conn) );
 			return false;
 		}
 	}
@@ -172,7 +184,7 @@ class ImportAttendenceSheet{
 	function insertBatchStudentsInDatabase()
 	{
 		$conn = DbConn::getDbConn();
-		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,  SQL to insert Student Information '".$this->insertSqlForStudents."'" );
+		//log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,  SQL to insert Student Information '".$this->insertSqlForStudents."'" );
 		if (mysqli_multi_query($conn, $this->insertSqlForStudents)) {
 			do{
 				//echo array_shift($query_type[1]),": ";
@@ -185,27 +197,27 @@ class ImportAttendenceSheet{
 				}
 			} while(mysqli_more_results($conn) && mysqli_next_result($conn));
 
-			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , Success !  Batch Students Information inserted successfully in Database : '".$cumulative_rows."'" );
+			log_event( READ_ATTENDENCE, __LINE__."  ". __FILE__."  , Success !  Batch Students Information inserted successfully in Database : '".$cumulative_rows."'" );
 			return true;
 		}
 		else {
-			log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  ,ERROR # " .mysqli_error($conn) );
+			log_event( READ_ATTENDENCE, __LINE__."  ". __FILE__."  ,ERROR # " .mysqli_error($conn) );
 			return false;
 		}
 	}
 
-	function importBatchStudents($excelFilePath,$sheetNo,$startRow,$endROw,$no_of_columns)
+	function importBatchStudents($excelFilePath,$sheetNo,$startRow,$endROw,$no_of_columns,$ssc,$jobRole,$qpcode)
 	{
-		if($this->readExcel($excelFilePath,$sheetNo,$startRow,$endROw,$no_of_columns)){
+		if($this->readExcel($excelFilePath,$sheetNo,$startRow,$endROw,$no_of_columns,$ssc,$jobRole,$qpcode)){
 			if($this->insertBatchStudentsInDatabase())
 			return true;
 			else{
-				log_event( LOG_DATABASE, __LINE__."  ". __FILE__. " ,  ERROR while inserting Batch Information in database." );
+				log_event( READ_ATTENDENCE, __LINE__."  ". __FILE__. " ,  ERROR while inserting Batch Information in database." );
 				return false;
 			}
 		}
 		else{
-			log_event( LOG_DATABASE, __LINE__."  ". __FILE__. " ,  ERROR while reading excel file." );
+			log_event( READ_ATTENDENCE, __LINE__."  ". __FILE__. " ,  ERROR while reading excel file." );
 			return false;
 		}
 	}

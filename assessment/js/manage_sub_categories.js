@@ -4,7 +4,8 @@ $(document).ready(function() {
     var qpCode = "";
     var subjectName = "";
     var catId = "";
-    var moduleId ="";
+    var moduleId = "";
+    var catIdForModule="";
 
     // Populate SSC Dropdown
 
@@ -77,7 +78,7 @@ $(document).ready(function() {
 
     $('#jobroletest-dropdown-menu').on('click', 'li a', function() {
         $('#jobroledropdownButton').html($(this).text() + '<span class="caret"></span>');
-        subId=$(this).attr("id");
+        subId = $(this).attr("id");
         $('#category_list_group').children().remove();
         $('#module_list_group').children().remove();
         showCategory();
@@ -85,7 +86,7 @@ $(document).ready(function() {
     });
 
     function showCategory() {
-      $('#category_list_group').children().remove();
+        $('#category_list_group').children().remove();
 
         $.ajax({
             type: 'POST',
@@ -99,29 +100,29 @@ $(document).ready(function() {
                 //now when you received json, render options
                 var counter = 0;
                 $.each(json.ids, function(i, cat_id) {
-                   var rendered_option = '<li id="'+cat_id+'" row="'+counter+'" class="list-group-item"><span>'+json.category[counter]+'</span><button name="renameCategory" id="rename_cat" class="btn btn-sm btn-info pull-right" >  Rename Category  </button><span></span>  <button class="btn btn-xs btn-danger" id="delete_'+cat_id+'">X</button></li>';
-                   //  var rendered_option = '<li><a href="#" id="' + json.qp_code[counter] + '">' + option + '  (' + json.qp_code[counter] + ' )</a></li>';
+                    var rendered_option = '<li id="' + cat_id + '" row="' + counter + '" class="list-group-item"><span>' + json.category[counter] + '</span><button name="renameCategory" id="rename_cat" class="btn btn-sm btn-info pull-right" >  Rename Category  </button><span></span>  <button class="btn btn-xs btn-danger" id="delete_cat">X</button></li>';
+                    //  var rendered_option = '<li><a href="#" id="' + json.qp_code[counter] + '">' + option + '  (' + json.qp_code[counter] + ' )</a></li>';
                     $(rendered_option).appendTo('#category_list_group');
                     counter++;
                 });
-             },
-             error: function(data) {
-                 // Handle errors here
-                 console.log('ERRORS: ' + data);
-                 $('#errorModal').modal('show');
-                 // Set a timeout to hide the element again
-                 setTimeout(function(){
-                       $("#errorModal").modal('hide');
-                 }, 5000);
-                 // STOP LOADING SPINNER
-             }
-          });
+            },
+            error: function(data) {
+                // Handle errors here
+                console.log('ERRORS: ' + data);
+                $('#errorModal').modal('show');
+                // Set a timeout to hide the element again
+                setTimeout(function() {
+                    $("#errorModal").modal('hide');
+                }, 5000);
+                // STOP LOADING SPINNER
+            }
+        });
     }
 
 
     $('#category_list_group').on('click', 'li', function() {
         //$('#jobroledropdownButton').html($(this).text() + '<span class="caret"></span>');
-        catId=$(this).attr("id");
+        catId = $(this).attr("id");
         $('#module_list_group').children().remove();
         //alert(catId);
         showModules();
@@ -129,51 +130,235 @@ $(document).ready(function() {
         //showExams();
     });
 
-$('#category_list_group').on('click', '#rename_cat', function(){
-  $('#categoryRenameModal').modal('show');
-});
+    $('#category_list_group').on('click', '#rename_cat', function() {
+        $('#categoryRenameModal').modal('show');
+    });
 
 
-$('#newCatText').on('keyup', function(e) {
-    if ($('#newCatText').val() === "")
-        $('#createCat').prop('disabled', true);
-    else {
-        $('#createCat').prop('disabled', false);
+    // Create Category and Module.
+
+    $('#newCatText').on('keyup', function(e) {
+        if ($('#newCatText').val() === "")
+            $('#createCat').prop('disabled', true);
+        else {
+            $('#createCat').prop('disabled', false);
+        }
+    });
+
+    $('#newModuleText').on('keyup', function(e) {
+        if ($('#newModuleText').val() === "" || $("#selected_category").val() ==="" )
+            $('#createMod').prop('disabled', true);
+        else {
+            $('#createMod').prop('disabled', false);
+        }
+    });
+
+
+    $("#createCat").click(function() {
+        $.ajax({
+            url: '/assessment/php/manageCategory.php',
+            data: {
+                action: "createCat",
+                subId: subId,
+                category: $('#newCatText').val()
+            },
+            dataType: 'json', //since you wait for json
+            success: function(data) {
+                $('#successMessageText').text(data.message);
+                $('#successMessage').modal('show');
+                showCategory();
+            },
+            error: function(data) {
+                // Handle errors here
+                console.log('ERRORS: ' + data);
+                //alert(data.message);
+                // STOP LOADING SPINNER
+            }
+        });
+    });
+
+
+
+    $('#moduleModal').on('show.bs.modal', function() {
+          showCategoryForModuleCreation();
+    });
+
+    function showCategoryForModuleCreation() {
+        $.ajax({
+            type: 'POST',
+            url: '/assessment/php/manageCategory.php',
+            data: {
+                action: "getCategories",
+                subId: subId
+            },
+            dataType: 'json', //since you wait for json
+            success: function(json) {
+                //now when you received json, render options
+                var counter = 0;
+                $('#cat-dropdown-menu').children().remove();
+                $.each(json.ids, function(i, cat_id) {
+                  var rendered_option = '<li><a href="#" id="' + cat_id + '">' + json.category[counter] + '</a></li>';
+                  $(rendered_option).appendTo('#cat-dropdown-menu');
+                    counter++;
+                });
+            }
+        });
     }
-});
 
-$("#createCat").click(function() {
-    $.ajax({
-        type: 'POST',
-        url: '/assessment/php/manageCategory.php',
-        data: {
-            action: "renameCategory",
-            subId: subId,
-            cat_id: catId,
-            new_name:$('#newCatText').val()
-        },
-        dataType: 'json', //since you wait for json
-        success: function(json) {
-           $('#successMessageText').text(json.message);
-           $('#successMessage').modal('show');
-           showCategory();
-         },
-         error: function(data) {
-             // Handle errors here
-             console.log('ERRORS: ' + data);
-             $('#errorMessageText').text(data.message);
-             $('#errorModal').modal('show');
-             // Set a timeout to hide the element again
-             setTimeout(function(){
-                   $("#errorModal").modal('hide');
-             }, 5000);
-             // STOP LOADING SPINNER
-         }
+
+    $('#cat-dropdown-menu').on('click', 'li a', function() {
+        var selText = $(this).text();
+        $("#selected_category").val(selText);
+        catIdForModule = $(this).text();
+        //catIdForModule = $(this).attr("id");
+        $('#catButton').html(selText + '<span class="caret"></span>');
+
+    });
+
+    $("#createMod").click(function() {
+        $.ajax({
+            url: '/assessment/php/manageCategory.php',
+            data: {
+                action: "createCat",
+                subId: subId,
+                category: catIdForModule,
+                module: $('#newModuleText').val()
+            },
+            dataType: 'json', //since you wait for json
+            success: function(data) {
+                //alert(data.message);
+                $('#successMessageText').text(data.message);
+                $('#successMessage').modal('show');
+            },
+            error: function(data) {
+                // Handle errors here
+                console.log('ERRORS: ' + data);
+                // STOP LOADING SPINNER
+            }
+        });
+    });
+
+    // Rename Category
+    $('#renameCatText').on('keyup', function(e) {
+        if ($('#renameCatText').val() === "")
+            $('#renameCat').prop('disabled', true);
+        else {
+            $('#renameCat').prop('disabled', false);
+        }
+    });
+
+    $("#renameCat").click(function() {
+        $.ajax({
+            type: 'POST',
+            url: '/assessment/php/manageCategory.php',
+            data: {
+                action: "renameCategory",
+                subId: subId,
+                cat_id: catId,
+                new_name: $('#renameCatText').val()
+            },
+            dataType: 'json', //since you wait for json
+            success: function(json) {
+                $('#successMessageText').text(json.message);
+                $('#successMessage').modal('show');
+                showCategory();
+            },
+            error: function(data) {
+                // Handle errors here
+                console.log('ERRORS: ' + data);
+                $('#errorMessageText').text(data.message);
+                $('#errorModal').modal('show');
+                // Set a timeout to hide the element again
+                setTimeout(function() {
+                    $("#errorModal").modal('hide');
+                }, 5000);
+                // STOP LOADING SPINNER
+            }
+        });
+    });
+
+
+
+    $('#category_list_group').on('click', '#delete_cat', function() {
+      $('#confirmCategory').modal({
+              backdrop: 'static',
+              keyboard: false
+          })
+          .one('click', '#deleteCategory', function() {
+              deleteCategory();
+          });
+    });
+
+  function deleteCategory(){
+      $.ajax({
+          type: 'POST',
+          url: '/assessment/php/manageCategory.php',
+          data: {
+              action: "deleteCategory",
+              cat_id: catId
+          },
+          dataType: 'json', //since you wait for json
+          success: function(json) {
+              $('#successMessageText').text(json.message);
+              $('#successMessage').modal('show');
+              showCategory();
+          },
+          error: function(data) {
+              // Handle errors here
+              console.log('ERRORS: ' + data);
+              $('#errorMessageText').text(data.message);
+              $('#errorModal').modal('show');
+              // Set a timeout to hide the element again
+              setTimeout(function() {
+                  $("#errorModal").modal('hide');
+              }, 5000);
+              // STOP LOADING SPINNER
+          }
       });
-});
+    }
+
+
+
+    $('#module_list_group').on('click', '#delete_module', function() {
+      $('#confirmModule').modal({
+              backdrop: 'static',
+              keyboard: false
+          })
+          .one('click', '#deleteModule', function() {
+              deleteModule();
+          });
+    });
+
+  function deleteModule(){
+      $.ajax({
+          type: 'POST',
+          url: '/assessment/php/manageCategory.php',
+          data: {
+              action: "deleteModule",
+              mod_id: moduleId
+          },
+          dataType: 'json', //since you wait for json
+          success: function(json) {
+              $('#successMessageText').text(json.message);
+              $('#successMessage').modal('show');
+              showModules();
+          },
+          error: function(data) {
+              // Handle errors here
+              console.log('ERRORS: ' + data);
+              $('#errorMessageText').text(data.message);
+              $('#errorModal').modal('show');
+              // Set a timeout to hide the element again
+              setTimeout(function() {
+                  $("#errorModal").modal('hide');
+              }, 5000);
+              // STOP LOADING SPINNER
+          }
+      });
+    }
 
     function showModules() {
-       $('#module_list_group').children().remove();
+        $('#module_list_group').children().remove();
         $.ajax({
             type: 'POST',
             url: '/assessment/php/manageCategory.php',
@@ -187,8 +372,8 @@ $("#createCat").click(function() {
                 //now when you received json, render options
                 var counter = 0;
                 $.each(json.ids, function(i, mod_id) {
-                   var rendered_option = '<li id="'+mod_id+'" row="'+counter+'" class="list-group-item"><span>'+json.module[counter]+'</span> <span><button name="renameCategory" id="rename_module" class="btn btn-sm btn-info pull-right" >  Rename Module  </button></span><button class="btn btn-xs btn-danger" id="delete_field_btn_'+mod_id+'" rowid="0">X</button></li>';
-                   //  var rendered_option = '<li><a href="#" id="' + json.qp_code[counter] + '">' + option + '  (' + json.qp_code[counter] + ' )</a></li>';
+                    var rendered_option = '<li id="' + mod_id + '" row="' + counter + '" class="list-group-item"><span>' + json.module[counter] + '</span> <span><button name="renameCategory" id="rename_module" class="btn btn-sm btn-info pull-right" >  Rename Module  </button></span><button class="btn btn-xs btn-danger" id="delete_module" rowid="0">X</button></li>';
+                    //  var rendered_option = '<li><a href="#" id="' + json.qp_code[counter] + '">' + option + '  (' + json.qp_code[counter] + ' )</a></li>';
                     $(rendered_option).appendTo('#module_list_group');
                     counter++;
                 });
@@ -199,25 +384,25 @@ $("#createCat").click(function() {
                     var rendered_option = '<li><a href="#">' + option + '</a></li>';
                     $(rendered_option).appendTo('#cat-dropdown-menu');
                 });*/
-             },
-             error: function(data) {
-                 // Handle errors here
-                 console.log('ERRORS: ' + data);
-                 $('#errorModal').modal('show');
-                 // Set a timeout to hide the element again
-                 setTimeout(function(){
-                       $("#errorModal").modal('hide');
-                 }, 5000);
-                 // STOP LOADING SPINNER
-             }
-          });
+            },
+            error: function(data) {
+                // Handle errors here
+                console.log('ERRORS: ' + data);
+                $('#errorModal').modal('show');
+                // Set a timeout to hide the element again
+                setTimeout(function() {
+                    $("#errorModal").modal('hide');
+                }, 5000);
+                // STOP LOADING SPINNER
+            }
+        });
     }
 
 
 
     $('#module_list_group').on('click', 'li', function() {
         //$('#jobroledropdownButton').html($(this).text() + '<span class="caret"></span>');
-        moduleId=$(this).attr("id");
+        moduleId = $(this).attr("id");
         //$('#module_list_group').children().remove();
         //alert(catId);
         //showModules();
@@ -226,20 +411,20 @@ $("#createCat").click(function() {
     });
 
 
-    $('#module_list_group').on('click', '#rename_module', function(){
-      $('#moduleRenameModal').modal('show');
+    $('#module_list_group').on('click', '#rename_module', function() {
+        $('#moduleRenameModal').modal('show');
     });
 
 
-    $('#newModuleText').on('keyup', function(e) {
-        if ($('#newModuleText').val() === "")
-            $('#createModule').prop('disabled', true);
+    $('#renameModuleText').on('keyup', function(e) {
+        if ($('#renameModuleText').val() === "")
+            $('#renameModule').prop('disabled', true);
         else {
-            $('#createModule').prop('disabled', false);
+            $('#renameModule').prop('disabled', false);
         }
     });
 
-    $("#createModule").click(function() {
+    $("#renameModule").click(function() {
         $.ajax({
             type: 'POST',
             url: '/assessment/php/manageCategory.php',
@@ -247,27 +432,27 @@ $("#createCat").click(function() {
                 action: "renameModule",
                 subId: subId,
                 cat_id: catId,
-                mod_id:moduleId,
-                new_name:$('#newModuleText').val()
+                mod_id: moduleId,
+                new_name: $('#renameModuleText').val()
             },
             dataType: 'json', //since you wait for json
             success: function(json) {
-               $('#successMessageText').text(json.message);
-               $('#successMessage').modal('show');
-               showModules();
-             },
-             error: function(data) {
-                 // Handle errors here
-                 console.log('ERRORS: ' + data);
-                 $('#errorMessageText').text(data.message);
-                 $('#errorModal').modal('show');
-                 // Set a timeout to hide the element again
-                 setTimeout(function(){
-                       $("#errorModal").modal('hide');
-                 }, 5000);
-                 // STOP LOADING SPINNER
-             }
-          });
+                $('#successMessageText').text(json.message);
+                $('#successMessage').modal('show');
+                showModules();
+            },
+            error: function(data) {
+                // Handle errors here
+                console.log('ERRORS: ' + data);
+                $('#errorMessageText').text(data.message);
+                $('#errorModal').modal('show');
+                // Set a timeout to hide the element again
+                setTimeout(function() {
+                    $("#errorModal").modal('hide');
+                }, 5000);
+                // STOP LOADING SPINNER
+            }
+        });
     });
 
 
@@ -312,7 +497,7 @@ $("#createCat").click(function() {
                 "searchable": false,
                 "data": null,
                 "width": "55%",
-              "defaultContent": " <button id=\"showExamDetails\"  type=\"button\" class=\"btn btn-info btn-sm\" >Show Exam Details</button>   <button id=\"editExamButton\"  type=\"button\" class=\"btn btn-primary btn-sm\" ><span class=\"glyphicon glyphicon-edit\"></span>Edit</button>  <button id=\"manQstsButton\"  type=\"button\" class=\"btn btn-success btn-sm\" ><span class=\"glyphicon glyphicon-edit\"></span>Manage Questions</button>  <button id=\"showQuestions\"  type=\"button\" class=\"btn btn-warning btn-sm\" ><span class=\"glyphicon glyphicon-edit\"></span>Show Questions</button> <button id=\"deleteExamButton\"  type=\"button\" class=\"btn btn-danger btn-sm\" ><span class=\"glyphicon glyphicon-remove\"></span>Delete</button>  "
+                "defaultContent": " <button id=\"showExamDetails\"  type=\"button\" class=\"btn btn-info btn-sm\" >Show Exam Details</button>   <button id=\"editExamButton\"  type=\"button\" class=\"btn btn-primary btn-sm\" ><span class=\"glyphicon glyphicon-edit\"></span>Edit</button>  <button id=\"manQstsButton\"  type=\"button\" class=\"btn btn-success btn-sm\" ><span class=\"glyphicon glyphicon-edit\"></span>Manage Questions</button>  <button id=\"showQuestions\"  type=\"button\" class=\"btn btn-warning btn-sm\" ><span class=\"glyphicon glyphicon-edit\"></span>Show Questions</button> <button id=\"deleteExamButton\"  type=\"button\" class=\"btn btn-danger btn-sm\" ><span class=\"glyphicon glyphicon-remove\"></span>Delete</button>  "
             }, ],
             "destroy": true,
         });
@@ -358,7 +543,7 @@ $("#createCat").click(function() {
 
     function deleteExam(exam_name) {
         $.ajax({
-           type: 'POST',
+            type: 'POST',
             url: '/assessment/php/manageExams.php',
             data: {
                 action: "delete",
@@ -371,17 +556,17 @@ $("#createCat").click(function() {
                 $('#successMessage').modal('show');
                 showExams();
                 // Set a timeout to hide the element again
-                setTimeout(function(){
-                      $("#successMessage").modal('hide');
+                setTimeout(function() {
+                    $("#successMessage").modal('hide');
                 }, 3000);
             },
             error: function(data) {
                 // Handle errors here
                 console.log('ERRORS: ' + data);
                 $('#errorModal').modal('show');
-                    // Set a timeout to hide the element again
-                setTimeout(function(){
-                      $("#errorModal").modal('hide');
+                // Set a timeout to hide the element again
+                setTimeout(function() {
+                    $("#errorModal").modal('hide');
                 }, 3000);
                 // STOP LOADING SPINNER
             }

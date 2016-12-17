@@ -96,7 +96,7 @@ class manageAttendence{
 	{
 		$conn = DbConn::getDbConn();
 		$sql="SELECT * FROM `assessment`.`batch_students`";
-		if($batch_id!="")
+		//if($batch_id!="")
 		$sql.= " where batch_id='".htmlspecialchars($batch_id,ENT_QUOTES)."'";
 		log_event(MANAGE_ATTENDENCE, __LINE__."  ". __FILE__."  , SQL to get Student List : '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
@@ -123,8 +123,7 @@ class manageAttendence{
 		$conn = DbConn::getDbConn();
 
 		$sql="SELECT * FROM `assessment`.`batch_details`";
-		if($batch_id!="")
-			$sql.= " where batch_id='".htmlspecialchars($batch_id,ENT_QUOTES)."'";
+		$sql.= " where batch_id='".htmlspecialchars($batch_id,ENT_QUOTES)."'";
 		
 		log_event( MANAGE_ATTENDENCE, __LINE__."  ". __FILE__."  , SQL to get Batch Information : '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
@@ -154,7 +153,7 @@ class manageAttendence{
 		$conn = DbConn::getDbConn();
 		$sql="SELECT batch_id FROM `assessment`.`batch_details`";
 		if($subjectId!="")
-			//$sql.= " where job_role='".htmlspecialchars($subjectId,ENT_QUOTES)."'";
+			$sql.= " where qp_code='".htmlspecialchars($subjectId,ENT_QUOTES)."'";
 		log_event( LOG_DATABASE, __LINE__."  ". __FILE__."  , SQL to get List of batch for subject : '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -172,7 +171,6 @@ class manageAttendence{
 		// print json Data.
 		echo json_encode(array_unique($jsonArr));
 	}
-	
 
 
 }

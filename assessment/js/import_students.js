@@ -1,11 +1,72 @@
 $(function() {
 
-    /*
-        $("#cancelButton").click(function() {
-            //window.fileUploadInput.reset();
-            clearFileInput();
-            //$("#fileUploadInput").val('').clone(true);
-        });*/
+  var sscValue = "";
+  var jobRole = "";
+  var subId = "";
+  var catId = "";
+  var moduleId = "";
+
+  // Populate SSC Dropdown
+
+  loadSSCList();
+
+  function loadSSCList() {
+      $.ajax({
+          url: '/assessment/php/getSubjectDetails.php',
+          data: {
+              get: "ssc"
+          },
+          dataType: 'json', //since you wait for json
+          success: function(json) {
+              //now when you received json, render options
+              $.each(json, function(i, option) {
+                  var rendered_option = '<li><a href="#">' + option + '</a></li>';
+                  $(rendered_option).appendTo('#ssctest-dropdown-menu');
+              });
+          }
+      });
+  }
+
+
+  $('#ssctest-dropdown-menu').on('click', 'li a', function() {
+      sscValue = $(this).text();
+      var selText = $(this).text();
+
+      $('#jobroletest-dropdown-menu').children().remove();
+      $('#jobroledropdownButton').html("- Select JobRole - " + '<span class="caret"></span>');
+      $('#sscdropdownButton').html(selText + '<span class="caret"></span>');
+      loadJobRoles(selText);
+      $('#uploadXlsForm').addClass('hide');
+  });
+
+
+  function loadJobRoles(sscValue) {
+      $.ajax({
+          url: '/assessment/php/getSubjectDetails.php',
+          data: {
+              get: "jobroleWithQPCode",
+              ssc: sscValue
+          },
+          dataType: 'json', //since you wait for json
+          success: function(json) {
+              //now when you received json, render options
+              var counter = 0;
+              $.each(json.job_role, function(i, option) {
+                  var rendered_option = '<li id="' + option + '"><a href="#" id="' + json.qp_code[counter] + '">' + option + '  (' + json.qp_code[counter] + ' )</a></li>';
+                  $(rendered_option).appendTo('#jobroletest-dropdown-menu');
+                  counter++;
+              });
+          }
+      });
+  }
+
+
+  $('#jobroletest-dropdown-menu').on('click', 'li a', function() {
+      $('#jobroledropdownButton').html($(this).text() + '<span class="caret"></span>');
+      jobRole = $(this).parent().attr("id");
+      subId = $(this).attr("id");
+      $('#uploadXlsForm').removeClass('hide');
+  });
 
 
     $("#uploadFileButton").click(function() {
@@ -78,6 +139,9 @@ $(function() {
         $.each(files, function(key, value) {
             data.append(key, value);
         });
+        data.append("ssc", sscValue);
+        data.append("jobRole", jobRole);
+        data.append("qpcode", subId);
 
         $.ajax({
             url: 'php/uploadAttendenceSheet.php?files',
@@ -134,6 +198,11 @@ function submitForm(event, data) {
         $.each(data.files, function(key, value) {
             formData = formData + '&filenames[]=' + value;
         });
+
+        formData = formData + '&ssc=' + sscValue;
+        formData = formData + '&jobRole=' + jobRole;
+        formData = formData + '&qpcode=' + subId;
+
         $.ajax({
             url: 'php/uploadAttendenceSheet.php',
             type: 'POST',
@@ -189,7 +258,7 @@ function submitForm(event, data) {
                         //$('#batch').html('<div id=\"error_msg\"  class=\"alert alert-danger fade in\" style=\"position:relative"><strong>No Batch Information Found.</strong></div>');
                         json.data = [];
                     } else {
-                        $('#error_msg').addClass('hide');
+                        //$('#error_msg').addClass('hide');
                     }
                     return json.data;
                 },

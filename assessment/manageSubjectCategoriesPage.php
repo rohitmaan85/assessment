@@ -34,9 +34,8 @@
 <body>
   <!-- <script src="js/jquery-3.1.0.js"></script> -->
 
-    <div class="loader"></div>
-  <div class="row">
-    <!-- uncomment code for absolute positioning tweek see top comment in css -->
+  <div class="loader"></div>
+  <!-- uncomment code for absolute positioning tweek see top comment in css -->
     <div class="absolute-wrapper"> </div>
     <!-- Menu -->
     <div class="page-header">
@@ -64,7 +63,7 @@
             <li><a  href="importQuestionsPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Questions</a></li>
             <li><a  href="importBatchPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Batches</a></li>
             <li><a  href="importStudentsPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Students</a></li>
-            <li><a  href="manageSubjectsPage.php"><span class="glyphicon glyphicon-paperclip"></span>Manage Questions</a></li>
+            <li><a  href="manageQuestionPage.php"><span class="glyphicon glyphicon-paperclip"></span>Manage Questions</a></li>
             <li><a  href="manageSubjectCategoriesPage.php"><span class="glyphicon glyphicon-paperclip"></span>Manage Categories</a></li>
             <li><a  href="manageExamsPage.php"><span class="glyphicon glyphicon-pencil"></span>Manage Exams</a></li>
             <li><a  href="manageAttendencePage.php"><span class="glyphicon glyphicon-pencil"></span>Manage Batch Attendence</a></li>
@@ -78,67 +77,61 @@
         <!-- /.navbar-collapse -->
       </nav>
     </div>
-    <!-- Main Content -->
+  </div>
+
+       <!-- Main Content -->
     <div class="container-fluid">
       <div class="side-body">
-
-
-
-
-          <!--  Modal to display Exam details -->
-          <div id="displayExamDetailsModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-              <!-- Modal content-->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">Exam Details</h4>
-                </div>
-                <div class="modal-body">
-                  <form id="showExamDetailsForm" class="form-horizontal" >
-                    <label for="namelbl"  >Exam Name :</label>
-                    <input type="text" maxlength="4" id="name_text" class="form-control" disabled="true">
-
-                    <label for="batch_lbl" >Batch Id :</label>
-                    <input type="text" id="batch_text" class="form-control" disabled="true">
-
-                    <label for="no_of_qstns_lbl" >Number of Questions :</label>
-                    <input type="text" id="no_of_qstns_text" class="form-control" disabled="true">
-
-                    <label for="duration_lbl" >Duration of Exam :</label>
-                    <input type="text" id="duration_text" class="form-control" disabled="true">
-
-                    <label for="exam_from_lbl">Exam Valid From :</label>
-                    <input type="text" id="exam_from_text" class="form-control" disabled="true">
-
-                    <label for="exam_to_lbl">Exam Valid To :</label>
-                    <input type="text" id="exam_to_text" class="form-control" disabled="true">
-
-                    <label for="total_marks_lbl">Total Marks :</label>
-                    <input type="text" id="total_marks_text" class="form-control" disabled="true">
-
-                    <label for="pass_percent_lbl">Passing Percentage :</label>
-                    <input type="text" id="pass_percent_text" class="form-control" disabled="true">
-
-                  </form>
-
-                </div>
-
-                 <div class="modal-footer">
-                     <button type="button" class="btn btn-warning" data-dismiss="modal">Close Batch Information</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
             <!--<div class="col-lg-14 col-md-11 col-sm-2 col-xs-12"> -->
+            <div class="col-xs-14 col-md-14">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
-                         <h3 class="panel-title pull-left"><strong>Manage Subjects Category and Modules </strong></h3>
+                  <div class="panel-heading">
+                     <h3 class="panel-title pull-left"><strong>Manage Subjects Category and Modules </strong></h3>
                     </div>
+                        <div id="categoryModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                      <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Enter New Category</h4>
+                                      </div>
+                                    <div class="modal-body">
+                                      <input type="text" id="newCatText" class="form-control"  placeholder="Enter Category">
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                                        <button type="button" id="createCat" class="btn btn-success" disabled="true">Create Category</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              <div id="moduleModal" class="modal fade" role="dialog">
+                              <div class="modal-dialog">
+                                <!-- Modal content-->
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Enter New Module</h4>
+                                      </div>
+                                    <div class="modal-body">
+                                      <div class="dropdown">
+                                          <button id="catButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          -Select Category-<span class="caret"></span></button>
+                                           <ul id="cat-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
+                                          </ul>
+                                       </div>
 
-
+                                        <label for="ssc_label">Category * </label><input type="text" id="selected_category" class="form-control" disabled="true">
+                                          <label for="ssc_label">Module * </label><input type="text" id="newModuleText" class="form-control"  placeholder="Enter Module">
+                                    </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                                          <button type="button" id="createMod" class="btn btn-success" disabled="true">Create Module</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
                     <div id="categoryRenameModal" class="modal fade" role="dialog">
                       <div class="modal-dialog">
                         <!-- Modal content-->
@@ -148,11 +141,11 @@
                             <h4 class="modal-title">Rename Category</h4>
                           </div>
                           <div class="modal-body">
-                            <input type="text" id="newCatText" class="form-control"  placeholder="Enter New Name">
+                            <input type="text" id="renameCatText" class="form-control"  placeholder="Enter New Name">
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-                            <button type="button" id="createCat" class="btn btn-success" disabled="true">Rename Category</button>
+                            <button type="button" id="renameCat" class="btn btn-success" disabled="true">Rename Category</button>
                           </div>
                         </div>
                       </div>
@@ -168,18 +161,18 @@
                             <h4 class="modal-title">Rename Module</h4>
                           </div>
                           <div class="modal-body">
-                            <input type="text" id="newModuleText" class="form-control"  placeholder="Enter New Module Name">
+                            <input type="text" id="renameModuleText" class="form-control"  placeholder="Enter New Module Name">
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-                            <button type="button" id="createModule" class="btn btn-success" disabled="true">Rename Module</button>
+                            <button type="button" id="renameModule" class="btn btn-success" disabled="true">Rename Module</button>
                           </div>
                         </div>
                       </div>
                     </div
 
                     <div class="panel-body">
-                      <div id="confirm" class="modal fade" role="dialog">
+                      <div id="confirmCategory" class="modal fade" role="dialog">
                           <div class="modal-dialog">
                             <div class="modal-content">
                               <div class="modal-header">
@@ -187,38 +180,52 @@
                                 <h4 class="modal-title">Confirm Deletion</h4>
                               </div>
                               <div class="modal-body">
-                                  <strong> <font color='Red'>Are you sure , you want to delete this Exam?</font></strong>
+                                  <strong> <font color='Red'>Are you sure , you want to delete this Category ?</font></strong>
                             </div>
                         <div class="modal-footer">
-                          <button type="button" data-dismiss="modal" class="btn btn-danger" id="delete">Delete</button>
+                          <button type="button" data-dismiss="modal" class="btn btn-danger" id="deleteCategory">Delete</button>
                           <button type="button" data-dismiss="modal" class="btn">Cancel</button>
                         </div>
                         </div>
-                        </div>
                       </div>
+                    </div>
 
-                      <div id="successMessage" class="modal fade" role="dialog">
+                    <div id="confirmModule" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Confirm Deletion</h4>
+                            </div>
+                            <div class="modal-body">
+                                <strong> <font color='Red'>Are you sure , you want to delete this Module ?</font></strong>
+                          </div>
+                      <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn btn-danger" id="deleteModule">Delete</button>
+                        <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+
+                    <div id="successMessage" class="modal fade" role="dialog">
                           <div class="modal-dialog">
                             <div class="modal-content">
                               <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Confirm Deletion</h4>
+                                <h4 class="modal-title">Status</h4>
                               </div>
                               <div class="modal-body">
-
                                   <strong> <font color='Green'><span id="successMessageText">Exam deleted Successfully !</span></font></strong>
                             </div>
                         <div class="modal-footer">
-                          <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete">Delete</button>
-                          <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+                            <button type="button" data-dismiss="modal" class="btn">Cancel</button>
                         </div>
                         </div>
                         </div>
-                      </div>
-
-
-                      <div id="errorModal" class="modal fade" role="dialog">
-                          <div class="modal-dialog">
+                    </div>
+                  <div id="errorModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
                             <div class="modal-content">
                               <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -235,16 +242,13 @@
                         </div>
                         </div>
                         </div>
-                      </div>
-
-                      <div class="col-xs-14 col-md-14">
-                        <form>
+                    </div>
                           <div class="form-group">
                                <label for="ssc"  class="col-xs-1">SSC*</label>
                                  <div class="col-xs-4">
                                      <div class="dropdown">
                                        <button id="sscdropdownButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                         --Select SSC--<span class="caret"></span></button>
+                                         -- Select SSC --<span class="caret"></span></button>
                                           <ul id="ssctest-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
                                      </ul>
                                    </div>
@@ -253,59 +257,68 @@
                                    <div class="col-xs-6">
                                      <div class="dropdown">
                                          <button id="jobroledropdownButton" class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                             --Select JobRole--<span class="caret"></span></button>
+                                             -- Select JobRole --<span class="caret"></span></button>
                                                   <ul id="jobroletest-dropdown-menu"  class="dropdown-menu dropdown-menu-center scrollable-menu">
-                                             </ul>
-                                     </div>
-                                     </div>
-                            </div>
-                         </form>
-                      </div>
+                                         </ul>
+                                 </div>
+                             </div>
+                        </div>
+
+
+                    <div class="form-group">
+                      <br>
                       <div class="col-xs-14 col-md-14">
-                        <br>
-                        <br>
-                        <br>
-                                  <hr style="width: 100%; color: black; height: 1px; background-color:green;" />
+                            <hr style="width: 100%; color: black; height: 1px; background-color:green;" />
                       </div>
+                    </div>
 
-                      <div class="col-xs-14 col-md-14" id="showCategory">
-                        <div class="panel panel-info">
-                          <div class="panel-heading">
-                                 Categories
+                    <div class="col-xs-14 col-md-14" id="showModules">
+                          <div class="panel panel-info">
+                              <div class="panel-heading">
+                                       Create category and Modules
+                                </div>
+                            <div class="panel-body">
+                              <div class="form-group">
+                                   <div class="col-xs-14 col-md-14">
+                                        <div class="btn-group pull-center">
+                                          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#categoryModal">Create Category</button>
+                                          <button id="createModuleModalButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#moduleModal">Create Module </button>
+                                        </div>
+                                  </div>
+                              </div>
                           </div>
-                        <div class="panel-body">
-                        <ul class="list-group" id="category_list_group" style="margin-top:5px">
-                        <!--  <li id="field_row_0" row="0" class="list-group-item"><span>test</span><button class="btn btn-xs btn-danger pull-right" id="delete_field_btn_0" rowid="0">X</button></li>
-                          <span class="fieldtip glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="" data-original-title="Click on a field below to edit its details.  Note: extended fields and composite fields (fields based on an existing field or model) cannot be edited.">
-							            </span>
-                          <li id="field_row_1" row="1" class="list-group-item"><span>test2</span><button class="btn btn-xs btn-danger pull-right" id="delete_field_btn_1" rowid="1">X</button></li>
-                          <li id="field_row_2" row="2" class="list-group-item"><span>test3</span><button class="btn btn-xs btn-danger pull-right" id="delete_field_btn_2" rowid="2">X</button></li></ul>
-                          -->
-                          <br>
-                      </div>
-                      </div>
-                      </div>
+                        </div>
+                   </div>
 
+                    <div class="col-xs-14 col-md-14" id="showCategory">
+                          <div class="panel panel-info">
+                                <div class="panel-heading">
+                                       Categories
+                                </div>
+                              <div class="panel-body">
+                              <ul class="list-group" id="category_list_group" style="margin-top:5px">
+                            </div>
+                            </div>
+                      </div>
 
                       <div class="col-xs-14 col-md-14" id="showModules">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                     Modules
-                              </div>
-                          <div class="panel-body">
-                        <ul class="list-group" id="module_list_group" style="margin-top:5px">
-                              <!--
-                                <li id="field_row_0" row="0" class="list-group-item"><span>test</span><button class="btn btn-xs btn-danger pull-right" id="delete_field_btn_0" rowid="0">X</button></li>
-                                <li id="field_row_1" row="1" class="list-group-item"><span>test2</span><button class="btn btn-xs btn-danger pull-right" id="delete_field_btn_1" rowid="1">X</button></li>
-                                <li id="field_row_2" row="2" class="list-group-item"><span>test3</span><button class="btn btn-xs btn-danger pull-right" id="delete_field_btn_2" rowid="2">X</button></li></ul>
-                              <br> -->
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                         Modules
+                                  </div>
+                              <div class="panel-body">
+                            <ul class="list-group" id="module_list_group" style="margin-top:5px">
+                            </div>
                           </div>
-                          </div>
-                      </div>
+                     </div>
+
+
                     </div>
                   </div>
 
                 </div>
                 </div>
-              </body>
+                </div>
+                </div>
+  </body>
 </html>

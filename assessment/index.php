@@ -17,6 +17,7 @@ if(!isset($_SESSION['name']))
 <head>
   <title>BriskMindTest EMS</title>
    <script src="js/jquery.js"></script>
+
   <script src="js/bootstrap.min.js"></script>
   <script src="js/toggle.js"></script>
   <link rel="stylesheet" href="css/bootstrap.min.css">

@@ -9,6 +9,7 @@ $(document).ready(function() {
     var counterforRequiredQstns = 0;
     var moduleIds = [];
     var moduleNoOfQstns = [];
+    var batchId = "";
 
 
     loadSSCList();
@@ -76,8 +77,8 @@ $(document).ready(function() {
                             var moduleAdditionalDiv = "";
                             var moduleMarksDiv = "";
                             if (module.noOfQstns > 0) {
-                                moduleIds[module.moduleName] =  module.id ;
-                              //  moduleIds[module.id] = module.moduleName;
+                                moduleIds[module.moduleName] = module.id;
+                                //  moduleIds[module.id] = module.moduleName;
                                 moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control"></div>';
                                 moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control"></div>';
                                 moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox"></div></div>';
@@ -104,8 +105,8 @@ $(document).ready(function() {
                         var moduleQstnsAvailDiv = ' <label for="qstnsAvailable"  class="col-xs-1">Available Qstns</label><div class="col-xs-1"><input type="text" id="moduleAvailQstns_' + counter + '" class="form-control" disabled="true" value="' + option.noOfQstnsInCategory + '"></div>';
 
                         if (option.noOfQstnsInCategory > 0) {
-                          //  moduleIds[option.id] = option.category;
-                          moduleIds[option.category] =  option.id ;
+                            //  moduleIds[option.id] = option.category;
+                            moduleIds[option.category] = option.id;
                             moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control"></div>';
                             moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control"></div>';
                             moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox"></div></div>';
@@ -158,14 +159,24 @@ $(document).ready(function() {
 
 
     $('#ssctest-dropdown-menu').on('click', 'li a', function() {
+        batchId = "";
+        $('#selGroupDropdown').val("");
         sscValue = $(this).text();
         var selText = $(this).text();
-        $('#jobroletest-dropdown-menu').children().remove();
-        $('#selGroupDropdown').children().remove();
-        $('#jobroledropdownButton').html("-Select JobRole-" + '<span class="caret"></span>');
         $('#sscdropdownButton').html(selText + '<span class="caret"></span>');
+
+        $('#jobroletest-dropdown-menu').children().remove();
+        $('#jobroledropdownButton').html("-Select JobRole-" + '<span class="caret"></span>');
+
+        $('#batch-dropdown-menu').children().remove();
+        $('#batchdropdownButton').html(" -- Select BatchId -- " + '<span class="caret"></span>');
+
+        $('#selGroupDropdown').children().remove();
         loadJobRoles(selText);
         $('#createExamForm').addClass('hide');
+        $('#studentDetails').prop('disabled', true);
+        $('#batch_info').prop('disabled', true);
+
     });
 
 
@@ -192,42 +203,86 @@ $(document).ready(function() {
 
     // Click on Jobrole DropDown Item.
     $('#jobroletest-dropdown-menu').on('click', 'li a', function() {
+      $('#studentDetails').prop('disabled', true);
+      $('#batch_info').prop('disabled', true);
+
+        batchId = "";
+        $('#selGroupDropdown').val("");
+        $('#createExamForm').addClass('hide');
         subId = $(this).attr('id');
         displayModuleSection();
         loadBatchList();
         $('#jobroledropdownButton').html($(this).text() + '<span class="caret"></span>');
-        $('#createExamForm').removeClass('hide');
+        //$('#createExamForm').removeClass('hide');
 
+        $('#batch-dropdown-menu').children().remove();
+        $('#batchdropdownButton').html(" -- Select BatchId -- " + '<span class="caret"></span>');
     });
 
+
+    $('#batch-dropdown-menu').on('click', 'li a', function() {
+        batchId = $(this).attr('id');
+        $('#selGroupDropdown').val(batchId);
+        $('#selGroupDropdown').prop('disabled', true);
+        $('#batchdropdownButton').html($(this).text() + '<span class="caret"></span>');
+        $('#createExamForm').removeClass('hide');
+        $('#studentDetails').prop('disabled', false);
+        $('#batch_info').prop('disabled', false);
+
+    });
 
     function loadBatchList() {
         $.ajax({
             url: '/assessment/php/manageAttendence.php',
-            type:'POST',
+            type: 'POST',
             data: {
                 action: "getBatchList",
                 subId: subId
             },
             dataType: 'json', //since you wait for json
             success: function(json) {
+
                 //now when you received json, render options
                 var counter = 0;
+                $('#batch-dropdown-menu').children().remove();
+                //  $('#batchdropdownButton').html(" -- Select BatchId -- " + '<span class="caret"></span>');
                 $('#selGroupDropdown').children().remove();
                 $('#selGroupDropdown')
                     .append($("<option></option>").attr("value", "None Selected")
                         .text("None Selected"));
                 // Get  Data from Json
                 $.each(json, function(i, option) {
+                    var rendered_option = '<li><a id="' + option + '" href="#">' + option + '</a></li>';
+                    $(rendered_option).appendTo('#batch-dropdown-menu');
+
                     $('#selGroupDropdown').append($("<option></option>")
-                            .attr("value", option)
-                            .text(option));
+                        .attr("value", option)
+                        .text(option));
                     counter++;
                 });
             }
         });
     }
+
+    $("#studentDetails").click(function() {
+        $('#displayStudentsModal').modal('show');
+        showStudentsList();
+    });
+
+    $("#batch_info").click(function() {
+        //var batchId = $("#selGroupDropdown").val();
+        if (batchId !== "") {
+            getBatchInformationForDialog(batchId);
+        }
+        $('#displayBatchDetailsModal').modal('show');
+        /*
+        $(this).css("background-color", "yellow");
+        }, function(){
+        $(this).css("background-color", "pink");
+    */
+    });
     // Handle show Modules Part
+
 
 
 
@@ -357,58 +412,55 @@ $(document).ready(function() {
         var moduleId = "";
 
         var totalModuleQstns = parseInt(0, 10);
-        moduleNoOfQstns= [];
-      //  var moduleRequiedQstnsByUser = [];
+        moduleNoOfQstns = [];
+        //  var moduleRequiedQstnsByUser = [];
         //var row1 = $('#moduleReqQstns_1').val();
         for (i = 1; i < counterforRequiredQstns; i++) {
             qstnId = '#moduleReqQstns_' + i;
             var value = $(qstnId).val();
             if (typeof value != "undefined") {
-                if (value !== '' && !isNaN(value)){
+                if (value !== '' && !isNaN(value)) {
                     totalModuleQstns = totalModuleQstns + parseInt(value);
 
                     // Get category id from array
-                    categoryNameId = '#category_'+i;
+                    categoryNameId = '#category_' + i;
                     categoryName = $(categoryNameId).val();
-                    categoryId =  moduleIds[categoryName];
+                    categoryId = moduleIds[categoryName];
 
                     // If category does not exist then check module name
-                    if(typeof categoryId === 'undefined'){
-                      moduleNameId = '#module_'+i;
-                      moduleName = $(moduleNameId).val();
-                      moduleId =  moduleIds[moduleName];
-                      moduleNoOfQstns.push({
-                        id : moduleId,
-                       noOfQstns : parseInt(value)
-                      });
-                      //moduleNoOfQstns.id =moduleId;
-                      //moduleNoOfQstns.noOfQstns =parseInt(value);
-                    }
-                    else
-                    {
-                    //  moduleNoOfQstns.id =categoryId;
-                    //  moduleNoOfQstns.noOfQstns =parseInt(value);
-                      moduleNoOfQstns.push({
-                        id : categoryId,
-                       noOfQstns : parseInt(value)
-                      });
-                      //  moduleNoOfQstns[categoryId]=parseInt(value);
+                    if (typeof categoryId === 'undefined') {
+                        moduleNameId = '#module_' + i;
+                        moduleName = $(moduleNameId).val();
+                        moduleId = moduleIds[moduleName];
+                        moduleNoOfQstns.push({
+                            id: moduleId,
+                            noOfQstns: parseInt(value)
+                        });
+                        //moduleNoOfQstns.id =moduleId;
+                        //moduleNoOfQstns.noOfQstns =parseInt(value);
+                    } else {
+                        //  moduleNoOfQstns.id =categoryId;
+                        //  moduleNoOfQstns.noOfQstns =parseInt(value);
+                        moduleNoOfQstns.push({
+                            id: categoryId,
+                            noOfQstns: parseInt(value)
+                        });
+                        //  moduleNoOfQstns[categoryId]=parseInt(value);
                     }
 
 
 
-                                      /*
+                    /*
                     $.each(moduleNoOfQstns, function(key, value) {
                       if(value===)
                           //alert(key)
                     });*/
-                  }
-                else
+                } else
                     totalModuleQstns = totalModuleQstns + parseInt(0);
             }
         }
 
-        alert(moduleNoOfQstns.length);
+        //alert(moduleNoOfQstns.length);
         if ($("#noOfQstnsText").val() != totalModuleQstns) {
             allFieldsOk = false;
             fieldsValue += "* Total Number of Questions '" + $("#noOfQstnsText").val() + "' in Test should be Equal to sum of all module Questions '" + totalModuleQstns + "' \n";
@@ -486,14 +538,13 @@ $(document).ready(function() {
                     if (typeof data.error === 'undefined') {
                         // Success so call function to process the form
                         console.log('SUCCESS: ' + data.success);
-                        $('.alert-danger').removeClass('alert-danger').addClass('alert-success');
                         $('#error_msg').addClass('in');
                         $('#error_msg strong').text("Success! " + data.success);
                         /* Get from database using jax request*/
                         //subjectTable.ajax.reload();
                     } else {
                         // Handle errors here
-                        console.log('ERRORS: ' + data.error);
+                        console.log('ERRORS should be in alert: ' + data.error);
                         $('#error_msg').addClass('in');
                         $('#error_msg strong').text("Error! " + data.error);
                     }
@@ -506,50 +557,77 @@ $(document).ready(function() {
                 },
             });
         }
-});
+    });
 
-// Display batch details on Hovering.
-
-
-$("#batch_info").click(function(){
-
-    var batchId = $("#selGroupDropdown").val();
-    getBatchInformationForDialog(batchId);
-    $('#displayBatchDetailsModal').modal('show');
+    // Display batch details on Hovering.
     /*
-    $(this).css("background-color", "yellow");
-    }, function(){
-    $(this).css("background-color", "pink");
-*/
-});
+    $(".modal").on("hidden.bs.modal", function(){
+      $("#batchDetailBody").html("");
+    });
+    */
+
+    // Function to display students table when click on table Row.
+    function showStudentsList() {
+        var studentsTable = $('#showStdntsTable').DataTable({
+            "oLanguage": {
+                "sEmptyTable": '<strong> No Students Found in selected Batch !!!</strong>'
+            },
+            // serverSide: true,
+            initComplete: function() {
+                studentsTable.buttons().container()
+                    .appendTo('#showStdntsTable_wrapper .col-sm-6:eq(0)');
+            },
+
+            buttons: ['copy', 'excel', 'pdf'],
+            "ajax": {
+                'url': '/assessment/php/manageAttendence.php',
+                'type': 'POST',
+                'data': {
+                    action: 'getStudentList',
+                    batch_id: batchId
+                },
+                'dataSrc': function(json) {
+                    if (!json.data) {
+                        json.data = [];
+                    } else {
+                      //  $('#error_msg').addClass('hide');
+                    }
+                    return json.data;
+                },
+            },
+            "destroy": true,
+        });
+    }
 
 
-function getBatchInformationForDialog(batch_id){
-      $.ajax({
-          type: 'POST',
-          url: '/assessment/php/manageAttendence.php',
-          data: {
-              action: "getBatchInfo",
-              batch_id: batch_id
-          },
-          dataType: 'json', //since you wait for json
-          success: function(json) {
-              $.each(json, function(i, option) {
-                $('#batch_text').val(option[0][0]);
-                $('#exam_date_text').val(option[0][2]);
-                $('#no_students_text').val(option[0][5]);
-                $('#center_text').val(option[0][3]);
-                $('#training_text').val(option[0][4]);
-                $('#status_text').val(option[0][6]);
-              });
-          }
-      // control.replaceWith(control.val('').clone(true));
-  });
-}
 
-// load Exams table.
-showExams();
-function showExams() {
+    function getBatchInformationForDialog(batch_id) {
+        $.ajax({
+            type: 'POST',
+            url: '/assessment/php/manageAttendence.php',
+            data: {
+                action: "getBatchInfo",
+                batch_id: batch_id
+            },
+            dataType: 'json', //since you wait for json
+            success: function(json) {
+                    $.each(json, function(i, option) {
+                        $('#batch_text').val(option[0][0]);
+                        $('#exam_date_text').val(option[0][2]);
+                        $('#no_students_text').val(option[0][5]);
+                        $('#center_text').val(option[0][3]);
+                        $('#training_text').val(option[0][4]);
+                        $('#status_text').val(option[0][6]);
+                    });
+                }
+                // control.replaceWith(control.val('').clone(true));
+        });
+    }
+
+    // load Exams table.
+    showExams();
+
+    function showExams() {
         var subjectId = $("#qpcodeText").val();
         var examTable = $('#examTable').DataTable({
             "ajax": {
@@ -561,10 +639,10 @@ function showExams() {
                 },
                 'dataSrc': function(json) {
                     if (!json.data) {
-                        $('#qstns').html('<div id=\"error_msg\"  class=\"alert alert-danger fade in\" style=\"position:relative"><strong>No Questions Found for selected Subject in Database.</strong></div>');
+                        //$('#qstns').html('<div id=\"error_msg\"  class=\"alert alert-danger fade in\" style=\"position:relative"><strong>No Questions Found for selected Subject in Database.</strong></div>');
                         json.data = [];
                     } else {
-                        $('#error_msg').addClass('hide');
+                      //  $('#error_msg').addClass('hide');
                     }
 
                     return json.data;
