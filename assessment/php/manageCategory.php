@@ -252,6 +252,25 @@ class manageCategory{
 		return $moduleId;
 	}
 
+	function getModuleCategory($module_id)
+	{
+		$conn = DbConn::getDbConn();
+		$sql="SELECT category_id FROM `assessment`.`subject_category_module`";
+		$sql.= " where id= '".htmlspecialchars($module_id,ENT_QUOTES)."'";
+		log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__."  , SQL to get Category Id : '".$sql."'" );
+		$result = mysqli_query($conn,$sql);
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$i=0;
+		$categoryId = "";
+		while ($row)
+		{
+			$categoryId = $row['category_id'];
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		}
+		// Free result set
+		mysqli_free_result($result);
+		return $categoryId;
+	}
 
 
 	function getModuleList($subjectId,$category)

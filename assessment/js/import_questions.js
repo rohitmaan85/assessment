@@ -82,7 +82,7 @@ $(function() {
         $('#jobroledropdownButton').html($(this).text() + '<span class="caret"></span>');
         jobRole = $(this).parent().attr("id");
         subId = $(this).attr("id");
-        $('#uploadXlsForm').removeClass('hide');
+        $('#uploadXlsForm').addClass('hide');    
         $('#cat-dropdown-menu').children().remove();
         $('#module-dropdown-menu').children().remove();
         $('#categorydropdownButton').html("- Select Category - " + '<span class="caret"></span>');
@@ -129,9 +129,11 @@ $(function() {
     $('#cat-dropdown-menu').on('click', 'li a', function() {
         $('#categorydropdownButton').html($(this).text() + '<span class="caret"></span>');
         catId = $(this).attr("id");
+        moduleId = "";
         $('#module-dropdown-menu').children().remove();
         $('#moduledropdownButton').html("- Select Module - " + '<span class="caret"></span>');
         showModules();
+        $('#uploadXlsForm').removeClass('hide');
     });
 
     function showModules() {

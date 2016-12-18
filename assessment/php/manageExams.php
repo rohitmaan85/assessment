@@ -3,6 +3,7 @@ require_once 'DbConn.php';
 require_once 'logging_api.php';
 require_once 'getSubjectDetails.php';
 require_once 'manageQuestions.php';
+require_once 'manageCategory.php';
 
 class manageExams{
 
@@ -235,7 +236,7 @@ class manageExams{
 
 	function selectQuestions($subjectId,$category,$module,$noOfQstns,$exam_id){
 		$conn = DbConn::getDbConn();
-		$sql="SELECT id FROM `assessment`.`question` where";
+		$sql="SELECT id FROM `assessment`.`question` where status ='active' and ";
 		if($subjectId!=""){
 			$sql.= " qp_code='".htmlspecialchars($subjectId,ENT_QUOTES)."'";
 		}
@@ -368,7 +369,6 @@ class manageExams{
 		$i=0;
 		$category = "";
 		$module = "";
-		log_event(MANAGE_TEST, __LINE__."  ". __FILE__."Rohit Maan");
 		while ($row)
 		{
 			//log_event();
@@ -394,10 +394,12 @@ class manageExams{
 		// Handle number of questions:
 		$moduleIds = "";
 		$moduleNoOfQstns = "";
+		$moduleNoOfQstns = "";
 		foreach($noOfModuleQstsArr as $d){
-			log_event( MANAGE_TEST, __LINE__."  ". __FILE__. " ,  Number of Questions in each Module : " . $d['id']. "=>" .$d['noOfQstns']);
+			log_event( MANAGE_TEST, __LINE__."  ". __FILE__. " ,  Number of Questions in each Module : " . $d['id']. "=>" .$d['noOfQstns']. " , isCategory =". $isCategory);
 			$moduleIds .= $d['id'].",";
 			$moduleNoOfQstns .=$d['noOfQstns'].",";
+			$isCategory.=$d['isCategory'].",";
 		}
 
 		try{
@@ -409,11 +411,11 @@ class manageExams{
 			"','".htmlspecialchars($startDate,ENT_QUOTES)."','".htmlspecialchars($endDate,ENT_QUOTES)."','".htmlspecialchars($decResult,ENT_QUOTES).
 			"','".htmlspecialchars($batchId,ENT_QUOTES)."','".htmlspecialchars($negMarking,ENT_QUOTES).
 			"','".htmlspecialchars($totalMarks,ENT_QUOTES)."','".htmlspecialchars($randomQstn,ENT_QUOTES)."','".htmlspecialchars($pp,ENT_QUOTES)."','".htmlspecialchars($examDesc,ENT_QUOTES).
-			"','".$testcode."','".date("Y-m-d H:i:s", time())."','".date("Y-m-d H:i:s", time())."','active','".$moduleIds."','".$moduleNoOfQstns."'";
+			"','".$testcode."','".date("Y-m-d H:i:s", time())."','".date("Y-m-d H:i:s", time())."','active','".$moduleIds."','".$moduleNoOfQstns."','".$isCategory."'";
 
 			$sql = "INSERT INTO `assessment`.`exam`(`subid`,`testid`,`testname`,`totalquestions`,
 				  `duration`,`attemptedstudents`,`testfrom`,`testto`,`declareResult`,`batchid`,`negativemarking`,
-				   `total_marks`,`randomqstn`,`pp`,`testdesc`,`testcode`,`createDate`,`last_modified_on`,`status`,`moduleIds`,`moduleNoOfQsnts`)
+				   `total_marks`,`randomqstn`,`pp`,`testdesc`,`testcode`,`createDate`,`last_modified_on`,`status`,`moduleIds`,`moduleNoOfQsnts`,`isCategory`)
 					VALUES(".$row_value.");";
 
 			log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to insert Exam : '".$sql."'" );
@@ -434,14 +436,27 @@ class manageExams{
 				foreach($noOfModuleQstsArr as $d){
 					$moduleId = $d['id'];
 					$moduleNoOfQstns =$d['noOfQstns'];
+					$isCategory =$d['isCategory'];
+					if($isCategory==0 )
 					// Get category details
-					$details = $this->getModuleDetails($moduleId);
-					if($details[0]!="")
-					//$subjectId,$category,$module,$noOfQstns,$exam_id
-					$this->selectQuestions($subjectId,$details[0],$details[1],$moduleNoOfQstns,$exam_id);
-					else
-					log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , Error !  'selectedCategory' and 'module' does not exist  in Database '" );
-
+					//	$details = $this->getModuleDetails($moduleId);
+						$this->selectQuestions($subjectId,$moduleId,"",$moduleNoOfQstns,$exam_id);
+					else{
+						// Get Module Details
+						$obj = new manageCategory();
+						$category_id = $obj->getModuleCategory($moduleId);
+						$this->selectQuestions($subjectId,$category_id,$moduleId,$moduleNoOfQstns,$exam_id);
+					}
+					
+						// Get Module details
+						//	$details = $this->getModuleDetails($moduleId);
+							/*			
+						if($details[0]!="")
+						//$subjectId,$category,$module,$noOfQstns,$exam_id
+						$this->selectQuestions($subjectId,$details[0],$details[1],$moduleNoOfQstns,$exam_id);
+						else
+						log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , Error !  'selectedCategory' and 'module' does not exist  in Database '" );
+					*/
 				}
 				return $this->insertQstnsInExam();
 			}
@@ -620,13 +635,15 @@ function getExamQstnListToEdit($exam_name,$exam_id){
 	$result = mysqli_query($conn,$sql);
 	$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 	$qstnObj = new manageQuestions();
-
+	$obj = new manageCategory();
 	$i=0;
 	while ($row)
 	{
 		//$jsonArr[0]="";
-		$jsonArr[0]=$row['category'];
-		$jsonArr[1]=$row['module'];
+		$category_name	= $obj->getCategoryName($row['category']);
+		$module_name	= $obj->getModuleName($row['module']);
+		$jsonArr[0]=$category_name;
+		$jsonArr[1]=$module_name;
 		// Get Questions Details
 		$qstn_details = $qstnObj->getQuestionDetails($row['qstn_id']);
 		//log_event(MANAGE_QUESTIONS, __LINE__."  ". __FILE__."  , Question Details: '".print_r($qstn_details)."'" );
@@ -707,7 +724,7 @@ if(isset($_POST['action'])){
 
 	 if(!$obj->createExam($exName,$subId,$_POST['noOfModuleQstsArr']))
 		{
-			$data =  array('error' => 'Error while creating exam.') ;
+			$data =  array('error' => 'Error while creating exam , Please check all details and try again.') ;
 			log_event( MANAGE_TEST, __LINE__."  ". __FILE__." Error while inserting Question in DB.".json_encode($data) );
 		} else {
 			$data =  array('success' => 'Exam Created Successfully.') ;

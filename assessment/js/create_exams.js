@@ -42,101 +42,6 @@ $(document).ready(function() {
     //Create Module Section dynamically
     //displayModuleSection();
 
-    function displayModuleSection() {
-
-        $.ajax({
-            url: '/assessment/php/manageCategory.php',
-            data: {
-                get: "catNModules",
-                subId: subId
-            },
-            dataType: 'json', //since you wait for json
-            success: function(json) {
-                //now when you received json, render options
-                //var counter = 0;
-                var moduleCompleteDiv = "";
-                var moduleRowDiv = "";
-                var startDiv = '<div class="col-xs-14"><hr></div>';
-                var endDiv = '<div class="col-xs-14"><hr></div></div>';
-                var counter = 0;
-                var categoryExist = false;
-                $.each(json.data, function(i, option) {
-                    // Iterate Modules if exists
-                    if (option.modules !== null) {
-                        $.each(option.modules, function(i, module) {
-
-                            //  moduleIds.push(option.modules.id);
-                            counter++;
-                            counterforRequiredQstns++;
-                            categoryExist = true;
-                            moduleRowDiv = "";
-                            var categoryDiv = '<div class="form-group"><div class="col-xs-2"><input id="category_' + counter + '" class="form-control" type="text" 	value="' + option.category + '" disabled="true"></div>';
-                            var moduleDiv = '<div class="col-xs-2"><input id="module_' + counter + '" class="form-control" type="text" value="' + module.moduleName + '" disabled="true"></div>';
-                            var moduleQstnsAvailDiv = ' <label for="qstnsAvailable"  class="col-xs-1">Available Qstns</label><div class="col-xs-1"><input type="text" id="moduleAvailQstns_' + counter + '" class="form-control" disabled="true" value="' + module.noOfQstns + '" ></div>';
-                            var moduleRequiredQstnsDiv = "";
-                            var moduleAdditionalDiv = "";
-                            var moduleMarksDiv = "";
-                            if (module.noOfQstns > 0) {
-                                moduleIds[module.moduleName] = module.id;
-                                //  moduleIds[module.id] = module.moduleName;
-                                moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control"></div>';
-                                moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control"></div>';
-                                moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox"></div></div>';
-                            } else {
-                                moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control" disabled="true"></div>';
-                                moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control" disabled="true"></div>';
-                                moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox" disabled="true"></div></div>';
-                            }
-                            moduleRowDiv = categoryDiv + moduleDiv + moduleQstnsAvailDiv + moduleMarksDiv + moduleRequiredQstnsDiv + moduleAdditionalDiv;
-                            moduleCompleteDiv = moduleCompleteDiv + moduleRowDiv;
-                        });
-                    } else {
-
-                        counter++;
-                        counterforRequiredQstns++;
-                        categoryExist = true;
-                        moduleRowDiv = "";
-                        var moduleRequiredQstnsDiv = "";
-                        var moduleAdditionalDiv = "";
-                        var moduleMarksDiv = "";
-
-                        var categoryDiv = '<div class="form-group"><div class="col-xs-2"><input id="category_' + counter + '" class="form-control" type="text" 	value="' + option.category + '" disabled="true"></div>';
-                        var moduleDiv = '<div class="col-xs-2"><input style="color: red;" id="module_' + counter + '" class="form-control" type="text" value="No Module Found" disabled="true"></div>';
-                        var moduleQstnsAvailDiv = ' <label for="qstnsAvailable"  class="col-xs-1">Available Qstns</label><div class="col-xs-1"><input type="text" id="moduleAvailQstns_' + counter + '" class="form-control" disabled="true" value="' + option.noOfQstnsInCategory + '"></div>';
-
-                        if (option.noOfQstnsInCategory > 0) {
-                            //  moduleIds[option.id] = option.category;
-                            moduleIds[option.category] = option.id;
-                            moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control"></div>';
-                            moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control"></div>';
-                            moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox"></div></div>';
-
-                        } else {
-                            moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control" disabled="true"></div>';
-                            moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control" disabled="true"></div>';
-                            moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox" disabled="true"></div></div>';
-
-                        }
-                        /*
-                            var moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control"></div>';
-                            var moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control"></div>';
-                            var moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox"></div></div>';
-                       */
-                        moduleRowDiv = categoryDiv + moduleDiv + moduleQstnsAvailDiv + moduleMarksDiv + moduleRequiredQstnsDiv + moduleAdditionalDiv;
-                        moduleCompleteDiv = moduleCompleteDiv + moduleRowDiv;
-                    }
-
-                });
-                // Display module Rows
-                if (categoryExist)
-                    $('#showModuleDiv').html(startDiv + moduleCompleteDiv + endDiv);
-                else {
-                    $('#showModuleDiv').html('<div class="form-group"><div class="col-xs-14"><input style="color: red;" class="form-control" type="text" value="No Category Found , Please create it first" disabled="true"></div></div>');
-                }
-            }
-        });
-
-    }
 
     $("#showModules-checkbox").change(function() {
         if (this.checked) {
@@ -263,6 +168,102 @@ $(document).ready(function() {
             }
         });
     }
+
+    function displayModuleSection() {
+
+        $.ajax({
+            url: '/assessment/php/manageCategory.php',
+            data: {
+                get: "catNModules",
+                subId: subId
+            },
+            dataType: 'json', //since you wait for json
+            success: function(json) {
+                //now when you received json, render options
+                //var counter = 0;
+                var moduleCompleteDiv = "";
+                var moduleRowDiv = "";
+                var startDiv = '<div class="col-xs-14"><hr></div>';
+                var endDiv = '<div class="col-xs-14"><hr></div></div>';
+                var counter = 0;
+                var categoryExist = false;
+                $.each(json.data, function(i, option) {
+                    // Iterate Modules if exists
+                    if (option.modules !== null) {
+                        $.each(option.modules, function(i, module) {
+                            //  moduleIds.push(option.modules.id);
+                            counter++;
+                            counterforRequiredQstns++;
+                            categoryExist = true;
+                            moduleRowDiv = "";
+                            var categoryDiv = '<div class="form-group"><div class="col-xs-2"><input id="category_' + counter + '" class="form-control" type="text" 	value="' + option.category + '" disabled="true"></div>';
+                            var moduleDiv = '<div class="col-xs-2"><input id="module_' + counter + '" class="form-control" type="text" value="' + module.moduleName + '" disabled="true"></div>';
+                            var moduleQstnsAvailDiv = ' <label for="qstnsAvailable"  class="col-xs-1">Available Qstns</label><div class="col-xs-1"><input type="text" id="moduleAvailQstns_' + counter + '" class="form-control" disabled="true" value="' + module.noOfQstns + '" ></div>';
+                            var moduleRequiredQstnsDiv = "";
+                            var moduleAdditionalDiv = "";
+                            var moduleMarksDiv = "";
+                            if (module.noOfQstns > 0) {
+                                moduleIds[module.moduleName] = module.id;
+                                //  moduleIds[module.id] = module.moduleName;
+                                moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control"></div>';
+                                moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control"></div>';
+                                moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox"></div></div>';
+                            } else {
+                                moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control" disabled="true"></div>';
+                                moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control" disabled="true"></div>';
+                                moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox" disabled="true"></div></div>';
+                            }
+                            moduleRowDiv = categoryDiv + moduleDiv + moduleQstnsAvailDiv + moduleMarksDiv + moduleRequiredQstnsDiv + moduleAdditionalDiv;
+                            moduleCompleteDiv = moduleCompleteDiv + moduleRowDiv;
+                        });
+                    } else {
+
+                        counter++;
+                        counterforRequiredQstns++;
+                        categoryExist = true;
+                        moduleRowDiv = "";
+                        var moduleRequiredQstnsDiv = "";
+                        var moduleAdditionalDiv = "";
+                        var moduleMarksDiv = "";
+
+                        var categoryDiv = '<div class="form-group"><div class="col-xs-2"><input id="category_' + counter + '" class="form-control" type="text" 	value="' + option.category + '" disabled="true"></div>';
+                        var moduleDiv = '<div class="col-xs-2"><input style="color: red;" id="module_' + counter + '" class="form-control" type="text" value="No Module Found" disabled="true"></div>';
+                        var moduleQstnsAvailDiv = ' <label for="qstnsAvailable"  class="col-xs-1">Available Qstns</label><div class="col-xs-1"><input type="text" id="moduleAvailQstns_' + counter + '" class="form-control" disabled="true" value="' + option.noOfQstnsInCategory + '"></div>';
+
+                        if (option.noOfQstnsInCategory > 0) {
+                            //  moduleIds[option.id] = option.category;
+                            moduleIds[option.category] = option.id;
+                            moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control"></div>';
+                            moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control"></div>';
+                            moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox"></div></div>';
+
+                        } else {
+                            moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control" disabled="true"></div>';
+                            moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control" disabled="true"></div>';
+                            moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox" disabled="true"></div></div>';
+
+                        }
+                        /*
+                            var moduleMarksDiv = '<label for="marks"  class="col-xs-1">Module Marks</label><div class="col-xs-1"><input type="text" id="moduleMarks_' + counter + '" class="form-control"></div>';
+                            var moduleRequiredQstnsDiv = '<label for="moduleQstns"  class="col-xs-1">Questions required in Exam</label><div class="col-xs-1"><input type="text" id="moduleReqQstns_' + counter + '" class="form-control"></div>';
+                            var moduleAdditionalDiv = '<label for="addModule" class="col-xs-1">Additional</label><div class="col-xs-1"><input id="moduleAdditional-checkbox_' + counter + '" type="checkbox"></div></div>';
+                       */
+                        moduleRowDiv = categoryDiv + moduleDiv + moduleQstnsAvailDiv + moduleMarksDiv + moduleRequiredQstnsDiv + moduleAdditionalDiv;
+                        moduleCompleteDiv = moduleCompleteDiv + moduleRowDiv;
+                    }
+
+                });
+                // Display module Rows
+                if (categoryExist)
+                    $('#showModuleDiv').html(startDiv + moduleCompleteDiv + endDiv);
+                else {
+                    $('#showModuleDiv').html('<div class="form-group"><div class="col-xs-14"><input style="color: red;" class="form-control" type="text" value="No Category Found , Please create it first" disabled="true"></div></div>');
+                }
+            }
+        });
+
+    }
+
 
     $("#studentDetails").click(function() {
         $('#displayStudentsModal').modal('show');
@@ -415,7 +416,8 @@ $(document).ready(function() {
         moduleNoOfQstns = [];
         //  var moduleRequiedQstnsByUser = [];
         //var row1 = $('#moduleReqQstns_1').val();
-        for (i = 1; i < counterforRequiredQstns; i++) {
+        var i= 1;
+        for (i = 1; i <= counterforRequiredQstns; i++) {
             qstnId = '#moduleReqQstns_' + i;
             var value = $(qstnId).val();
             if (typeof value != "undefined") {
@@ -434,7 +436,8 @@ $(document).ready(function() {
                         moduleId = moduleIds[moduleName];
                         moduleNoOfQstns.push({
                             id: moduleId,
-                            noOfQstns: parseInt(value)
+                            noOfQstns: parseInt(value),
+                            isCategory: "1"
                         });
                         //moduleNoOfQstns.id =moduleId;
                         //moduleNoOfQstns.noOfQstns =parseInt(value);
@@ -443,7 +446,8 @@ $(document).ready(function() {
                         //  moduleNoOfQstns.noOfQstns =parseInt(value);
                         moduleNoOfQstns.push({
                             id: categoryId,
-                            noOfQstns: parseInt(value)
+                            noOfQstns: parseInt(value),
+                            isCategory: "0"
                         });
                         //  moduleNoOfQstns[categoryId]=parseInt(value);
                     }
@@ -471,7 +475,7 @@ $(document).ready(function() {
         // var moduleId = "";
         var totalModuleMarks = parseInt(0, 10);
         //var row1 = $('#moduleReqQstns_1').val();
-        for (i = 1; i < counterforRequiredQstns; i++) {
+        for (i = 1; i <= counterforRequiredQstns; i++) {
             qstnMarksId = '#moduleMarks_' + i;
             var marksValue = $(qstnMarksId).val();
             if (typeof marksValue != "undefined") {
@@ -538,22 +542,27 @@ $(document).ready(function() {
                     if (typeof data.error === 'undefined') {
                         // Success so call function to process the form
                         console.log('SUCCESS: ' + data.success);
-                        $('#error_msg').addClass('in');
-                        $('#error_msg strong').text("Success! " + data.success);
+                      //  $('#error_msg').addClass('in');
+                    //    $('#error_msg strong').text("Success! " + data.success);
+                        $('#successMessageText').text(data.success);
+                        $('#successMessage').modal('show');
                         /* Get from database using jax request*/
                         //subjectTable.ajax.reload();
                     } else {
                         // Handle errors here
                         console.log('ERRORS should be in alert: ' + data.error);
-                        $('#error_msg').addClass('in');
-                        $('#error_msg strong').text("Error! " + data.error);
+                      //  $('#error_msg').addClass('in');
+                      //  $('#error_msg strong').text("Error! " + data.error);
+                        $('#errorMessageText').text(data.error);
+                        $('#errorMessage').modal('show');
                     }
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     // Handle errors here
                     console.log('ERRORS: ' + textStatus);
-                    $('#error_msg').addClass('in');
-                    $('#error_msg strong').text("Error! Invalid response from server" + errorThrown);
+                    $('#errorMessageText').text("Error! Invalid response from server" + errorThrown);
+                    $('#errorMessage').modal('show');
+                    //$('#error_msg strong').text("Error! Invalid response from server" + errorThrown);
                 },
             });
         }

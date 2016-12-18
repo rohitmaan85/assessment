@@ -211,6 +211,39 @@ if(isset($_GET['action'])){
           </form>
           </div>
 
+          <div id="successMessage" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Status</h4>
+                    </div>
+                    <div class="modal-body">
+                        <strong> <font color='Green'><span id="successMessageText">Exam deleted Successfully !</span></font></strong>
+                  </div>
+              <div class="modal-footer">
+                  <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+              </div>
+              </div>
+              </div>
+          </div>
+
+          <div id="errorMessage" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Error</h4>
+                    </div>
+                    <div class="modal-body">
+                        <strong> <font color='Green'><span id="errorMessageText"></span></font></strong>
+                  </div>
+              <div class="modal-footer">
+                  <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+              </div>
+              </div>
+              </div>
+          </div>
 
           <div class="panel panel-default">
                <div class="panel-heading">
@@ -239,13 +272,6 @@ if(isset($_GET['action'])){
 
             <form id="createExamForm" class="form-horizontal hide" >
               <div id='createExamDiv' class="col-xs-14">
-                    <div class="col-xs-14 " >
-                       <div id="error_msg"  class="alert alert-danger fade" style="position:relative">
-                         <button href="#" type="button" class="close">&times;</button>
-                             <strong></strong>
-                        </div>
-                    </div>
-
                     <div class="form-group">
                        <div class="form-group-inline required">
                          <label for="examName"  class="col-xs-2 control-label">Exam Name</label>
