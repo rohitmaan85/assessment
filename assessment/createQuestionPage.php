@@ -40,6 +40,7 @@ if(isset($_GET['action'])){
     <script src="js/validator.js"></script>
     <script src="js/main.js"></script>
     <script src="js/keyboard.js"></script>
+    <script src="js/progress.js"></script>
     <link rel="stylesheet" type="text/css" href="css/keyboard.css" />
 
   </head>
@@ -166,6 +167,63 @@ if(isset($_GET['action'])){
                         </div>
                       </div>
                       <div class="form-group">
+                         <label for="langauge" class="col-xs-4">Select Type : </label>
+                           <div class="col-xs-8">
+                              <div class="btn-group" id="selectTypeRadio" data-toggle="buttons">
+                                <label class="radio-inline">
+                                 <input name="radioGroupType" id="radioType1" value="text" checked="checked" type="radio"> Text
+                                </label>
+                                <label class="radio-inline">
+                                 <input name="radioGroupType" id="radioType2" value="image"  type="radio"> Image
+                                </label>
+                                <label class="radio-inline">
+                                  <input name="radioGroupType" id="radioType3" value="boolean" type="radio"> Boolean
+                                </label>
+                             </div>
+                          </div>
+                        </div>
+
+                        <!-- Display Image Div-->
+                        <div id="qstnImageDiv" class="form-group col-xs-12 hide">
+                          <hr>
+                          <hr>
+                        </div>
+
+
+                        <div id="uploadImageForm" class="form-group col-xs-12 hide">
+                          <hr>
+                           <div class="row" style="position:relative">
+                             <!--  <div class="col-lg-12 col-sm-6 col-12"> -->
+                               <h5>Upload Image.</h5>
+                               <div class="input-group">
+                                   <label class="input-group-btn">
+                                       <span class="btn btn-primary">
+                                           Browse&hellip; <input id="fileUploadInput" name="image" type="file" style="display: none;" multiple>
+                                       </span>
+                                   </label>
+                                   <input type="text" class="form-control" readonly>
+                               </div>
+                               <span class="help-block">
+                                   Select Image to be uploaded , Only .jpeg,jpg files are allowed.
+                               </span>
+
+                             <!-- File Upload Progress Bar -->
+                             <div class="list-group" id="files"></div>
+                             <script id="fileUploadProgressTemplate" type="text/x-jquery-tmpl">
+                             <div class="list-group-item">
+                                 <div class="progress progress-striped active">
+                                     <div class="progress-bar progress-bar-info" style="width: 0%;"></div>
+                                 </div>
+                             </div>
+                             </script>
+                             <!-- File Upload Progress Bar End-->
+                            </div>
+                            <button id="uploadFileButton"  type="button" class="btn btn-success disabled" disabled="disabled"><span class="glyphicon glyphicon-upload"></span> Upload Image</button>
+                            <hr>
+                        </div>
+
+
+            <div class="form-group">
                          <label for="enterQuestion" class="col-xs-4">Question : </label>
                          <div class="col-xs-8">
                            <div id="hindiTextArea" class="textarea.form-control hide">
@@ -271,6 +329,8 @@ if(isset($_GET['action'])){
                      </div>
 
                     </form>
+
+
                   </div>
                  <!--  End Create Exam Form-->
 

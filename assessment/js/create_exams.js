@@ -53,9 +53,44 @@ $(document).ready(function() {
     });
 
     $(function() {
-        $('#startDate').datetimepicker();
-        $('#endDate').datetimepicker();
+      //  $('#startDate').datetimepicker();
+      //  $('#endDate').datetimepicker();
     });
+
+    $(function () {
+    $('#startDate').datetimepicker();
+    $('#endDate').datetimepicker({
+        useCurrent: false //Important! See issue #1075
+    });
+    $("#startDate").on("dp.change", function (e) {
+        $('#endDate').data("DateTimePicker").minDate(e.date);
+    });
+    $("#endDate").on("dp.change", function (e) {
+        $('#startDate').data("DateTimePicker").maxDate(e.date);
+    });
+});
+
+
+/*
+    $(document).ready(function() {
+
+        $("#startDate").datetimepicker({
+            //numberOfMonths: 2,
+            onSelect: function(selected) {
+                $("#endDate").datepicker("option", "minDate", selected);
+            }
+
+        });
+
+        $("#endDate").datetimepicker({
+            //numberOfMonths: 2,
+            onSelect: function(selected) {
+                $("#startDate").datepicker("option", "maxDate", selected);
+            }
+        });
+
+    });
+*/
 
     $("#sscButton").click(function() {
         var selText = $(this).text();
@@ -108,8 +143,8 @@ $(document).ready(function() {
 
     // Click on Jobrole DropDown Item.
     $('#jobroletest-dropdown-menu').on('click', 'li a', function() {
-      $('#studentDetails').prop('disabled', true);
-      $('#batch_info').prop('disabled', true);
+        $('#studentDetails').prop('disabled', true);
+        $('#batch_info').prop('disabled', true);
 
         batchId = "";
         $('#selGroupDropdown').val("");
@@ -416,7 +451,7 @@ $(document).ready(function() {
         moduleNoOfQstns = [];
         //  var moduleRequiedQstnsByUser = [];
         //var row1 = $('#moduleReqQstns_1').val();
-        var i= 1;
+        var i = 1;
         for (i = 1; i <= counterforRequiredQstns; i++) {
             qstnId = '#moduleReqQstns_' + i;
             var value = $(qstnId).val();
@@ -542,8 +577,8 @@ $(document).ready(function() {
                     if (typeof data.error === 'undefined') {
                         // Success so call function to process the form
                         console.log('SUCCESS: ' + data.success);
-                      //  $('#error_msg').addClass('in');
-                    //    $('#error_msg strong').text("Success! " + data.success);
+                        //  $('#error_msg').addClass('in');
+                        //    $('#error_msg strong').text("Success! " + data.success);
                         $('#successMessageText').text(data.success);
                         $('#successMessage').modal('show');
                         /* Get from database using jax request*/
@@ -551,8 +586,8 @@ $(document).ready(function() {
                     } else {
                         // Handle errors here
                         console.log('ERRORS should be in alert: ' + data.error);
-                      //  $('#error_msg').addClass('in');
-                      //  $('#error_msg strong').text("Error! " + data.error);
+                        //  $('#error_msg').addClass('in');
+                        //  $('#error_msg strong').text("Error! " + data.error);
                         $('#errorMessageText').text(data.error);
                         $('#errorMessage').modal('show');
                     }
@@ -599,7 +634,7 @@ $(document).ready(function() {
                     if (!json.data) {
                         json.data = [];
                     } else {
-                      //  $('#error_msg').addClass('hide');
+                        //  $('#error_msg').addClass('hide');
                     }
                     return json.data;
                 },
@@ -651,7 +686,7 @@ $(document).ready(function() {
                         //$('#qstns').html('<div id=\"error_msg\"  class=\"alert alert-danger fade in\" style=\"position:relative"><strong>No Questions Found for selected Subject in Database.</strong></div>');
                         json.data = [];
                     } else {
-                      //  $('#error_msg').addClass('hide');
+                        //  $('#error_msg').addClass('hide');
                     }
 
                     return json.data;

@@ -10,6 +10,7 @@ class manageExams{
 	var	$selectedCategory = "";
 	var	$module = "";
 	var $global_qstn_counter = 0;
+	var $Category_no_of_qsnts = array();
 
 
 	function getExamQuestionsInJSONString($examId,$examName){
@@ -148,34 +149,210 @@ class manageExams{
 	}
 
 
-	function getExamQuestionsDivs($examId,$examName){
+	
+	function getQuestionCountForEachCategory($exam_id){
+		$questionDiv="";
+		$conn = DbConn::getDbConn();
+		$sql="SELECT category , count(category) as no_of_qstns FROM `assessment`.`exam_qstn` where exam_id='".$exam_id."' group by category";
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get Question Count for each category : '".$sql."'" );
+		$result 	= 	mysqli_query($conn,$sql);
+		$row		= 	mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$catgory_qstns_arr = "";
+		while ($row)
+		{
+			$catgory_qstns["cat_id"] = $row['category'];
+			$catgory_qstns["no_of_qstns"] = $row['no_of_qstns'];
+			$this->Category_no_of_qsnts[] = $catgory_qstns;
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);	
+		}
+		mysqli_free_result($result);
+		//return $catgory_qstns_arr;
+	}
+	
+	
+	function getNoOfQstns($category_id){
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__." , Get No of Qsnts for category: '".$category_id);
+		foreach($this->Category_no_of_qsnts as $d){
+			if($d["cat_id"]==$category_id)
+				return  $d["no_of_qstns"];
+			}
+		 log_event( MANAGE_TEST, __LINE__."  ". __FILE__." , Category: '".$category_id."' Questions Not Found." );
+			
+		}
+	
+	
+	function getExamQuestionsDivs($examId,$examName){		
 		$completeDiv = "";
 		$conn = DbConn::getDbConn();
 		if($examName!="" && $examId=="")
-		$examId= $this->getExamId($examName);
-		$sql="SELECT qstn_id FROM `assessment`.`exam_qstn` where exam_id='".$examId."'";
+			$examId= $this->getExamId($examName);
+		$this->getQuestionCountForEachCategory($examId);
+		$sql="SELECT qstn_id,category,module FROM `assessment`.`exam_qstn` where exam_id='".$examId."' order by category,module,qstn_id";
 		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get all Questions of Exam with name : '".$sql."'" );
 		$result = 	mysqli_query($conn,$sql);
 		$row		= 	mysqli_fetch_array($result, MYSQLI_ASSOC);
 		$i=0;
+		$prev_cat = "";
+		$prev_module = "";
+		
+		
+		// Print Exam Details :
+		$completeDiv = $this->getExamDetailsDiv($examId);		
+		//$completeDiv .= $this->getPanelDiv("Exam Name : ".$examName);
+		$obj = new manageCategory();
+		$atleast2Div = false;
 		while ($row)
 		{
-			$i++;
 			//$jsonArr[0]= $i;
 			$qstnId	 =	$row['qstn_id'];
-			$qstnDiv  = $this->getQuestionDetailDiv($qstnId);
-			$completeDiv.= $qstnDiv;
+			$current_category = $row['category'];
+			$current_module	  = $row['module'];
+
+			if($i!=0){
+				if($current_category!=$prev_cat){ // Create New Panel
+					// end previosu panel
+					$completeDiv.= "</div></div>";
+					$categoryName = $obj->getCategoryName($current_category);
+					if($current_module!="")
+					{
+						$moduleName= $obj->getModuleName($current_module);
+						$categoryName .= " : ".$moduleName;
+					}
+					$no_of_qstns = $this->getNoOfQstns($current_category);
+					$completeDiv.=$this->getPanelDiv("Category Name : ".$categoryName." , Number of Questions = ".$no_of_qstns);
+					$qstnDiv  = $this->getQuestionDetailDiv($qstnId);
+					$completeDiv.= $qstnDiv;
+
+				}else{
+					$qstnDiv  = $this->getQuestionDetailDiv($qstnId);
+					$completeDiv.= $qstnDiv;
+				}
+			}else{// Add Question in current Panel
+				$categoryName= $obj->getCategoryName($current_category);
+				if($current_module!="")
+				{
+					$moduleName= $obj->getModuleName($current_module);
+					$categoryName .= " : ".$moduleName;
+				}
+				$no_of_qstns = $this->getNoOfQstns($current_category);
+				$completeDiv.=$this->getPanelDiv("Category Name : ".$categoryName." , Number of Questions = ".$no_of_qstns);
+				$qstnDiv  = $this->getQuestionDetailDiv($qstnId);
+				$completeDiv.= $qstnDiv;
+			}
+
+			$prev_cat=$current_category;
+			$prev_module=$crrent_module;
+			$i++;
 			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+
 		}
-		//	$final_array = array('data' => $jsonArr1);
+		//$completeDiv.= "</div></div></div></div>";
+		$completeDiv.= "</div></div>";
 		// Free result set
 		mysqli_free_result($result);
-		// print json Data.
-		//echo json_encode($final_array);
 		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  ,Complete Qstn Div = '".$completeDiv."'" );
 		return $completeDiv;
 	}
 
+
+	function getPanelDiv($categoryName){
+
+		return '<div class="panel panel-default">
+     				<div class="panel-heading">
+              			<h2 class="panel-title pull-left"><strong>'.$categoryName.' </strong></h2>
+    			 	</div>
+    			<div class="panel-body">';
+	}
+	
+	function getExamDetailsDiv($exam_id){
+		    $examDetailsArray = $this->getExamDetailsToDisplayOnExamQuestionsPage($exam_id);	
+		    // log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , exam Details Array ".print_r($examDetailsArray)."'" );			
+		    $examDetailsDiv = '<form id="manageExamQuestionsForm" class="form-horizontal" >
+              <div id="manageExamQuestionDiv" class="col-xs-18">
+
+              <div class="form-group">
+                       <div class="form-group-inline required">
+                         <label for="examName"  class="col-xs-2 control-label">Exam Name </label>
+                       </div>
+                         <div class="col-xs-3">
+                           <input type="text" id="examNameText" class="form-control" value="'.$examDetailsArray[0].'" disabled="true" >
+                         </div>
+                         <div class="col-xs-2"></div>
+                         <div class="form-group-inline required">
+                           <label for="noOfQstns"  class="col-xs-2 control-label">No. of Questions </label>
+                         </div>
+                         <div class="col-xs-3">
+                           <input type="text" id="noOfQstnsText" class="form-control" value="'.$examDetailsArray[1].'" disabled="true">
+                        </div>
+                   </div>
+
+                   <div class="form-group">
+                      <div class="form-group-inline required">
+                        <label for="batch"  class="col-xs-2 control-label">Batch Name </label>
+                      </div>
+                        <div class="col-xs-3">
+                          <input type="text" id="batchText" class="form-control" value="'.$examDetailsArray[2].'" disabled="true" >
+                        </div>
+                        <div class="col-xs-2"></div>
+                        <div class="form-group-inline required">
+                          <label for="examDate"  class="col-xs-2 control-label">Exam Date</label>
+                        </div>
+                        <div class="col-xs-3">
+                          <input type="text" id="examDateText" class="form-control" value="'.$examDetailsArray[3].'" disabled="true">
+                       </div>
+                  </div>
+
+                  <div class="form-group">
+                     <div class="form-group-inline required">
+                       <label for="duration"  class="col-xs-2 control-label">Duration </label>
+                     </div>
+                       <div class="col-xs-3">
+                         <input type="text" id="durationText" class="form-control"  value="'.$examDetailsArray[4].' Minutes" disabled="true">
+                       </div>
+                       <div class="col-xs-2"></div>
+                       <div class="form-group-inline required">
+                         <label for="tm"  class="col-xs-2 control-label">Total Marks</label>
+                       </div>
+                       <div class="col-xs-3">
+                         <input type="text" id="tmText" class="form-control" value="'.$examDetailsArray[5].'" disabled="true">
+                      </div>
+                </div>
+
+                <div class="form-group">
+                   <div class="form-group-inline required">
+                     <label for="validFrom"  class="col-xs-2 control-label">Valid From Date</label>
+                   </div>
+                     <div class="col-xs-3">
+                       <input type="text" id="validFromText" class="form-control"  value="'.$examDetailsArray[6].'" disabled="true">
+                     </div>
+                     <div class="col-xs-2"></div>
+                     <div class="form-group-inline required">
+                       <label for="validTo"  class="col-xs-2 control-label">Valid To Date </label>
+                     </div>
+                     <div class="col-xs-3">
+                       <input type="text" id="validToText" class="form-control" value="'.$examDetailsArray[7].'" disabled="true">
+                    </div>
+               </div>
+
+               <div class="form-group">
+                  <div class="form-group-inline required">
+                    <label for="ssc"  class="col-xs-2 control-label">SSC</label>
+                  </div>
+                    <div class="col-xs-3">
+                      <input type="text" id="sscText" class="form-control"  value="'.$examDetailsArray[9].'" disabled="true" >
+                    </div>
+                    <div class="col-xs-2"></div>
+                    <div class="form-group-inline required">
+                      <label for="Jobrole"  class="col-xs-2 control-label">Job Role</label>
+                    </div>
+                    <div class="col-xs-3">
+                      <input type="text" id="JobroleText" class="form-control"  value="'.$examDetailsArray[8].'" disabled="true">
+                   </div>
+              </div>
+             </div>
+        </form>';		    
+		return $examDetailsDiv;
+	}
 
 	function getQuestionDetailDiv($question_id){
 		$questionDiv="";
@@ -193,6 +370,9 @@ class manageExams{
 			$optionb=$row['optionb'];
 			$optionc=$row['optionc'];
 			$optiond=$row['optiond'];
+			// 27-12-2016
+			$type=$row['type'];
+			$image_path = $row['image_path'];
 
 			$divBackGround = "";
 			if($this->global_qstn_counter % 2 == 0){
@@ -200,10 +380,23 @@ class manageExams{
 			}else{
 				$divBackGround="oddQstn";
 			}
+			
+			log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , IMAGE TYPE QUESTION : '".$image_path."'" );
+			
+			
+			$imageDiv="";
+			if($type=="image"){
+				$imageDiv='
+                        <div id="qstnImageDiv" class="form-group col-xs-12">
+                          <hr>
+				          <img id="qstn_img" width="504" height="236" src="'.$image_path.'" alt="question Image" class="img-responsive center-block" />            
+                          <hr>
+                        </div>';
+			}
 
 			$questionDiv = ' <div class="form-group"><div id="'.$divBackGround.'"><div id="'.$question_id.'" class="col-xs-14">
 				<p id="qstn_p">'.$this->global_qstn_counter.'. '.$qstn.'</p>
-				<div><br></div>
+				<div><br></div>'.$imageDiv.'
 				<div id="optiona"><p id="qstn_p"><input id="qstn_checkbox" type="checkbox">
 				'.$optiona.'</p></div>
 				<div><br></div>
@@ -226,7 +419,7 @@ class manageExams{
 		}
 		//	$final_array = array('data' => $jsonArr1);
 		// Free result set
-		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , Qstn Div = '".$questionDiv."'" );
+		//	log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , Qstn Div = '".$questionDiv."'" );
 		mysqli_free_result($result);
 		return $questionDiv;
 		// print json Data.
@@ -440,23 +633,23 @@ class manageExams{
 					if($isCategory==0 )
 					// Get category details
 					//	$details = $this->getModuleDetails($moduleId);
-						$this->selectQuestions($subjectId,$moduleId,"",$moduleNoOfQstns,$exam_id);
+					$this->selectQuestions($subjectId,$moduleId,"",$moduleNoOfQstns,$exam_id);
 					else{
 						// Get Module Details
 						$obj = new manageCategory();
 						$category_id = $obj->getModuleCategory($moduleId);
 						$this->selectQuestions($subjectId,$category_id,$moduleId,$moduleNoOfQstns,$exam_id);
 					}
-					
-						// Get Module details
-						//	$details = $this->getModuleDetails($moduleId);
-							/*			
+
+					// Get Module details
+					//	$details = $this->getModuleDetails($moduleId);
+					/*
 						if($details[0]!="")
 						//$subjectId,$category,$module,$noOfQstns,$exam_id
 						$this->selectQuestions($subjectId,$details[0],$details[1],$moduleNoOfQstns,$exam_id);
 						else
 						log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , Error !  'selectedCategory' and 'module' does not exist  in Database '" );
-					*/
+						*/
 				}
 				return $this->insertQstnsInExam();
 			}
@@ -552,126 +745,165 @@ class manageExams{
 			$data =  array('message' => 'Exam deleted Successfully , Status is inactive now !!!.') ;
 			log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Exam deleting Successfully !!!." );
 		}
-	
+
 		echo json_encode($data);
-	//return $this->();
-}
-
-function getQuestionToEdit($subjectId,$qstnId)
-{
-	$conn = DbConn::getDbConn();
-	$sql="SELECT * FROM `assessment`.`question`";
-	if($subjectId!="")
-	$sql.= " where subid='".htmlspecialchars($subjectId,ENT_QUOTES)."' and qnid='".htmlspecialchars($qstnId,ENT_QUOTES)."'";
-	log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get Question for editing : '".$sql."'" );
-	$result = mysqli_query($conn,$sql);
-	$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
-	$i=0;
-	while ($row)
-	{
-		$i++;
-		$jsonArr["subId"]=$row['subId'];
-		$jsonArr["question"]=$row['question'];
-		$jsonArr["optiona"]=$row['optiona'];
-		$jsonArr["optionb"]=$row['optionb'];
-		$jsonArr["optionc"]=$row['optionc'];
-		$jsonArr["optiond"]=$row['optiond'];
-		$jsonArr["correctanswer"]=$row['correctanswer'];
-		$jsonArr["marks"]=$row['marks'];
-		$jsonArr["language"]=$row['language'];
-		$jsonArr["noOfOption"]=$row['no_of_options'];
-		//$jsonArr1[] =$jsonArr;
-		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		//return $this->();
 	}
-	$final_array = array($jsonArr);
-	// Free result set
-	mysqli_free_result($result);
-	// print json Data.
-	echo json_encode($jsonArr);
-}
 
-function getExamDetailsToEditQstns($exam_name)
-{
-	$conn = DbConn::getDbConn();
-	$sql="SELECT * FROM `assessment`.`exam`";
-	if(examId!="")
-	$sql.= " where testname='".htmlspecialchars($exam_name,ENT_QUOTES)."'";
-	log_event(MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get Exam Details : '".$sql."'" );
-	$result = mysqli_query($conn,$sql);
-	$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
-	$i=0;
-	$qstnObj = new getSubjectDetails();
-	while ($row)
+	function getQuestionToEdit($subjectId,$qstnId)
 	{
-		$i++;
-		//$jsonArr[0]= $i;
-		$jsonArr[0]=$row['testname'];
-		$jsonArr[1]=$row['totalquestions'];
-		$jsonArr[2]=$row['batchid'];
-		$jsonArr[3]=$row['testfrom'];
-		$jsonArr[4]=$row['duration']." Minutes";
-		$jsonArr[5]=$row['total_marks'];
-		$jsonArr[6]=$row['testfrom'];
-		$jsonArr[7]=$row['testto'];
-		$qp_code=$row['subid'];
-		$jsonArr[8]= $qstnObj->getJobRole($qp_code)." (".$qp_code.")";
-		$jsonArr[9]=$qstnObj->getSSC($qp_code);
-		$jsonArr1[] =$jsonArr;
+		$conn = DbConn::getDbConn();
+		$sql="SELECT * FROM `assessment`.`question`";
+		if($subjectId!="")
+		$sql.= " where subid='".htmlspecialchars($subjectId,ENT_QUOTES)."' and qnid='".htmlspecialchars($qstnId,ENT_QUOTES)."'";
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get Question for editing : '".$sql."'" );
+		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
-		break;
+		$i=0;
+		while ($row)
+		{
+			$i++;
+			$jsonArr["subId"]=$row['subId'];
+			$jsonArr["question"]=$row['question'];
+			$jsonArr["optiona"]=$row['optiona'];
+			$jsonArr["optionb"]=$row['optionb'];
+			$jsonArr["optionc"]=$row['optionc'];
+			$jsonArr["optiond"]=$row['optiond'];
+			$jsonArr["correctanswer"]=$row['correctanswer'];
+			$jsonArr["marks"]=$row['marks'];
+			$jsonArr["language"]=$row['language'];
+			$jsonArr["noOfOption"]=$row['no_of_options'];
+			//$jsonArr1[] =$jsonArr;
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		}
+		$final_array = array($jsonArr);
+		// Free result set
+		mysqli_free_result($result);
+		// print json Data.
+		echo json_encode($jsonArr);
 	}
-	$final_array = array('data' => $jsonArr1);
-	// Free result set
-	mysqli_free_result($result);
-	// print json Data.
-	echo json_encode($final_array);
-}
 
-function getExamQstnListToEdit($exam_name,$exam_id){
-	$conn = DbConn::getDbConn();
-	$qstn_id="";
-	$sql="SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '".$exam_id."'";
-	log_event(MANAGE_QUESTIONS, __LINE__."  ". __FILE__."  , SQL to get Exam Questions List: '".$sql."'" );
-	$result = mysqli_query($conn,$sql);
-	$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
-	$qstnObj = new manageQuestions();
-	$obj = new manageCategory();
-	$i=0;
-	while ($row)
+	function getExamDetailsToEditQstns($exam_name)
 	{
-		//$jsonArr[0]="";
-		$category_name	= $obj->getCategoryName($row['category']);
-		$module_name	= $obj->getModuleName($row['module']);
-		$jsonArr[0]=$category_name;
-		$jsonArr[1]=$module_name;
-		// Get Questions Details
-		$qstn_details = $qstnObj->getQuestionDetails($row['qstn_id']);
-		//log_event(MANAGE_QUESTIONS, __LINE__."  ". __FILE__."  , Question Details: '".print_r($qstn_details)."'" );
-		$jsonArr[2]=$qstn_details[1];
-		$jsonArr[3]=$qstn_details[2];
-		$jsonArr[4]=$qstn_details[3];
-		$jsonArr[5]=$qstn_details[4];
-		$jsonArr[6]=$qstn_details[5];
-		$jsonArr[7]=$qstn_details[6];
-		$jsonArr[8]="";
-		$jsonArr[9]=$row['mark'];
-		$jsonArr[10]=$row['qstn_id'];
-		$jsonArr1[] =$jsonArr;
+		$conn = DbConn::getDbConn();
+		$sql="SELECT * FROM `assessment`.`exam`";
+		if(examId!="")
+		$sql.= " where testname='".htmlspecialchars($exam_name,ENT_QUOTES)."'";
+		log_event(MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get Exam Details : '".$sql."'" );
+		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$i=0;
+		$qstnObj = new getSubjectDetails();
+		while ($row)
+		{
+			$i++;
+			//$jsonArr[0]= $i;
+			$jsonArr[0]=$row['testname'];
+			$jsonArr[1]=$row['totalquestions'];
+			$jsonArr[2]=$row['batchid'];
+			$jsonArr[3]=$row['testfrom'];
+			$jsonArr[4]=$row['duration']." Minutes";
+			$jsonArr[5]=$row['total_marks'];
+			$jsonArr[6]=$row['testfrom'];
+			$jsonArr[7]=$row['testto'];
+			$qp_code=$row['subid'];
+			$jsonArr[8]= $qstnObj->getJobRole($qp_code)." (".$qp_code.")";
+			$jsonArr[9]=$qstnObj->getSSC($qp_code);
+			$jsonArr1[] =$jsonArr;
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+			break;
+		}
+		$final_array = array('data' => $jsonArr1);
+		// Free result set
+		mysqli_free_result($result);
+		// print json Data.
+		echo json_encode($final_array);
 	}
-	$final_array = array('data' => $jsonArr1);
-	// Free result set
-	mysqli_free_result($result);
-	// print json Data.
-	echo json_encode($final_array);
-}
+	
+	function getExamDetailsToDisplayOnExamQuestionsPage($exam_id)
+	{
+		$conn = DbConn::getDbConn();
+		$sql="SELECT * FROM `assessment`.`exam`";
+		if($exam_id!="")
+			$sql.= " where id='".htmlspecialchars($exam_id,ENT_QUOTES)."'";
+		log_event(MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get Exam Details : '".$sql."'" );
+		$result = mysqli_query($conn,$sql);
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$i=0;
+		$qstnObj = new getSubjectDetails();
+		while ($row)
+		{
+			$i++;
+			//$jsonArr[0]= $i;
+			$jsonArr[0]=$row['testname'];
+			$jsonArr[1]=$row['totalquestions'];
+			$jsonArr[2]=$row['batchid'];
+			$jsonArr[3]=$row['testfrom'];
+			$jsonArr[4]=$row['duration']." Minutes";
+			$jsonArr[5]=$row['total_marks'];
+			$jsonArr[6]=$row['testfrom'];
+			$jsonArr[7]=$row['testto'];
+			$qp_code=$row['subid'];
+			$jsonArr[8]= $qstnObj->getJobRole($qp_code)." (".$qp_code.")";
+			$jsonArr[9]=$qstnObj->getSSC($qp_code);
+			//$jsonArr1[] =$jsonArr;
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+			break;
+		}
+		// Free result set
+		mysqli_free_result($result);
+		return $jsonArr;	
+	}
+	
+	
+
+	function getExamQstnListToEdit($exam_name,$exam_id){
+		$conn = DbConn::getDbConn();
+		$qstn_id="";
+		$sql="SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id = '".$exam_id."'";
+		log_event(MANAGE_QUESTIONS, __LINE__."  ". __FILE__."  , SQL to get Exam Questions List: '".$sql."'" );
+		$result = mysqli_query($conn,$sql);
+		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$qstnObj = new manageQuestions();
+		$obj = new manageCategory();
+		$i=0;
+		while ($row)
+		{
+			//$jsonArr[0]="";
+			$category_name	= $obj->getCategoryName($row['category']);
+			$module_name	= $obj->getModuleName($row['module']);
+			$jsonArr[0]=$category_name;
+			$jsonArr[1]=$module_name;
+			// Get Questions Details
+			$qstn_details = $qstnObj->getQuestionDetails($row['qstn_id']);
+			//log_event(MANAGE_QUESTIONS, __LINE__."  ". __FILE__."  , Question Details: '".print_r($qstn_details)."'" );
+			$jsonArr[2]=$qstn_details[1];
+			$jsonArr[3]=$qstn_details[2];
+			$jsonArr[4]=$qstn_details[3];
+			$jsonArr[5]=$qstn_details[4];
+			$jsonArr[6]=$qstn_details[5];
+			$jsonArr[7]=$qstn_details[6];
+			$jsonArr[8]="";
+			$jsonArr[9]=$row['mark'];
+			$jsonArr[10]=$row['qstn_id'];
+			$jsonArr1[] =$jsonArr;
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		}
+		$final_array = array('data' => $jsonArr1);
+		// Free result set
+		mysqli_free_result($result);
+		// print json Data.
+		echo json_encode($final_array);
+	}
 
 
 }
 
 // Handle Requests from UI
 $obj = new manageExams();
-//$obj->getExamQuestions("","rohit_123");
+//$obj->getQuestionCountForEachCategory("1");
+//echo $obj->getNoOfQstns("1");
+
 
 if(isset($_POST['get'])){
 	$requestParam = $_POST['get'];

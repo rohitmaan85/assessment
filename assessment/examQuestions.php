@@ -4,6 +4,7 @@
 include('./php/manageExams.php');
 if(isset($_GET['examname'])){
     $testName   =   $_GET['examname'];
+    echo '<input type="hidden" value="'.$testName.'" id="getExamName" name="isEditable"/>';
 }
 //$testId     =   5;
 $obj = new manageExams();
@@ -82,13 +83,13 @@ $htmlContent='<!DOCTYPE HTML>
       <div class="side-body">
         <div class="panel panel-default">
           <div class="panel-heading">
-                  <h4 id = "heading" class="form-signin-heading pull-left"><strong>Test Questions</strong></h4>
+                  <h4 id = "heading" class="form-signin-heading pull-left"><strong>Exam Questions</strong></h4>
           </div>
           <div class="panel-body">
             <button id="exportExamAsPDF"  type="button" class="btn btn-info"><span class="glyphicon glyphicon-floppy-saved"></span> Export Questions in PDF File.  </button>
             <button id="exportEncryptedExam"  type="button" class="btn btn-warning"><span class="glyphicon glyphicon-floppy-saved"></span> Export Questions in Encrypted File.  </button>
-          <div><br></div>
-              <div id="examQuestions" class="col-xs-12">
+          <div><hr></div>
+              <div id="examQuestions" class="col-xs-14">
                 <form id="createQuestionForm" class="form-horizontal" >
                   '.$qstnDivs.'
                     </form>

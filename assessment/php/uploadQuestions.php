@@ -1,6 +1,6 @@
 <?php
 require_once 'logging_api.php';
-include 'ImportQuestions.php';
+include 'ImportQuestionsClass.php';
 
 $data = array();
 
@@ -11,11 +11,9 @@ if(isset($_GET['files']))
 	$uploaddir = '../uploads/questions/';
 	$archiveDir ='../uploads/questions/archives/';
 
-
 	if(!is_dir($uploaddir)){
 	 if( mkdir($uploaddir,0777, true) ){
 	 	log_event( UPLOAD_QUESTION,  __FILE__."  Line: ". __LINE__."  , '".$uploaddir ."' does not exist , so created successfullly." );
-
 	 }
 	 else{
 	 	$error = true;
@@ -68,7 +66,7 @@ if(isset($_GET['files']))
 			// Parse excel file and save in database.
 			if (file_exists($excelFilePath)) {
                  // Parse the excel file and save it in database.
-				 $obj = new ImportQuestions();
+				 $obj = new ImportQuestionsClass();
 				 // Get start and end row from Configuration File or table
 				 $connConf = parse_ini_file('config.ini.php');
 

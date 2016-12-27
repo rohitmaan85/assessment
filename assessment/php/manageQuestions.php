@@ -226,6 +226,8 @@ class manageQuestions{
 			$jsonArr["marks"]=$row['marks'];
 			$jsonArr["language"]=$row['language'];
 			$jsonArr["noOfOption"]=$row['no_of_options'];
+			$jsonArr["type"]=$row['type'];
+			$jsonArr["image_path"]=$row['image_path'];
 			//$jsonArr1[] =$jsonArr;
 			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		}
@@ -308,6 +310,15 @@ if(isset($_GET['get'])){
 		//echo json_encode($data);
 	}
 }
+
+
+if(isset($_GET['files']))
+{
+	// Get Question type isImage  $image = $_FILES['image']['tmp_name'];
+	$image = $_FILES['image']['tmp_name'];
+	$img = file_get_contents($image);
+}
+
 
 if(isset($_GET['action'])){
 	log_event( LOG_DATABASE, " Get Request with action parameter." );

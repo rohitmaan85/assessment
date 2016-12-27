@@ -141,13 +141,10 @@ if(isset($_GET['action'])){
         </div>
 
 
-
-
           <div class="panel panel-default">
               <div class="panel-heading">
                  <h4 id = "heading" class="form-signin-heading pull-left"><strong>Manage Exam Questions </strong></h4>
                  </div>
-
                  <div id="displayQstnModal" class="modal fade" role="dialog">
                    <div class="modal-dialog">
                      <!-- Modal content-->
@@ -159,7 +156,6 @@ if(isset($_GET['action'])){
                          <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                        </div>
                      </div>
-
                    </div>
                  </div>
                <div class="panel-body">
@@ -269,13 +265,11 @@ if(isset($_GET['action'])){
                       <label for="Jobrole"  class="col-xs-2 control-label">Job Role</label>
                     </div>
                     <div class="col-xs-3">
-                      <input type="text" id="JobroleText" class="form-control" disabled="true"">
+                      <input type="text" id="JobroleText" class="form-control" disabled="true">
                    </div>
               </div>
-
-                   </div>
-
-                    </form>
+             </div>
+        </form>
                     <div class="col-xs-14">
                       <hr>
     <table id="qstns" class="table table-striped table-bordered table-hover dt-responsive"  cellspacing="0" width="100%">

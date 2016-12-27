@@ -2,7 +2,7 @@
 
 2. Manage Attendence list  : Fix Modal Dialogue box footer and dimension.
 
-3. Add ssc , jobrole ,category , module filter when questions are impport.
+3. Add ssc , jobrole ,category , module filter when questions are import.
 
 4. Add History in all modules.
 
@@ -11,3 +11,11 @@
 6. Duplicate import check on all upload functioanality.
 
 7. While Creating Exam , Display only those jobrole which have Questions exist.
+
+8. Add category and modules filters in edit question page.
+
+9. Check if question exists in active exam then do not allow to edit it.
+
+10. Give option to set exam inactive after exam is done.
+
+11. Image is not included in PDF exam export file.

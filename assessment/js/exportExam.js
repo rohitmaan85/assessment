@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var examname = "rohit_1234";
+  var examname = $('#getExamName').val();
 
 
   $('#exportExamAsPDF').click(function() {
