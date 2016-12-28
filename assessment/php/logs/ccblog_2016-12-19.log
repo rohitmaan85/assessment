@@ -1,0 +1,439 @@
+2016-12-19T11:51:21+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T11:51:21+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T11:51:21+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T11:51:22+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T11:51:22+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T11:51:22+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T13:22:28+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T13:22:28+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T13:22:28+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T13:22:30+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T13:22:30+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T13:22:30+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T13:22:36+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T13:22:36+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T13:22:36+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T13:22:38+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T13:22:38+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T13:22:38+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T13:22:42+00:00 [3720] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-12-19T13:22:42+00:00 [3720] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Agriculture'
+2016-12-19T13:22:42+00:00 [3720] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Agriculture''
+2016-12-19T13:22:45+00:00 [3720] INFO  : DB  Get Request with action parameter  :'getBatchList'
+2016-12-19T13:22:45+00:00 [3720] INFO  : MANAGE ATTENDENCE Get Request to get Student List.
+2016-12-19T13:22:45+00:00 [3720] INFO  : DB 157  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get List of batch for subject : 'SELECT batch_id FROM `assessment`.`batch_details` where qp_code='AGR/Q4804''
+2016-12-19T13:22:45+00:00 [3720] INFO  : DB Get Request with parameter :'catNModules'
+2016-12-19T13:22:45+00:00 [3720] INFO  : MANAGE CATEGORY Get Request with parameter : 'catNModules'
+2016-12-19T13:22:45+00:00 [3720] INFO  : MANAGE CATEGORY Get Category and Module List for subject : 'AGR/Q4804' and category ''
+2016-12-19T13:22:45+00:00 [3720] INFO  : MANAGE CATEGORY 330  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories 'SELECT id,category FROM `assessment`.`subject_category` where subId='AGR/Q4804' and status='active''
+2016-12-19T13:22:45+00:00 [3720] INFO  : MANAGE CATEGORY 307  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module and its Questions : 'SELECT id,module FROM `assessment`.`subject_category_module` where status='active' and subId='AGR/Q4804' and category_id='1''
+2016-12-19T13:22:45+00:00 [3720] INFO  : DB 98  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question Count  : 'SELECT * FROM `assessment`.`question` where qp_code='AGR/Q4804' and category='1' and module='1''
+2016-12-19T13:22:45+00:00 [3720] INFO  : DB 98  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question Count  : 'SELECT * FROM `assessment`.`question` where qp_code='AGR/Q4804' and category='1' and module='2''
+2016-12-19T13:22:45+00:00 [3720] INFO  : DB 98  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question Count  : 'SELECT * FROM `assessment`.`question` where qp_code='AGR/Q4804' and category='1' and module='3''
+2016-12-19T13:22:45+00:00 [3720] INFO  : DB 98  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question Count  : 'SELECT * FROM `assessment`.`question` where qp_code='AGR/Q4804' and category='1''
+2016-12-19T13:22:45+00:00 [3720] INFO  : MANAGE CATEGORY 307  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module and its Questions : 'SELECT id,module FROM `assessment`.`subject_category_module` where status='active' and subId='AGR/Q4804' and category_id='2''
+2016-12-19T13:22:45+00:00 [3720] INFO  : DB 98  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question Count  : 'SELECT * FROM `assessment`.`question` where qp_code='AGR/Q4804' and category='2''
+2016-12-19T13:22:45+00:00 [3720] INFO  : MANAGE CATEGORY 307  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module and its Questions : 'SELECT id,module FROM `assessment`.`subject_category_module` where status='active' and subId='AGR/Q4804' and category_id='3''
+2016-12-19T13:22:45+00:00 [3720] INFO  : DB 98  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question Count  : 'SELECT * FROM `assessment`.`question` where qp_code='AGR/Q4804' and category='3''
+2016-12-19T13:37:10+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T13:37:10+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T13:37:10+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T13:41:22+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T13:41:22+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T13:41:23+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T13:41:38+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T13:41:38+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T13:41:39+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T13:41:56+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T13:41:56+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T13:41:56+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T13:43:17+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T13:43:17+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T13:43:17+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T13:43:34+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T13:43:34+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T13:43:34+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T13:44:39+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T13:44:39+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T13:44:39+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T13:44:56+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T13:44:56+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T13:44:57+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T13:45:31+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T13:45:31+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T13:45:31+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T13:46:50+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T13:46:50+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T13:46:50+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T13:48:38+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T13:48:38+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T13:48:38+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T13:50:33+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T13:50:33+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T13:50:33+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T13:50:48+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T13:50:48+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T13:50:48+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T13:51:06+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T13:51:06+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T13:51:06+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T13:51:16+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T13:51:16+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T13:51:16+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T13:55:27+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T13:55:27+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T13:55:27+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T13:55:28+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T13:55:28+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T13:55:28+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:23:13+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:23:13+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:23:13+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:23:20+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:23:20+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:23:20+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:23:32+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:23:32+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:23:32+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:23:36+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:23:36+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:23:36+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:23:42+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:23:42+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:23:42+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:25:25+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:25:25+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:25:25+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:26:11+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:26:11+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:26:11+00:00 [3720] INFO  : MANAGE CATEGORY Get Request with parameter : 'qsntsList'
+2016-12-19T15:26:11+00:00 [3720] INFO  : DB Get Request with parameter :'qsntsList'
+2016-12-19T15:26:11+00:00 [3720] INFO  : DB 302  C:\wamp64\www\assessment\php\manageQuestions.php Get Questions List for import Page
+2016-12-19T15:26:11+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:26:11+00:00 [3720] INFO  : DB 172  C:\wamp64\www\assessment\php\manageQuestions.php  , SQL to get Question : 'SELECT * FROM `assessment`.`question`'
+2016-12-19T15:26:11+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='5''
+2016-12-19T15:26:11+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='9''
+2016-12-19T15:26:11+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='5''
+2016-12-19T15:26:11+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='9''
+2016-12-19T15:26:11+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='5''
+2016-12-19T15:26:11+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='9''
+2016-12-19T15:26:11+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='5''
+2016-12-19T15:26:11+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='9''
+2016-12-19T15:26:11+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='5''
+2016-12-19T15:26:11+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='9''
+2016-12-19T15:26:11+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='5''
+2016-12-19T15:26:11+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='9''
+2016-12-19T15:26:11+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='5''
+2016-12-19T15:26:11+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='9''
+2016-12-19T15:26:11+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='5''
+2016-12-19T15:26:11+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='9''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='5''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='9''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='5''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='9''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='5''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='9''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='5''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='9''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='5''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='9''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='5''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='9''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='9''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='9''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='9''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='9''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='9''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='9''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='9''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='9''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='9''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='9''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='9''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='9''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='9''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='9''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 219  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT module FROM `assessment`.`subject_category_module` where id='1''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='2''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='2''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='2''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='2''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='2''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='2''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='2''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='2''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='2''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='2''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='2''
+2016-12-19T15:26:12+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='2''
+2016-12-19T15:26:13+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='2''
+2016-12-19T15:26:13+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='2''
+2016-12-19T15:26:13+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='3''
+2016-12-19T15:26:13+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='3''
+2016-12-19T15:26:13+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='3''
+2016-12-19T15:26:13+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='3''
+2016-12-19T15:26:13+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='3''
+2016-12-19T15:26:13+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='3''
+2016-12-19T15:26:13+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='3''
+2016-12-19T15:26:13+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='3''
+2016-12-19T15:26:13+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='3''
+2016-12-19T15:26:13+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='3''
+2016-12-19T15:26:13+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='3''
+2016-12-19T15:26:13+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='3''
+2016-12-19T15:26:13+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='3''
+2016-12-19T15:26:13+00:00 [3720] INFO  : MANAGE CATEGORY 196  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT category FROM `assessment`.`subject_category` where id='3''
+2016-12-19T15:32:30+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:32:30+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:32:30+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:32:36+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:32:36+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:32:36+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:36:41+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:36:41+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:36:41+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:36:42+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:36:42+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:36:42+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:43:57+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:43:57+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:43:57+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:44:01+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:44:01+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:44:01+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:44:04+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:44:04+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:44:04+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:44:05+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:44:05+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:44:05+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:44:15+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:44:15+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:44:15+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:50:51+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:50:51+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:50:51+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:53:54+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:53:54+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:53:54+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:53:59+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:53:59+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:53:59+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:54:17+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:54:17+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:54:17+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:55:14+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:55:14+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:55:14+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:57:54+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:57:54+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:57:54+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T15:59:23+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T15:59:23+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T15:59:23+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:01:07+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:01:07+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:01:07+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:01:33+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:01:33+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:01:33+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:01:40+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:01:40+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:01:40+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:01:46+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:01:46+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:01:46+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:04:27+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:04:27+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:04:27+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:07:26+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:07:26+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:07:26+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:08:19+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:08:19+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:08:20+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:08:22+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:08:22+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:08:22+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:14:04+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:14:04+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:14:04+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:14:07+00:00 [3720] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-12-19T16:14:07+00:00 [3720] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Automotive '
+2016-12-19T16:14:07+00:00 [3720] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Automotive ''
+2016-12-19T16:14:44+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:14:44+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:14:44+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:15:05+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:15:05+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:15:05+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:15:44+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:15:44+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:15:44+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:16:04+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:16:04+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:16:05+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:16:33+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:16:33+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:16:33+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:16:37+00:00 [3720] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-12-19T16:16:37+00:00 [3720] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Apparel, Madeups & Home Furnishing'
+2016-12-19T16:16:37+00:00 [3720] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Apparel, Madeups & Home Furnishing''
+2016-12-19T16:17:16+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:17:16+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:17:16+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:17:20+00:00 [3720] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-12-19T16:17:20+00:00 [3720] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Apparel, Madeups & Home Furnishing'
+2016-12-19T16:17:20+00:00 [3720] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Apparel, Madeups & Home Furnishing''
+2016-12-19T16:17:43+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:17:43+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:17:43+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:17:53+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:17:53+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:17:53+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:18:14+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:18:14+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:18:14+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:18:50+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:18:50+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:18:50+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:18:54+00:00 [3720] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-12-19T16:18:54+00:00 [3720] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Apparel, Madeups & Home Furnishing'
+2016-12-19T16:18:54+00:00 [3720] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Apparel, Madeups & Home Furnishing''
+2016-12-19T16:19:29+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:19:29+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:19:29+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:19:32+00:00 [3720] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-12-19T16:19:32+00:00 [3720] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Apparel, Madeups & Home Furnishing'
+2016-12-19T16:19:32+00:00 [3720] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Apparel, Madeups & Home Furnishing''
+2016-12-19T16:19:43+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:19:43+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:19:44+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:20:01+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:20:01+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:20:01+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:20:10+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:20:10+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:20:10+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:22:15+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:22:15+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:22:15+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:22:37+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:22:37+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:22:37+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:23:20+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:23:20+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:23:20+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:23:41+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:23:41+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:23:42+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:23:48+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:23:48+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:23:48+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:24:00+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:24:00+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:24:00+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:24:23+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:24:23+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:24:23+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:25:20+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:25:20+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:25:20+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:25:56+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:25:56+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:25:56+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:26:14+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:26:14+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:26:14+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:26:52+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:26:52+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:26:52+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:26:55+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:26:55+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:26:55+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:27:14+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:27:14+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:27:14+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:27:20+00:00 [3720] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-12-19T16:27:20+00:00 [3720] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Automotive '
+2016-12-19T16:27:20+00:00 [3720] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Automotive ''
+2016-12-19T16:27:23+00:00 [3720] INFO  : DB Get Request with parameter :'jobroleWithQPCode'
+2016-12-19T16:27:23+00:00 [3720] INFO  : DB Get Job Roles List with parameter :'jobroleWithQPCode' for SSC :'Apparel, Madeups & Home Furnishing'
+2016-12-19T16:27:23+00:00 [3720] INFO  : DB SQL = 'SELECT job_role,qp_code FROM `assessment`.`jobroles_excel_import` where ssc='Apparel, Madeups & Home Furnishing''
+2016-12-19T16:28:08+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:28:08+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:28:08+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:29:02+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:29:02+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:29:02+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:30:36+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:30:36+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:30:36+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:32:14+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:32:14+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:32:14+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:33:28+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:33:28+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:33:28+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:33:59+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:33:59+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:33:59+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:36:27+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:36:27+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:36:27+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:37:03+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:37:03+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:37:03+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:37:24+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:37:24+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:37:24+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:38:19+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:38:19+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:38:19+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:39:27+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:39:27+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:39:27+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:40:09+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:40:09+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:40:09+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:40:11+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:40:11+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:40:11+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:40:14+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:40:14+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:40:14+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:40:15+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:40:15+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:40:15+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:40:17+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:40:17+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:40:17+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-19T16:41:01+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-19T16:41:01+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-19T16:41:02+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'

@@ -12,6 +12,7 @@ class EncryptQuestionPaperClass{
 	public $keyString = "bcb04b7e103a0cd8b54763051cef08bc55abe029fdebae5e1d417e2ffb2a00a3";
 	var $key = "";
 	var $iv_size = "";
+	var $jsonFormat = "";
 	
 	
 
@@ -44,11 +45,20 @@ class EncryptQuestionPaperClass{
 
 		$manageExamsObj = new manageExams();
 		$questionPaperJSONString  = $manageExamsObj->getExamQuestionsInJSONString($examId, $examName);
-		log_event( LOG_ENCRYPTION, __LINE__."  ". __FILE__.", JSON String for Exam '".$questionPaperJSONString."'" );
+		log_event( LOG_ENCRYPTION, __LINE__."  ". __FILE__.", JSON String for Exam Encryption '".$questionPaperJSONString."'" );
 		//echo json_encode($questionPaperJSONString);
+		$this->jsonFormat = json_encode($questionPaperJSONString);
 		return $this->encryptQuestionPaper(json_encode($questionPaperJSONString));
 
 	}
+	
+	
+	function addHistoryInDB($file_name, $file_md5, $remote_ip, $downloaded_at, $exam_name, $json_format){
+		$manageExamsObj = new manageExams();
+		$manageExamsObj->buildInsertDownloadEncryptExamSql($file_name, $file_md5, $remote_ip, $downloaded_at, $exam_name, $this->jsonFormat);
+	}
+	
+	
 	
 	// -------------------- Decryption Start here ----------------- //
 	
@@ -86,7 +96,7 @@ class EncryptQuestionPaperClass{
 		return $this->getDecryptedQuestionPaper($encryptData);
 	}
 
-	function getDecryptedQuestionPaper($encryptedQuestionPaper){
+	function  getDecryptedQuestionPaper($encryptedQuestionPaper){
 		$questionPaperJSONString =  $this->decryptQuestionPaper($encryptedQuestionPaper);
 		//echo "Decrypt Data = " . $questionPaperJSONString;	
 		return $questionPaperJSONString;
@@ -245,9 +255,10 @@ function getExamDivsFromJSON($data)
 	}
 }
 
+/*
 $manageExamsObj = new manageExams();
 echo json_encode($manageExamsObj->getExamQuestionsInJSONString("","rohit_123"));
-
+*/
 //$obj = new EncryptQuestionPaperClass();
 //$obj->decodeJSONFile('cob_details.json');
 

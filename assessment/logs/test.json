@@ -1,0 +1,276 @@
+{
+    "Exam_Details": {
+        "Exam_Name": "Animal_Health_325069",
+        "EXAM_DATE": null,
+        "SSC": "Agriculture",
+        "JOB_ROLE": "Animal Health Worker (AGR\/Q4804)",
+        "QP_CODE": "AGR\/Q4804",
+        "BATCH_ID": "325069",
+        "NUMBER_OF_QUESTIONS": "12",
+        "DURATION_IN_MINUTES": "5",
+        "VALID_FROM": "12\/18\/2016 2:45 PM",
+        "VALID_TO": "12\/02\/2016 2:45 PM",
+        "TOTAL_MARKS": "12"
+    },
+    "Batch_Details": null,
+    "Student_Details": [{
+        "Name": "Arun Pratap Singh",
+        "Enrollment Id": "8884233",
+        "Father\/Husband Name": "Anar Singh"
+    }, {
+        "Name": "Susheel Kumar",
+        "Enrollment Id": "8884234",
+        "Father\/Husband Name": "Grish Chandra"
+    }, {
+        "Name": "Satish Kumar",
+        "Enrollment Id": "8884235",
+        "Father\/Husband Name": "Pop Singh"
+    }, {
+        "Name": "Prateek Kumar Jain",
+        "Enrollment Id": "8884236",
+        "Father\/Husband Name": "Sunilkumar Jain"
+    }, {
+        "Name": "Ashish Jain",
+        "Enrollment Id": "8884237",
+        "Father\/Husband Name": "Pradip Kumar Jain"
+    }, {
+        "Name": "Neeraj",
+        "Enrollment Id": "8884238",
+        "Father\/Husband Name": "Hari Shankar"
+    }, {
+        "Name": "Satya Pal singh",
+        "Enrollment Id": "8884239",
+        "Father\/Husband Name": "Prabhu Dayal"
+    }, {
+        "Name": "Ranjeet Kumar",
+        "Enrollment Id": "8884240",
+        "Father\/Husband Name": "Raghuveer Singh"
+    }, {
+        "Name": "Dig Pal Singh",
+        "Enrollment Id": "8884241",
+        "Father\/Husband Name": "Prem Singh"
+    }, {
+        "Name": "Ku Namrata Singh",
+        "Enrollment Id": "8884242",
+        "Father\/Husband Name": "Satya Prakash Vyas"
+    }, {
+        "Name": "Sudhir Kumar",
+        "Enrollment Id": "8884243",
+        "Father\/Husband Name": "Shukhdayal Singh"
+    }, {
+        "Name": "Sagar Singh",
+        "Enrollment Id": "8884244",
+        "Father\/Husband Name": "Rajkumar"
+    }, {
+        "Name": "Sumit Yadav",
+        "Enrollment Id": "8884245",
+        "Father\/Husband Name": "Gulab Singh Yadav"
+    }, {
+        "Name": "Ram Kumar",
+        "Enrollment Id": "8884246",
+        "Father\/Husband Name": "Girendra Singh"
+    }, {
+        "Name": "Ashish Kumar",
+        "Enrollment Id": "8884247",
+        "Father\/Husband Name": "Kamlesh Kumar"
+    }, {
+        "Name": "Ku Mona",
+        "Enrollment Id": "8884248",
+        "Father\/Husband Name": "Chandrapal Sharma"
+    }, {
+        "Name": "Harendra Singh",
+        "Enrollment Id": "8884249",
+        "Father\/Husband Name": "Rakshapal Singh"
+    }, {
+        "Name": "Bhuvnendra Kumar",
+        "Enrollment Id": "8884250",
+        "Father\/Husband Name": "Tej Pratap Singh"
+    }, {
+        "Name": "Ashwanee Kumar",
+        "Enrollment Id": "8884251",
+        "Father\/Husband Name": "Ikram Singh"
+    }, {
+        "Name": "Suneel Kumar",
+        "Enrollment Id": "8884252",
+        "Father\/Husband Name": "Amar Singh"
+    }, {
+        "Name": "Dinesh Kumar",
+        "Enrollment Id": "8884253",
+        "Father\/Husband Name": "Shri Mahavir Singh"
+    }, {
+        "Name": "Bhagvendra Kumar",
+        "Enrollment Id": "8884254",
+        "Father\/Husband Name": "Rakesh Kumar"
+    }, {
+        "Name": "Niteshkumar",
+        "Enrollment Id": "8884255",
+        "Father\/Husband Name": "Rakesh Kumar"
+    }, {
+        "Name": "Kuldeep Sahai",
+        "Enrollment Id": "8884256",
+        "Father\/Husband Name": "Rajendra Prasad"
+    }, {
+        "Name": "Dhirendr Kumar",
+        "Enrollment Id": "8884257",
+        "Father\/Husband Name": "Rajendra Kumar"
+    }, {
+        "Name": "Avadhesh Kumar",
+        "Enrollment Id": "8884258",
+        "Father\/Husband Name": "Karan Singh"
+    }, {
+        "Name": "Akash Kumar",
+        "Enrollment Id": "8884259",
+        "Father\/Husband Name": "Virendra Singh"
+    }, {
+        "Name": "Vishnu Kumar",
+        "Enrollment Id": "8884260",
+        "Father\/Husband Name": "Subhash Chandra"
+    }, {
+        "Name": "Vivek Kumar",
+        "Enrollment Id": "8884261",
+        "Father\/Husband Name": "Hari Om"
+    }, {
+        "Name": "Durgesh Kumar",
+        "Enrollment Id": "8884262",
+        "Father\/Husband Name": "Dinesh Chandra"
+    }],
+    "Exam_Questions": [{
+        "category_name": "Theory",
+        "module_name": "Main",
+        "no_of_questions": "6",
+        "Questions": {
+            "1": {
+                "question": "Identify this Image",
+                "optiona": "a",
+                "optionb": "b",
+                "optionc": "c",
+                "optiond": "d",
+                "type": "image",
+                "image_path": ".\/images\/question\/test3.jpg",
+                "marks": "2"
+            },
+            "2": {
+                "question": "qstn1",
+                "optiona": "a",
+                "optionb": "b",
+                "optionc": "c",
+                "optiond": "d",
+                "type": "normal",
+                "image_path": null,
+                "marks": "2"
+            },
+            "3": {
+                "question": "qstn1",
+                "optiona": "a",
+                "optionb": "b",
+                "optionc": "c",
+                "optiond": "d",
+                "type": "normal",
+                "image_path": null,
+                "marks": "2"
+            },
+            "4": {
+                "question": "qstn1",
+                "optiona": "a",
+                "optionb": "b",
+                "optionc": "c",
+                "optiond": "d",
+                "type": "normal",
+                "image_path": null,
+                "marks": "2"
+            },
+            "5": {
+                "question": "qstn1",
+                "optiona": "a",
+                "optionb": "b",
+                "optionc": "c",
+                "optiond": "d",
+                "type": "normal",
+                "image_path": null,
+                "marks": null
+            },
+            "6": {
+                "question": "qstn1",
+                "optiona": "a",
+                "optionb": "b",
+                "optionc": "c",
+                "optiond": "d",
+                "type": "normal",
+                "image_path": null,
+                "marks": "2"
+            }
+        }
+    }, {
+        "category_name": "Practical",
+        "module_name": "",
+        "no_of_questions": "3",
+        "Questions": {
+            "7": {
+                "question": "qstn1",
+                "optiona": "a",
+                "optionb": "b",
+                "optionc": "c",
+                "optiond": "d",
+                "type": "normal",
+                "image_path": null,
+                "marks": null
+            },
+            "8": {
+                "question": "qstn1",
+                "optiona": "a",
+                "optionb": "b",
+                "optionc": "c",
+                "optiond": "d",
+                "type": "normal",
+                "image_path": null,
+                "marks": null
+            },
+            "9": {
+                "question": "qstn1",
+                "optiona": "a",
+                "optionb": "b",
+                "optionc": "c",
+                "optiond": "d",
+                "type": "normal",
+                "image_path": null,
+                "marks": null
+            }
+        }
+    }, {
+        "category_name": "SoftSkills",
+        "module_name": "",
+        "no_of_questions": "3",
+        "Questions": {
+            "10": {
+                "question": "qstn1",
+                "optiona": "a",
+                "optionb": "b",
+                "optionc": "c",
+                "optiond": "d",
+                "type": "normal",
+                "image_path": null,
+                "marks": null
+            },
+            "11": {
+                "question": "qstn1",
+                "optiona": "a",
+                "optionb": "b",
+                "optionc": "c",
+                "optiond": "d",
+                "type": "normal",
+                "image_path": null,
+                "marks": null
+            },
+            "12": {
+                "question": "qstn1",
+                "optiona": "a",
+                "optionb": "b",
+                "optionc": "c",
+                "optiond": "d",
+                "type": "normal",
+                "image_path": null,
+                "marks": null
+            }
+        }
+    }]
+}

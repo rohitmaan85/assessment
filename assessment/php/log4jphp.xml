@@ -6,7 +6,7 @@
         <layout class="LoggerLayoutPattern">
            <param name="conversionPattern" value="%date [%process] %-5level : %msg%n" />
       </layout>
-        	<param name="file" value="./logs/ccblog_%s.log" />
+        	<param name="file" value="./logs/assessment_log_%s.log" />
 			<param name="datePattern" value="Y-m-d" />
 	</appender>
  

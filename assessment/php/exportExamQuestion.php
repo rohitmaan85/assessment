@@ -38,6 +38,13 @@ $mpdf=new mPDF();
 $mpdf->WriteHTML($stylesheet,1);
 $mpdf->WriteHTML($qstnDivs,2);
 //$mpdf->Output();
-$mpdf->Output($testName.'_'.date("Y-m-d H:i:s", time()).'.pdf','D'); // For Download
+// Save copy locally
+
+/*$handle = fopen('test.test', "w");
+fwrite($handle, $qstnDivs);
+fclose($handle);
+ */
+$mpdf->Output($testName.'_'.date("Y-m-d H:i:s", time()).'.pdf','D');
+//$mpdf->Output($testName.'_'.date("Y-m-d H:i:s", time()).'.pdf','D'); // For Download
 
 ?>

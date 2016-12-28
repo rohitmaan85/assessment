@@ -19,3 +19,11 @@
 10. Give option to set exam inactive after exam is done.
 
 11. Image is not included in PDF exam export file.
+
+12. Test Date on test details page should be fetched from batch Details not from exam table.
+
+13. Marks should be enter for each question in "exam_qstn" table.
+
+14. Marks should be displayed in exam details page.
+
+15. Change image path when export exams in pdf file.

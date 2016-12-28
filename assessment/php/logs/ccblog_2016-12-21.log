@@ -1,0 +1,30 @@
+2016-12-21T04:04:48+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-21T04:04:49+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-21T04:04:50+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-21T04:04:52+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-21T04:04:52+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-21T04:04:52+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-21T08:03:15+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-21T08:03:15+00:00 [3720] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-21T08:03:15+00:00 [3720] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-21T08:03:15+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-21T08:03:16+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-21T08:03:16+00:00 [3720] INFO  : MANAGE TEST 486  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''
+2016-12-21T08:03:21+00:00 [3720] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-21T08:03:21+00:00 [3720] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-21T08:03:21+00:00 [3720] INFO  : MANAGE TEST 486  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''
+2016-12-21T08:03:21+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-21T08:03:21+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-21T08:03:21+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-21T08:05:02+00:00 [3720] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-21T08:05:02+00:00 [3720] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-21T08:05:02+00:00 [3720] INFO  : MANAGE TEST 486  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''
+2016-12-21T08:05:03+00:00 [3720] INFO  : MANAGE TEST Get Request with parameter :'examDetailsForInfo'
+2016-12-21T08:05:03+00:00 [3720] INFO  : MANAGE TEST Get Exam Information for exam  : 'Animal_Health_325069'
+2016-12-21T08:05:03+00:00 [3720] INFO  : MANAGE TEST 93  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam Details : 'SELECT * FROM `assessment`.`exam` where testname='Animal_Health_325069''
+2016-12-21T15:25:22+00:00 [7400] INFO  : DB Get Request with parameter :'ssc'
+2016-12-21T15:25:23+00:00 [7400] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2016-12-21T15:25:23+00:00 [7400] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2016-12-21T15:25:23+00:00 [7400] INFO  : DB Get SSC List from database.
+2016-12-21T15:25:23+00:00 [7400] INFO  : MANAGE TEST 486  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''
+2016-12-21T15:25:23+00:00 [7400] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'

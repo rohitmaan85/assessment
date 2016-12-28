@@ -1,0 +1,12 @@
+2016-12-20T04:28:21+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-20T04:28:22+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-20T04:28:22+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-20T04:28:23+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-20T04:28:23+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-20T04:28:23+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-20T04:48:45+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-20T04:48:45+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-20T04:48:45+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2016-12-20T05:19:28+00:00 [3720] INFO  : DB Get Request with parameter :'ssc'
+2016-12-20T05:19:28+00:00 [3720] INFO  : DB Get SSC List from database.
+2016-12-20T05:19:28+00:00 [3720] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
