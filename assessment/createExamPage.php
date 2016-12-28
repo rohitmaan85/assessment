@@ -398,7 +398,7 @@ if(isset($_GET['action'])){
                                   </div>
                                   <div class="col-xs-3">
                                           <input type="text" maxlength="4" id="totalMarksText" class="form-control" placeholder="Total Marks" required>
-                                        </div>
+                                  </div>
                                   <div class="col-xs-2"></div>
                                     <label for="pasingPer" class="col-xs-2">Passing Percent</label>
                                      <div class="col-xs-3">
@@ -431,12 +431,19 @@ if(isset($_GET['action'])){
                                     <input id="showModules-checkbox" type="checkbox">
                                  <div class="col-xs-12"> </div>
                                 </div>
-
-
                                 <div id='showModuleDiv' class="col-xs-14">
-                                </div>
+                        </div
+                  <div class="form-group">
+                    <div class="form-group-inline required">
+                        <label for="MarksForEachQuestion"  class="col-xs-5 control-label">Marks for each Questions in Exam</label>
+                        </div>
+                        <div class="col-xs-5">
+                                <input type="text" maxlength="4" id="marksForEachQuestionText" class="form-control" disabled=true placeholder="Marks for each Question" required>
+                        </div>
+                 </div>
 
                    <hr>
+                   <br>
                    <div class="form-group">
                     <div id='newModeButton' class="form-group ">
                       <div class="span4 offset4 text-center">

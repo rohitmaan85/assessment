@@ -1,4 +1,6 @@
 <?php
+
+
 require_once 'DbConn.php';
 require_once 'logging_api.php';
 require_once 'getSubjectDetails.php';
@@ -17,6 +19,7 @@ class manageExams{
 	var $batch_id = "";
 	
 	var $insertDownloadHistorySQL="";
+	var $marks_each_question="";
 
 	function getExamQuestionsInJSONString($examId,$examName){
 		$conn = DbConn::getDbConn();
@@ -504,6 +507,84 @@ class manageExams{
 		return $completeDiv;
 	}
 
+	
+	
+function getExamQuestionsDivsForPDF($examId,$examName){
+		$completeDiv = "";
+		$conn = DbConn::getDbConn();
+		if($examName!="" && $examId=="")
+		$examId= $this->getExamId($examName);
+		$this->getQuestionCountForEachCategory($examId);
+		$sql="SELECT qstn_id,category,module,mark FROM `assessment`.`exam_qstn` where exam_id='".$examId."' order by category,module,qstn_id";
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get all Questions of Exam with name : '".$sql."'" );
+		$result = 	mysqli_query($conn,$sql);
+		$row		= 	mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$i=0;
+		$prev_cat = "";
+		$prev_module = "";
+
+
+		// Print Exam Details :
+		$completeDiv = $this->getExamDetailsDiv($examId);
+		//$completeDiv .= $this->getPanelDiv("Exam Name : ".$examName);
+		$obj = new manageCategory();
+		$atleast2Div = false;
+		while ($row)
+		{
+			//$jsonArr[0]= $i;
+			$qstnId	 =	$row['qstn_id'];
+			$current_category = $row['category'];
+			$current_module	  = $row['module'];
+			$marks =  $row['mark'];
+
+			if($i!=0){
+				if($current_category!=$prev_cat){ // Create New Panel
+					// end previosu panel
+					$completeDiv.= "</div></div>";
+					$categoryName = $obj->getCategoryName($current_category);
+					if($current_module!="")
+					{
+						$moduleName= $obj->getModuleName($current_module);
+						$categoryName .= " : ".$moduleName;
+					}
+					$no_of_qstns = $this->getNoOfQstns($current_category);
+					$completeDiv.=$this->getPanelDiv("Category Name : ".$categoryName." , Number of Questions = ".$no_of_qstns);
+					$qstnDiv  = $this->getQuestionDetailDivForPDF($qstnId,$marks);
+					$completeDiv.= $qstnDiv;
+
+				}else{
+					$qstnDiv  = $this->getQuestionDetailDivForPDF($qstnId,$marks);
+					$completeDiv.= $qstnDiv;
+				}
+			}else{// Add Question in current Panel
+				$categoryName= $obj->getCategoryName($current_category);
+				if($current_module!="")
+				{
+					$moduleName= $obj->getModuleName($current_module);
+					$categoryName .= " : ".$moduleName;
+				}
+				$no_of_qstns = $this->getNoOfQstns($current_category);
+				$completeDiv.=$this->getPanelDiv("Category Name : ".$categoryName." , Number of Questions = ".$no_of_qstns);
+				$qstnDiv  = $this->getQuestionDetailDivForPDF($qstnId,$marks);
+				$completeDiv.= $qstnDiv;
+			}
+
+			$prev_cat=$current_category;
+			$prev_module=$crrent_module;
+			$i++;
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+		}
+		//$completeDiv.= "</div></div></div></div>";
+		$completeDiv.= "</div></div>";
+		// Free result set
+		mysqli_free_result($result);
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  ,Complete Qstn Div = '".$completeDiv."'" );
+		return $completeDiv;
+	}
+	
+	
+	
 
 	function getPanelDiv($categoryName){
 
@@ -684,6 +765,86 @@ class manageExams{
 		//echo json_encode($final_array);
 	}
 
+	
+	
+function getQuestionDetailDivForPDF($question_id,$marks){
+		if($marks == null || $marks ==""){
+			$marks = 4;
+		}
+		$questionDiv="";
+		$conn = DbConn::getDbConn();
+		$sql="SELECT * FROM `assessment`.`question` where id='".$question_id."'";
+		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to get Question Detail : '".$sql."'" );
+		$result = 	mysqli_query($conn,$sql);
+		$row		= 	mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$i=0;
+		while ($row)
+		{
+			$this->global_qstn_counter++;
+			$qstn=$row['question'];
+			$optiona=$row['optiona'];
+			$optionb=$row['optionb'];
+			$optionc=$row['optionc'];
+			$optiond=$row['optiond'];
+			// 27-12-2016
+			$type=$row['type'];
+			$image_path = ".".$row['image_path'];
+
+			$divBackGround = "";
+			if($this->global_qstn_counter % 2 == 0){
+				$divBackGround="evenQstn";
+			}else{
+				$divBackGround="oddQstn";
+			}
+
+
+
+			$imageDiv="";
+			if($type=="image"){
+				log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , IMAGE TYPE QUESTION : '".$image_path."'" );
+				$imageDiv='
+                        <div id="qstnImageDiv" class="form-group col-xs-12">
+                          <hr>
+				          <img id="qstn_img" width="504" height="236" src="'.$image_path.'" alt="question Image" class="img-responsive center-block" />            
+                          <hr>
+                        </div>';
+			}
+
+			$questionDiv = ' <div class="form-group">
+				<div id="'.$divBackGround.'">
+				<div id="'.$question_id.'" class="col-xs-14">
+				<div id="marks" class="pull-right"><p id="qstn_marks">Marks :	'.$marks.'</p></div>
+				<p id="qstn_p">'.$this->global_qstn_counter.'. '.$qstn.'</p>
+				<div><br></div>'.$imageDiv.'
+				<div id="optiona"><p id="qstn_p"><input id="qstn_checkbox" type="checkbox">
+				'.$optiona.'</p></div>
+				<div><br></div>
+				<div id="optionb"><p id="qstn_p"> <input id="qstn_checkbox" type="checkbox">
+				'.$optionb.'</p>
+				</div>
+				<div><br></div>
+				<div id="optionc"><p id="qstn_p"> <input id="qstn_checkbox" type="checkbox">
+				'.$optionc.'</p>
+				</div>
+				<div><br></div>
+				<div id="optiond"><p id="qstn_p"><input id="qstn_checkbox" type="checkbox">
+				'.$optiond.'</p>
+				</div>
+				<div><br></div>
+			 </div></div>
+			<div class="col-xs-14"><hr></div></div>';
+			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+			break;
+		}
+		//	$final_array = array('data' => $jsonArr1);
+		// Free result set
+		//	log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , Qstn Div = '".$questionDiv."'" );
+		mysqli_free_result($result);
+		return $questionDiv;
+		// print json Data.
+		//echo json_encode($final_array);
+	}
+	
 
 	function selectQuestions($subjectId,$category,$module,$noOfQstns,$exam_id){
 		$conn = DbConn::getDbConn();
@@ -718,8 +879,8 @@ class manageExams{
 
 	function buildInsertQstnsSql($row_value){
 		// Add Upload Date in the end.
-		$row_value.="'active','".date("Y-m-d H:i:s", time())."','".date("Y-m-d H:i:s", time())."'";
-		$sql = "INSERT INTO `assessment`.`exam_qstn`(`exam_id`,`qstn_id`,`subid`,`category`,`module`,`status`,`created_on`,`last_modified_on`) VALUES(".$row_value.");";
+		$row_value.="'active','".date("Y-m-d H:i:s", time())."','".date("Y-m-d H:i:s", time())."','".$this->marks_each_question ."'";
+		$sql = "INSERT INTO `assessment`.`exam_qstn`(`exam_id`,`qstn_id`,`subid`,`category`,`module`,`status`,`created_on`,`last_modified_on`,`mark`) VALUES(".$row_value.");";
 		$this->insertQstnsSQL .=$sql;
 		//log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to insert Qstns in Exam : '".$this->insertQstnsSQL."'" );
 
@@ -868,6 +1029,7 @@ class manageExams{
 
 	function buildInsertSql($subId,$exName,$noOfQstns,$examDesc,$examDur,$atmptCount,$startDate,$endDate,$decResult,$batchId,$negMarking,$randomQstn,$totalMarks,$pp,$noOfModuleQstsArr)
 	{
+		$this->marks_each_question = $totalMarks/$noOfQstns;
 		if($atmptCount == "")
 		$atmptCount=10;
 		// Handle number of questions:
@@ -1243,6 +1405,11 @@ if(isset($_POST['action'])){
 	 $pp			= $_POST['pp'];
 	 $noOfModuleQstsArr = json_decode(stripslashes($_POST['noOfModuleQstsArr']));
 
+	 if($obj->getExamId($exName) != ""){
+	 	$data =  array('error' => 'Exam with same name "'.$exName.'" already exist , Pleae select different name.') ;
+	 	echo json_encode($data);
+	 }else{
+	 
 	 // log_event( MANAGE_TEST, __LINE__."  ". __FILE__. " ,  Number of Questions in each Module : " . print_r($noOfModuleQstsArr));
 	 log_event( MANAGE_TEST, __LINE__."  ". __FILE__." ,  Get Request to create Exam with Values : '".
 	 $subId."','".$exName."','".$noOfQstns."','".$examDesc."','".$examDur."','".$atmptCount.
@@ -1260,6 +1427,7 @@ if(isset($_POST['action'])){
 			log_event( MANAGE_TEST, __LINE__."  ". __FILE__." Question created successfully." );
 		}
 		echo json_encode($data);
+	 }
 	}
 	else if($_GET['action']=="edit"){
 		log_event( MANAGE_TEST, " Get Request to get question details." );

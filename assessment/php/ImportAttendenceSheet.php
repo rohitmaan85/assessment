@@ -5,7 +5,7 @@
 
 /** Set default timezone (will throw a notice otherwise) */
 //date_default_timezone_set('America/Los_Angeles');
-
+date_default_timezone_set("Asia/Kolkata");
 include 'Classes/PHPExcel/IOFactory.php';
 include 'DbConn.php';
 require_once 'logging_api.php';

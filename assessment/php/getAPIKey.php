@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set("Asia/Kolkata");
 if(isset($_POST['get'])){
   if($_POST['get'] == "key"){
     $key = "N0dXZjNzVmhiUHRjWlJIT1d4c2dDSnhHTVhqcjI0NVc6";

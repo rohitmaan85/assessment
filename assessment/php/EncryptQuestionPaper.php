@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set("Asia/Kolkata");
 include('manageExams.php');
 class EncryptQuestionPaperClass{
 
@@ -187,15 +187,15 @@ function getExamDivsFromJSON($data)
 		//echo $data;
 	
 		$json = json_decode($data, true);
-		foreach ($json as $key => $value) {
-			//echo $key
-			/*if (!is_array($value)) {
-				echo $key . '=>' . $value . '<br/>';
-				foreach ($value as $key1 => $value1) {
-				echo $key1 . '=>' . $value1 . '<br/>';
-				}
-				} else {*/
-			foreach ($value as $key => $val) {
+		//print_r($json);
+		
+		foreach($json['Exam_Details'] as $item) {
+			echo $item;			
+		}
+		
+		/*
+		
+		foreach ($value as $key => $val) {
 
 				$qstn="";
 				$optiona="";
@@ -249,16 +249,31 @@ function getExamDivsFromJSON($data)
 			<div class="col-xs-14"><hr></div></div>';
 			}
 		}
+		*/
 
 		return $questionDiv;
 		//echo $questionDiv;
 	}
 }
 
-/*
+
+
+
 $manageExamsObj = new manageExams();
-echo json_encode($manageExamsObj->getExamQuestionsInJSONString("","rohit_123"));
-*/
+//echo json_encode($manageExamsObj->getExamQuestionsInJSONString(1,""));
+
+
+
+$obj = new EncryptQuestionPaperClass();
+$encryptText = $obj->getEncryptedQuestionPaper(1,"");
+//echo $encryptText."\n";
+
+$decryptTextJSON = $obj->decryptQuestionPaper($encryptText);
+//Remove junk characters from the end
+$pos = strripos($decryptTextJSON, '}'); // $pos = 7, not 0
+$data=substr($decryptTextJSON,0,$pos+1);
+$obj->getExamDivsFromJSON($data);
+
 //$obj = new EncryptQuestionPaperClass();
 //$obj->decodeJSONFile('cob_details.json');
 

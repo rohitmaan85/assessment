@@ -2,7 +2,7 @@
 
 // Insert the path where you unpacked log4php
 include('lib/log4php/log4php/Logger.php');
-
+date_default_timezone_set("Asia/Kolkata");
 // Tell log4php to use our configuration file.
 Logger::configure('log4jphp.xml');
 

@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set("Asia/Kolkata");
 require_once 'logging_api.php';
 include 'ImportQuestionsClass.php';
 

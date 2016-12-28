@@ -12,6 +12,23 @@ $(document).ready(function() {
     var batchId = "";
 
 
+    $("#noOfQstnsText").focusout(function() {
+        if( $("#totalMarksText").val()!== "" && $("#noOfQstnsText").val()!== ""){
+
+            var marksEachQuestion = $("#totalMarksText").val()/$("#noOfQstnsText").val();
+            $( "#marksForEachQuestionText" ).val(marksEachQuestion);
+        }
+      });
+
+      $("#totalMarksText").focusout(function() {
+          if( $("#totalMarksText").val()!== "" && $("#noOfQstnsText").val()!== ""){
+
+              var marksEachQuestion = $("#totalMarksText").val()/$("#noOfQstnsText").val();
+              $( "#marksForEachQuestionText" ).val(marksEachQuestion);
+          }
+        });
+
+
     loadSSCList();
 
     function loadSSCList() {

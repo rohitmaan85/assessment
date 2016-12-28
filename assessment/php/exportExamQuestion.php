@@ -1,5 +1,6 @@
 <?php
 //ini_set('error_reporting', E_ALL);
+date_default_timezone_set("Asia/Kolkata");
 include("./lib/MPDF_5_7/MPDF57/mpdf.php");
 include('manageExams.php');
 
@@ -7,7 +8,7 @@ if(isset($_GET['examname'])){
 	$testName   =   $_GET['examname'];
 	$obj = new manageExams();
 	log_event(EXPORT_EXAM, "Get Request to export Exam :'".$testName."'" );
-	$qstnDivs = $obj->getExamQuestionsDivs($testId,$testName);
+	$qstnDivs = $obj->getExamQuestionsDivsForPDF($testId,$testName);
 }else{
 	log_event(EXPORT_EXAM, "Exam Name is Missing :'".$testName."'" );
 	$qstnDivs="Exam Name is Missing";
