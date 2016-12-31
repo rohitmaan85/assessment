@@ -18,6 +18,7 @@ class ImportQuestionsClass{
 
 	var $insertSQL = "";
 	var $dbConnObj = "";
+	var $total_no_of_qstn_upload = "";
 
 	function readExcel($inputFileName,$sheetNo,$startRow,$endROw,$start_column,$no_of_columns,$ssc,$jobRole,$qpcode,$category,$module)
 	{
@@ -100,6 +101,7 @@ class ImportQuestionsClass{
 
 	function insertInToDatabase()
 	{
+		
 		$conn = DbConn::getDbConn();
 		//log_event( UPLOAD_QUESTION, __LINE__."  ". __FILE__."  ,  SQL to insert Question '".$this->insertSQL."'" );
 		if (mysqli_multi_query($conn, $this->insertSQL)) {
@@ -113,8 +115,10 @@ class ImportQuestionsClass{
 					//echo "Current Query's Affected Rows = $aff_rows, Cumulative Affected Rows = $cumulative_rows<br>";
 				}
 			} while(mysqli_more_results($conn) && mysqli_next_result($conn));
+			
+			$this->total_no_of_qstn_upload = $cumulative_rows;
 
-			log_event( UPLOAD_QUESTION, __LINE__."  ". __FILE__."  , Success !  Questions inserted successfully in Database : '".$cumulative_rows."'" );
+				log_event( UPLOAD_QUESTION, __LINE__."  ". __FILE__."  , Success !  Questions inserted successfully in Database : '".$cumulative_rows."'" );
 			return true;
 		}
 		else {
@@ -125,16 +129,20 @@ class ImportQuestionsClass{
 
 	function importQuestions($excelFilePath,$sheetNo,$startRow,$endROw,$start_column,$no_of_columns,$ssc,$jobRole,$qpcode,$category,$module)
 	{
-
+		$obj_history = new manageHistory();
 		if($this->readExcel($excelFilePath,$sheetNo,$startRow,$endROw,$start_column,$no_of_columns,$ssc,$jobRole,$qpcode,$category,$module)){
-			if($this->insertInToDatabase())
-			return true;
+			if($this->insertInToDatabase()){
+				$obj_history->addUploadQuestionHistory("upload",$excelFilePath,$ssc,$jobRole,$category,$module, "1", 0,'Question insrted successfully : '.$this->total_no_of_qstn_upload);
+				return true;
+			}
 			else{
+				$obj_history->addUploadQuestionHistory("upload",$excelFilePath,$ssc,$jobRole,$category,$module, "1", 1,'ERROR while inserting questions in database');
 				log_event( UPLOAD_QUESTION, __LINE__."  ". __FILE__. " ,  ERROR while inserting questions in database." );
 				return false;
 			}
 		}
 		else{
+			$obj_history->addUploadQuestionHistory("upload",$excelFilePath,$ssc,$jobRole,$category,$module, "1", 1,'ERROR while inserting questions in database');
 			log_event( UPLOAD_QUESTION, __LINE__."  ". __FILE__. " ,  ERROR while reading excel file." );
 			return false;
 		}

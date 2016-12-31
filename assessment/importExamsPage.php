@@ -5,13 +5,13 @@ include('./php/EncryptQuestionPaper.php');
 
 $obj = new EncryptQuestionPaperClass();
 // Read Encrypted File
-$examInJSONFormat = $obj->decodeExamsFromFile('./importTests/EncryptQstnPaper.enq');
+$examInJSONFormat = $obj->getExamInJSONFormatFromEncryptFile('./importTests/EncryptQstnPaper.enq');
 $pos = strripos($examInJSONFormat, '}'); // $pos = 7, not 0
 //echo $pos;
 $data=substr($examInJSONFormat,0,$pos+1);
 //echo $data;
 //echo $examInJSONFormat;
-$qstnDivs = $obj->getExamDivsFromJSON($data);
+$qstnDivs = $obj->getExamDivsFromJSONData($data);
 
 //$qstnDivs = $obj->decodeJSONFile('./importTests/cob_details.json');
 $htmlContent='<!DOCTYPE HTML>

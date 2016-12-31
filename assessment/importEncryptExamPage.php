@@ -75,7 +75,7 @@
             <!--<div class="col-lg-14 col-md-11 col-sm-2 col-xs-12"> -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                         <h2 class="panel-title pull-left"><strong>Import Batch Details from Excel File</strong></h2>
+                         <h2 class="panel-title pull-left"><strong>Import Encrypted Exam File </strong></h2>
                     </div>
                     <div class="panel-body">
                     <form id="uploadEncryptExamForm" class="well" action="#" method="post" enctype="multipart/form-data">
@@ -108,7 +108,7 @@
                         </script>
                         <!-- File Upload Progress Bar End-->
 
-                       <button id="uploadFileButton"  type="button" class="btn btn-warning" disabled="disabled"><span class="glyphicon glyphicon-upload"></span>      Import Exams information ...</button>
+                       <button id="uploadFileButton"  type="button" class="btn btn-warning" disabled="disabled"><span class="glyphicon glyphicon-upload"></span>  Upload Encrypted Exams  ...</button>
                        <button id="cancelButton"  type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>  Cancel</button>
                        </form>
                     <hr>

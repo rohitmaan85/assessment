@@ -7,6 +7,7 @@ require_once 'getSubjectDetails.php';
 require_once 'manageQuestions.php';
 require_once 'manageCategory.php';
 require_once 'manageAttendence.php';
+require_once 'manageHistory.php';
 date_default_timezone_set("Asia/Kolkata");
 
 class manageExams{
@@ -1181,15 +1182,18 @@ function getQuestionDetailDivForPDF($question_id,$marks){
 	}
 
 	function deleteExam($exam_id){
+		$obj_history = new manageHistory();
 		$sql = "update `assessment`.`exam` set
 				`status`='inactive' , `last_modified_on`='".date("Y-m-d H:i:s", time())."' ";
 		$sql.="where id='".$exam_id."'";
 		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to delete Exam : '".$sql."'" );
 		if(!$this->executeUpdateQuery($sql))
 		{
+		 	$obj_history->addExamHistory("delete", $exam_id, "", 1, 1, "", $exName,'Error while delete Exam , Please try again later!' );
 			$data =  array('message' => 'Error while delete Exam , Please try again later!') ;
 			log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Error while deleting Exam.".json_encode($data) );
 		} else {
+		 	$obj_history->addExamHistory("delete", $exam_id, "", 1, 0, "", $exName, 'Exam deleted Successfully , Status is inactive now !!!.' );
 			$data =  array('message' => 'Exam deleted Successfully , Status is inactive now !!!.') ;
 			log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Exam deleting Successfully !!!." );
 		}
@@ -1355,6 +1359,7 @@ function getQuestionDetailDivForPDF($question_id,$marks){
 }
 
 $obj = new manageExams();
+$obj_history = new manageHistory();
 
 /*
 // Handle Requests from UI
@@ -1406,6 +1411,8 @@ if(isset($_POST['action'])){
 	 $noOfModuleQstsArr = json_decode(stripslashes($_POST['noOfModuleQstsArr']));
 
 	 if($obj->getExamId($exName) != ""){
+	 	$obj_history->addExamHistory("create", "", $exName, 1, 1, "", $exName,'Exam with same name "'.$exName.'" already exist , Pleae select different name.' );
+	 	
 	 	$data =  array('error' => 'Exam with same name "'.$exName.'" already exist , Pleae select different name.') ;
 	 	echo json_encode($data);
 	 }else{
@@ -1420,11 +1427,13 @@ if(isset($_POST['action'])){
 
 	 if(!$obj->createExam($exName,$subId,$_POST['noOfModuleQstsArr']))
 		{
+		 	$obj_history->addExamHistory("create", "", $exName, 1, 1, "", $exName,'Exam with same name "'.$exName.'" already exist , Pleae select different name.' );
 			$data =  array('error' => 'Error while creating exam , Please check all details and try again.') ;
 			log_event( MANAGE_TEST, __LINE__."  ". __FILE__." Error while inserting Question in DB.".json_encode($data) );
 		} else {
+		 	$obj_history->addExamHistory("create", "", $exName, 1, 0, "", $exName,'Exam created successfully' );
 			$data =  array('success' => 'Exam Created Successfully.') ;
-			log_event( MANAGE_TEST, __LINE__."  ". __FILE__." Question created successfully." );
+			log_event( MANAGE_TEST, __LINE__."  ". __FILE__." Exam created successfully." );
 		}
 		echo json_encode($data);
 	 }

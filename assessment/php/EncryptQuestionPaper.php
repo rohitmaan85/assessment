@@ -13,8 +13,8 @@ class EncryptQuestionPaperClass{
 	var $key = "";
 	var $iv_size = "";
 	var $jsonFormat = "";
-	
-	
+
+
 
 	function encryptQuestionPaper($questionPaperJSONString){
 		$this->key = pack('H*', $this->keyString);
@@ -51,17 +51,17 @@ class EncryptQuestionPaperClass{
 		return $this->encryptQuestionPaper(json_encode($questionPaperJSONString));
 
 	}
-	
-	
+
+
 	function addHistoryInDB($file_name, $file_md5, $remote_ip, $downloaded_at, $exam_name, $json_format){
 		$manageExamsObj = new manageExams();
 		$manageExamsObj->buildInsertDownloadEncryptExamSql($file_name, $file_md5, $remote_ip, $downloaded_at, $exam_name, $this->jsonFormat);
 	}
-	
-	
-	
+
+
+
 	// -------------------- Decryption Start here ----------------- //
-	
+
 	function decryptQuestionPaper($encryptedQuestionPaper)
 	{
 		# --- DECRYPTION ---
@@ -74,8 +74,8 @@ class EncryptQuestionPaperClass{
 
 		# create a random IV to use with CBC encoding
 		$this->iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_CBC);
-		
-		
+
+
 		$ciphertext_dec = base64_decode($encryptedQuestionPaper);
 
 		# retrieves the IV, iv_size should be created using mcrypt_get_iv_size()
@@ -91,188 +91,273 @@ class EncryptQuestionPaperClass{
 		//echo  $plaintext_dec . "\n";
 	}
 
-	function decodeExamsFromFile($fileName){
-		$encryptData = file_get_contents ($fileName);
-		return $this->getDecryptedQuestionPaper($encryptData);
+	function getExamInJSONFormatFromEncryptFile($encrypt_file_name){
+		$encryptData = file_get_contents ($encrypt_file_name);
+		return $this->getExamInJSONFormatFromEncryptData($encryptData);
 	}
 
-	function  getDecryptedQuestionPaper($encryptedQuestionPaper){
-		$questionPaperJSONString =  $this->decryptQuestionPaper($encryptedQuestionPaper);
-		//echo "Decrypt Data = " . $questionPaperJSONString;	
-		return $questionPaperJSONString;
+	function  getExamInJSONFormatFromEncryptData($encryptedExam){
+		$examInJSONString =  $this->decryptQuestionPaper($encryptedExam);
+		//echo "Decrypt Data = " . $questionPaperJSONString;
+		return $examInJSONString;
 	}
-	
-	function decodeJSONFile($fileName)
+
+	function getExamDivFromJSONFile($fileName)
 	{
 		$questionDiv="";
 		$global_qstn_counter=  0;
 		$data = file_get_contents ($fileName);
-	//	$data = file_get_contents ('cob_details.json');
-	
-		$json = json_decode($data, true);
-		foreach ($json as $key => $value) {
-			//echo $key
-			/*if (!is_array($value)) {
-				echo $key . '=>' . $value . '<br/>';
-				foreach ($value as $key1 => $value1) {
-				echo $key1 . '=>' . $value1 . '<br/>';
-				}
-				} else {*/
+		//	$data = file_get_contents ('cob_details.json');
+
+		$json_data = json_decode($data, true);
+		return $this->getExamDivsFromJSONData($json_data);
+		/*
+		 foreach ($json as $key => $value) {
 			foreach ($value as $key => $val) {
 
-				$qstn="";
-				$optiona="";
-				$optionb="";
-				$optionc="";
-				$optiond="";
+			$qstn="";
+			$optiona="";
+			$optionb="";
+			$optionc="";
+			$optiond="";
 
-				//echo $key;
-				//echo $key . '=>' . $val . '<br/>';
-				foreach ($val as $key1 => $value1) {
-					//echo $key1 . '=>' . $value1 . '';
-					if($key1=="question")
-					$qstn = $value1;
-					if($key1=="optiona")
-					$optiona = $value1;
-					if($key1=="optionb")
-					$optionb = $value1;
-					if($key1=="optionc")
-					$optionc = $value1;
-					if($key1=="optiond")
-					$optiond = $value1;
-					//}
-				}
+			//echo $key;
+			//echo $key . '=>' . $val . '<br/>';
+			foreach ($val as $key1 => $value1) {
+			//echo $key1 . '=>' . $value1 . '';
+			if($key1=="question")
+			$qstn = $value1;
+			if($key1=="optiona")
+			$optiona = $value1;
+			if($key1=="optionb")
+			$optionb = $value1;
+			if($key1=="optionc")
+			$optionc = $value1;
+			if($key1=="optiond")
+			$optiond = $value1;
+			//}
+			}
 
-				$divBackGround = "";
-				if($key% 2 == 0){
-					$divBackGround="evenQstn";
-				}else{
-					$divBackGround="oddQstn";
-				}
+			$divBackGround = "";
+			if($key% 2 == 0){
+			$divBackGround="evenQstn";
+			}else{
+			$divBackGround="oddQstn";
+			}
 
-				$questionDiv.= ' <div class="form-group"><div id="'.$divBackGround.'"><div id="'.$question_id.'" class="col-xs-14">
-				<p id="qstn_p">'.$key.'. '.$qstn.'</p>
-				<div><br></div>
-				<div id="optiona"><p id="qstn_p"><input id="qstn_checkbox" type="checkbox">
-				'.$optiona.'</p></div>
-				<div><br></div>
-				<div id="optionb"><p id="qstn_p"> <input id="qstn_checkbox" type="checkbox">
-				'.$optionb.'</p>
-				</div>
-				<div><br></div>
-				<div id="optionc"><p id="qstn_p"> <input id="qstn_checkbox" type="checkbox">
-				'.$optionc.'</p>
-				</div>
-				<div><br></div>
-				<div id="optiond"><p id="qstn_p"><input id="qstn_checkbox" type="checkbox">
-				'.$optiond.'</p>
-				</div>
-				<div><br></div>
-			 </div></div>
+			$questionDiv.= ' <div class="form-group"><div id="'.$divBackGround.'"><div id="'.$question_id.'" class="col-xs-14">
+			<p id="qstn_p">'.$key.'. '.$qstn.'</p>
+			<div><br></div>
+			<div id="optiona"><p id="qstn_p"><input id="qstn_checkbox" type="checkbox">
+			'.$optiona.'</p></div>
+			<div><br></div>
+			<div id="optionb"><p id="qstn_p"> <input id="qstn_checkbox" type="checkbox">
+			'.$optionb.'</p>
+			</div>
+			<div><br></div>
+			<div id="optionc"><p id="qstn_p"> <input id="qstn_checkbox" type="checkbox">
+			'.$optionc.'</p>
+			</div>
+			<div><br></div>
+			<div id="optiond"><p id="qstn_p"><input id="qstn_checkbox" type="checkbox">
+			'.$optiond.'</p>
+			</div>
+			<div><br></div>
+			</div></div>
 			<div class="col-xs-14"><hr></div></div>';
 			}
-		}
-
-		return $questionDiv;
+			}
+			return $questionDiv;
+			*/
 		//echo $questionDiv;
 	}
-	
-function getExamDivsFromJSON($data)
+
+	function getExamDivsFromJSONData($exam_in_json_format)
 	{
 		$questionDiv="";
-		//$global_qstn_counter=  0;
-		//$data = file_get_contents ($fileName);
-	//	$data = file_get_contents ('cob_details.json');
+		$json = json_decode($exam_in_json_format, true);
 
-		//echo $data;
-	
-		$json = json_decode($data, true);
-		//print_r($json);
-		
-		foreach($json['Exam_Details'] as $item) {
-			echo $item;			
+		// Print Exam Details
+		echo "------------------------------------------------Exam Details ------------------------------------------------";
+		echo "\n";
+		foreach($json['Exam_Details'] as $key => $exam_detail) {
+			echo $key. "  ==> " .$exam_detail ." , ";
+			echo "\n";
 		}
-		
-		/*
-		
-		foreach ($value as $key => $val) {
 
-				$qstn="";
-				$optiona="";
-				$optionb="";
-				$optionc="";
-				$optiond="";
+		echo "\n";
 
-				//echo $key;
-				//echo $key . '=>' . $val . '<br/>';
-				foreach ($val as $key1 => $value1) {
-					//echo $key1 . '=>' . $value1 . '';
-					if($key1=="question")
-					$qstn = $value1;
-					if($key1=="optiona")
-					$optiona = $value1;
-					if($key1=="optionb")
-					$optionb = $value1;
-					if($key1=="optionc")
-					$optionc = $value1;
-					if($key1=="optiond")
-					$optiond = $value1;
-					//}
+		echo "------------------------------------------------Batch Details ------------------------------------------------";
+		echo "\n";
+		// Print batch details :
+		foreach($json['Batch_Details'] as $key =>$batch) {
+			echo $key. "  ==> " .$batch . " ,";
+			echo "\n";
+		}
+
+
+		echo "\n";
+		echo "------------------------------------------------Student Details ------------------------------------------------";
+		echo "\n";
+		// Print batch details :
+		foreach($json['Student_Details'] as $key =>$student) {
+			foreach($student as $key1 =>$student_detail) {
+				echo $key1. "  ==> " .$student_detail;
+				echo " , ";
+			}
+			echo "\n";
+		}
+
+		echo "------------------------------------------------Questions Details ------------------------------------------------";
+		echo "\n";
+		// Print Questions details :
+		foreach($json['Exam_Questions'] as $category_details ){
+			//echo $student . " ,";
+			foreach($category_details as $key=>$category) {
+				//echo $categry."     ,     ";
+				if($key == "Questions"){
+					foreach($category as $sno=>$qstn_details ){
+						$qstn="";
+						$optiona="";
+						$optionb="";
+						$optionc="";
+						$optiond="";
+						/// echo $qstn_details;
+						foreach($qstn_details as $key=>$value ){
+							echo $key. "  ==> " .$value." \n";
+							// Print in Divs
+							if($key=="question")
+							$qstn = $value;
+							if($key=="optiona")
+							$optiona = $value;
+							if($key=="optionb")
+							$optionb = $value;
+							if($key=="optionc")
+							$optionc = $value;
+							if($key=="optiond")
+							$optiond = $value;
+					 }
+
+					 $divBackGround = "";
+					 if($key% 2 == 0){
+					 	$divBackGround="evenQstn";
+					 }else{
+					 	$divBackGround="oddQstn";
+					 }
+
+					 $questionDiv.= ' <div class="form-group"><div id="'.$divBackGround.'"><div id="'.$question_id.'" class="col-xs-14">
+									<p id="qstn_p">'.$key.'. '.$qstn.'</p>
+									<div><br></div>
+									<div id="optiona"><p id="qstn_p"><input id="qstn_checkbox" type="checkbox">
+									'.$optiona.'</p></div>
+									<div><br></div>
+									<div id="optionb"><p id="qstn_p"> <input id="qstn_checkbox" type="checkbox">
+									'.$optionb.'</p>
+									</div>
+									<div><br></div>
+									<div id="optionc"><p id="qstn_p"> <input id="qstn_checkbox" type="checkbox">
+									'.$optionc.'</p>
+									</div>
+									<div><br></div>
+									<div id="optiond"><p id="qstn_p"><input id="qstn_checkbox" type="checkbox">
+									'.$optiond.'</p>
+									</div>
+									<div><br></div>
+									</div></div>
+									<div class="col-xs-14"><hr></div></div>';
+					 echo "-----------------------------------------";
+					 echo "\n";
+					}
 				}
-
-				$divBackGround = "";
-				if($key% 2 == 0){
-					$divBackGround="evenQstn";
-				}else{
-					$divBackGround="oddQstn";
-				}
-
-				$questionDiv.= ' <div class="form-group"><div id="'.$divBackGround.'"><div id="'.$question_id.'" class="col-xs-14">
-				<p id="qstn_p">'.$key.'. '.$qstn.'</p>
-				<div><br></div>
-				<div id="optiona"><p id="qstn_p"><input id="qstn_checkbox" type="checkbox">
-				'.$optiona.'</p></div>
-				<div><br></div>
-				<div id="optionb"><p id="qstn_p"> <input id="qstn_checkbox" type="checkbox">
-				'.$optionb.'</p>
-				</div>
-				<div><br></div>
-				<div id="optionc"><p id="qstn_p"> <input id="qstn_checkbox" type="checkbox">
-				'.$optionc.'</p>
-				</div>
-				<div><br></div>
-				<div id="optiond"><p id="qstn_p"><input id="qstn_checkbox" type="checkbox">
-				'.$optiond.'</p>
-				</div>
-				<div><br></div>
-			 </div></div>
-			<div class="col-xs-14"><hr></div></div>';
 			}
 		}
-		*/
+	 return $questionDiv;
 
-		return $questionDiv;
-		//echo $questionDiv;
+	 /*
+	  foreach ($value as $key => $val) {
+
+			$qstn="";
+			$optiona="";
+			$optionb="";
+			$optionc="";
+			$optiond="";
+
+			//echo $key;
+			//echo $key . '=>' . $val . '<br/>';
+			foreach ($val as $key1 => $value1) {
+			//echo $key1 . '=>' . $value1 . '';
+			if($key1=="question")
+			$qstn = $value1;
+			if($key1=="optiona")
+			$optiona = $value1;
+			if($key1=="optionb")
+			$optionb = $value1;
+			if($key1=="optionc")
+			$optionc = $value1;
+			if($key1=="optiond")
+			$optiond = $value1;
+			//}
+			}
+
+			$divBackGround = "";
+			if($key% 2 == 0){
+			$divBackGround="evenQstn";
+			}else{
+			$divBackGround="oddQstn";
+			}
+
+			$questionDiv.= ' <div class="form-group"><div id="'.$divBackGround.'"><div id="'.$question_id.'" class="col-xs-14">
+			<p id="qstn_p">'.$key.'. '.$qstn.'</p>
+			<div><br></div>
+			<div id="optiona"><p id="qstn_p"><input id="qstn_checkbox" type="checkbox">
+			'.$optiona.'</p></div>
+			<div><br></div>
+			<div id="optionb"><p id="qstn_p"> <input id="qstn_checkbox" type="checkbox">
+			'.$optionb.'</p>
+			</div>
+			<div><br></div>
+			<div id="optionc"><p id="qstn_p"> <input id="qstn_checkbox" type="checkbox">
+			'.$optionc.'</p>
+			</div>
+			<div><br></div>
+			<div id="optiond"><p id="qstn_p"><input id="qstn_checkbox" type="checkbox">
+			'.$optiond.'</p>
+			</div>
+			<div><br></div>
+			</div></div>
+			<div class="col-xs-14"><hr></div></div>';
+			}
+
+			return $questionDiv;
+			//echo $questionDiv;*/
 	}
 }
 
 
-
+/*
 
 $manageExamsObj = new manageExams();
 //echo json_encode($manageExamsObj->getExamQuestionsInJSONString(1,""));
-
-
 
 $obj = new EncryptQuestionPaperClass();
 $encryptText = $obj->getEncryptedQuestionPaper(1,"");
 //echo $encryptText."\n";
 
-$decryptTextJSON = $obj->decryptQuestionPaper($encryptText);
-//Remove junk characters from the end
-$pos = strripos($decryptTextJSON, '}'); // $pos = 7, not 0
-$data=substr($decryptTextJSON,0,$pos+1);
-$obj->getExamDivsFromJSON($data);
+$exam_in_json_format = $obj->getExamInJSONFormatFromEncryptData($encryptText);
+//Remove junk characters from the end from JSON data
+$pos = strripos($exam_in_json_format, '}'); // $pos = 7, not 0
+$exam_in_json_format=substr($exam_in_json_format,0,$pos+1);
+
+echo $exam_in_json_format;
+
+// Get Exam divs from JSON data to print on UI.
+$obj->getExamDivsFromJSONData($exam_in_json_format);
+
+*/
+
+
+
+
 
 //$obj = new EncryptQuestionPaperClass();
 //$obj->decodeJSONFile('cob_details.json');

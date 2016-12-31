@@ -2,6 +2,7 @@
 date_default_timezone_set("Asia/Kolkata");
 require_once 'logging_api.php';
 include 'ImportAttendenceSheet.php';
+require_once 'manageHistory.php';
 
 $data = array();
 
@@ -82,6 +83,7 @@ if(isset($_GET['files']))
 				}
 			}	
 			else {	
+				$obj_history->addUploadBatchHistory("upload",$excelFilePath,$ssc,$jobRole, "1", 1,"File ". $excelFilePath." does not exist");
 				$error_msg = "File ". $excelFilePath." does not exist";					
 				log_event( READ_ATTENDENCE, __LINE__."  ". __FILE__. " , File ". $excelFilePath." does not exist" );
 				$error = true;				
@@ -89,6 +91,7 @@ if(isset($_GET['files']))
 		}		
 		else
 		{	
+			$obj_history->addUploadBatchHistory("upload",$excelFilePath,$ssc,$jobRole, "1", 1," , Unable to move file to Directory , ". $uploaddir." does not exist");
 			log_event( READ_ATTENDENCE, __LINE__."  ". __FILE__. " , Unable to move file to Directory , ". $uploaddir." does not exist" );			
 			$error = true;	
 			$error_msg = "Unable to move file to Directory , ". $uploaddir." does not exist";		

@@ -3,47 +3,48 @@ date_default_timezone_set("Asia/Kolkata");
 require_once 'DbConn.php';
 require_once 'logging_api.php';
 require_once 'manageQuestions.php';
+require_once 'manageHistory.php';
 
 
 class manageCategory{
 
 
 	function buildInsertCategorySql($qpCode,$category,$module){
-			// Insert new row
-			$row_value= "'".htmlspecialchars($qpCode,ENT_QUOTES)."','".htmlspecialchars($category,ENT_QUOTES).
+		// Insert new row
+		$row_value= "'".htmlspecialchars($qpCode,ENT_QUOTES)."','".htmlspecialchars($category,ENT_QUOTES).
 					"','".date("Y-m-d H:i:s", time())."','".date("Y-m-d H:i:s", time())."','active'";
 
-			$sql = "INSERT INTO `assessment`.`subject_category`
+		$sql = "INSERT INTO `assessment`.`subject_category`
 				   (`subId`,`category`,`created_on`,`last_modified_on`,`status`)
 					 VALUES(".$row_value.");";
-			log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__."  , SQL to insert Category : '".$sql."'" );
-			$this->insertSQL .=$sql;
+		log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__."  , SQL to insert Category : '".$sql."'" );
+		$this->insertSQL .=$sql;
 	}
 
 	function buildRenameCategorySql($category_id,$new_name){
-			$sql = "update `assessment`.`subject_category` set category='".$new_name."' , last_modified_on='".date("Y-m-d H:i:s", time())."' where id='".$category_id."'";
-			log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__."  , SQL to rename Category : '".$sql."'" );
-			$this->updateSQL .=$sql;
+		$sql = "update `assessment`.`subject_category` set category='".$new_name."' , last_modified_on='".date("Y-m-d H:i:s", time())."' where id='".$category_id."'";
+		log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__."  , SQL to rename Category : '".$sql."'" );
+		$this->updateSQL .=$sql;
 	}
 
 
 	function buildRenameModuleSql($module_id,$new_name){
-			$sql = "update `assessment`.`subject_category_module` set module='".$new_name."' , last_modified_on='".date("Y-m-d H:i:s", time())."' where id='".$module_id."'";
-			log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__."  , SQL to rename Module : '".$sql."'" );
-			$this->updateModuleSQL .=$sql;
+		$sql = "update `assessment`.`subject_category_module` set module='".$new_name."' , last_modified_on='".date("Y-m-d H:i:s", time())."' where id='".$module_id."'";
+		log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__."  , SQL to rename Module : '".$sql."'" );
+		$this->updateModuleSQL .=$sql;
 	}
 
 	function buildInsertModuleSql($qpCode,$category,$module){
-		  $category_id = $this->getCategoryId($qpCode,$category);
-			// Insert new row
-			$row_value= "'".htmlspecialchars($qpCode,ENT_QUOTES)."','".htmlspecialchars($category_id,ENT_QUOTES).
+		$category_id = $this->getCategoryId($qpCode,$category);
+		// Insert new row
+		$row_value= "'".htmlspecialchars($qpCode,ENT_QUOTES)."','".htmlspecialchars($category_id,ENT_QUOTES).
 					"','".htmlspecialchars($module,ENT_QUOTES)."','".date("Y-m-d H:i:s", time())."','".date("Y-m-d H:i:s", time())."','active'";
 
-			$sql = "INSERT INTO `assessment`.`subject_category_module`
+		$sql = "INSERT INTO `assessment`.`subject_category_module`
 					 (`subId`,`category_id`,`module`,`created_on`,`last_modified_on`,`status`)
 					 VALUES(".$row_value.");";
-			log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__."  , SQL to create Module : '".$sql."'" );
-			$this->insertModuleSQL .=$sql;
+		log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__."  , SQL to create Module : '".$sql."'" );
+		$this->insertModuleSQL .=$sql;
 	}
 
 	function addCategory()
@@ -184,15 +185,15 @@ class manageCategory{
 		return $categoryId;
 	}
 
-	
+
 	function getCategoryName($category_id)
 	{
 		$conn = DbConn::getDbConn();
 		$sql="SELECT category FROM `assessment`.`subject_category`";
 		if($category_id!="")
-			$sql.= " where id='".htmlspecialchars($category_id,ENT_QUOTES)."'";
+		$sql.= " where id='".htmlspecialchars($category_id,ENT_QUOTES)."'";
 		else
-			return "";
+		return "";
 		log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__."  , SQL to get Category Id : '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -207,15 +208,15 @@ class manageCategory{
 		mysqli_free_result($result);
 		return $categoryName;
 	}
-	
+
 	function getModuleName($module_id)
 	{
 		$conn = DbConn::getDbConn();
 		$sql="SELECT module FROM `assessment`.`subject_category_module`";
 		if($module_id!="")
-			$sql.= " where id='".htmlspecialchars($module_id,ENT_QUOTES)."'";
+		$sql.= " where id='".htmlspecialchars($module_id,ENT_QUOTES)."'";
 		else
-			return "";
+		return "";
 		log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__."  , SQL to get Module Id : '".$sql."'" );
 		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -347,20 +348,20 @@ class manageCategory{
 		// Free result set
 		mysqli_free_result($result);
 
-/*
-		// Get Category with Modules
-		$catModArray= array();
-		$sql="SELECT distinct(category) FROM `assessment`.`subject_category`";
-		if($subjectId!="")
-		$sql.= " where subId='".htmlspecialchars($subjectId,ENT_QUOTES)."' and status='active'";
-		log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__."  , SQL to get Categories  without Modules : '".$sql."'" );
-		$result = mysqli_query($conn,$sql);
-		$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
-		$i=0;
-		$moduleExist = false;
-		//$categoryArray =
-		while ($row)
-		{
+		/*
+		 // Get Category with Modules
+		 $catModArray= array();
+		 $sql="SELECT distinct(category) FROM `assessment`.`subject_category`";
+		 if($subjectId!="")
+		 $sql.= " where subId='".htmlspecialchars($subjectId,ENT_QUOTES)."' and status='active'";
+		 log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__."  , SQL to get Categories  without Modules : '".$sql."'" );
+		 $result = mysqli_query($conn,$sql);
+		 $row=mysqli_fetch_array($result, MYSQLI_ASSOC);
+		 $i=0;
+		 $moduleExist = false;
+		 //$categoryArray =
+		 while ($row)
+		 {
 			// Get all Modules
 			$moduleArray = $this->getModuleListForTestCreation($subjectId,$row['id']);
 			$catModArray["id"] = "";
@@ -369,10 +370,10 @@ class manageCategory{
 			$catModArray["noOfQstnsInCategory"] = $manageQstnsObj->getQuestionCount($subjectId,$row['id'],"");
 			$jsonArr[]=$catModArray;
 			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
-		}
-		// Free result set
-		mysqli_free_result($result);
-		*/
+			}
+			// Free result set
+			mysqli_free_result($result);
+			*/
 		$final_array = array('data' => $jsonArr);
 		// print json Data.
 		echo json_encode($final_array);
@@ -398,8 +399,8 @@ class manageCategory{
 		$final_array = array('ids' => $jsonArrId,'category' => $jsonArrCategory);
 		//log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__."  , SQL to get Categories : '".	print_r($final_array)."'" );
 
-	;
-			// Free result set
+		;
+		// Free result set
 		mysqli_free_result($result);
 		// print json Data.
 
@@ -423,50 +424,57 @@ class manageCategory{
 			$jsonArrModule[]= $row['module'];
 			$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 		}
-	//	$final_array = array('data' => $jsonArr);
+		//	$final_array = array('data' => $jsonArr);
 		$final_array = array('ids' => $jsonArrId,'module' => $jsonArrModule);
 		// Free result set
 		mysqli_free_result($result);
 		// print json Data.
 		echo json_encode($final_array);
 	}
-	
+
 	function deleteCategory($cat_id){
+		$obj_history = new manageHistory();
 		$sql = "update `assessment`.`subject_category` set
 				`status`='inactive' , `last_modified_on`='".date("Y-m-d H:i:s", time())."' ";
 		$sql.="where id='".$cat_id."'";
 		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to delete Category : '".$sql."'" );
 		if(!$this->executeUpdateQuery($sql))
 		{
+			$obj_history->addCatModHistory("delete","",$cat_id, "", "1", 1, $cat_id,"",'Error while delete Category , Please try again later!');
 			$data =  array('message' => 'Error while delete Category , Please try again later!') ;
 			log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Error while deleting Category.".json_encode($data) );
 		} else {
+			$obj_history->addCatModHistory("delete","",$cat_id, "", "1", 0, $cat_id,"",'Category deleted Successfully , Status is inactive now !!!.');
 			$data =  array('message' => 'Category deleted Successfully , Status is inactive now !!!.') ;
 			log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Category deleted Successfully !!!." );
 		}
-	
+
 		echo json_encode($data);
-	//return $this->();
-  }
-  
+		//return $this->();
+	}
+
 	function deleteModule($mod_id){
+		$obj_history = new manageHistory();
 		$sql = "update `assessment`.`subject_category_module` set
 				`status`='inactive' , `last_modified_on`='".date("Y-m-d H:i:s", time())."' ";
 		$sql.="where id='".$mod_id."'";
 		log_event( MANAGE_TEST, __LINE__."  ". __FILE__."  , SQL to delete Module : '".$sql."'" );
 		if(!$this->executeUpdateQuery($sql))
 		{
+			$obj_history->addCatModHistory("delete","","", $_POST['mod_id'], "", "1", 1, $_POST['mod_id'],"",'Error while delete Module , Please try again later!');
 			$data =  array('message' => 'Error while delete Module , Please try again later!') ;
 			log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Error while deleting Module.".json_encode($data) );
 		} else {
+			$obj_history->addCatModHistory("delete","","", $_POST['mod_id'], "1", 0, $_POST['mod_id'],"",'Module deleted Successfully , Status is inactive now !!!.');
+		
 			$data =  array('message' => 'Module deleted Successfully , Status is inactive now !!!.') ;
 			log_event( LOG_DATABASE, __LINE__."  ". __FILE__." Module deleted Successfully !!!." );
 		}
-	
+
 		echo json_encode($data);
-	//return $this->();
-  }
-  
+		//return $this->();
+	}
+
 	function executeUpdateQuery($sql)
 	{
 		$conn = DbConn::getDbConn();
@@ -489,6 +497,7 @@ class manageCategory{
 
 // Handle Requests from UI
 $obj = new manageCategory();
+$obj_history = new manageHistory();
 
 //$obj->getModuleCategoryForTestCreation("AGR/Q4804");
 
@@ -526,40 +535,55 @@ else if($_GET['action']=="createCat"){
 		if(isset($_GET['module'])){
 			log_event( MANAGE_CATEGORY, "Get Request to create Module." );
 			if($_GET['category'] ==""){
-					$data =  array('message' => 'Error while creating Module in DB.') ;
-			}else{			
-			//$obj->buildInsertSql($subId, $_GET['category'],$_GET['module']);
-			$obj->buildInsertModuleSql($subId, $_GET['category'],$_GET['module']);
-			if(!$obj->addModule())
-			{
-				$data =  array('message' => 'Error while inserting Module in DB.') ;
-				log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Error while inserting Module in DB.".json_encode($data) );
-			} else {
-				$data =  array('message' => 'Module Created Successfully.') ;
-				log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Module created successfully." );
+				$obj_history->addCatModHistory("create", $_GET['subId'],$_GET['category'], $_GET['module'], "1", 1,"",$_GET['module'], "Error while creating Module in DB");
+				$data =  array('message' => 'Error while creating Module in DB.') ;
+			}else{
+				//$obj->buil
+					
+				if( $obj->getModuleId($subId,$_GET['module'])!="")
+				{
+					$obj_history->addCatModHistory("create",$_GET['subId'], $_GET['category'], $_GET['module'], "1", 1,"",$_GET['module'],'Error while creating module , Module with this name already Exist "'.$_GET['module'].'"');
+					log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Module with this name already Exist  !!" );
+					$data =  array('message' => 'Error while creating module , Module with this name already Exist "'.$_GET['module'].'"') ;
+				}else{
+					//buildInsertSql($subId, $_GET['category'],$_GET['module']);
+					$obj->buildInsertModuleSql($subId, $_GET['category'],$_GET['module']);
+					if(!$obj->addModule())
+					{
+						$obj_history->addCatModHistory("create",$_GET['subId'], $_GET['category'], $_GET['module'], "1", 1,"",$_GET['module'], "Error while creating Module in DB");
+						$data =  array('message' => 'Error while inserting Module in DB.') ;
+						log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Error while inserting Module in DB.".json_encode($data) );
+					} else {
+						$obj_history->addCatModHistory("create", $_GET['subId'],$_GET['category'], $_GET['module'], "1", 1,"",$_GET['module'], "Module created successfully");
+						$data =  array('message' => 'Module Created Successfully.') ;
+						log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Module created successfully." );
+					}
+				}
 			}
-		  }
 
 		}else{
 			log_event( MANAGE_CATEGORY, "Get Request to create Category." );
 			$obj->buildInsertCategorySql($subId, $_GET['category'],"");
 
 			if( $obj->getCategoryId($subId,$_GET['category'])!=""){
-					log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Category already Exist  !!" );
-						$data =  array('message' => 'Error while creating Category in DB, Category already Exists.') ;
+				$obj_history->addCatModHistory("create",$_GET['subId'], $_GET['category'], "", "1", 1,"",$_GET['category'],'Error while creating module , Category with this name already Exist "'.$_GET['category'].'"');
+				log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Category already Exist  !!" );
+				$data =  array('message' => 'Error while creating Category in DB, Category already Exists.') ;
 			}
 
 			else{
-					if(!$obj->addCategory())
-					{
-						$data =  array('message' => 'Error while inserting Category in DB.') ;
-						log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Error while inserting Category in DB.".json_encode($data) );
-					} else {
-						$data =  array('message' => 'Category Created Successfully.') ;
-						log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Category created successfully." );
-					}
-
+				if(!$obj->addCategory())
+				{
+					$obj_history->addCatModHistory("create",$_GET['subId'], $_GET['category'], "", "1", 1,"",$_GET['category'],'Error while inserting Category in DB.');
+					$data =  array('message' => 'Error while inserting Category in DB.') ;
+					log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Error while inserting Category in DB.".json_encode($data) );
+				} else {
+					$obj_history->addCatModHistory("create",$_GET['subId'], $_GET['category'], "", "1", 0,"",$_GET['category'],' Category created successfully');
+					$data =  array('message' => 'Category Created Successfully.') ;
+					log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Category created successfully." );
 				}
+
+			}
 		}
 		echo json_encode($data);
 	}else{
@@ -570,141 +594,152 @@ else if($_GET['action']=="createCat"){
 }
 // Update defect details.
 else if($_POST['action']=="getCategories")
-	{
-		$subjectId="";
-		if(isset($_POST['subId']) && $_POST['subId']!=""){
-			$subjectId = $_POST['subId'];
-			log_event(MANAGE_CATEGORY, "Get Categories List with Ids for subject  : '".$_POST['subId']."'" );
-			$obj->getCategoryListWithId($subjectId);
-		}
- }
- else if($_POST['action']=="getModules")
- 	{
- 		$subjectId="";
- 		if(isset($_POST['subId']) && $_POST['subId']!="" && $_POST['cat_id']!=""){
- 			$subjectId = $_POST['subId'];
-			$category_id = $_POST['cat_id'];
- 			log_event(MANAGE_CATEGORY, "Get Modules List with Ids for subject  : '".$_POST['subId']."' and category id =". $_POST['cat_id']);
- 			$obj->getModuleListWithId($subjectId,$category_id);
- 		}
-  }
-  
-  
-  else if($_POST['action']=="deleteCategory")
-  	{
-  		$subjectId="";
-  		if(isset($_POST['cat_id'])&& $_POST['cat_id']!="" ){
-				log_event(MANAGE_CATEGORY, "Delete Category with Id =". $_POST['cat_id']);
-				if($_POST['cat_id']==""){
-					$data =  array('message' => "Error : Category can not be blank , please select valid Category.") ;
-					echo json_encode($data);
-				}
-				else
-				{
-					$category_id = $_POST['cat_id'];
-  		  			$obj->deleteCategory($category_id);
-                }
-  		}
-  		else{
-  							$data =  array('message' => "Error : Category can not be blank , please select valid Category.") ;
-					echo json_encode($data);
-	
-  		}
+{
+	$subjectId="";
+	if(isset($_POST['subId']) && $_POST['subId']!=""){
+		$subjectId = $_POST['subId'];
+		log_event(MANAGE_CATEGORY, "Get Categories List with Ids for subject  : '".$_POST['subId']."'" );
+		$obj->getCategoryListWithId($subjectId);
 	}
-	
-  else if($_POST['action']=="deleteModule")
-  	{
-  		if(isset($_POST['mod_id'])&& $_POST['mod_id']!="" ){
-				log_event(MANAGE_CATEGORY, "Delete Module with Id =". $_POST['mod_id']);
-				if($_POST['mod_id']==""){
-					$data =  array('message' => "Error : Module can not be blank , please select valid Category.") ;
-					echo json_encode($data);
-				}
-				else
-				{
-					$mod_id = $_POST['mod_id'];
-  		  			$obj->deleteModule($mod_id);
-                }
-  		}
-  		else{
-  							$data =  array('message' => "Error : Module can not be blank , please select valid Category.") ;
-					echo json_encode($data);
-	
-  		}
+}
+else if($_POST['action']=="getModules")
+{
+	$subjectId="";
+	if(isset($_POST['subId']) && $_POST['subId']!="" && $_POST['cat_id']!=""){
+		$subjectId = $_POST['subId'];
+		$category_id = $_POST['cat_id'];
+		log_event(MANAGE_CATEGORY, "Get Modules List with Ids for subject  : '".$_POST['subId']."' and category id =". $_POST['cat_id']);
+		$obj->getModuleListWithId($subjectId,$category_id);
 	}
-  
-  
-	else if($_POST['action']=="renameCategory")
-  	{
-  		$subjectId="";
-  		if(isset($_POST['subId']) && $_POST['subId']!="" && $_POST['cat_id']!="" ){
-				log_event(MANAGE_CATEGORY, "Rename Category with Id for subject  : '".$_POST['subId']."' and category id =". $_POST['cat_id']);
-				if($_POST['new_name']==""){
-					$data =  array('message' => "Error : 'New Name' can not be blank , please enter valid name.") ;
-					echo json_encode($data);
-				}
-				else
-				{
-					$subId=$_POST['subId'];
-					if( $obj->getCategoryId($subId,$_POST['new_name'])!="")
-					  {
-									log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Category already Exist  !!" );
-									$data =  array('message' => 'Error while creating Category in DB, Category already Exists "'.$_POST['new_name'].'"') ;
-						}
-						else
-						{
-			  			$category_id = $_POST['cat_id'];
-							$new_name = $_POST['new_name'];
-			  			$obj->buildRenameCategorySql($category_id,$new_name);
-							if(!$obj->updateCategory())
-							{
-								$data =  array('message' => 'Error while renaming Category in DB.') ;
-								log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Error while renaming Category in DB.".json_encode($data) );
-							} else {
-								$data =  array('message' => 'Category renamed Successfully to "'.$new_name.'"') ;
-								log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Category rnamed successfully." );
-							}
-  	  	   }
-					 echo json_encode($data);
-		  	  }
-    }
-	}
+}
 
-	else if($_POST['action']=="renameModule")
+
+else if($_POST['action']=="deleteCategory")
+{
+	$subjectId="";
+	if(isset($_POST['cat_id'])&& $_POST['cat_id']!="" ){
+		log_event(MANAGE_CATEGORY, "Delete Category with Id =". $_POST['cat_id']);
+		if($_POST['cat_id']==""){
+			$data =  array('message' => "Error : Category can not be blank , please select valid Category.") ;
+			echo json_encode($data);
+		}
+		else
 		{
-			$subjectId="";
-			if(isset($_POST['subId']) && $_POST['subId']!="" && $_POST['cat_id']!="" ){
-				log_event(MANAGE_CATEGORY, "Rename Module with Id for subject  : '".$_POST['subId']."' and category id =". $_POST['cat_id']);
-				if($_POST['new_name']==""){
-					$data =  array('message' => "Error : 'New Name' can not be blank , please enter valid name.") ;
-					echo json_encode($data);
-				}
-				else
-				{
-					$subId=$_POST['subId'];
-					// If Module already Exist.
-					if( $obj->getModuleId($subId,$_POST['new_name'])!="")
-						{
-									log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Module with this name already Exist  !!" );
-									$data =  array('message' => 'Error while rename module , Module with this name already Exist "'.$_POST['new_name'].'"') ;
-						}
-						else
-						{
-							$module_id = $_POST['mod_id'];
-							$new_name = $_POST['new_name'];
-							$obj->buildRenameModuleSql($module_id,$new_name);
-							if(!$obj->updateModule())
-							{
-								$data =  array('message' => 'Error while renaming Module , Please try again later.') ;
-								log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Error while renaming Module in DB.".json_encode($data) );
-							} else {
-								$data =  array('message' => 'Module renamed Successfully to "'.$new_name.'"') ;
-								log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Module renamed successfully." );
-							}
-					 }
-					 echo json_encode($data);
-					}
+			$category_id = $_POST['cat_id'];
+			$obj->deleteCategory($category_id);
 		}
 	}
+	else{
+		$data =  array('message' => "Error : Category can not be blank , please select valid Category.") ;
+		echo json_encode($data);
+
+	}
+}
+
+else if($_POST['action']=="deleteModule")
+{
+	if(isset($_POST['mod_id'])&& $_POST['mod_id']!="" ){
+		log_event(MANAGE_CATEGORY, "Delete Module with Id =". $_POST['mod_id']);
+		if($_POST['mod_id']==""){
+			$data =  array('message' => "Error : Module can not be blank , please select valid Category.") ;
+			echo json_encode($data);
+		}
+		else
+		{
+			//$obj_history->addCatModHistory("delete","", $_POST['mod_id'], "", "1", 1, $_POST['mod_id'],"",'Error while creating module , Category with this name already Exist "'.$_GET['category'].'"');
+		
+			$mod_id = $_POST['mod_id'];
+			$obj->deleteModule($mod_id);
+		}
+	}
+	else{
+		$data =  array('message' => "Error : Module can not be blank , please select valid Category.") ;
+		echo json_encode($data);
+
+	}
+}
+
+
+else if($_POST['action']=="renameCategory")
+{
+	$subjectId="";
+	if(isset($_POST['subId']) && $_POST['subId']!="" && $_POST['cat_id']!="" ){
+		log_event(MANAGE_CATEGORY, "Rename Category with Id for subject  : '".$_POST['subId']."' and category id =". $_POST['cat_id']);
+		if($_POST['new_name']==""){
+			$obj_history->addCatModHistory("rename",$_POST['subId'],$_POST['cat_id'], "", "1", 1, $_POST['cat_id'],$new_name,'Error while renaming Module , Please try again later!');
+			$data =  array('message' => "Error : 'New Name' can not be blank , please enter valid name.") ;
+			echo json_encode($data);
+		}
+		else
+		{
+			$subId=$_POST['subId'];
+			if( $obj->getCategoryId($subId,$_POST['new_name'])!="")			{
+				$obj_history->addCatModHistory("rename",$subId,$_POST['cat_id'], "", "1", 1, $_POST['cat_id'],$_POST['new_name'],'Error while renaming Category in DB, Category already Exists "'.$_POST['new_name'].'"');
+						
+				log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Category already Exist  !!" );
+				$data =  array('message' => 'Error while creating Category in DB, Category already Exists "'.$_POST['new_name'].'"') ;
+			}
+			else
+			{
+				$category_id = $_POST['cat_id'];
+				$new_name = $_POST['new_name'];
+				$obj->buildRenameCategorySql($category_id,$new_name);
+				if(!$obj->updateCategory())
+				{
+					$obj_history->addCatModHistory("rename",$subId,$_POST['cat_id'], "", "1", 1, $_POST['cat_id'],$_POST['new_name'],'Error while renaming Category in DB'.$_POST['new_name'].'"');
+					
+					$data =  array('message' => 'Error while renaming Category in DB.') ;
+					log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Error while renaming Category in DB.".json_encode($data) );
+				} else {
+					$obj_history->addCatModHistory("rename",$subId,$_POST['cat_id'], "", "1", 0, $_POST['cat_id'],$_POST['new_name'],'Category renamed Successfully to "'.$new_name.'"');
+					$data =  array('message' => 'Category renamed Successfully to "'.$new_name.'"') ;
+					log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Category rnamed successfully." );
+				}
+			}
+			echo json_encode($data);
+		}
+	}
+}
+
+else if($_POST['action']=="renameModule")
+{
+	$subjectId="";
+	if(isset($_POST['subId']) && $_POST['subId']!="" && $_POST['cat_id']!="" ){
+		log_event(MANAGE_CATEGORY, "Rename Module with Id for subject  : '".$_POST['subId']."' and category id =". $_POST['cat_id']);
+		if($_POST['new_name']==""){
+			$data =  array('message' => "Error : 'New Name' can not be blank , please enter valid name.") ;
+			echo json_encode($data);
+		}
+		else
+		{
+			$subId=$_POST['subId'];
+			// If Module already Exist.
+			if( $obj->getModuleId($subId,$_POST['new_name'])!="")
+			{
+				$obj_history->addCatModHistory("rename",$subId,$_POST['cat_id'], $_POST['mod_id'], "1", 1, $_POST['mod_id'],$new_name,'Error while renaming Module , Please try again later!');
+				log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Module with this name already Exist  !!" );
+				$data =  array('message' => 'Error while rename module , Module with this name already Exist "'.$_POST['new_name'].'"') ;
+			}
+			else
+			{
+				$module_id = $_POST['mod_id'];
+				$new_name = $_POST['new_name'];
+				$obj->buildRenameModuleSql($module_id,$new_name);
+				if(!$obj->updateModule())
+				{
+					$obj_history->addCatModHistory("rename",$subId,$_POST['cat_id'], $_POST['mod_id'], "1", 1, $_POST['mod_id'],$new_name,'Error while renaming Module , Please try again later!');
+		
+					$data =  array('message' => 'Error while renaming Module , Please try again later.') ;
+					log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Error while renaming Module in DB.".json_encode($data) );
+				} else {
+					$obj_history->addCatModHistory("rename",$subId,$_POST['cat_id'], $_POST['mod_id'], "1", 0, $_POST['mod_id'],$new_name,'Module renamed Successfully to "'.$new_name.'"');
+					$data =  array('message' => 'Module renamed Successfully to "'.$new_name.'"') ;
+					log_event( MANAGE_CATEGORY, __LINE__."  ". __FILE__." Module renamed successfully." );
+				}
+			}
+			echo json_encode($data);
+		}
+	}
+}
 
 ?>

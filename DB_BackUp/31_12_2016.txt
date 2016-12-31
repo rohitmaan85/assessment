@@ -1,0 +1,295 @@
+	CREATE TABLE `batch` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `batch_id` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `batch_name` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `batch_type` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `no_of_candidates` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `project_cat` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `team` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `date_of_assignment` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `start_date` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `end_date` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `assessment_date` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `job_role` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `center_add` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `center_disct` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `center_poc_cont_name` varchar(512) CHARACTER SET utf8 DEFAULT NULL,
+  `center_poc_cont_phone` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `uploadDate` datetime DEFAULT NULL,
+  `status` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `last_modified_on` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`,`batch_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `batch_details` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `job_role` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `batch_id` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `exam_date` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `no_of_students_schedule` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `center_id_n_location` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `training_partner_name` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `center_skill_counsil` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `upload_date` datetime DEFAULT NULL,
+  `status` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
+  `last_updated_at` datetime DEFAULT NULL,
+  `qp_code` varchar(216) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `batch_students` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `batch_id` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `s.no` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `name` varchar(512) CHARACTER SET utf8 NOT NULL,
+  `job_role` varchar(512) CHARACTER SET utf8 NOT NULL,
+  `enrollment_id` varchar(128) CHARACTER SET utf8 NOT NULL,
+  `father_n_husband_name` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `aadhar_number` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `gender` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `mobile_no` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `address` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `uploadDate` datetime DEFAULT NULL,
+  `status` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `last_modified_on` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `cat_mod_history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sub_id` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `cat_id` varchar(512) CHARACTER SET utf8 DEFAULT NULL,
+  `mod_id` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `user_id` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `action` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
+  `old_value` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `new_value` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `comments` varchar(1024) CHARACTER SET utf8 DEFAULT NULL,
+  `action_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `download_encrypt_history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `file_name` varchar(1024) CHARACTER SET utf8 DEFAULT NULL,
+  `file_md5` varchar(1024) CHARACTER SET utf8 DEFAULT NULL,
+  `remote_ip` varchar(512) CHARACTER SET utf8 DEFAULT NULL,
+  `downloaded_at` datetime DEFAULT NULL,
+  `exam_name` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `json_format` text COLLATE utf8_unicode_ci,
+  `creation_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `exam` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `subid` varchar(30) DEFAULT NULL,
+  `testid` varchar(512) NOT NULL,
+  `testname` varchar(512) NOT NULL,
+  `totalquestions` int(11) DEFAULT NULL,
+  `duration` int(11) DEFAULT NULL,
+  `attemptedstudents` bigint(20) DEFAULT NULL,
+  `testfrom` varchar(50) NOT NULL,
+  `testto` varchar(50) NOT NULL,
+  `declareResult` varchar(3) NOT NULL,
+  `batchid` varchar(45) DEFAULT NULL,
+  `negativemarking` varchar(3) NOT NULL,
+  `total_marks` varchar(10) NOT NULL,
+  `randomqstn` varchar(3) NOT NULL,
+  `pp` varchar(3) NOT NULL,
+  `testdesc` varchar(100) DEFAULT NULL,
+  `testcode` varchar(40) NOT NULL,
+  `createDate` datetime DEFAULT NULL,
+  `last_modified_on` datetime DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `moduleIds` varchar(512) DEFAULT NULL,
+  `moduleNoOfQsnts` varchar(512) DEFAULT NULL,
+  `isCategory` varchar(512) DEFAULT NULL,
+  PRIMARY KEY (`id`,`testid`),
+  UNIQUE KEY `testname` (`testname`),
+  KEY `test_fk1` (`subid`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `exam_history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `exam_id` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `exam_name` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `user_id` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `action` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
+  `old_value` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `new_value` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `comments` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `action_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `exam_qstn` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `exam_id` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `qstn_id` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `subid` varchar(512) CHARACTER SET utf8 DEFAULT NULL,
+  `category` varchar(256) CHARACTER SET utf8 DEFAULT NULL,
+  `module` varchar(256) CHARACTER SET utf8 DEFAULT NULL,
+  `status` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `last_modified_on` datetime DEFAULT NULL,
+  `mark` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `jobroles_excel_import` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `s.no` varchar(45) DEFAULT NULL,
+  `ssc` varchar(512) DEFAULT NULL,
+  `job_role` varchar(512) DEFAULT NULL,
+  `qp_code` varchar(45) DEFAULT NULL,
+  `nsqf_level` varchar(45) DEFAULT NULL,
+  `theory` varchar(45) DEFAULT NULL,
+  `practical` varchar(45) DEFAULT NULL,
+  `add_dur_entr_n_sftskill` varchar(45) DEFAULT NULL,
+  `add_dur_digital_literacy` varchar(45) DEFAULT NULL,
+  `training_duration` varchar(45) DEFAULT NULL,
+  `curriculum_available` varchar(45) DEFAULT NULL,
+  `content_available` varchar(45) DEFAULT NULL,
+  `common_norms_category` varchar(45) DEFAULT NULL,
+  `classfication` varchar(45) DEFAULT NULL,
+  `upload_date` datetime DEFAULT NULL,
+  `last_modified_on` datetime DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=217 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `qstn_images` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `qstn_id` int(11) DEFAULT NULL,
+  `image` blob,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `question` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `s.no` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ssc` varchar(512) CHARACTER SET utf8 NOT NULL,
+  `job_role` varchar(512) CHARACTER SET utf8 NOT NULL,
+  `qp_code` varchar(100) CHARACTER SET latin1 NOT NULL DEFAULT '0',
+  `category` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
+  `module` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
+  `type` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
+  `question` varchar(5000) CHARACTER SET utf8 DEFAULT NULL,
+  `optiona` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `optionb` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `optionc` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `optiond` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `correctanswer` enum('optiona','optionb','optionc','optiond') CHARACTER SET latin1 DEFAULT NULL,
+  `marks` int(11) DEFAULT NULL,
+  `language` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `no_of_options` int(11) DEFAULT '4',
+  `image_path` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `image` longblob,
+  `uploadDate` datetime DEFAULT NULL,
+  `createDate` datetime DEFAULT NULL,
+  `last_modified_on` datetime DEFAULT NULL,
+  `status` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=274 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `question_history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `qstn_id` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `user_id` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `action` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
+  `old_value` varchar(2056) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `new_value` varchar(2056) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `comments` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `action_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `subject_category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `subId` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `category` varchar(512) CHARACTER SET utf8 NOT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `last_modified_on` datetime DEFAULT NULL,
+  `status` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `subject_category_module` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `subId` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `category_id` varchar(512) CHARACTER SET utf8 NOT NULL,
+  `module` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `last_modified_on` datetime DEFAULT NULL,
+  `status` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `subject_history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sub_id` varchar(12) CHARACTER SET utf8 DEFAULT NULL,
+  `user_id` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `action` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
+  `comments` varchar(1024) CHARACTER SET utf8 DEFAULT NULL,
+  `action_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `upload_batch_history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `file_name` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ssc` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `job_role` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `user_id` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `action` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
+  `comments` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `action_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `upload_exam_result_history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `file_name` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `exam_id` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ssc` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `job_role` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `user_id` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `action` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
+  `comments` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `action_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `upload_qstn_history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `file_name` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ssc` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `job_role` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `cat_id` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `mod_id` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `user_id` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `action` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
+  `comments` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `action_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `upload_sub_history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `file_name` varchar(512) CHARACTER SET utf8 DEFAULT NULL,
+  `user_id` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `action` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
+  `comments` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `action_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

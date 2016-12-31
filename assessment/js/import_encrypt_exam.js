@@ -125,36 +125,6 @@ $(function() {
         });
     });
 
-  // showBatchDetails();
-  function showBatchDetails(){
-              var batchTable = $('#batchTable').DataTable({
-                "oLanguage": {
-                "sEmptyTable": '<strong>No Exams Information have been imported yet !</strong>'
-                },
-                "ajax": {
-                  'url' : '/assessment/php/manageBatch.php',
-                  'data': {
-                            get: 'batchList',
-                          },
-                 'dataSrc': function (json) {
-                                if(!json.data){
-                                          $('#batch').html('<div id=\"error_msg\"  class=\"alert alert-danger fade in\" style=\"position:relative"><strong>No Batch Information Found.</strong></div>');
-                                          json.data = [];
-                                      }
-                                      else{
-                                            $('#error_msg').addClass('hide');
-                                  }
-                                return json.data;
-                          },
-                  'complete': function() {
-                                                $('#uploadFileButton').prop('disabled', false);
-                          }
-
-                },
-                "destroy" : true,
-              });
-          }
-
 
 function submitForm(event, data) {
         // Create a jQuery object from the form

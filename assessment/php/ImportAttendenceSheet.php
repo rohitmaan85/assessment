@@ -18,6 +18,7 @@ class ImportAttendenceSheet{
 	var $batch_id="";
 	var $job_role="";
 	var $qp_code="";
+	var $total_no_of_students = "";
 
 
 	var $headerRowIndex =  array("center_skill_counsil" => 2, "date" => 2,
@@ -208,15 +209,21 @@ class ImportAttendenceSheet{
 
 	function importBatchStudents($excelFilePath,$sheetNo,$startRow,$endROw,$no_of_columns,$ssc,$jobRole,$qpcode)
 	{
+		$obj_history = new manageHistory();
 		if($this->readExcel($excelFilePath,$sheetNo,$startRow,$endROw,$no_of_columns,$ssc,$jobRole,$qpcode)){
 			if($this->insertBatchStudentsInDatabase())
-			return true;
+			{
+				$obj_history->addUploadBatchHistory("upload",$excelFilePath,$ssc,$jobRole, "1", 0,'Batch Details insrted successfully . "'.	$this->batch_id.'"');
+				return true;
+			}
 			else{
+				$obj_history->addUploadBatchHistory("upload",$excelFilePath,$ssc,$jobRole, "1", 1,' ERROR while inserting Batch Information in database.');
 				log_event( READ_ATTENDENCE, __LINE__."  ". __FILE__. " ,  ERROR while inserting Batch Information in database." );
 				return false;
 			}
 		}
 		else{
+			$obj_history->addUploadBatchHistory("upload",$excelFilePath,$ssc,$jobRole, "1", 1,' ERROR while inserting Batch Information in database.');
 			log_event( READ_ATTENDENCE, __LINE__."  ". __FILE__. " ,  ERROR while reading excel file." );
 			return false;
 		}

@@ -1,0 +1,62 @@
+2016-12-30T22:44:14+05:30 [12828] INFO  : MANAGE CATEGORY Get Categories List with Ids for subject  : 'ASC/Q3509'
+2016-12-30T22:44:14+05:30 [12828] INFO  : MANAGE CATEGORY 388  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT id,category FROM `assessment`.`subject_category` where status='active' and subId='ASC/Q3509''
+2016-12-30T22:44:17+05:30 [12828] INFO  : DB  Get Request with action parameter.
+2016-12-30T22:44:17+05:30 [12828] INFO  : MANAGE CATEGORY Get Request to create category or module.
+2016-12-30T22:44:17+05:30 [12828] INFO  : MANAGE CATEGORY Get Request to create Module.
+2016-12-30T22:44:17+05:30 [12828] INFO  : MANAGE CATEGORY 241  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT id FROM `assessment`.`subject_category_module` where subId='ASC/Q3509' and module='hindi3''
+2016-12-30T22:44:17+05:30 [12828] INFO  : CREATE_EXAM_HISTORY 92  C:\wamp64\www\assessment\php\manageHistory.php  ,SQL  #INSERT INTO `assessment`.`cat_mod_history`
+				   (`sub_id`,`cat_id`,`mod_id`,`user_id`,`action`,`status`,`old_value`,`new_value`,`comments`,`action_date`)
+					 VALUES('ASC/Q3509','automative_main','hindi3','1','create','1','','hindi3','Error while creating Module in DB','2016-12-30 22:44:17');
+2016-12-30T22:44:17+05:30 [12828] INFO  : CREATE_EXAM_HISTORY 98  C:\wamp64\www\assessment\php\manageHistory.php  ,ERROR #Data too long for column 'cat_id' at row 1
+2016-12-30T22:44:17+05:30 [12828] INFO  : MANAGE CATEGORY 539  C:\wamp64\www\assessment\php\manageCategory.php Module with this name already Exist  !!
+2016-12-30T22:45:23+05:30 [12828] INFO  : MANAGE CATEGORY Get Categories List with Ids for subject  : 'ASC/Q3509'
+2016-12-30T22:45:23+05:30 [12828] INFO  : MANAGE CATEGORY 388  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT id,category FROM `assessment`.`subject_category` where status='active' and subId='ASC/Q3509''
+2016-12-30T22:45:24+05:30 [12828] INFO  : DB  Get Request with action parameter.
+2016-12-30T22:45:24+05:30 [12828] INFO  : MANAGE CATEGORY Get Request to create category or module.
+2016-12-30T22:45:24+05:30 [12828] INFO  : MANAGE CATEGORY Get Request to create Module.
+2016-12-30T22:45:24+05:30 [12828] INFO  : MANAGE CATEGORY 241  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT id FROM `assessment`.`subject_category_module` where subId='ASC/Q3509' and module='hindi3''
+2016-12-30T22:45:24+05:30 [12828] INFO  : CREATE_EXAM_HISTORY 92  C:\wamp64\www\assessment\php\manageHistory.php  ,SQL  #INSERT INTO `assessment`.`cat_mod_history`
+				   (`sub_id`,`cat_id`,`mod_id`,`user_id`,`action`,`status`,`old_value`,`new_value`,`comments`,`action_date`)
+					 VALUES('ASC/Q3509','automative_main','hindi3','1','create','1','','hindi3','Error while creating Module in DB','2016-12-30 22:45:24');
+2016-12-30T22:45:24+05:30 [12828] INFO  : CREATE_EXAM_HISTORY 98  C:\wamp64\www\assessment\php\manageHistory.php  ,ERROR #Incorrect integer value: 'hindi3' for column 'mod_id' at row 1
+2016-12-30T22:45:24+05:30 [12828] INFO  : MANAGE CATEGORY 539  C:\wamp64\www\assessment\php\manageCategory.php Module with this name already Exist  !!
+2016-12-30T22:46:04+05:30 [12828] INFO  : MANAGE CATEGORY Get Categories List with Ids for subject  : 'ASC/Q3509'
+2016-12-30T22:46:04+05:30 [12828] INFO  : MANAGE CATEGORY 388  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT id,category FROM `assessment`.`subject_category` where status='active' and subId='ASC/Q3509''
+2016-12-30T22:46:06+05:30 [12828] INFO  : DB  Get Request with action parameter.
+2016-12-30T22:46:06+05:30 [12828] INFO  : MANAGE CATEGORY Get Request to create category or module.
+2016-12-30T22:46:06+05:30 [12828] INFO  : MANAGE CATEGORY Get Request to create Module.
+2016-12-30T22:46:06+05:30 [12828] INFO  : MANAGE CATEGORY 241  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Module Id : 'SELECT id FROM `assessment`.`subject_category_module` where subId='ASC/Q3509' and module='hindi3''
+2016-12-30T22:46:06+05:30 [12828] INFO  : CREATE_EXAM_HISTORY 92  C:\wamp64\www\assessment\php\manageHistory.php  ,SQL  #INSERT INTO `assessment`.`cat_mod_history`
+				   (`sub_id`,`cat_id`,`mod_id`,`user_id`,`action`,`status`,`old_value`,`new_value`,`comments`,`action_date`)
+					 VALUES('ASC/Q3509','automative_main','hindi3','1','create','1','','hindi3','Error while creating Module in DB','2016-12-30 22:46:06');
+2016-12-30T22:46:06+05:30 [12828] INFO  : CREATE_EXAM_HISTORY 95  C:\wamp64\www\assessment\php\manageHistory.php  , Success !! Create category and Module History added successfully in Database : ''
+2016-12-30T22:46:06+05:30 [12828] INFO  : MANAGE CATEGORY 539  C:\wamp64\www\assessment\php\manageCategory.php Module with this name already Exist  !!
+2016-12-30T22:48:58+05:30 [12828] INFO  : DB  Get Request with action parameter.
+2016-12-30T22:48:58+05:30 [12828] INFO  : MANAGE CATEGORY Get Request to create category or module.
+2016-12-30T22:48:58+05:30 [12828] INFO  : MANAGE CATEGORY Get Request to create Category.
+2016-12-30T22:48:58+05:30 [12828] INFO  : MANAGE CATEGORY 20  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to insert Category : 'INSERT INTO `assessment`.`subject_category`
+				   (`subId`,`category`,`created_on`,`last_modified_on`,`status`)
+					 VALUES('ASC/Q3509','tst1','2016-12-30 22:48:58','2016-12-30 22:48:58','active');'
+2016-12-30T22:48:58+05:30 [12828] INFO  : MANAGE CATEGORY 173  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT id FROM `assessment`.`subject_category` where subId='ASC/Q3509' and category='tst1' and status='active''
+2016-12-30T22:48:58+05:30 [12828] INFO  : MANAGE CATEGORY 54  C:\wamp64\www\assessment\php\manageCategory.php  , Success !  Category inserted successfully in Database : ''
+2016-12-30T22:48:58+05:30 [12828] INFO  : CREATE_EXAM_HISTORY 92  C:\wamp64\www\assessment\php\manageHistory.php  ,SQL  #INSERT INTO `assessment`.`cat_mod_history`
+				   (`sub_id`,`cat_id`,`mod_id`,`user_id`,`action`,`status`,`old_value`,`new_value`,`comments`,`action_date`)
+					 VALUES('ASC/Q3509','tst1','','1','create','0','','tst1',' Category created successfully','2016-12-30 22:48:58');
+2016-12-30T22:48:58+05:30 [12828] INFO  : CREATE_EXAM_HISTORY 95  C:\wamp64\www\assessment\php\manageHistory.php  , Success !! Create category and Module History added successfully in Database : ''
+2016-12-30T22:48:58+05:30 [12828] INFO  : MANAGE CATEGORY 576  C:\wamp64\www\assessment\php\manageCategory.php Category created successfully.
+2016-12-30T22:48:59+05:30 [12828] INFO  : MANAGE CATEGORY Get Categories List with Ids for subject  : 'ASC/Q3509'
+2016-12-30T22:48:59+05:30 [12828] INFO  : MANAGE CATEGORY 388  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT id,category FROM `assessment`.`subject_category` where status='active' and subId='ASC/Q3509''
+2016-12-30T22:49:11+05:30 [12828] INFO  : DB  Get Request with action parameter.
+2016-12-30T22:49:11+05:30 [12828] INFO  : MANAGE CATEGORY Get Request to create category or module.
+2016-12-30T22:49:11+05:30 [12828] INFO  : MANAGE CATEGORY Get Request to create Category.
+2016-12-30T22:49:11+05:30 [12828] INFO  : MANAGE CATEGORY 20  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to insert Category : 'INSERT INTO `assessment`.`subject_category`
+				   (`subId`,`category`,`created_on`,`last_modified_on`,`status`)
+					 VALUES('ASC/Q3509','tst1','2016-12-30 22:49:11','2016-12-30 22:49:11','active');'
+2016-12-30T22:49:11+05:30 [12828] INFO  : MANAGE CATEGORY 173  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Category Id : 'SELECT id FROM `assessment`.`subject_category` where subId='ASC/Q3509' and category='tst1' and status='active''
+2016-12-30T22:49:11+05:30 [12828] INFO  : CREATE_EXAM_HISTORY 92  C:\wamp64\www\assessment\php\manageHistory.php  ,SQL  #INSERT INTO `assessment`.`cat_mod_history`
+				   (`sub_id`,`cat_id`,`mod_id`,`user_id`,`action`,`status`,`old_value`,`new_value`,`comments`,`action_date`)
+					 VALUES('ASC/Q3509','tst1','','1','create','1','','tst1','Error while creating module , Module with this name already Exist &quot;tst1&quot;','2016-12-30 22:49:11');
+2016-12-30T22:49:11+05:30 [12828] INFO  : CREATE_EXAM_HISTORY 95  C:\wamp64\www\assessment\php\manageHistory.php  , Success !! Create category and Module History added successfully in Database : ''
+2016-12-30T22:49:11+05:30 [12828] INFO  : MANAGE CATEGORY 563  C:\wamp64\www\assessment\php\manageCategory.php Category already Exist  !!
+2016-12-30T22:49:11+05:30 [12828] INFO  : MANAGE CATEGORY Get Categories List with Ids for subject  : 'ASC/Q3509'
+2016-12-30T22:49:11+05:30 [12828] INFO  : MANAGE CATEGORY 388  C:\wamp64\www\assessment\php\manageCategory.php  , SQL to get Categories : 'SELECT id,category FROM `assessment`.`subject_category` where status='active' and subId='ASC/Q3509''
