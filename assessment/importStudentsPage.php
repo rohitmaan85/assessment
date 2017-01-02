@@ -1,4 +1,8 @@
-<!DOCTYPE HTML>
+<?php
+require_once 'header.php';
+?>
+<!DOCTYPE 
+HTML>
 <html>
 
 <head>

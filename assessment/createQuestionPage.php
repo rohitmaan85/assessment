@@ -1,4 +1,8 @@
 <?php
+require_once 'header.php';
+
+
+
 //$_GET['action']="edit";
 if(isset($_GET['action'])){
    $action = $_GET['action'];

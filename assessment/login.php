@@ -11,21 +11,11 @@
 </head>
 
 <body>
-  <!-- <script src="js/jquery-3.1.0.js"></script> -->
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/ui/1.12.0-beta.1/jquery-ui.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.1.135/jspdf.min.js"></script>
-<script type="text/javascript" src="http://cdn.uriit.ru/jsPDF/libs/adler32cs.js/adler32cs.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js
-"></script>
-<script type="text/javascript" src="http://cdn.immex1.com/js/jspdf/plugins/jspdf.plugin.addimage.js"></script>
-<script type="text/javascript" src="http://cdn.immex1.com/js/jspdf/plugins/jspdf.plugin.standard_fonts_metrics.js"></script>
-<script type="text/javascript" src="http://cdn.immex1.com/js/jspdf/plugins/jspdf.plugin.split_text_to_size.js"></script>
-<script type="text/javascript" src="http://cdn.immex1.com/js/jspdf/plugins/jspdf.plugin.from_html.js"></script>
 
 
   <script src="js/main.js"></script>
+    <script src="js/login.js"></script>
     <div class="loader"></div>
   <div class="row">
     <!-- uncomment code for absolute positioning tweek see top comment in css -->
@@ -37,13 +27,12 @@
            src="images/logo.png">      Brisk Mind Examination Management System !!! </a>
        </h3>
     </div>
+
+    <!--
     <div class="side-menu">
 
       <nav class="navbar navbar-default" role="navigation" >
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <!-- <div class="brand-wrapper"> -->
-            <!-- Hamburger -->
+          <div class="navbar-header">
             <button type="button" class="navbar-toggle"  data-toggle="collapse" data-target=".side-menu-container">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
@@ -51,7 +40,8 @@
               <span class="icon-bar"></span>
             </button>
 
-        <!-- Main Menu -->
+
+
         <div class="side-menu-container">
           <ul class="nav navbar-nav" >
             <li><a  href="importSubjectPage.php"><span class="glyphicon glyphicon-collapse-down"></span>Import Subjects</a></li>
@@ -69,38 +59,58 @@
             <li><a  href="backupFPDF.php"><span class="glyphicon glyphicon-paperclip"></span>Reports</a></li>
           </ul>
         </div>
-        <!-- /.navbar-collapse -->
       </nav>
 
     </div>
 
+  -->
+    <!-- /.navbar-collapse -->
 
     <!-- Main Content -->
 
-    <div class="container-fluid">
-      <div class="side-body">
-       <div class="container1">
+         <div class="container1">
+
+	            <div id="errorMessage" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Error</h4>
+                 </div>
+                 <div class="modal-body">
+                     <strong> <font color='Red'><span id="errorMessageText">Error while connecting Axway Arrow !!</span></font></strong>
+               </div>
+             <div class="modal-footer">
+               <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+             </div>
+           </div>
+          </div>
+         </div>
+
           <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-1">
             <div class="panel panel-info">
               <div class="panel-heading">
-                <div class="panel-title">Sign In</div>
+                <div class="panel-title">Sign In To BriskMind EMS</div>
                 <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
               </div>
 
               <div style="padding-top:30px" class="panel-body">
 
-                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
 
+				<div id="login-alert" class="alert alert-danger"  hidden="hidden">
+                  <button class="close" data-hide="alert">&times;</button>
+                    <strong></strong>
+                </div>
                 <form id="loginform" class="form-horizontal" role="form">
 
                   <div style="margin-bottom: 25px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">
+                    <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email" required="required">
                   </div>
 
                   <div style="margin-bottom: 25px" class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
+                    <input id="login-password" type="password" class="form-control" name="password" placeholder="password" required="required">
                   </div>
 
 
@@ -115,7 +125,7 @@
 
                   <div style="margin-top:10px" class="form-group">
                                          <div class="col-sm-12 controls">
-                      <a id="btn-login" href="#" class="btn btn-success">Login  </a>
+                      <button id="loginButton" type="submit" class="btn btn-success">Login</button>
                     </div>
                   </div>
 
@@ -123,13 +133,8 @@
               </div>
             </div>
           </div>
-        </div>
-     </div>
     </div>
   </div>
 </body>
 
 </html>';
-
-//echo $html_content;
->

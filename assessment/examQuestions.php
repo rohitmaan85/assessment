@@ -2,6 +2,8 @@
 //ini_set('error_reporting', E_ALL);
 //include("./php/lib/MPDF_5_7/MPDF57/mpdf.php");
 include('./php/manageExams.php');
+require_once 'header.php';
+
 if(isset($_GET['examname'])){
     $testName   =   $_GET['examname'];
     echo '<input type="hidden" value="'.$testName.'" id="getExamName" name="isEditable"/>';

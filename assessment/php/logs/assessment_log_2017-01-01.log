@@ -1,0 +1,50 @@
+2017-01-01T18:49:57+05:30 [12828] INFO  : USER_AUTHENTICATION 73  C:\wamp64\www\assessment\php\AuthenticateUser.php, Get Request to authenticate user 'root' and password = 'Axway123'
+2017-01-01T18:49:57+05:30 [12828] INFO  : DB 16  C:\wamp64\www\assessment\php\AuthenticateUser.php  , SQL to get Batch List : 'SELECT * FROM `assessment`.`user` Where username='root' and password='Axway123' and status='active''
+2017-01-01T18:49:57+05:30 [12828] INFO  : USER_AUTHENTICATION No Row Found
+2017-01-01T18:49:57+05:30 [12828] INFO  : USER_AUTHENTICATION 82  C:\wamp64\www\assessment\php\AuthenticateUser.php, Invalid username and password
+2017-01-01T18:49:57+05:30 [12828] INFO  : USER_AUTHENTICATION 73  C:\wamp64\www\assessment\php\AuthenticateUser.php, Get Request to authenticate user 'root' and password = 'Axway123'
+2017-01-01T18:49:57+05:30 [12828] INFO  : DB 16  C:\wamp64\www\assessment\php\AuthenticateUser.php  , SQL to get Batch List : 'SELECT * FROM `assessment`.`user` Where username='root' and password='Axway123' and status='active''
+2017-01-01T18:49:57+05:30 [12828] INFO  : USER_AUTHENTICATION No Row Found
+2017-01-01T18:49:57+05:30 [12828] INFO  : USER_AUTHENTICATION 82  C:\wamp64\www\assessment\php\AuthenticateUser.php, Invalid username and password
+2017-01-01T18:50:26+05:30 [12828] INFO  : USER_AUTHENTICATION 73  C:\wamp64\www\assessment\php\AuthenticateUser.php, Get Request to authenticate user 'admin' and password = 'admin'
+2017-01-01T18:50:26+05:30 [12828] INFO  : DB 16  C:\wamp64\www\assessment\php\AuthenticateUser.php  , SQL to get Batch List : 'SELECT * FROM `assessment`.`user` Where username='admin' and password='admin' and status='active''
+2017-01-01T18:50:26+05:30 [12828] INFO  : USER_AUTHENTICATION 46  C:\wamp64\www\assessment\php\AuthenticateUser.php  , Success !  SQL executed ''
+2017-01-01T18:50:26+05:30 [12828] INFO  : USER_AUTHENTICATION 73  C:\wamp64\www\assessment\php\AuthenticateUser.php, Get Request to authenticate user 'admin' and password = 'admin'
+2017-01-01T18:50:26+05:30 [12828] INFO  : DB 16  C:\wamp64\www\assessment\php\AuthenticateUser.php  , SQL to get Batch List : 'SELECT * FROM `assessment`.`user` Where username='admin' and password='admin' and status='active''
+2017-01-01T18:50:26+05:30 [12828] INFO  : USER_AUTHENTICATION 46  C:\wamp64\www\assessment\php\AuthenticateUser.php  , Success !  SQL executed ''
+2017-01-01T21:56:45+05:30 [12828] INFO  : DB Get Request with parameter :'ssc'
+2017-01-01T21:56:45+05:30 [12828] INFO  : DB Get SSC List from database.
+2017-01-01T21:56:45+05:30 [12828] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2017-01-01T21:56:54+05:30 [12828] INFO  : DB  Get Request with action parameter  :'getBatchDetails'
+2017-01-01T21:56:54+05:30 [12828] INFO  : MANAGE ATTENDENCE  Get Request to get batch details.
+2017-01-01T21:56:54+05:30 [12828] INFO  : MANAGE ATTENDENCE 104  C:\wamp64\www\assessment\php\manageAttendence.php  , SQL to get Batch Details List : 'SELECT * FROM `assessment`.`batch_details`'
+2017-01-01T21:56:56+05:30 [12828] INFO  : DB Get Request with parameter :'ssc'
+2017-01-01T21:56:56+05:30 [12828] INFO  : DB Get SSC List from database.
+2017-01-01T21:56:56+05:30 [12828] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2017-01-01T21:56:56+05:30 [12828] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2017-01-01T21:56:56+05:30 [12828] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2017-01-01T21:56:56+05:30 [12828] INFO  : MANAGE TEST 950  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''
+2017-01-01T22:01:23+05:30 [12828] INFO  : DB Get Request with parameter :'ssc'
+2017-01-01T22:01:23+05:30 [12828] INFO  : DB Get SSC List from database.
+2017-01-01T22:01:23+05:30 [12828] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2017-01-01T22:01:23+05:30 [12828] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2017-01-01T22:01:23+05:30 [12828] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2017-01-01T22:01:23+05:30 [12828] INFO  : MANAGE TEST 950  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''
+2017-01-01T22:02:41+05:30 [12828] INFO  : DB Get Request with parameter :'ssc'
+2017-01-01T22:02:41+05:30 [12828] INFO  : DB Get SSC List from database.
+2017-01-01T22:02:41+05:30 [12828] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2017-01-01T22:02:41+05:30 [12828] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2017-01-01T22:02:41+05:30 [12828] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2017-01-01T22:02:41+05:30 [12828] INFO  : MANAGE TEST 950  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''
+2017-01-01T22:11:02+05:30 [12828] INFO  : DB Get Request with parameter :'ssc'
+2017-01-01T22:11:02+05:30 [12828] INFO  : DB Get SSC List from database.
+2017-01-01T22:11:02+05:30 [12828] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2017-01-01T22:11:02+05:30 [12828] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2017-01-01T22:11:02+05:30 [12828] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2017-01-01T22:11:02+05:30 [12828] INFO  : MANAGE TEST 950  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''
+2017-01-01T22:12:14+05:30 [12828] INFO  : DB Get Request with parameter :'ssc'
+2017-01-01T22:12:14+05:30 [12828] INFO  : DB Get SSC List from database.
+2017-01-01T22:12:14+05:30 [12828] INFO  : DB SQL = 'SELECT ssc FROM `assessment`.`jobroles_excel_import`'
+2017-01-01T22:12:14+05:30 [12828] INFO  : MANAGE TEST Get Request with parameter :'exams'
+2017-01-01T22:12:14+05:30 [12828] INFO  : MANAGE TEST Get Exam List for subject  : ''
+2017-01-01T22:12:14+05:30 [12828] INFO  : MANAGE TEST 950  C:\wamp64\www\assessment\php\manageExams.php  , SQL to get Exam : 'SELECT * FROM `assessment`.`exam` where status='active''

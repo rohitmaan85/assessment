@@ -1,7 +1,13 @@
+
 <?php
+
+
 //ini_set('error_reporting', E_ALL);
 //include("./php/lib/MPDF_5_7/MPDF57/mpdf.php");
 include('./php/EncryptQuestionPaper.php');
+require_once 'header.php';
+
+
 
 $obj = new EncryptQuestionPaperClass();
 // Read Encrypted File

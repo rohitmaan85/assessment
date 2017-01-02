@@ -1,13 +1,18 @@
 <?php
+/*** begin our session ***/
+session_start();
+ob_start();
 /*
 $uid = isset($_POST['uid']) ? $_POST['uid'] : $_SESSION['uid'];
 $pwd = isset($_POST['pwd']) ? $_POST['pwd'] : $_SESSION['pwd'];
+*/
 
-if(!isset($_SESSION['name']))
+
+if(!isset($_SESSION['userName']))
 {
         header("location: login.php");
 }
-*/
+
 ?>
 
 
@@ -36,6 +41,8 @@ if(!isset($_SESSION['name']))
       <h3 class="navbar-brand brand-name">
            <a href="login.php"><img class="img-responsive2"
            src="images/logo.png">      Brisk Mind Examination Management System !!! </a>
+                                <a class="pul-right" href="logout.php">Logout</a>
+
        </h3>
     </div>
     <div class="side-menu">
@@ -65,7 +72,7 @@ if(!isset($_SESSION['name']))
             <li><a  href="createExamPage.php"><span class="glyphicon glyphicon-education"></span>Create Test</a></li>
             <li><a  href="createStudentPage.php"><span class="glyphicon glyphicon-user"></span>Create Student</a></li>
             <li><a  href="login.php"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-            <li><a  href="backupFPDF.php"><span class="glyphicon glyphicon-paperclip"></span>Reports</a></li>
+            <li><a  href="manageReports.php"><span class="glyphicon glyphicon-paperclip"></span>Reports</a></li>
           </ul>
         </div>
         <!-- /.navbar-collapse -->
